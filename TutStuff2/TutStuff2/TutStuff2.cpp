@@ -2,29 +2,47 @@
 //
 
 #include <iostream>
+#include <string.h>
 
 using namespace std;
 
 class Cpal
 {
-protected: 
-	string men;
+	protected: 
+		string men;
 
-private:
-	int me = 0;
+	private:
+		int me = 0;
+		string name;
 
-public: 
-	void menm()
-	{
-		cout << "ble" << endl;
-	}
+	public: 
+		void menm(string x)
+		{
+			name = x;
+			cout << "ble" << endl;
+		}
+		string getName() 
+		{
+			return name;
+		};
+};
+
+class Momisdead
+{
+public:
+	string name;
 };
 
 int main()
 {
+	// multiple instantiations
+	Momisdead ded;
+	ded.name = "mom";
+	cout << ded.name;
 
+	Cpal mo;
     std::cout << "Hello World!\n";
-
+	mo.menm(ded.name);
 	return 0;
 }
 
