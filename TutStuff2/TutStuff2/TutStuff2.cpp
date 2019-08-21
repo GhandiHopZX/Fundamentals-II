@@ -16,7 +16,7 @@ class Cpal
 		string name;
 
 	public: 
-		void menm(string x)
+		void setName(string x)
 		{
 			name = x;
 			cout << "ble" << endl;
@@ -41,8 +41,11 @@ int main()
 	cout << ded.name;
 
 	Cpal mo;
+	mo.setName("wowNIPX");
     std::cout << "Hello World!\n";
-	mo.menm(ded.name);
+	mo.setName(ded.name);
+	mo.setName("bleck");
+	cout << mo.getName();
 	return 0;
 }
 
