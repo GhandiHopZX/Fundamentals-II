@@ -3,9 +3,29 @@
 
 #include <iostream>
 
+using namespace std;
+
+class Cpal
+{
+protected: 
+	string men;
+
+private:
+	int me = 0;
+
+public: 
+	void menm()
+	{
+		cout << "ble" << endl;
+	}
+};
+
 int main()
 {
+
     std::cout << "Hello World!\n";
+
+	return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
