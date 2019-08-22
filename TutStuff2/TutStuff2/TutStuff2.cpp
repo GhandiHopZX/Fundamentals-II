@@ -6,6 +6,14 @@
 
 using namespace std;
 
+struct rune
+{
+	string name;
+	string dec;
+	string type;
+	int* id = nullptr;
+};
+
 class Cpal
 {
 	protected: 
@@ -44,9 +52,39 @@ int main()
 	mo.setName("wowNIPX");
     std::cout << "Hello World!\n";
 	mo.setName(ded.name);
+
 	mo.setName("bleck");
 	cout << mo.getName();
+
+	cout << "\n";
+	system("PAUSE");
 	return 0;
+}
+
+int rContainer()
+{
+	rune Tainer;
+	rune prp;
+	rune megani;
+
+	int tainer0 = 0;
+	int markp1 = 0;
+	int meg2 = 0;
+
+	Tainer.id = &tainer0;
+	prp.id = &markp1;
+	megani.id = &meg2;
+	
+	int items0[]=  { tainer0 };
+	int items1[] = { markp1 };
+	int items2[] = { meg2 };
+
+	for (int i; items0 < 0; i++)
+	{
+		cout << items0[i];
+	}
+
+	return;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
