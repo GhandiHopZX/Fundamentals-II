@@ -6,6 +6,14 @@
 
 using namespace std;
 
+struct SD
+{
+	string name;
+	int price;
+	int num;
+
+};
+
 struct rune
 {
 	string name;
@@ -13,6 +21,7 @@ struct rune
 	string type;
 	int* id = nullptr;
 };
+
 
 class Cpal
 {
@@ -40,6 +49,10 @@ class Momisdead
 public:
 	string name;
 };
+
+void transaction(SD[], int s, double& aflac);
+
+int getChoice(SD[]);
 
 int main()
 {
@@ -85,6 +98,16 @@ int rContainer()
 	}
 
 	return;
+}
+
+void transaction(SD[], int s, double& aflac)
+{
+
+}
+
+int getChoice(SD[])
+{
+	
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
