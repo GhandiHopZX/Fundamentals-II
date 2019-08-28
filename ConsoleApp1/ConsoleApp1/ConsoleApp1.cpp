@@ -5,7 +5,6 @@
 // Description: Page 662 #13 Drink Machine
 */
 
-
 #include <iostream>
 #include <cstdlib>
 #include <iomanip>

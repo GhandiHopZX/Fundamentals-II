@@ -36,7 +36,7 @@ class Cpal
 		void setName(string x)
 		{
 			name = x;
-			cout << "ble" << endl;
+			cout << "bled" << endl;
 		}
 		string getName() 
 		{
@@ -56,6 +56,12 @@ int getChoice(SD[]);
 
 int main()
 {
+	/// some ints 
+	int a = 5;
+	int *b = &a;
+	int c = *b;
+	///
+
 	// multiple instantiations
 	Momisdead ded;
 	ded.name = "mom";
@@ -66,8 +72,11 @@ int main()
     std::cout << "Hello World!\n";
 	mo.setName(ded.name);
 
-	mo.setName("bleck");
+	mo.setName("bleck\n");
 	cout << mo.getName();
+	cout << "\n";
+
+	cout << "     Here it is " + c;
 
 	cout << "\n";
 	system("PAUSE");
@@ -80,6 +89,7 @@ int rContainer()
 	rune prp;
 	rune megani;
 
+	int addup = 0;
 	int tainer0 = 0;
 	int markp1 = 0;
 	int meg2 = 0;
@@ -92,12 +102,14 @@ int rContainer()
 	int items1[] = { markp1 };
 	int items2[] = { meg2 };
 
-	for (int i; items0 < 0; i++)
+	for (int i = 0; items0 < 0; i++)
 	{
 		cout << items0[i];
+		addup += items2[i];
+		addup += items1[i];
+		addup += items0[i];
 	}
-
-	return;
+	return addup;
 }
 
 void transaction(SD[], int s, double& aflac)
@@ -107,7 +119,7 @@ void transaction(SD[], int s, double& aflac)
 
 int getChoice(SD[])
 {
-	
+	return -1;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
