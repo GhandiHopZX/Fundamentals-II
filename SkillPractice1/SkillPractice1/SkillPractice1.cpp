@@ -32,16 +32,38 @@ int getBin(BIN[]);
 
 int main()
 {
+	// Bin parts
+	BIN bin;
 
-    cout << "Hello World!\n";
+	//Welcome the user 
+	cout << "Welcome" << endl;
+	
+	//Main Menu
+	int userChoice;
+
+	userChoice = getBin();
 
 	system("PAUSE");
 
 	return 0;
 }
 
-string DisplayBin(BIN)
+int getChoice(BIN c[])
 {
+
+}
+
+int DisplayBin(BIN[])
+{
+	//user begins input
 	int input;
+	cout << endl;
+
+
 	return input - 1;
+}
+
+int getBin(BIN[])
+{
+	return 0;
 }
