@@ -22,7 +22,6 @@ struct Drink
 	string name;
 	double price;
 	int num;
-
 };
 
 // Function prototypes
@@ -60,7 +59,6 @@ int main()
 		transaction(machine, choice, earnings);
 		// get the next choice
 		choice = getChoice(machine);
-
 	}
 
 	// display the machine's total earnings

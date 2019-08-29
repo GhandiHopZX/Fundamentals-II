@@ -1,10 +1,10 @@
 // SkillPractice1.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 /******************************
-   Solomon Pattee
-   8/28/2019
-   SkillPractice1.cpp
-   Inventory Management for the Bins
+   Name: Solomon Pattee
+   Date: 8/28/2019
+   FileName: SkillPractice1.cpp
+   Description: Inventory Management for the Bins
 ********************************/
 
 // Headers
@@ -29,19 +29,24 @@ struct BIN
 
 int getBin(BIN[]);
 
+int addParts(BIN[]);
+
+int removeParts(BIN[]);
 
 int main()
 {
 	// Bin parts
 	BIN bin;
 
-	//Welcome the user 
-	cout << "Welcome" << endl;
-	
 	//Main Menu
 	int userChoice;
 
+	// display the bin list
+	// all the bins
 	userChoice = getBin();
+
+	//process the user input
+	getChoice();
 
 	system("PAUSE");
 
@@ -50,20 +55,68 @@ int main()
 
 int getChoice(BIN c[])
 {
-
-}
-
-int DisplayBin(BIN[])
-{
-	//user begins input
-	int input;
+	// user imput
+	char choice;
 	cout << endl;
 
+	// displaying menu
 
-	return input - 1;
+	cout << "Part Description\t\t Number of Parts in the Bin";
+
+	// user chooses
+		
+	while (choice != 11)
+	{
+		switch (choice)
+		{
+		case '1': 
+			break;
+
+		case '2':
+			break;
+
+		case '3':
+			break;
+
+		case '4':
+			break;
+
+		case '5':
+			break;
+
+		case '6':
+			break;
+
+		case '7':
+			break;
+
+		case '8':
+			break;
+
+		case '9':
+			break;
+
+		case '10':
+			break;
+		default:
+			break;
+		}
+
+	}
+
 }
 
 int getBin(BIN[])
+{
+	return 0;
+}
+
+int addParts(BIN[])
+{
+	return 0;
+}
+
+int removeParts(BIN[])
 {
 	return 0;
 }
