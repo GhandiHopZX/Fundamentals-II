@@ -56,12 +56,18 @@ int main()
 int getChoice(BIN c[])
 {
 	// user imput
-	char choice;
+	int choice;
 	cout << endl;
 
 	// displaying menu
 
-	cout << "Part Description\t\t Number of Parts in the Bin";
+	cout << "Part Description\t\t Number of Parts in the Bin\n" << endl;
+
+	for (int x = 0; x < NUM_OF_BINS; x++)
+	{
+		cout << (x + 1) << ")" << c[x].partName << "\t\t";
+		cout << c[x].num << endl;
+	}
 
 	// user chooses
 		
@@ -69,41 +75,61 @@ int getChoice(BIN c[])
 	{
 		switch (choice)
 		{
-		case '1': 
+		case 1: 
+			cout << "Valves?" << endl;
+			addParts();
 			break;
 
-		case '2':
+		case 2:
+			cout << "Bearings?" << endl;
+			cin >> c->num;
 			break;
 
-		case '3':
+		case 3:
+			cout << "Bushings?" << endl;
+			cin >> c->num;
 			break;
 
-		case '4':
+		case 4:
+			cout << "Couplings?" << endl;
+			cin >> c->num;
 			break;
 
-		case '5':
+		case 5:
+			cout << "Flanges?" << endl;
+			
+			cin >> c->num;
 			break;
 
-		case '6':
+		case 6:
+			cout << "Gears?" << endl;
+			cin >> c->num;
 			break;
 
-		case '7':
+		case 7:
+			cout << "Gear Housings?" << endl;
+			cin >> c->num;
 			break;
 
-		case '8':
+		case 8:
+			cout << "Vacuum Gripers?" << endl;
+			cin >> c->num;
 			break;
 
-		case '9':
+		case 9:
+			cout << "Cables?" << endl;
+			cin >> c->num;
 			break;
 
-		case '10':
+		case 10:
+			cout << "Rods?" << endl;
+			cin >> c->num;
 			break;
+
 		default:
 			break;
 		}
-
 	}
-
 }
 
 int getBin(BIN[])
@@ -111,8 +137,12 @@ int getBin(BIN[])
 	return 0;
 }
 
-int addParts(BIN[])
+int addParts(BIN c[])
 {
+	// ask the User how many to add
+
+	cout << "how many to add" << endl;
+	
 	return 0;
 }
 
