@@ -35,9 +35,17 @@ void removeParts(BIN rem[]);
 int main()
 {
 	// Bin parts
-	BIN Bins[NUM_OF_BINS] = 
-	{
-	
+	BIN Bins[NUM_OF_BINS] = {
+	{"Valve", 10},
+	{"Bearing", 5},
+	{"Bushing", 15},
+	{"Coupling", 21},
+	{"Flange", 7},
+	{"Gear", 5},
+	{"Gear Housing", 5},
+	{"Vacuum Gripper", 25},
+	{"Cable", 18},
+	{"Rod", 12}
 	};
 
 	//Main Menu
