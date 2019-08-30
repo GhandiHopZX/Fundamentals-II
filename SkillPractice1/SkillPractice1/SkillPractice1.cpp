@@ -18,7 +18,6 @@ using namespace std;
 // Global variables
 const int NUM_OF_BINS = 10;
 
-
 struct BIN
 {
 	string partName;
@@ -36,7 +35,10 @@ void removeParts(BIN rem[]);
 int main()
 {
 	// Bin parts
-	BIN Bins[NUM_OF_BINS];
+	BIN Bins[NUM_OF_BINS] = 
+	{
+	
+	};
 
 	//Main Menu
 	int choice;
@@ -51,7 +53,7 @@ int main()
 				
 
 		// all the bins
-		choice = getBin(getChoice);
+		choice = getChoice(Bins);
 
 	} while (choice != 11);
 	{}
@@ -121,7 +123,7 @@ int getBin(BIN c[])
 	return 0;
 }
 
-int addParts(BIN add[])
+int addParts(BIN add[], int choice)
 {
 	//Bin object
 	BIN add;
@@ -139,6 +141,6 @@ int addParts(BIN add[])
 	return  -1;
 }
 
-void removeParts(BIN rem[])
+void removeParts(BIN rem[], int choice)
 {
 }
