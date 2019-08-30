@@ -17,7 +17,7 @@ using namespace std;
 
 // Global variables
 const int NUM_OF_BINS = 10;
-BIN Bins[NUM_OF_BINS];
+
 
 struct BIN
 {
@@ -29,24 +29,32 @@ struct BIN
 
 int getBin(BIN[]);
 
-int addParts(BIN[]);
+int addParts(BIN add[]);
 
-int removeParts(BIN[]);
+void removeParts(BIN rem[]);
 
 int main()
 {
 	// Bin parts
-	BIN bin;
+	BIN Bins[NUM_OF_BINS];
 
 	//Main Menu
-	int userChoice;
+	int choice;
 
-	// display the bin list
-	// all the bins
-	userChoice = getBin();
+	do
+	{
+		// display the bin list
+		system("CLS");
+		cout << "Part Description\t\t Number of Parts in the Bin\n" << endl;
 
-	//process the user input
-	getChoice();
+		// displaying menu
+				
+
+		// all the bins
+		choice = getBin(getChoice);
+
+	} while (choice != 11);
+	{}
 
 	system("PAUSE");
 
@@ -59,94 +67,78 @@ int getChoice(BIN c[])
 	int choice;
 	cout << endl;
 
-	// displaying menu
-
-	cout << "Part Description\t\t Number of Parts in the Bin\n" << endl;
-
+	// Bin list display
 	for (int x = 0; x < NUM_OF_BINS; x++)
 	{
 		cout << (x + 1) << ")" << c[x].partName << "\t\t";
 		cout << c[x].num << endl;
 	}
 
-	// user chooses
-		
-	while (choice != 11)
+	// display the last menu item, which is to leave Bin Warehouse
+	cout << (NUM_OF_BINS + 1)
+		<< ") Leave Warehouse\n\n";
+
+	// user picks the bin and type
+	cout << "Select the part: " << endl;
+	cin >> choice;
+
+	// validate the choice 
+	while (choice < 1 || choice > 10)
 	{
-		switch (choice)
-		{
-		case 1: 
-			cout << "Valves?" << endl;
-			addParts();
-			break;
-
-		case 2:
-			cout << "Bearings?" << endl;
-			cin >> c->num;
-			break;
-
-		case 3:
-			cout << "Bushings?" << endl;
-			cin >> c->num;
-			break;
-
-		case 4:
-			cout << "Couplings?" << endl;
-			cin >> c->num;
-			break;
-
-		case 5:
-			cout << "Flanges?" << endl;
-			
-			cin >> c->num;
-			break;
-
-		case 6:
-			cout << "Gears?" << endl;
-			cin >> c->num;
-			break;
-
-		case 7:
-			cout << "Gear Housings?" << endl;
-			cin >> c->num;
-			break;
-
-		case 8:
-			cout << "Vacuum Gripers?" << endl;
-			cin >> c->num;
-			break;
-
-		case 9:
-			cout << "Cables?" << endl;
-			cin >> c->num;
-			break;
-
-		case 10:
-			cout << "Rods?" << endl;
-			cin >> c->num;
-			break;
-
-		default:
-			break;
-		}
+		cout << "Invalid Please Select a Part: ";
+		cin >> choice;
 	}
-}
 
-int getBin(BIN[])
-{
-	return 0;
-}
+	// choice to add or remove
+	int choice2;
 
-int addParts(BIN c[])
-{
-	// ask the User how many to add
-
-	cout << "how many to add" << endl;
+	// user chooses once the bin is seleced they may add or remove
+	cout << "(1) Add \n or \n (2) Remove the part(s)? " << endl;
 	
+	if (choice2 == 1)
+	{
+		addParts(c);
+	}
+	else if (choice2 == 2)
+	{
+		removeParts(c);
+	}
+	else {
+	// Invalid option
+
+	};
+
+	//Validate choice2
+	while (choice2 < 1 || choice2 > 2)
+	{
+	}
+
+	return choice -1;
+}
+
+int getBin(BIN c[])
+{
 	return 0;
 }
 
-int removeParts(BIN[])
+int addParts(BIN add[])
 {
-	return 0;
+	//Bin object
+	BIN add;
+	// amount integer
+	int amount;
+
+	// ask the User how many to add
+	cout << "how many to add" << endl;
+	cin >> amount;
+
+	// 
+
+	add->partName += "Valves";
+
+	return  -1;
+}
+
+void removeParts(BIN rem[])
+{
 }

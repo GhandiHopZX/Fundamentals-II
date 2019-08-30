@@ -28,7 +28,6 @@ struct Drink
 int getChoice(Drink[]);
 void transaction(Drink[], int, double&);
 
-
 int main()
 {
 	// Menu
