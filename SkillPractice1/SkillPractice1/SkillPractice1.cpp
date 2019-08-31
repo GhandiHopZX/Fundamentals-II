@@ -66,6 +66,7 @@ int main()
 	} while (choice != 11);
 	{}
 
+	// system stops 
 	system("PAUSE");
 
 	return 0;
