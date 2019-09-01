@@ -108,10 +108,12 @@ int getChoice(BIN c[])
 	
 	if (choice2 == 1)
 	{
+		// 
 		addParts(c);
 	}
 	else if (choice2 == 2)
 	{
+		//  
 		removeParts(c);
 	}
 	else {
@@ -132,7 +134,7 @@ int getBin(BIN c[])
 	return 0;
 }
 
-int addParts(BIN add[], int choice)
+BIN addParts(BIN add[], string item, int choice)
 {
 	//Bin object
 	BIN add;
@@ -140,16 +142,34 @@ int addParts(BIN add[], int choice)
 	int amount;
 
 	// ask the User how many to add
-	cout << "how many to add" << endl;
+	cout << "how many to add?" << endl;
 	cin >> amount;
 
-	// 
-
-	add->partName += "Valves";
-
-	return  -1;
+	// for loop
+	item = add->partName;
+	for (int i = 0; i < amount; i++)
+	{
+		choice += add->num;
+	}
+	return add[choice];
 }
 
-void removeParts(BIN rem[], int choice)
+void removeParts(BIN rem[], string item, int choice)
 {
+	//Bin object
+	BIN rem;
+	// amount integer
+	int amount;
+
+	// ask the User how many to add
+	cout << "how many to remove?" << endl;
+	cin >> amount;
+
+	// for loop
+	item = rem->partName;
+	for (int i = 0; i < amount; i++)
+	{
+		choice -= rem->num;
+	}
+
 }

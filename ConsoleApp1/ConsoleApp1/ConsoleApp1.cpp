@@ -151,7 +151,7 @@ void transaction(Drink m[], int choice, double& earnings)
 		// update 
 		earnings += m[choice].price;
 
-		// decrease the number of cars of the selected drink
+		// decrease the number of cans of the selected drink
 		m[choice].num--;
 
 		// display the number of the cans this drink currently has in the machine
