@@ -32,6 +32,8 @@ int addParts(BIN add[], int userChoice);
 
 int removeParts(BIN rem[], int userChoice);
 
+void binChanger(BIN chg[], int userChoice);
+
 int main()
 {
 	// Bin parts
@@ -58,7 +60,7 @@ int main()
 		system("CLS");
 		cout << "Part Description\t\t Number of Parts in the Bin\n" << endl;
 
-		// displaying menu
+		// displaying menu binChanger
 				
 
 		// all the bins
@@ -140,6 +142,15 @@ int addParts(BIN add[], int userChoice)
 	cout << "how many to add?" << endl;
 	cin >> amount;
 
+	//validation
+
+	if (amount > 30)
+	{
+		//too many items requirement...
+		cout << "Thats too many!" << endl;
+		amount = 0;
+	};
+
 	// for loop
 
 	for (int i = 0; i < amount; i++)
@@ -159,6 +170,15 @@ int removeParts(BIN rem[], int userChoice)
 	cout << "how many to remove?" << endl;
 	cin >> amount;
 
+	//validation
+
+	if (amount < 0)
+	{
+		//too many items requirement...
+		cout << "DON'T GO NEGATIVE!!" << endl;
+		amount = 0;
+	};
+
 	// for loop
 
 	for (int i = 0; i < amount; i++)
@@ -167,4 +187,8 @@ int removeParts(BIN rem[], int userChoice)
 	}
 	
 	return userChoice -1;
+}
+
+void binChanger(BIN chg[], int userChoice)
+{
 }
