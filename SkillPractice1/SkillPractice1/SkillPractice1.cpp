@@ -108,12 +108,12 @@ int getChoice(BIN c[])
 	
 	if (choice2 == 1)
 	{
-		// 
+		// adding said part
 		addParts(c);
 	}
 	else if (choice2 == 2)
 	{
-		//  
+		// removing said part 
 		removeParts(c);
 	}
 	else {
@@ -124,17 +124,18 @@ int getChoice(BIN c[])
 	//Validate choice2
 	while (choice2 < 1 || choice2 > 2)
 	{
+
 	}
 
 	return choice -1;
 }
 
-int getBin(BIN c[])
-{
-	return 0;
-}
+//int getBin(BIN c[])
+//{
+//	return 0;
+//}
 
-BIN addParts(BIN add[], string item, int choice)
+BIN addParts(BIN add[], int choice)
 {
 	//Bin object
 	BIN add;
@@ -146,7 +147,7 @@ BIN addParts(BIN add[], string item, int choice)
 	cin >> amount;
 
 	// for loop
-	item = add->partName;
+
 	for (int i = 0; i < amount; i++)
 	{
 		choice += add->num;
@@ -154,7 +155,7 @@ BIN addParts(BIN add[], string item, int choice)
 	return add[choice];
 }
 
-void removeParts(BIN rem[], string item, int choice)
+BIN removeParts(BIN rem[], int choice)
 {
 	//Bin object
 	BIN rem;
@@ -166,10 +167,10 @@ void removeParts(BIN rem[], string item, int choice)
 	cin >> amount;
 
 	// for loop
-	item = rem->partName;
+
 	for (int i = 0; i < amount; i++)
 	{
 		choice -= rem->num;
 	}
-
+	return rem[choice];
 }
