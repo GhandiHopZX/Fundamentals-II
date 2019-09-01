@@ -149,6 +149,7 @@ int addParts(BIN add[], int userChoice)
 		//too many items requirement...
 		cout << "Thats too many!" << endl;
 		amount = 0;
+		return;
 	};
 
 	// for loop
@@ -177,6 +178,7 @@ int removeParts(BIN rem[], int userChoice)
 		//too many items requirement...
 		cout << "DON'T GO NEGATIVE!!" << endl;
 		amount = 0;
+		return;
 	};
 
 	// for loop
