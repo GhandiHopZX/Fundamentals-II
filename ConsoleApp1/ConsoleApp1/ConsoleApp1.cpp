@@ -55,6 +55,7 @@ int main()
 	// process the transaction
 	while (choice != 5)
 	{
+		// Transaction has a function call (getChoice) within it as a parameter
 		transaction(machine, choice, earnings);
 		// get the next choice
 		choice = getChoice(machine);

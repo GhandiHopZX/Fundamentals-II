@@ -26,11 +26,11 @@ struct BIN
 
 // Function declarations
 
-int getBin(BIN[]);
+int getChoice(BIN c[], int userChoice);
 
-int addParts(BIN add[]);
+int addParts(BIN add[], int userChoice);
 
-void removeParts(BIN rem[]);
+int removeParts(BIN rem[], int userChoice);
 
 int main()
 {
@@ -49,7 +49,8 @@ int main()
 	};
 
 	//Main Menu
-	int choice;
+	int choice = 0;
+	int userChoice = 0;
 
 	do
 	{
@@ -61,7 +62,7 @@ int main()
 				
 
 		// all the bins
-		choice = getChoice(Bins);
+		choice = getChoice(Bins, userChoice);
 
 	} while (choice != 11);
 	{}
@@ -72,7 +73,7 @@ int main()
 	return 0;
 }
 
-int getChoice(BIN c[])
+int getChoice(BIN c[], int userChoice)
 {
 	// user imput
 	int choice;
@@ -101,7 +102,7 @@ int getChoice(BIN c[])
 	}
 
 	// choice to add or remove
-	int choice2;
+	int choice2 = 0;
 
 	// user chooses once the bin is seleced they may add or remove
 	cout << "(1) Add \n or \n (2) Remove the part(s)? " << endl;
@@ -109,36 +110,29 @@ int getChoice(BIN c[])
 	if (choice2 == 1)
 	{
 		// adding said part
-		addParts(c);
+		addParts(c, choice);
 	}
 	else if (choice2 == 2)
 	{
 		// removing said part 
-		removeParts(c);
+		removeParts(c, choice);
 	}
 	else {
 	// Invalid option
-
+		cout << "invalid option..." << endl;
 	};
 
 	//Validate choice2
 	while (choice2 < 1 || choice2 > 2)
 	{
-
+		cout << "invalid option..." << endl;
 	}
 
 	return choice -1;
 }
 
-//int getBin(BIN c[])
-//{
-//	return 0;
-//}
-
-BIN addParts(BIN add[], int choice)
+int addParts(BIN add[], int userChoice)
 {
-	//Bin object
-	BIN add;
 	// amount integer
 	int amount;
 
@@ -150,15 +144,14 @@ BIN addParts(BIN add[], int choice)
 
 	for (int i = 0; i < amount; i++)
 	{
-		choice += add->num;
+		userChoice += add->num;
 	}
-	return add[choice];
+
+	return userChoice -1;
 }
 
-BIN removeParts(BIN rem[], int choice)
+int removeParts(BIN rem[], int userChoice)
 {
-	//Bin object
-	BIN rem;
 	// amount integer
 	int amount;
 
@@ -170,7 +163,8 @@ BIN removeParts(BIN rem[], int choice)
 
 	for (int i = 0; i < amount; i++)
 	{
-		choice -= rem->num;
+		userChoice -= rem->num;
 	}
-	return rem[choice];
+	
+	return userChoice -1;
 }
