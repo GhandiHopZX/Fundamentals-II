@@ -144,7 +144,7 @@ int addParts(BIN add[], int userChoice)
 
 	//validation
 
-	if (amount > 30)
+	if (add[amount].num > 30)
 	{
 		//too many items requirement...
 		cout << "Thats too many!" << endl;
@@ -173,7 +173,7 @@ int removeParts(BIN rem[], int userChoice)
 
 	//validation
 
-	if (amount < 0)
+	if (rem[amount].num < 0)
 	{
 		//too many items requirement...
 		cout << "DON'T GO NEGATIVE!!" << endl;
@@ -193,4 +193,55 @@ int removeParts(BIN rem[], int userChoice)
 
 void binChanger(BIN chg[], int userChoice)
 {
+}
+
+void transaction(BIN m[], int choice, double& earnings)
+{
+	// the amout of money tendered
+	double money;
+
+	// If the bin part is out of stock
+	if (m[choice].num == 0)
+	{
+		cout << "Sorry, this part is out of stock.\n";
+		return;
+	}
+
+	// get some money from the customer
+	cout << "Enter an amount of money: ";
+	cin >> money;
+
+	// make sure the customer entered at least enough for the selected drink
+	// and no more than $1.00
+	while (money < m[choice].num || money > 1.0)
+	{
+		cout << "Enter at least " << m[choice].num;
+		cout << " and not more than 1 dollar.\n";
+		cin >> money;
+	}
+
+	// process the selection and give back any change that is due
+	if (money >= m[choice].num)
+	{
+		//dispence the drink 
+		cout << "\nThump, thump, thump, dung!\n"
+			<< "Enjoy your beverage!\n\n";
+
+		cout << "Change calculated: "
+			<< (money - m[choice].num) << endl;
+
+		// if change is due, give to user
+		if ((money - m[choice].num) > 0)
+			cout << "Your change, " << (money - m[choice].num)
+			<< " has just dropped into the change dispenser. \n\n";
+
+		// update 
+		earnings += m[choice].num;
+
+		// decrease the number of cans of the selected drink
+		m[choice].num--;
+
+		// display the number of the cans this drink currently has in the machine
+		cout << "There are " << m[choice].num << " drinks of that type left\n";
+	}
 }
