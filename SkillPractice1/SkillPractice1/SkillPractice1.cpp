@@ -32,7 +32,7 @@ int addParts(BIN add[], int userChoice);
 
 int removeParts(BIN rem[], int userChoice);
 
-void binChanger(BIN chg[], int userChoice);
+void binChanger(BIN c[], int userChoice);
 
 int main()
 {
@@ -56,16 +56,11 @@ int main()
 	//Main Menu
 	int userChoice{};
 
-	// display the bin list
-	cout << "Part Description\t\t Number of Parts in the Bin" << endl;
-
 	userChoice = getChoice(Bins);
 
 	while (userChoice != 11)
 	{
-		// display the bin list
-		cout << "Part Description\t\t Number of Parts in the Bin" << endl;
-
+		
 		// displaying menu binChanger
 		binChanger(Bins, userChoice);
 
@@ -82,8 +77,11 @@ int main()
 
 int getChoice(BIN c[])
 {
+	// display the bin list
+	cout << "Part Description\t\t Number of Parts in the Bin" << endl;
+
 	int userChoice;
-	// user imput
+	// user input
 	cout << endl;
 
 	// Bin list display
@@ -109,12 +107,46 @@ int getChoice(BIN c[])
 		cin >> userChoice;
 	}
 
+	// If you wana leave this hell. Wouldn't blame ya.
 	if (userChoice == 11)
 	{ 
 		cout << "Goodbye!" << endl;
 		return userChoice;
 	}
 
+	return userChoice -1;
+}
+
+int addParts(BIN add[], int userChoice)
+{
+	// amount integer
+	int amount = 0;
+
+	// ask the User how many to add
+	cout << "how many to add?" << endl;
+	cin >> amount;
+
+	add[userChoice].num += amount;
+
+	return add[userChoice].num -1;
+}
+
+int removeParts(BIN rem[], int userChoice)
+{
+	// amount integer
+	int amount;
+
+	// ask the User how many to add
+	cout << "how many to add?" << endl;
+	cin >> amount;
+
+	rem[userChoice].num -= amount;
+
+	return rem[userChoice].num - 1;
+}
+
+void binChanger(BIN c[], int userChoice)
+{
 	// choice to add or remove
 	char choice2;
 
@@ -122,7 +154,7 @@ int getChoice(BIN c[])
 	cout << "(1) Add \n or \n (2) Remove the part(s)? " << endl;
 
 	cin >> choice2;
-	
+
 	if (choice2 == '1')
 	{
 		// adding said part
@@ -133,7 +165,7 @@ int getChoice(BIN c[])
 		// removing said part 
 		removeParts(c, userChoice);
 	}
-	else 
+	else
 	{
 		// Invalid option
 		cout << "invalid option..." << endl;
@@ -148,59 +180,27 @@ int getChoice(BIN c[])
 		cin >> choice2;
 	}
 
-	return userChoice -1;
-}
+	//Validation
 
-int addParts(BIN add[], int userChoice)
-{
-	// amount integer
-	int amount;
-
-	// ask the User how many to add
-	cout << "how many to add?" << endl;
-	cin >> amount;
-
-	//validation
-
-	if (add[userChoice].num > 30)
+	// for adding
+	if (c[userChoice].num > 30)
 	{
 		//too many items requirement...
-		cout << "Thats too many!" << endl;
-		amount = 0;
-	};
-	
-	add[userChoice].num += amount;
+		cout << "Maximum capacity!" << endl;
 
-	return userChoice;
-}
+		// maxium value 30
+		c[userChoice].num = 30;
+	}
 
-int removeParts(BIN rem[], int userChoice)
-{
-	// amount integer
-	int amount;
-
-	// ask the User how many to add
-	cout << "how many to remove?" << endl;
-	cin >> amount;
-
-	//validation
-
-	if (rem[amount].num < 0)
+	// for removing
+	if (c[userChoice].num < 0)
 	{
-		//too many items requirement...
-		cout << "There aren't any to get rid of.." << endl;
-		amount = 0;
-		return amount;
-	};
+		//too little items requirement...
+		cout << "That's not enough!" << endl;
 
-	userChoice -= rem[userChoice].num;
-	rem[userChoice].num--;
-	
-	return userChoice;
-}
+		// minimum value 0
+		c[userChoice].num = 0;
+	}
 
-void binChanger(BIN chg[], int userChoice)
-{
-
-
+	system("CLS");
 }
