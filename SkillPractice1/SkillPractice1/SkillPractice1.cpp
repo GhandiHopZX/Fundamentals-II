@@ -54,7 +54,7 @@ int main()
 	cout << fixed << showpoint << setprecision(2);
 	
 	//Main Menu
-	int userChoice;
+	int userChoice{};
 
 	// display the bin list
 	cout << "Part Description\t\t Number of Parts in the Bin" << endl;
@@ -107,6 +107,12 @@ int getChoice(BIN c[])
 		cout << "invalid option..." << endl;
 		cout << "Choose part: ";
 		cin >> userChoice;
+	}
+
+	if (userChoice == 11)
+	{ 
+		cout << "Goodbye!" << endl;
+		return userChoice;
 	}
 
 	// choice to add or remove
