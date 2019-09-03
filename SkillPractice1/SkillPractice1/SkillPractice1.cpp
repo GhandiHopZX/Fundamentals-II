@@ -67,7 +67,7 @@ int main()
 
 	};
 
-	// system stops 
+	// Exiting the Program..
 	system("PAUSE");
 
 	return 0;
