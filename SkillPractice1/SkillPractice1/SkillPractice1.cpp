@@ -18,6 +18,7 @@ using namespace std;
 // Global variables
 const int NUM_OF_BINS = 10;
 
+// Bin struct. Name first then number second.
 struct BIN
 {
 	string partName;
@@ -49,9 +50,6 @@ int main()
 	{"	Cable			", 18},
 	{"	Rod			", 12}
 	};
-
-	// formatting
-	cout << fixed << showpoint << setprecision(2);
 	
 	//Main Menu
 	int userChoice{};
@@ -137,7 +135,7 @@ int removeParts(BIN rem[], int userChoice)
 	int amount;
 
 	// ask the User how many to add
-	cout << "how many to add?" << endl;
+	cout << "how many to remove?" << endl;
 	cin >> amount;
 
 	rem[userChoice].num -= amount;
