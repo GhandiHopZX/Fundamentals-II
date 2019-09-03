@@ -32,7 +32,7 @@ int addParts(BIN add[], int userChoice);
 
 int removeParts(BIN rem[], int userChoice);
 
-void binChanger(BIN chg[], int userChoice);
+//void binChanger(BIN chg[], int userChoice);
 
 int main()
 {
@@ -49,6 +49,9 @@ int main()
 	{"Cable", 18},
 	{"Rod", 12}
 	};
+
+	// wformatting
+	cout << fixed << showpoint << setprecision(2);
 
 	//Main Menu
 	int choice = 0;
@@ -78,7 +81,6 @@ int main()
 int getChoice(BIN c[], int userChoice)
 {
 	// user imput
-	int choice;
 	cout << endl;
 
 	// Bin list display
@@ -94,43 +96,48 @@ int getChoice(BIN c[], int userChoice)
 
 	// user picks the bin and type
 	cout << "Select the part: " << endl;
-	cin >> choice;
+	cin >> userChoice;
 
-	// validate the choice 
-	while (choice < 1 || choice > 10)
+	//Validate choice2
+	if (userChoice < 1 || userChoice > 10)
 	{
-		cout << "Invalid Please Select a Part: ";
-		cin >> choice;
+		cout << "invalid option..." << endl;
+		cin >> userChoice;
 	}
 
 	// choice to add or remove
-	int choice2 = 0;
+	char choice2;
 
 	// user chooses once the bin is seleced they may add or remove
 	cout << "(1) Add \n or \n (2) Remove the part(s)? " << endl;
+
+	cin >> choice2;
 	
-	if (choice2 == 1)
+	if (choice2 = '1')
 	{
 		// adding said part
-		addParts(c, choice);
+		addParts(c, userChoice);
 	}
-	else if (choice2 == 2)
+	else if (choice2 = '2')
 	{
 		// removing said part 
-		removeParts(c, choice);
+		removeParts(c, userChoice);
 	}
-	else {
-	// Invalid option
+	else 
+	{
+		// Invalid option
 		cout << "invalid option..." << endl;
+		cin >> choice2;
 	};
 
 	//Validate choice2
-	while (choice2 < 1 || choice2 > 2)
+	if (choice2 < '1' || choice2 > '2')
 	{
 		cout << "invalid option..." << endl;
+		cin >> choice2;
 	}
 
-	return choice -1;
+	return userChoice -1;
 }
 
 int addParts(BIN add[], int userChoice)
@@ -149,14 +156,14 @@ int addParts(BIN add[], int userChoice)
 		//too many items requirement...
 		cout << "Thats too many!" << endl;
 		amount = 0;
-		return;
+		return amount;
 	};
 
 	// for loop
 
 	for (int i = 0; i < amount; i++)
 	{
-		userChoice += add->num;
+		userChoice += add[userChoice].num;
 	}
 
 	return userChoice -1;
@@ -176,72 +183,34 @@ int removeParts(BIN rem[], int userChoice)
 	if (rem[amount].num < 0)
 	{
 		//too many items requirement...
-		cout << "DON'T GO NEGATIVE!!" << endl;
+		cout << "There aren't any to get rid of.." << endl;
 		amount = 0;
-		return;
+		return amount;
 	};
 
 	// for loop
 
 	for (int i = 0; i < amount; i++)
 	{
-		userChoice -= rem->num;
+		userChoice -= rem[userChoice].num;
 	}
 	
 	return userChoice -1;
 }
 
-void binChanger(BIN chg[], int userChoice)
-{
-}
-
-void transaction(BIN m[], int choice, double& earnings)
-{
-	// the amout of money tendered
-	double money;
-
-	// If the bin part is out of stock
-	if (m[choice].num == 0)
-	{
-		cout << "Sorry, this part is out of stock.\n";
-		return;
-	}
-
-	// get some money from the customer
-	cout << "Enter an amount of money: ";
-	cin >> money;
-
-	// make sure the customer entered at least enough for the selected drink
-	// and no more than $1.00
-	while (money < m[choice].num || money > 1.0)
-	{
-		cout << "Enter at least " << m[choice].num;
-		cout << " and not more than 1 dollar.\n";
-		cin >> money;
-	}
-
-	// process the selection and give back any change that is due
-	if (money >= m[choice].num)
-	{
-		//dispence the drink 
-		cout << "\nThump, thump, thump, dung!\n"
-			<< "Enjoy your beverage!\n\n";
-
-		cout << "Change calculated: "
-			<< (money - m[choice].num) << endl;
-
-		// if change is due, give to user
-		if ((money - m[choice].num) > 0)
-			cout << "Your change, " << (money - m[choice].num)
-			<< " has just dropped into the change dispenser. \n\n";
-
-		// update 
-		earnings += m[choice].num;
-
-		// decrease the number of cans of the selected drink
-		m[choice].num--;
-
-		// display the number of the cans this drink currently has in the machine
-		cout << "There are " << m[choice].num << " drinks of that type left\n";
-	}
-}
+//void binChanger(BIN chg[], int userChoice)
+//{
+//	// If the bin part is out of stock
+//	if (chg[userChoice].num == 0)
+//	{
+//		cout << "Sorry, this part is out of stock.\n";
+//		return;
+//	}
+//
+//	// update 
+//	userChoice += chg[userChoice].num;
+//
+//	// decrease the number of cans of the selected drink
+//	chg[userChoice].num--;
+//
+//}
