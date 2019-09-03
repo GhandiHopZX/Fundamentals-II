@@ -26,51 +26,53 @@ struct BIN
 
 // Function declarations
 
-int getChoice(BIN c[], int userChoice);
+int getChoice(BIN c[]);
 
 int addParts(BIN add[], int userChoice);
 
 int removeParts(BIN rem[], int userChoice);
 
-//void binChanger(BIN chg[], int userChoice);
+void binChanger(BIN chg[], int userChoice);
 
 int main()
 {
 	// Bin parts
 	BIN Bins[NUM_OF_BINS] = {
-	{"Valve", 10},
-	{"Bearing", 5},
-	{"Bushing", 15},
-	{"Coupling", 21},
-	{"Flange", 7},
-	{"Gear", 5},
-	{"Gear Housing", 5},
-	{"Vacuum Gripper", 25},
-	{"Cable", 18},
-	{"Rod", 12}
+	{"	Valve			", 10},
+	{"	Bearing			", 5},
+	{"	Bushing			", 15},
+	{"	Coupling		", 21},
+	{"	Flange			", 7},
+	{"	Gear			", 5},
+	{"	Gear Housing		", 5},
+	{"	Vacuum Gripper		", 25},
+	{"	Cable			", 18},
+	{"	Rod			", 12}
 	};
 
-	// wformatting
+	// formatting
 	cout << fixed << showpoint << setprecision(2);
-
+	
 	//Main Menu
-	int choice = 0;
-	int userChoice = 0;
+	int userChoice;
 
-	do
+	// display the bin list
+	cout << "Part Description\t\t Number of Parts in the Bin" << endl;
+
+	userChoice = getChoice(Bins);
+
+	while (userChoice != 11)
 	{
 		// display the bin list
-		system("CLS");
-		cout << "Part Description\t\t Number of Parts in the Bin\n" << endl;
+		cout << "Part Description\t\t Number of Parts in the Bin" << endl;
 
 		// displaying menu binChanger
-				
+		binChanger(Bins, userChoice);
 
 		// all the bins
-		choice = getChoice(Bins, userChoice);
+		userChoice = getChoice(Bins);
 
-	} while (choice != 11);
-	{}
+	};
 
 	// system stops 
 	system("PAUSE");
@@ -78,15 +80,16 @@ int main()
 	return 0;
 }
 
-int getChoice(BIN c[], int userChoice)
+int getChoice(BIN c[])
 {
+	int userChoice;
 	// user imput
 	cout << endl;
 
 	// Bin list display
 	for (int x = 0; x < NUM_OF_BINS; x++)
 	{
-		cout << (x + 1) << ")" << c[x].partName << "\t\t";
+		cout << (x + 1) << ")" << c[x].partName << "\t";
 		cout << c[x].num << endl;
 	}
 
@@ -95,13 +98,14 @@ int getChoice(BIN c[], int userChoice)
 		<< ") Leave Warehouse\n\n";
 
 	// user picks the bin and type
-	cout << "Select the part: " << endl;
+	cout << "Select the part: ";
 	cin >> userChoice;
 
 	//Validate choice2
-	if (userChoice < 1 || userChoice > 10)
+	while (userChoice < 1 || userChoice > 11)
 	{
 		cout << "invalid option..." << endl;
+		cout << "Choose part: ";
 		cin >> userChoice;
 	}
 
@@ -113,12 +117,12 @@ int getChoice(BIN c[], int userChoice)
 
 	cin >> choice2;
 	
-	if (choice2 = '1')
+	if (choice2 == '1')
 	{
 		// adding said part
 		addParts(c, userChoice);
 	}
-	else if (choice2 = '2')
+	else if (choice2 == '2')
 	{
 		// removing said part 
 		removeParts(c, userChoice);
@@ -131,9 +135,10 @@ int getChoice(BIN c[], int userChoice)
 	};
 
 	//Validate choice2
-	if (choice2 < '1' || choice2 > '2')
+	while (choice2 < '1' || choice2 > '2')
 	{
 		cout << "invalid option..." << endl;
+		cout << "Choose to add (1) or remove (2): ";
 		cin >> choice2;
 	}
 
@@ -151,22 +156,16 @@ int addParts(BIN add[], int userChoice)
 
 	//validation
 
-	if (add[amount].num > 30)
+	if (add[userChoice].num > 30)
 	{
 		//too many items requirement...
 		cout << "Thats too many!" << endl;
 		amount = 0;
-		return amount;
 	};
+	
+	add[userChoice].num += amount;
 
-	// for loop
-
-	for (int i = 0; i < amount; i++)
-	{
-		userChoice += add[userChoice].num;
-	}
-
-	return userChoice -1;
+	return userChoice;
 }
 
 int removeParts(BIN rem[], int userChoice)
@@ -188,29 +187,14 @@ int removeParts(BIN rem[], int userChoice)
 		return amount;
 	};
 
-	// for loop
-
-	for (int i = 0; i < amount; i++)
-	{
-		userChoice -= rem[userChoice].num;
-	}
+	userChoice -= rem[userChoice].num;
+	rem[userChoice].num--;
 	
-	return userChoice -1;
+	return userChoice;
 }
 
-//void binChanger(BIN chg[], int userChoice)
-//{
-//	// If the bin part is out of stock
-//	if (chg[userChoice].num == 0)
-//	{
-//		cout << "Sorry, this part is out of stock.\n";
-//		return;
-//	}
-//
-//	// update 
-//	userChoice += chg[userChoice].num;
-//
-//	// decrease the number of cans of the selected drink
-//	chg[userChoice].num--;
-//
-//}
+void binChanger(BIN chg[], int userChoice)
+{
+
+
+}

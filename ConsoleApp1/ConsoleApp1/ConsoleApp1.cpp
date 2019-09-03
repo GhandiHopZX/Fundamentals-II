@@ -115,7 +115,7 @@ void transaction(Drink m[], int choice, double& earnings)
 
 	// if the selected drink is sold out, display a message and get out
 	// of the function
-	if (m[choice].num == 0)
+	if (m[choice].num <= 0)
 	{
 		cout << "Sorry, that selection is sold out.\n";
 		return;
