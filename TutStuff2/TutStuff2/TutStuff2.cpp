@@ -6,6 +6,10 @@
 
 using namespace std;
 
+const int NUM_TAGYR = 2;
+const int NUM_VOLMIR = 3;
+const int NUM_ESSENOX = 5;
+
 struct SD
 {
 	string name;
