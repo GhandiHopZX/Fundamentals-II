@@ -39,16 +39,16 @@ int main()
 {
 	// Bin parts
 	BIN Bins[NUM_OF_BINS] = {
-	{"	Valve			", 10},
-	{"	Bearing			", 5},
-	{"	Bushing			", 15},
-	{"	Coupling		", 21},
-	{"	Flange			", 7},
-	{"	Gear			", 5},
-	{"	Gear Housing		", 5},
-	{"	Vacuum Gripper		", 25},
-	{"	Cable			", 18},
-	{"	Rod			", 12}
+	{"	Valve		\t", 10},
+	{"	Bearing		\t", 5},
+	{"	Bushing		\t", 15},
+	{"	Coupling	\t", 21},
+	{"	Flange		\t", 7},
+	{"	Gear		\t", 5},
+	{"	Gear Housing	\t", 5},
+	{"	Vacuum Gripper	\t", 25},
+	{"	Cable		\t", 18},
+	{"	Rod		\t", 12}
 	};
 	
 	//Main Menu
@@ -91,7 +91,7 @@ int getChoice(BIN c[])
 
 	// display the last menu item, which is to leave Bin Warehouse
 	cout << (NUM_OF_BINS + 1)
-		<< ") Leave Warehouse\n\n";
+		<< ") \tLeave Warehouse\n\n";
 
 	// user picks the bin and type
 	cout << "Select the part: ";
