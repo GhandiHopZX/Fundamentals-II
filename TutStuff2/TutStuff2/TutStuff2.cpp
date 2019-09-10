@@ -3,12 +3,17 @@
 
 #include <iostream>
 #include <string.h>
+#include <fstream>
 
 using namespace std;
 
 const int NUM_TAGYR = 2;
 const int NUM_VOLMIR = 3;
 const int NUM_ESSENOX = 5;
+
+fstream JOM("class.txt", ios::in, ios::out);
+
+fstream outfile("monday.txt", ios::in | ios::out | ios::trunc);
 
 struct SD
 {
