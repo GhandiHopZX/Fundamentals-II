@@ -9,13 +9,20 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include <memory>
+
 using namespace std;
 
 // Global variables
 
 // Function declarations
 
+double* thptr = nullptr;
+
+double* getAddress();
+
 int* arrayAllocator(int);
+
 
 int main()
 {
@@ -35,6 +42,15 @@ int main()
 // arrayAllocator function, takes an int for size, dynamically allocates
 // an array of ints on the number passed in, returns a pointer to the 
 // array
+
+double* getAddress()
+{
+	double x = 42.42;
+
+	double* ptrAddress = &x;
+
+	return ptrAddress;
+}
 
 int* arrayAllocator(int)
 {
