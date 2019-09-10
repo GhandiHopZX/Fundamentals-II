@@ -22,7 +22,7 @@ int main()
 	//	Make sure we place the end message on a new line
 	cout << endl;
 
-	//	The following is system dependent.  It will only work on Windows
+	//	The following is system dependent. It will only work on Windows
 	system("PAUSE");
 
 	/*
