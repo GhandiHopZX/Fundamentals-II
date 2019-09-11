@@ -32,7 +32,7 @@ int main()
 	//	The following is system dependent. It will only work on Windows
 	system("PAUSE");
 
-	/*
+	/* ass
 	// A non-system dependent method is below
 	cout << "Press any key to continue";
 	cin.get();
