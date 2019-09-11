@@ -2,7 +2,7 @@
    Solomon Pattee
    9/11/2019
    SkillPractice2.cpp
-   Finding the mean
+   Finding the median in a pointer array
 ********************************/
 
 // Headers
@@ -23,6 +23,7 @@ void X();
 
 int main()
 {
+	//	Calling the main program
 	X();
 
 	//	Make sure we place the end message on a new line
