@@ -2,7 +2,7 @@
    Solomon Pattee
    9/11/2019
    ConsoleApp3.cpp
-   Description Chapter 12
+   Description Chapter 12 , #11
 ********************************/
 
 // Headers
@@ -14,11 +14,14 @@ using namespace std;
 
 // Global variables
 
+
 // Function declarations
 
 int main()
 {
 	//	Your code goes here
+	// file stream object for corp.dat file
+
 	string name;		// to hold a file name
 	string inputLine;	// to hold a line of input
 	int lines = 0;	

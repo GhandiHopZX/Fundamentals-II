@@ -66,6 +66,8 @@ void X()
 	for (i = 0; i < numElements; i++)
 		cout << "Element " << i << " has the value " << *(pointer + i) << endl;
 
+
+
 	// deallocate the array
 	delete[] pointer;
 	pointer = nullptr;
