@@ -22,6 +22,8 @@ int main()
 	string name;		// to hold a file name
 	string inputLine;	// to hold a line of input
 	int lines = 0;	
+	long seekTo = 0; // a position in the file
+	int newLines = 0; // line counter
 	ifstream file;
 
 	// get the name of the file
@@ -29,8 +31,8 @@ int main()
 	getline(cin, name);
 
 
-	// open the file
-	file.open(name);
+	// open the file in binary mode
+	file.open(name, ios::binary);
 
 	// test for errors
 	if (!file)
@@ -38,6 +40,38 @@ int main()
 		cout << "Error opening " << name << endl;
 		exit(EXIT_FAILURE);
 	}
+
+	// go to the end of the file
+	file.seekg(0L,ios::end);
+
+	while (newLines < 10)
+	{
+		long pos = file.tellg();
+
+		if (pos == 0)
+
+			break;
+		//back up one position in the file
+		seekTo--;
+		file.seekg(seekTo, ios::end);
+
+		// if we backed up to a new line, update the line counter
+		if (file.get() == '\n')
+			newLines++;
+
+	}
+
+		// now display the file context, from the current position forward
+		while (!file.eof())
+		{
+			getline(file, inputLine, '\n');
+			// display the line
+			cout << inputLine << endl;
+		}
+
+		// close the file
+		file.close();
+
 	// display the first ten lines from the file
 	while (!file.eof() && lines < 10) // end of file
 	{
