@@ -11,6 +11,7 @@
 #include <string>
 #include <memory>
 #include <cmath>
+#include <iomanip>
 
 using namespace std;
 
@@ -45,10 +46,14 @@ int main()
 
 void X()
 {
+	cout << setprecision(2) << endl;
 	//	Your code goes here
 	int numElements;	// holdt he number of elements
 	int* pointer = nullptr;	 // a pointer to the array, set to 0
 	int i;
+	double median;
+	double median2;
+	double median3;
 
 	//
 	cout << "\enter the size of the int array: ";
@@ -62,11 +67,16 @@ void X()
 		* (pointer + i) = i;
 
 	// display the values
-	cout << "\n\nHere are the values in the array:\n";
+	/*cout << "\n\nHere are the values in the array:\n";
 	for (i = 0; i < numElements; i++)
-		cout << "Element " << i << " has the value " << *(pointer + i) << endl;
+		cout << "Element " << i << " has the value " << *(pointer + i) << endl;*/
 
+	median = pointer[(i / 2)];
+	median2 = (pointer[(i / 2)] + 1);
+	median3 = (median + median) / 2;
 
+	cout << "Here is the first middle number " << median << " and the other second middle number " << median2 << endl;
+	cout << " Here is the Median " << median3 << endl;
 
 	// deallocate the array
 	delete[] pointer;
