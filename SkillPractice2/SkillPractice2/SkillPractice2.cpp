@@ -1,8 +1,8 @@
 /******************************
    Solomon Pattee
-   9/4/2019
+   9/11/2019
    SkillPractice2.cpp
-   Description
+   Finding the median in a pointer array
 ********************************/
 
 // Headers
@@ -10,6 +10,7 @@
 #include <cstdlib>
 #include <string>
 #include <memory>
+#include <cmath>
 
 using namespace std;
 
@@ -17,22 +18,21 @@ using namespace std;
 
 // Function declarations
 
-double* thptr = nullptr;
-
-double* getAddress();
-
 int* arrayAllocator(int);
-
+void X();
 
 int main()
 {
+	//	Calling the main program
+	X();
+
 	//	Make sure we place the end message on a new line
 	cout << endl;
 
 	//	The following is system dependent. It will only work on Windows
 	system("PAUSE");
 
-	/*
+	/* ass
 	// A non-system dependent method is below
 	cout << "Press any key to continue";
 	cin.get();
@@ -43,16 +43,43 @@ int main()
 // an array of ints on the number passed in, returns a pointer to the 
 // array
 
-double* getAddress()
+void X()
 {
-	double x = 42.42;
+	//	Your code goes here
+	int numElements;	// holdt he number of elements
+	int* pointer = nullptr;	 // a pointer to the array, set to 0
+	int i;
 
-	double* ptrAddress = &x;
+	//
+	cout << "\enter the size of the int array: ";
+	cin >> numElements;
 
-	return ptrAddress;
+	// allocate the array
+	pointer = arrayAllocator(numElements);
+
+	// fill the array with values 
+	for (i = 0; i < numElements; i++)
+		* (pointer + i) = i;
+
+	// display the values
+	cout << "\n\nHere are the values in the array:\n";
+	for (i = 0; i < numElements; i++)
+		cout << "Element " << i << " has the value " << *(pointer + i) << endl;
+
+	// deallocate the array
+	delete[] pointer;
+	pointer = nullptr;
+
 }
 
-int* arrayAllocator(int)
+
+int* arrayAllocator(int num)
 {
-	return nullptr;
+	int* arrPtr = nullptr;
+
+	// allocate space for the array
+	arrPtr = new int[num];
+
+	// return the address of the allocated memory
+	return arrPtr;
 }
