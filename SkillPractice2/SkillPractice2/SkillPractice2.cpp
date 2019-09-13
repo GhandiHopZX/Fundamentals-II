@@ -60,7 +60,7 @@ void X()
 	int i;
 	
 	// Enter in size of the array
-	cout << "\enter the size of the int array: ";
+	cout << "enter the size of the int array: ";
 	cin >> numElements;
 
 	// allocate the array
@@ -80,7 +80,6 @@ void X()
 	pointer = nullptr;
 
 }
-
 
 int getMedian(int* array0, int size)
 {
@@ -103,14 +102,15 @@ int getMedian(int* array0, int size)
 	for (int i = 0; i < size; i++)
 	{ 
 		pointer[i];
+		count += i;
 	}
 
 	//median equations
-	median = pointer[(count / 2)];
-	median2 = (pointer[(count / 2)] + 1);
+	median = pointer[count] / 2;
+	median2 = 2 + (pointer[count] / 2);
 	median3 = (median + median2) / 2;
 
-	cout << " Here is the Median " << median3 << endl;
+	cout << " Here is the Median " << median << endl;
 
 	return 0;
 }
