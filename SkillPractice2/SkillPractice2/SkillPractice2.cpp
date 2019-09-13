@@ -107,7 +107,7 @@ int getMedian(int* array0, int size)
 
 	//median equations
 	median = pointer[count] / 2;
-	median2 = 2 + (pointer[count] / 2);
+	median2 = (pointer[count] / 2) + 2;
 	median3 = (median + median2) / 2;
 
 	cout << " Here is the Median " << median << endl;
