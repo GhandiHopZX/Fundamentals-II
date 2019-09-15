@@ -2,7 +2,8 @@
    Solomon Pattee
    9/16/2019
    Corporate Sales Data Input.cpp
-   Description
+   A program that reads in a file and outputs 
+   figures
 ********************************/
 
 // Headers
