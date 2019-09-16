@@ -25,17 +25,18 @@ struct Division
 };
 
 // Function declarations
+	
 
 int main()
 {
-	//	Your code goes here
-	//file stream object
+	// Your code goes here
+	// file stream object
 	fstream file("corp.dat", ios::out | ios::binary);
 
 	// create the division structure variables for each division
 	Division east, west, north, south;
 
-	//loop counter for each quarter
+	// loop counter for each quarter
 	int qtr;
 	// assign the division names to the division structure var
 	strcpy_s(east.divName, "East");
@@ -86,10 +87,10 @@ int main()
 	// close the file
 	file.close();
 
-	//	Make sure we place the end message on a new line
+	// Make sure we place the end message on a new line
 	cout << endl;
 
-	//	The following is system dependent. It will only work on Windows
+	// The following is system dependent. It will only work on Windows
     system("PAUSE");
 
 	/*
@@ -99,3 +100,4 @@ int main()
 	*/
 	return 0;
 }
+

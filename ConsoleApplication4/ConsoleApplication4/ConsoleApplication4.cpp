@@ -42,7 +42,7 @@ int main()
 
 	// get sales data for the east division
 	cout << "Enter the quarterly sales for the East Division:\n";
-	for  (qtr = 1; qtr <= 4; qtr++)
+	for (qtr = 1; qtr <= 4; qtr++)
 	{
 		east.quarter = qtr;
 		cout << "\tQuarter " << qtr << ": ";
