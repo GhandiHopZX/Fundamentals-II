@@ -1,7 +1,7 @@
 /******************************
    Solomon Pattee
    9/16/2019
-   Corporate Sales Data Input.cpp
+   SkillPractice3.cpp
    A program that reads in 
    a file and outputs figures
 ********************************/
@@ -12,77 +12,76 @@
 #include <iomanip>
 #include <string>
 #include <fstream>
+
 using namespace std;
 
 // Global variables
+
+struct Division
+{
+	char divName[12];
+	int quarter;
+	double sales;
+};
 
 // Function declarations
 
 int main()
 {
 	//	Your code goes here
-	string name;	// to hold a file name
-	string inputLine; // to hold a line of input
-	int lines = 0;
-	long seekTo = 0; // position in the file
-	int newLines = 0; // line counter
-	ifstream file;
+	//file stream object
+	fstream file("corp.dat", ios::out | ios::binary);
 
-	// open the file in binary mode
-	file.open(name, ios::binary);
+	// create the division structure variables for each division
+	Division east, west, north, south;
 
-	// test for errors
-	if (!file)
+	//loop counter for each quarter
+	int qtr;
+	// assign the division names to the division structure var
+	strcpy_s(east.divName, "East");
+	strcpy_s(west.divName, "West");
+	strcpy_s(north.divName, "North");
+	strcpy_s(south.divName, "South");
+
+	// get sales data for the east division
+	cout << "Enter the quarterly sales for the East Division:\n";
+	for (qtr = 1; qtr <= 4; qtr++)
 	{
-		cout << "Error opening " << name << endl;
-		exit(EXIT_FAILURE);
+		east.quarter = qtr;
+		cout << "\tQuarter " << qtr << ": ";
+		cin >> east.sales;
+		file.write(reinterpret_cast<char*>(&east), sizeof(east));
 	}
 
-	// go to the end of the file
-	file.seekg(0L, ios::end);
-
-	while (newLines < 10)
+	// get sales data for the east division
+	cout << "Enter the quarterly sales for the West Division:\n";
+	for (qtr = 1; qtr <= 4; qtr++)
 	{
-		long pos = file.tellg();
-
-		if (pos == 0)
-
-			break;
-		//back up one position in the file
-		seekTo--;
-		file.seekg(seekTo, ios::end);
-
-		// if we backed up to a new line, update the line counter
-		if (file.get() == '\n')
-			newLines++;
-
+		west.quarter = qtr;
+		cout << "\tQuarter " << qtr << ": ";
+		cin >> west.sales;
+		file.write(reinterpret_cast<char*>(&west), sizeof(west));
 	}
 
-	// now display the file context, from the current position forward
-	while (!file.eof())
+	// get sales data for the east division
+	cout << "Enter the quarterly sales for the North Division:\n";
+	for (qtr = 1; qtr <= 4; qtr++)
 	{
-		getline(file, inputLine, '\n');
-		// display the line
-		cout << inputLine << endl;
+		east.quarter = qtr;
+		cout << "\tQuarter " << qtr << ": ";
+		cin >> north.sales;
+		file.write(reinterpret_cast<char*>(&north), sizeof(north));
 	}
 
-	// close the file
-	file.close();
-
-	// display the first ten lines from the file
-	while (!file.eof() && lines < 10) // end of file
+	// get sales data for the east division
+	cout << "Enter the quarterly sales for the South Division:\n";
+	for (qtr = 1; qtr <= 4; qtr++)
 	{
-		// get line
-		getline(file, inputLine, '\n');
-		// increment the line counter
-		lines++;
-		// display the line 
-		cout << inputLine << endl;
+		south.quarter = qtr;
+		cout << "\tQuarter " << qtr << ": ";
+		cin >> south.sales;
+		file.write(reinterpret_cast<char*>(&south), sizeof(south));
 	}
-
-	// if the file had less than ten lines, indicate that
-	if (lines < 10)
-		cout << "\nThe entire file hase been displayed. \n";
 
 	// close the file
 	file.close();
@@ -91,7 +90,7 @@ int main()
 	cout << endl;
 
 	//	The following is system dependent. It will only work on Windows
-	system("PAUSE");
+    system("PAUSE");
 
 	/*
 	// A non-system dependent method is below
@@ -99,6 +98,4 @@ int main()
 	cin.get();
 	*/
 	return 0;
-
-
 }

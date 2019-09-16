@@ -14,7 +14,6 @@ using namespace std;
 
 // Global variables
 
-
 struct Division
 {
 	char divName[12];
