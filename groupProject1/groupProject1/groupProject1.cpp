@@ -43,7 +43,8 @@ int bianarySearch(const int MAX, int elements, int value)
 	// strings 
 
 	names Index;
-	value= Index.ID ;
+	Index.ID = 0;
+	value= Index.ID;
 
 	// index
 	string first[] = { Index.nameinFirst };
@@ -55,8 +56,9 @@ int bianarySearch(const int MAX, int elements, int value)
 
 	for (int i = 0; !found && first[i] <= last[i], i++;);
 	{
-		middle[i] = (first + last[i]) / 2;
-		if (middle[i] == value)
+		int m = (first[value] + last[value]);
+			m / 2;
+		if (middle[m] == middle[value])
 		{
 			found = true;
 			position = middle[i];
