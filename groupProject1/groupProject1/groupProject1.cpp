@@ -4,7 +4,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
-#include <>
+#include <vector>
 
 using namespace std;
 
@@ -43,10 +43,9 @@ int bianarySearch(const int MAX, int elements, int value)
 	// strings 
 
 	names Index;
-	Index.ID = value;
+	value= Index.ID ;
 
 	// index
-
 	string first[] = { Index.nameinFirst };
 	string last[] = {Index.nameinLast};
 	string middle[] = {Index.nameinMiddle};
@@ -57,16 +56,15 @@ int bianarySearch(const int MAX, int elements, int value)
 	for (int i = 0; !found && first[i] <= last[i], i++;);
 	{
 		middle[i] = (first + last[i]) / 2;
-		if (array[middle[i]] == value)
+		if (middle[i] == value)
 		{
 			found = true;
 			position = middle[i];
 		}
-		else if (array[middle[i]] > value)
+		else if (middle[i] > value)
 			last[i] = middle[i] - 1;
 		else
 			first[i] = middle[i] + 1;
 	}
 	return position / 2;
 }
-
