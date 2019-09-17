@@ -17,15 +17,18 @@ using namespace std;
 
 // Global variables
 
+const int MAX = 24;
+
 struct Division
 {
-	char divName[12];
-	int quarter;
-	double sales;
+	char divName[12]; // 12 bytes
+	int quarter; // 4 byts
+	double sales; // 8 bytes
 };
 
+
 // Function declarations
-void average(Division east, Division west, Division north, Division south);
+void average(int east[MAX], int west[MAX], int north[MAX], int south[MAX]);
 
 int main()
 {
@@ -34,13 +37,21 @@ int main()
 	fstream file;
 	
 	// open the file
-	file.open("corp.dat", ios::in | ios::binary);
+	file.open("corp.dat", ios::in | ios::out | ios::binary);
 
 	// create the division structure variables for each division
 	Division east, west, north, south; // each has 4 quarters of number data
 
+	// int 
+
+	int salesEast[MAX] = {0};
+	int salesWest[MAX] = {0};
+	int salesNorth[MAX] = {0};
+	int salesSouth[MAX] = {0};
+
 	// loop counter for each quarter
 	int qtr;
+
 	// assign the division names to the division structure var
 	strcpy_s(east.divName, "East");
 	strcpy_s(west.divName, "West");
@@ -61,49 +72,69 @@ int main()
 	file.read(reinterpret_cast<char*>(&south), sizeof(south));
 
 	// get sales data for the east division
-	/*cout << "Enter the quarterly sales for the East Division:\n";
+	cout << "Enter the quarterly sales for the East Division:\n";
 	for (qtr = 1; qtr <= 4; qtr++)
 	{
 		east.quarter = qtr;
 		cout << "\tQuarter " << qtr << ": ";
 		cin >> east.sales;
-		
+		file.write(reinterpret_cast<char*>(&east), sizeof(east));
 	}
-*/
-	// get sales data for the east division
-	/*cout << "Enter the quarterly sales for the West Division:\n";
+//*/
+	 //get sales data for the east division
+	cout << "Enter the quarterly sales for the West Division:\n";
 	for (qtr = 1; qtr <= 4; qtr++)
 	{
 		west.quarter = qtr;
 		cout << "\tQuarter " << qtr << ": ";
 		cin >> west.sales;
 		file.write(reinterpret_cast<char*>(&west), sizeof(west));
-	}*/
-
-	// get sales data for the east division
-	/*cout << "Enter the quarterly sales for the North Division:\n";
+	}
+//
+//	get sales data for the east division
+	cout << "Enter the quarterly sales for the North Division:\n";
 	for (qtr = 1; qtr <= 4; qtr++)
 	{
-		east.quarter = qtr;
+		north.quarter = qtr;
 		cout << "\tQuarter " << qtr << ": ";
 		cin >> north.sales;
 		file.write(reinterpret_cast<char*>(&north), sizeof(north));
-	}*/
-
-	// get sales data for the east division
-	cout << "The Average quarterly sales for the division are: ";
-
-	// Average function call
-    average(east, west, north, south);
-
-	/*for (qtr = 1; qtr <= 4; qtr++)
+	}
+//
+//	1000 each quarter for each division is what I used
+//
+	cout << "Enter the quarterly sales for the South Division:\n";
+	for (qtr = 1; qtr <= 4; qtr++)
 	{
 		south.quarter = qtr;
 		cout << "\tQuarter " << qtr << ": ";
 		cin >> south.sales;
 		file.write(reinterpret_cast<char*>(&south), sizeof(south));
 	}
-*/
+
+
+
+	// new array data
+	int newDataE[8] = {  };
+	int newDataN[8] = {  };
+	int newDataS[8] = {  };
+	int newDataW[8] = {  };
+
+	////data for each division
+	//for (int i = 4; i <= 8; i++)
+	//{
+
+	//}
+	
+
+//*/
+// get sales data for the east division
+	cout << "The Average quarterly sales for the division are: ";
+
+	// Average function call
+	/*average(east, west, north, south);*/
+	average(newDataE, newDataW, newDataN, newDataS);
+
 	// close the file
 	file.close();
 
@@ -121,18 +152,20 @@ int main()
 	return 0;
 }
 
-void average(Division east, Division west, Division north, Division south)
+void average(int east[MAX], int west[MAX], int north[MAX], int south[MAX])
 {
 	//variable numbers 
-	int eastS, westS, northS, southS;
+	int eastS = 0;
+	int westS = 0;
+	int northS = 0; 
+	int southS = 0;
 	int average = 0;
+	int total = 0;
 
-	eastS = east.sales;
-	westS = west.sales;
-	northS = north.sales;
-	southS = south.sales;
 
-	average = (eastS + westS + northS + southS) / 4;
+	total = eastS + westS + northS + southS;
+
+	average += (total) / 4;
 
 	// average calculation
 	cout << average;
