@@ -44,10 +44,10 @@ int main()
 
 	// int 
 
-	int salesEast[MAX] = {0};
-	int salesWest[MAX] = {0};
-	int salesNorth[MAX] = {0};
-	int salesSouth[MAX] = {0};
+	int salesEast[MAX] = {};
+	int salesWest[MAX] = {};
+	int salesNorth[MAX] = {};
+	int salesSouth[MAX] = {};
 
 	// loop counter for each quarter
 	int qtr;
@@ -112,13 +112,12 @@ int main()
 		file.write(reinterpret_cast<char*>(&south), sizeof(south));
 	}
 
-
-
+	
 	// new array data
-	int newDataE[8] = {  };
-	int newDataN[8] = {  };
-	int newDataS[8] = {  };
-	int newDataW[8] = {  };
+	int newDataE[MAX] = {  };
+	int newDataN[MAX] = {  };
+	int newDataS[MAX] = {  };
+	int newDataW[MAX] = {  };
 
 	////data for each division
 	//for (int i = 4; i <= 8; i++)
