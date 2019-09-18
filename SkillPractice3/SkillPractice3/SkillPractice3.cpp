@@ -23,7 +23,7 @@ struct Division
 {
 	char divName[12]; // 12 bytes
 	int quarter; // 4 byts
-	double sales; // 8 bytes
+	double sales[8]; // 8 bytes
 };
 
 struct Data
@@ -74,7 +74,7 @@ int main()
 	{
 		east.quarter = qtr;
 		cout << "\tQuarter " << qtr << ": ";
-		cin >> east.sales;
+		cin >> east.sales[8];
 		file.write(reinterpret_cast<char*>(&east), sizeof(east));
 	}
 //*/
@@ -84,7 +84,7 @@ int main()
 	{
 		west.quarter = qtr;
 		cout << "\tQuarter " << qtr << ": ";
-		cin >> west.sales;
+		cin >> west.sales[8];
 		file.write(reinterpret_cast<char*>(&west), sizeof(west));
 	}
 //
@@ -94,7 +94,7 @@ int main()
 	{
 		north.quarter = qtr;
 		cout << "\tQuarter " << qtr << ": ";
-		cin >> north.sales;
+		cin >> north.sales[8];
 		file.write(reinterpret_cast<char*>(&north), sizeof(north));
 	}
 //
@@ -105,7 +105,7 @@ int main()
 	{
 		south.quarter = qtr;
 		cout << "\tQuarter " << qtr << ": ";
-		cin >> south.sales;
+		cin >> south.sales[8];
 		file.write(reinterpret_cast<char*>(&south), sizeof(south));
 	}
 
@@ -126,15 +126,15 @@ int main()
 	int newDataE[MAX] = { };
 	int newDataN[MAX] = { };
 	int newDataS[MAX] = { };
-	int newDataW[MAX] = { };
+	int newDataW[MAX] = { }; 
 
 	//data for each division
-	for (int i = 4; i <= 8; i++)
+	for (int i = 0; i <= 8; i++)
 	{
-		newDataW[i] += west.sales;
-		newDataS[i] += south.sales;
-		newDataN[i] += north.sales;
-		newDataE[i] += east.sales;
+		newDataW[i] += west.sales[8];
+		newDataS[i] += south.sales[8];
+		newDataN[i] += north.sales[8];
+		newDataE[i] += east.sales[8];
 	}
 	
 	
