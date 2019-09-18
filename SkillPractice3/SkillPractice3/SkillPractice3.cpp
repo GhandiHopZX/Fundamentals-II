@@ -26,6 +26,11 @@ struct Division
 	double sales; // 8 bytes
 };
 
+struct Data
+{
+	int salesData[10];
+};
+
 
 // Function declarations
 void average(int east[MAX], int west[MAX], int north[MAX], int south[MAX]);
@@ -39,15 +44,16 @@ int main()
 	// open the file
 	file.open("corp.dat", ios::in | ios::out | ios::binary);
 
+		// if file is not there or empty
+		/*if (file.eof() <= 0)
+		{
+			cout << "File cannot be found..." << endl;
+		}*/
+
 	// create the division structure variables for each division
 	Division east, west, north, south; // each has 4 quarters of number data
 
 	// int 
-
-	int salesEast[MAX] = {};
-	int salesWest[MAX] = {};
-	int salesNorth[MAX] = {};
-	int salesSouth[MAX] = {};
 
 	// loop counter for each quarter
 	int qtr;
@@ -58,18 +64,7 @@ int main()
 	strcpy_s(north.divName, "North");
 	strcpy_s(south.divName, "South");
 
-	//pulling the data 
-	// east data
-	file.read(reinterpret_cast<char*>(&east), sizeof(east));
-
-	// west data
-	file.read(reinterpret_cast<char*>(&west), sizeof(west));
-
-	// north data
-	file.read(reinterpret_cast<char*>(&north), sizeof(north));
-
-	// south data
-	file.read(reinterpret_cast<char*>(&south), sizeof(south));
+	
 
 	// get sales data for the east division
 	cout << "Enter the quarterly sales for the East Division:\n";
@@ -112,12 +107,24 @@ int main()
 		file.write(reinterpret_cast<char*>(&south), sizeof(south));
 	}
 
+	//pulling the data 
+	// east data
+	file.read(reinterpret_cast<char*>(&east), sizeof(east));
+
+	// west data
+	file.read(reinterpret_cast<char*>(&west), sizeof(west));
+
+	// north data
+	file.read(reinterpret_cast<char*>(&north), sizeof(north));
+
+	// south data
+	file.read(reinterpret_cast<char*>(&south), sizeof(south));
 	
 	// new array data
 	int newDataE[MAX] = {  };
 	int newDataN[MAX] = {  };
-	int newDataS[MAX] = {  };
-	int newDataW[MAX] = {  };
+	int newDataS[MAX] = { };
+	int newDataW[MAX] = { };
 
 	////data for each division
 	//for (int i = 4; i <= 8; i++)
@@ -125,7 +132,7 @@ int main()
 
 	//}
 	
-
+	
 //*/
 // get sales data for the east division
 	cout << "The Average quarterly sales for the division are: ";
