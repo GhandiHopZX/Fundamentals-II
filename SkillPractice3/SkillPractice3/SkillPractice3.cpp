@@ -28,7 +28,7 @@ struct Division
 
 struct Data
 {
-	int salesData[10];
+	int salesData[16];
 };
 
 
@@ -52,6 +52,8 @@ int main()
 
 	// create the division structure variables for each division
 	Division east, west, north, south; // each has 4 quarters of number data
+
+	Data so;
 
 	// int 
 
@@ -121,16 +123,19 @@ int main()
 	file.read(reinterpret_cast<char*>(&south), sizeof(south));
 	
 	// new array data
-	int newDataE[MAX] = {  };
-	int newDataN[MAX] = {  };
+	int newDataE[MAX] = { };
+	int newDataN[MAX] = { };
 	int newDataS[MAX] = { };
 	int newDataW[MAX] = { };
 
-	////data for each division
-	//for (int i = 4; i <= 8; i++)
-	//{
-
-	//}
+	//data for each division
+	for (int i = 4; i <= 8; i++)
+	{
+		newDataW[i] += west.sales;
+		newDataS[i] += south.sales;
+		newDataN[i] += north.sales;
+		newDataE[i] += east.sales;
+	}
 	
 	
 //*/
