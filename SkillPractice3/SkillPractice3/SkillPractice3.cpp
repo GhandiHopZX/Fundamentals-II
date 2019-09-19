@@ -17,13 +17,13 @@ using namespace std;
 
 // Global variables
 
-const int MAX = 24;
+const int MAX = 3;
 
 struct Division
 {
 	char divName[12]; // 12 bytes
 	int quarter; // 4 byts
-	double sales[8]; // 8 bytes
+	double sales; // 8 bytes
 };
 
 struct Data
@@ -33,7 +33,7 @@ struct Data
 
 
 // Function declarations
-void average(int east[MAX], int west[MAX], int north[MAX], int south[MAX]);
+void average(double east[MAX], double west[MAX], double north[MAX], double south[MAX]);
 
 int main()
 {
@@ -43,7 +43,6 @@ int main()
 	
 	// open the file
 	file.open("corp.dat", ios::in | ios::out | ios::binary);
-
 		// if file is not there or empty
 		/*if (file.eof() <= 0)
 		{
@@ -53,9 +52,7 @@ int main()
 	// create the division structure variables for each division
 	Division east, west, north, south; // each has 4 quarters of number data
 
-	Data so;
-
-	// int 
+	//Data so;
 
 	// loop counter for each quarter
 	int qtr;
@@ -68,76 +65,162 @@ int main()
 
 	// get sales data for the east division
 	cout << "Enter the quarterly sales for the East Division:\n";
+	double quarterET[4] = { 0 };
 	for (qtr = 1; qtr <= 4; qtr++)
 	{
 		east.quarter = qtr;
 		cout << "\tQuarter " << qtr << ": ";
-		cin >> east.sales[8];
+		cin >> east.sales;
 		file.write(reinterpret_cast<char*>(&east), sizeof(east));
+		// le four ints for western qq
+
+		for (int i = 0; i <= 3; i++)
+		{
+			if (east.quarter == 0)
+			{
+				quarterET[0] += east.sales;
+			}
+			if (west.quarter == 1)
+			{
+				quarterET[1] += east.sales;
+			}
+			if (west.quarter == 2)
+			{
+				quarterET[2] += east.sales;
+			}
+			if (west.quarter == 3)
+			{
+				quarterET[3] += east.sales;
+			}
+		}
 	}
-//*/
-	 //get sales data for the east division
+//*/ 
+	 //get sales data for the west division
+	double quarterWT[4] = { 0 };
 	cout << "Enter the quarterly sales for the West Division:\n";
 	for (qtr = 1; qtr <= 4; qtr++)
 	{
 		west.quarter = qtr;
 		cout << "\tQuarter " << qtr << ": ";
-		cin >> west.sales[8];
+		cin >> west.sales;
 		file.write(reinterpret_cast<char*>(&west), sizeof(west));
+		// le four ints for western qq
+
+		for (int i = 0; i <= 3; i++)
+		{
+			if (west.quarter == 0)
+			{
+				quarterWT[0] += west.sales;
+			}
+			if (west.quarter == 1)
+			{
+				quarterWT[1] += west.sales;
+			}
+			if (west.quarter == 2)
+			{
+				quarterWT[2] += west.sales;
+			}
+			if (west.quarter == 3)
+			{
+				quarterWT[3] += west.sales;
+			}
+		}
 	}
-	// le four ints for western qq
-	int quarterWT[4];
-	if (west.quarter == 1 ) {
-	west.quarter += 
-	}
+	
 //
-//	get sales data for the east division
+//	get sales data for the north division
+	double quarterNT[4] = { 0 };
 	cout << "Enter the quarterly sales for the North Division:\n";
 	for (qtr = 1; qtr <= 4; qtr++)
 	{
 		north.quarter = qtr;
 		cout << "\tQuarter " << qtr << ": ";
-		cin >> north.sales[8];
+		cin >> north.sales;
 		file.write(reinterpret_cast<char*>(&north), sizeof(north));
+		// le four ints for western qq
+	
+		for (int i = 0; i <= 3; i++)
+		{
+			if (north.quarter == 0)
+			{
+				quarterNT[0] += north.sales;
+			}
+			if (west.quarter == 1)
+			{
+				quarterNT[1] += north.sales;
+			}
+			if (west.quarter == 2)
+			{
+				quarterNT[2] += north.sales;
+			}
+			if (west.quarter == 3)
+			{
+				quarterNT[3] += north.sales;
+			}
+		}
 	}
 //
 //	1000 each quarter for each division is what I used
-//
+//	south quarter
+	double quarterST[4] = { 0 };
+
 	cout << "Enter the quarterly sales for the South Division:\n";
 	for (qtr = 1; qtr <= 4; qtr++)
 	{
 		south.quarter = qtr;
 		cout << "\tQuarter " << qtr << ": ";
-		cin >> south.sales[8];
+		cin >> south.sales;
 		file.write(reinterpret_cast<char*>(&south), sizeof(south));
-	}
+		// le four ints for western qq
+		for (int i = 0; i < 4; i++)
+		{
+			if (south.quarter == 1)
+			{
+				quarterST[0] += south.sales;
+			}
+			if (south.quarter == 2)
+			{
+				quarterST[1] += south.sales;
+			}
+			if (south.quarter == 3)
+			{
+				quarterST[2] += south.sales;
+			}
+			if (south.quarter == 4)
+			{
+				quarterST[3] += south.sales;
+			}
+		}
+	} 
 
 	//pulling the data 
-	// east data
-	file.read(reinterpret_cast<char*>(&east), sizeof(east));
-
-	// west data
-	file.read(reinterpret_cast<char*>(&west), sizeof(west));
-
-	// north data
-	file.read(reinterpret_cast<char*>(&north), sizeof(north));
-
-	// south data
-	file.read(reinterpret_cast<char*>(&south), sizeof(south));
 	
-	// new array data
-	int newDataE[MAX] = { };
-	int newDataN[MAX] = { };
-	int newDataS[MAX] = { };
-	int newDataW[MAX] = { }; 
+
+	// ints
+
+	double newDataE[] = { quarterET[3] };
+	double newDataN[] = { quarterNT[3] };
+	double newDataS[] = { quarterST[3] };
+	double newDataW[] = { quarterWT[3] };
 
 	//data for each division
-	for (int i = 0; i <= 8; i++)
+	for (int i = 0; i <= 3; i++)
 	{
-		newDataW[i] += west.sales[8];
-		newDataS[i] += south.sales[8];
-		newDataN[i] += north.sales[8];
-		newDataE[i] += east.sales[8];
+		// west data
+		file.read(reinterpret_cast<char*>(&west), sizeof(west));
+		newDataW[i] += west.sales;
+
+		// north data
+		file.read(reinterpret_cast<char*>(&north), sizeof(north));
+		newDataS[i] += south.sales;
+
+		// south data
+		file.read(reinterpret_cast<char*>(&south), sizeof(south));
+		newDataN[i] += north.sales;
+
+		// east data
+		file.read(reinterpret_cast<char*>(&east), sizeof(east));
+		newDataE[i] += east.sales;
 	}
 	
 //*/
@@ -163,9 +246,10 @@ int main()
 	cin.get();
 	*/
 	return 0;
+	//1000
 }
 
-void average(int east[MAX], int west[MAX], int north[MAX], int south[MAX])
+void average(double east[MAX], double west[MAX], double north[MAX], double south[MAX])
 {
 	//variable numbers 
 	int eastS = 0;
