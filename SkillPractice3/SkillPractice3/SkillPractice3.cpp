@@ -74,8 +74,6 @@ int main()
 		file.write(reinterpret_cast<char*>(&east), sizeof(east));
 		// le four ints for western qq
 
-		for (int i = 0; i <= 3; i++)
-		{
 			if (east.quarter == 0)
 			{
 				quarterET[0] += east.sales;
@@ -92,7 +90,7 @@ int main()
 			{
 				quarterET[3] += east.sales;
 			}
-		}
+		
 	}
 //*/ 
 	 //get sales data for the west division
@@ -106,8 +104,6 @@ int main()
 		file.write(reinterpret_cast<char*>(&west), sizeof(west));
 		// le four ints for western qq
 
-		for (int i = 0; i <= 3; i++)
-		{
 			if (west.quarter == 0)
 			{
 				quarterWT[0] += west.sales;
@@ -124,7 +120,7 @@ int main()
 			{
 				quarterWT[3] += west.sales;
 			}
-		}
+		
 	}
 	
 //
@@ -139,8 +135,6 @@ int main()
 		file.write(reinterpret_cast<char*>(&north), sizeof(north));
 		// le four ints for western qq
 	
-		for (int i = 0; i <= 3; i++)
-		{
 			if (north.quarter == 0)
 			{
 				quarterNT[0] += north.sales;
@@ -157,7 +151,7 @@ int main()
 			{
 				quarterNT[3] += north.sales;
 			}
-		}
+		
 	}
 //
 //	1000 each quarter for each division is what I used
@@ -172,29 +166,25 @@ int main()
 		cin >> south.sales;
 		file.write(reinterpret_cast<char*>(&south), sizeof(south));
 		// le four ints for western qq
-		for (int i = 0; i < 4; i++)
+		if (south.quarter == 1)
 		{
-			if (south.quarter == 1)
-			{
-				quarterST[0] += south.sales;
-			}
-			if (south.quarter == 2)
-			{
-				quarterST[1] += south.sales;
-			}
-			if (south.quarter == 3)
-			{
-				quarterST[2] += south.sales;
-			}
-			if (south.quarter == 4)
-			{
-				quarterST[3] += south.sales;
-			}
+			quarterST[0] += south.sales;
+		}
+		if (south.quarter == 2)
+		{
+			quarterST[1] += south.sales;
+		}
+		if (south.quarter == 3)
+		{
+			quarterST[2] += south.sales;
+		}
+		if (south.quarter == 4)
+		{
+			quarterST[3] += south.sales;
 		}
 	} 
 
 	//pulling the data 
-	
 
 	// ints
 
@@ -203,26 +193,21 @@ int main()
 	double newDataS[] = { quarterST[3] };
 	double newDataW[] = { quarterWT[3] };
 
-	//data for each division
-	for (int i = 0; i <= 3; i++)
-	{
-		// west data
-		file.read(reinterpret_cast<char*>(&west), sizeof(west));
-		newDataW[i] += west.sales;
+	// west data
+	file.read(reinterpret_cast<char*>(&west), sizeof(west));
+	newDataW[] += west.sales;
 
-		// north data
-		file.read(reinterpret_cast<char*>(&north), sizeof(north));
-		newDataS[i] += south.sales;
-
-		// south data
+	// north data
+	file.read(reinterpret_cast<char*>(&north), sizeof(north));
+	newDataS[] += south.sales;
+	// south data
 		file.read(reinterpret_cast<char*>(&south), sizeof(south));
-		newDataN[i] += north.sales;
+	newDataN[] += north.sales;
 
-		// east data
-		file.read(reinterpret_cast<char*>(&east), sizeof(east));
-		newDataE[i] += east.sales;
-	}
-	
+	// east data
+	file.read(reinterpret_cast<char*>(&east), sizeof(east));
+	newDataE[] += east.sales;
+
 //*/
 // get sales data for the east division
 	cout << "The Average quarterly sales for the division are: ";
