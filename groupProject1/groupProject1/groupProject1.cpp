@@ -19,8 +19,6 @@ int bianarySearch(const int MAX, int elements);
 struct names
 {
 	char nameinFirst[MAXCHAR];
-	char nameinMiddle[MAXCHAR];
-	char nameinLast[MAXCHAR];
 };
 
 int main()
@@ -30,14 +28,12 @@ int main()
 
 	// assign names for each person in the structure var
 	strcpy_s(first.nameinFirst, "First");
-	strcpy_s(middle.nameinMiddle, "Middle");
-	strcpy_s(last.nameinLast, "Last");
 
 }
 
 // function declarations
 
-int bianarySearch(const int MAX, int elements)
+int bianarySearch(int elements)
 {
 	// Strings 
 
@@ -46,28 +42,29 @@ int bianarySearch(const int MAX, int elements)
 	// Index
 
 	string first[] = {Index.nameinFirst};
-	string last[] = {Index.nameinLast};
-	string middle[] = {Index.nameinMiddle};
 	int position = -1;
 	int count = 0;
 
 	bool found = false;
 
-
-/*
-	for (int i = 0; !found && first[i] <= last[i], i++;);
+	while (elements != Index.nameinFirst)
 	{
-		int m = (first[count] + last[count]);
-			m / 2;
-		if (middle[m] == middle[count])
-		{
-			found = true;
-			position = middle[];
-		}
-		else if (middle[] > count)
-			last[] = middle[] - 1;
-		else
-			first[] = middle[] + 1;
-	}*/
-	return position / 2;
+
+	}
+
+	//for (int i = 0; !found && first[i] <= last[i], i++;);
+	//{
+	//	int m = (first[count] + last[count]);
+	//		m / 2;
+	//	if (middle[m] == middle[count])
+	//	{
+	//		found = true;
+	//		position = middle[];
+	//	}
+	//	else if (middle[] > count)
+	//		last[] = middle[] - 1;
+	//	else
+	//		first[] = middle[] + 1;
+	//}
+	return position;
 }

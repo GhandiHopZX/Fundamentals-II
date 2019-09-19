@@ -85,6 +85,11 @@ int main()
 		cin >> west.sales[8];
 		file.write(reinterpret_cast<char*>(&west), sizeof(west));
 	}
+	// le four ints for western qq
+	int quarterWT[4];
+	if (west.quarter == 1 ) {
+	west.quarter += 
+	}
 //
 //	get sales data for the east division
 	cout << "Enter the quarterly sales for the North Division:\n";
@@ -134,7 +139,6 @@ int main()
 		newDataN[i] += north.sales[8];
 		newDataE[i] += east.sales[8];
 	}
-	
 	
 //*/
 // get sales data for the east division
