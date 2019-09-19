@@ -66,8 +66,6 @@ int main()
 	strcpy_s(north.divName, "North");
 	strcpy_s(south.divName, "South");
 
-	
-
 	// get sales data for the east division
 	cout << "Enter the quarterly sales for the East Division:\n";
 	for (qtr = 1; qtr <= 4; qtr++)
@@ -172,7 +170,7 @@ void average(int east[MAX], int west[MAX], int north[MAX], int south[MAX])
 	int southS = 0;
 	int average = 0;
 	int total = 0;
-
+	//
 
 	total = eastS + westS + northS + southS;
 

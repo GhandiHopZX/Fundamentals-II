@@ -13,7 +13,7 @@ using namespace std;
 const int MAXCHAR = 40;
 
 // Prototypes
-int bianarySearch(const int MAX, int elements, int value);
+int bianarySearch(const int MAX, int elements);
 
 // the struct data
 struct names
@@ -21,13 +21,12 @@ struct names
 	char nameinFirst[MAXCHAR];
 	char nameinMiddle[MAXCHAR];
 	char nameinLast[MAXCHAR];
-	int ID;
 };
 
 int main()
 {
 	// creating the names for each variable
-	names first, middle, last, value;
+	names first, middle, last;
 
 	// assign names for each person in the structure var
 	strcpy_s(first.nameinFirst, "First");
@@ -38,35 +37,37 @@ int main()
 
 // function declarations
 
-int bianarySearch(const int MAX, int elements, int value)
+int bianarySearch(const int MAX, int elements)
 {
-	// strings 
+	// Strings 
 
 	names Index;
-	Index.ID = 0;
-	value= Index.ID;
 
-	// index
-	string first[] = { Index.nameinFirst };
+	// Index
+
+	string first[] = {Index.nameinFirst};
 	string last[] = {Index.nameinLast};
 	string middle[] = {Index.nameinMiddle};
 	int position = -1;
+	int count = 0;
 
 	bool found = false;
 
+
+/*
 	for (int i = 0; !found && first[i] <= last[i], i++;);
 	{
-		int m = (first[value] + last[value]);
+		int m = (first[count] + last[count]);
 			m / 2;
-		if (middle[m] == middle[value])
+		if (middle[m] == middle[count])
 		{
 			found = true;
-			position = middle[i];
+			position = middle[];
 		}
-		else if (middle[i] > value)
-			last[i] = middle[i] - 1;
+		else if (middle[] > count)
+			last[] = middle[] - 1;
 		else
-			first[i] = middle[i] + 1;
-	}
+			first[] = middle[] + 1;
+	}*/
 	return position / 2;
 }
