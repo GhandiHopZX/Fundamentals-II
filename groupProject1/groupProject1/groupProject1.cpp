@@ -171,7 +171,7 @@ cout << "-----------------------------------------------------------------------
 cout << "Select which customer record you would like to pull up by entering their First Name, Space, Last Name. For example: John Smith." << endl;
 		cin >> c[i].name;
 		&search(position);//call search function
-While([i] == [j])
+	while([i] == [j]){
 			cout << "Name: " << c[j].name << endl;
 			cout << "Address: " << c[j].address << endl;
 			cout << "City: " << c[j].city << " State: " << c[i].state
@@ -199,26 +199,43 @@ long search(int names[CUSTSIZE])
 	cout << "What name do you wish to search for...?" << endl;
 	getline(cin, sName);
 
+	bool flag = false; // found
+
 	long pos = 0; // position in the file
 
-	string tIndex[CUSTSIZE][5]; // terminator Index
+	string tIndex[CUSTSIZE]; // terminator Index
 
 	// address
 	file.beg();
+	file.read(reinterpret_cast<char*>(&info), sizeof(info));
 
 	// The five rings
 	//tIndex[CUSTSIZE] = {};
-	string name1;
+	string nameSZ[4];
 
 	file.seekg(0L, ios::beg); // to the end
+
+	// hadangeki copys from the input that is converted to bytes
+	long hadangeki = static_cast<long>(sName.size());
+
 	while (!file.eof) // Not at end of file
 	{
-		// list search
+		if (pos != hadangeki)
+		{
+			file.read(reinterpret_cast<char*>(&pos), sizeof(pos));
+		}
+		else
+		{
+			flag == true;
+		}
+
+		// list search for comparisons
 		file.seekg(0L, 324L); // intervals
 		// each customer is 323bytes so each one has an address
-		file.read(reinterpret_cast<char*>(&info), sizeof(info));
-		file.seekg(324L, 647L);
+		file.read(reinterpret_cast<char*>(&info[1]), sizeof(info[1]));
+		nameSZ[0].assign = info[1];
 		// next
+		file.seekg(324L, 647L);
 		file.read(reinterpret_cast<char*>(&info), sizeof(info));
 		// next
 		file.seekg(647L, 970L);
@@ -232,7 +249,7 @@ long search(int names[CUSTSIZE])
 	}
 
 	// search loop
-	for (int i = 0; i < 5; i++)
+	/*for (int i = 0; i < 5; i++)
 	{
 		if (sName != tIndex[i])
 		{
@@ -241,14 +258,15 @@ long search(int names[CUSTSIZE])
 		else {
 			cout << "Here is your personel" << tIndex[i];
 		}
-	}
+	}*/
+	// comparison
 
 
 	//close the files
 	fileTemp.close();
 	file.close();
 
-	return;
+	return pos; // returns that long
 }
 
 // *****************************************************************
@@ -264,7 +282,7 @@ void showAll(Customer c[])    //christion butterworth
 		cout << "All Customer Accounts\n";
 		cout << "Name: " << c[x].name << endl;
 		cout << "Address: " << c[x].address << endl;
-		cout << "City and State:  " << c[x].state << c[].city << endl;
+		cout << "City and State:  " << c[x].state << c[x].city << endl;
 		cout << "Zip: " << c[x].zip << endl;
 		cout << "Phone Number : " << c[x].phone << endl;
 		cout << "Current Balance : " << c[x].balance << endl;
