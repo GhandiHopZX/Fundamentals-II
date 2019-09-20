@@ -78,16 +78,16 @@ int main() //Christina Camacho
 	{
 		switch (choice) {
 		case 1:
-			setInfo();//write a record to a file
+			//setInfo();//write a record to a file
 			break;
 		case 2:
 			display(info);//call display function
 			break;
 		case 3:
-			deleteRec(); //call delete record function
+			//deleteRec(); //call delete record function
 			break;
 		case 4:
-			show(info); //call show all function
+			//show(info); //call show all function
 			break;
 		}
 		//Option to request that a person write a record first or to return an error message is no records exists
@@ -157,7 +157,7 @@ void setInfo(long fp)
 // *****************************************************************
 // The display function displays a single record.                  *
 // *****************************************************************
-void display(Customer c[]//Christina Camacho
+void display(Customer c[])//Christina Camacho
 	{
 	int i;
 //open file
@@ -170,7 +170,7 @@ cout << "-----------------------------------------------------------------------
 
 cout << "Select which customer record you would like to pull up by entering their First Name, Space, Last Name. For example: John Smith." << endl;
 		cin >> c[i].name;
-		&search(position);//call search function
+		search();//call search function
 	while([i] == [j]){
 			cout << "Name: " << c[j].name << endl;
 			cout << "Address: " << c[j].address << endl;
@@ -189,7 +189,7 @@ file.close();
 // *****************************************************************
 // The search function returns the file pointer position.          *
 // *****************************************************************
-long search(int names[CUSTSIZE])
+long search()
 {
 	Customer info[CUSTSIZE];
 	fstream file("custFile.dat", ios::out | ios::binary);
@@ -206,7 +206,6 @@ long search(int names[CUSTSIZE])
 	string tIndex[CUSTSIZE]; // terminator Index
 
 	// address
-	file.beg();
 	file.read(reinterpret_cast<char*>(&info), sizeof(info));
 
 	// The five rings
@@ -260,9 +259,10 @@ long search(int names[CUSTSIZE])
 		}
 		else {
 			cout << "Here is your personel" << tIndex[i]; // output
+			// comparison done
+			pos = tIndex->compare;
 		}
 	}
-	// comparison done
 
 	//close the files
 	fileTemp.close();
@@ -311,6 +311,4 @@ void deleteRec(long fp)    // Jeremy Laney
 	string name;    // variable to hold name
 	Customer tempInfo[SIZE];
 	cout << "Please enter the customer or customers name whose file you would like to delete: " << endl;
-
-
 }
