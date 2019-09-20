@@ -211,7 +211,6 @@ long search(int names[CUSTSIZE])
 
 	// The five rings
 	//tIndex[CUSTSIZE] = {};
-	string nameSZ[4];
 
 	file.seekg(0L, ios::beg); // to the end
 
@@ -233,34 +232,37 @@ long search(int names[CUSTSIZE])
 		file.seekg(0L, 324L); // intervals
 		// each customer is 323bytes so each one has an address
 		file.read(reinterpret_cast<char*>(&info[1]), sizeof(info[1]));
-		nameSZ[0].assign = info[1];
+		tIndex[1].assign = info[1];
 		// next
 		file.seekg(324L, 647L);
 		file.read(reinterpret_cast<char*>(&info), sizeof(info));
+		tIndex[2].assign = info[2];
 		// next
 		file.seekg(647L, 970L);
 		file.read(reinterpret_cast<char*>(&info), sizeof(info));
+		tIndex[3].assign = info[3];
 		// next
 		file.seekg(970L, 1293L);
 		file.read(reinterpret_cast<char*>(&info), sizeof(info));
+		tIndex[4].assign = info[4];
 		// next
 		file.seekg(1293L, 1615L);
 		file.read(reinterpret_cast<char*>(&info), sizeof(info));
+		tIndex[5].assign = info[5];
 	}
 
-	// search loop
-	/*for (int i = 0; i < 5; i++)
+	// search loop for comparison
+	for (int i = 0; i < 5; i++)
 	{
 		if (sName != tIndex[i])
 		{
 			tIndex[i];
 		}
 		else {
-			cout << "Here is your personel" << tIndex[i];
+			cout << "Here is your personel" << tIndex[i]; // output
 		}
-	}*/
-	// comparison
-
+	}
+	// comparison done
 
 	//close the files
 	fileTemp.close();
