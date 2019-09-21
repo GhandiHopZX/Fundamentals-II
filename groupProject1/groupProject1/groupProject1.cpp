@@ -62,14 +62,16 @@ int main() //Christina Camacho
 	Customer info[SIZE];
 	cout << "*****************************************************************" << endl;
 	cout << "                         CUSTOMER ACCOUNTS                       " << endl;
-	cout << "                        By: THE TERMINATORS                      " << endl;
+	cout << "                        By: THE TERMINATORS					  " << endl;
+	cout << "						 MODDED alpha BY ZERO					  " << endl;
 	cout << "*****************************************************************" << endl << endl;
 
 	int choice;
 	//enter choice
 	cout << "The following program allows you to alter Customer Account information." << endl;
 	cout << "To write a record to a file select 1." << endl;
-	cout << "To display a record of your choice select 2." << endl;
+	cout << "Test Sol's function 2." << endl; // even tho mine is better >)
+	//cout << "To display a record of your choice select 2." << endl;
 	cout << "To delete a record select 3. " << endl;
 	cout << "To show all records select 4." << endl;
 	cout << "Select 5 to quit the program." << endl << endl;
@@ -81,13 +83,13 @@ int main() //Christina Camacho
 			//setInfo();//write a record to a file
 			break;
 		case 2:
-			display(info);//call display function
+			search();//display(info);//call display function
 			break;
 		case 3:
 			//deleteRec(); //call delete record function
 			break;
 		case 4:
-			//show(info); //call show all function
+			showAll(); //call show all function
 			break;
 		}
 		//Option to request that a person write a record first or to return an error message is no records exists
@@ -98,8 +100,6 @@ int main() //Christina Camacho
 		cout << "To show all records select 4." << endl;
 		cout << "Select 5 to quit the program." << endl << endl;
 	}
-
-
 
 	return 0;
 }
@@ -151,8 +151,6 @@ void setInfo(long fp)
 
 	}
 	custFile.close();
-
-
 }
 // *****************************************************************
 // The display function displays a single record.                  *
@@ -160,6 +158,7 @@ void setInfo(long fp)
 void display(Customer c[])//Christina Camacho
 	{
 	int i;
+	int j;
 //open file
 	fstream file("custFile.dat", ios::out | ios::binary);
 
@@ -224,51 +223,60 @@ long search()
 		}
 		else
 		{
-			flag == true;
+			flag = true;
 		}
 
 		// list search for comparisons
 		file.seekg(0L, 324L); // intervals
 		// each customer is 323bytes so each one has an address
 		file.read(reinterpret_cast<char*>(&info[1]), sizeof(info[1]));
-		tIndex[1].assign = info[1];
 		// next
 		file.seekg(324L, 647L);
-		file.read(reinterpret_cast<char*>(&info), sizeof(info));
-		tIndex[2].assign = info[2];
+		file.read(reinterpret_cast<char*>(&info[2]), sizeof(info[2]));
 		// next
 		file.seekg(647L, 970L);
-		file.read(reinterpret_cast<char*>(&info), sizeof(info));
-		tIndex[3].assign = info[3];
+		file.read(reinterpret_cast<char*>(&info[3]), sizeof(info[3]));
 		// next
 		file.seekg(970L, 1293L);
-		file.read(reinterpret_cast<char*>(&info), sizeof(info));
-		tIndex[4].assign = info[4];
+		file.read(reinterpret_cast<char*>(&info[4]), sizeof(info[4]));
 		// next
 		file.seekg(1293L, 1615L);
-		file.read(reinterpret_cast<char*>(&info), sizeof(info));
-		tIndex[5].assign = info[5];
+		file.read(reinterpret_cast<char*>(&info[5]), sizeof(info[5]));
 	}
 
-	// search loop for comparison
-	for (int i = 0; i < 5; i++)
-	{
-		if (sName != tIndex[i])
-		{
-			tIndex[i];
-		}
-		else {
-			cout << "Here is your personel" << tIndex[i]; // output
-			// comparison done
-			pos = tIndex->compare;
-		}
-	}
+	//// search loop for comparison
+	//for (int i = 1; i < 5; i++)
+	//{
+	//	if (sName != tIndex[i])
+	//	{
+	//		tIndex[i] = info[i];
+	//	}
+	//	else {
+	//		cout << "Here is your personel" << info[i]; // output
+	//		// comparison done
+	//		pos = static_cast<long>();
+	//	}
+	//}
 
 	//close the files
 	fileTemp.close();
 	file.close();
 
-	return pos; // returns that long
+	return info[]; // returns that long
+}
+
+string toString()
+{
+	Customer m;
+
+	cout << m[].address;
+	cout << m[].balance;
+	cout << m[].city;
+	cout << m[].lastPay;
+	cout << m[].name;
+	cout << m[].phone;
+	cout << m[].state;
+	cout << m[].zip;
 }
 
 // *****************************************************************
