@@ -82,7 +82,7 @@ int main() //Christina Camacho
 	{
 		switch (choice) {
 		case 1:
-			//setInfo();//write a record to a file
+			//setInfo(); //write a record to a file
 			break;
 		case 2:
 			search();//display(info);//call display function
@@ -196,8 +196,9 @@ long search() // todo fix
 	fstream file("custFile.dat", ios::out | ios::binary);
 
 	string sName = "";
-	cout << "Select which customer record you would like to pull up by entering their First Name, Space, Last Name. For example: John Smith." << endl;
-	getline(cin, sName);
+	cout << "Select which customer record you would like to pull up by" << endl;
+	cout << "entering their First Name, Space, Last Name. For example: John Smith." << endl;
+	cin >> sName;
 
 	bool flag = false; // found
 
@@ -221,28 +222,28 @@ long search() // todo fix
 		if (pos != hadangeki)
 		{
 			file.read(reinterpret_cast<char*>(&pos), sizeof(pos));
+			// list search for comparisons
+			//file.seekg(0L, 324L); // intervals
+			//// each customer is 323bytes so each one has an address
+			//file.read(reinterpret_cast<char*>(&info[1]), sizeof(info[1]));
+			//// next
+			//file.seekg(324L, 647L);
+			//file.read(reinterpret_cast<char*>(&info[2]), sizeof(info[2]));
+			//// next
+			//file.seekg(647L, 970L);
+			//file.read(reinterpret_cast<char*>(&info[3]), sizeof(info[3]));
+			//// next
+			//file.seekg(970L, 1293L);
+			//file.read(reinterpret_cast<char*>(&info[4]), sizeof(info[4]));
+			//// next
+			//file.seekg(1293L, 1615L);
+			//file.read(reinterpret_cast<char*>(&info[5]), sizeof(info[5]));
 		}
 		else
 		{
 			flag = true;
+			cout << "No name found..." << endl;
 		}
-
-		// list search for comparisons
-		file.seekg(0L, 324L); // intervals
-		// each customer is 323bytes so each one has an address
-		file.read(reinterpret_cast<char*>(&info[1]), sizeof(info[1]));
-		// next
-		file.seekg(324L, 647L);
-		file.read(reinterpret_cast<char*>(&info[2]), sizeof(info[2]));
-		// next
-		file.seekg(647L, 970L);
-		file.read(reinterpret_cast<char*>(&info[3]), sizeof(info[3]));
-		// next
-		file.seekg(970L, 1293L);
-		file.read(reinterpret_cast<char*>(&info[4]), sizeof(info[4]));
-		// next
-		file.seekg(1293L, 1615L);
-		file.read(reinterpret_cast<char*>(&info[5]), sizeof(info[5]));
 	}
 
 	// search loop for comparison
@@ -251,7 +252,7 @@ long search() // todo fix
 		if (sName == info[i].name)
 		{
 			string v = info[i].name;
-			hadangeki = static_cast<long>(v.size);
+			hadangeki = static_cast<long>(v.size());
 			pos = hadangeki;
 		}
 	}
