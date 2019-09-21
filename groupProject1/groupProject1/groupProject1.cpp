@@ -222,7 +222,7 @@ long search()
 	{
 		//string temp = "";
 		//getline(file, temp); // get from file
-		for (int i = 0; i < info.size(); i++)
+		for (int i = 0; i < info.name; i++)
 		{
 			if (info[i].name == tIndex[i].name)
 			{
@@ -237,9 +237,9 @@ long search()
 
 		if (flag)
 		{
-			for (int i = tIndex[i].name() + 1; i < info.size(); i++)
+			for (int i = tIndex[i].name + 1; i < info[i].name; i++)
 			{
-				cout << info[i];
+				cout << info[i].name;
 				break;
 			}
 		}
