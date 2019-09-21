@@ -66,7 +66,7 @@ int main() //Christina Camacho
 	cout << "						 MODDED alpha BY ZERO					  " << endl;
 	cout << "*****************************************************************" << endl << endl;
 
-	int choice;
+	int choice = 0;
 	//enter choice
 	cout << "The following program allows you to alter Customer Account information." << endl;
 	cout << "To write a record to a file select 1." << endl;
@@ -75,6 +75,8 @@ int main() //Christina Camacho
 	cout << "To delete a record select 3. " << endl;
 	cout << "To show all records select 4." << endl;
 	cout << "Select 5 to quit the program." << endl << endl;
+
+	cin >> choice; // user input
 
 	while (choice != 5)
 	{
@@ -89,7 +91,7 @@ int main() //Christina Camacho
 			//deleteRec(); //call delete record function
 			break;
 		case 4:
-			showAll(); //call show all function
+			//showAll(); //call show all function
 			break;
 		}
 		//Option to request that a person write a record first or to return an error message is no records exists
@@ -155,35 +157,35 @@ void setInfo(long fp)
 // *****************************************************************
 // The display function displays a single record.                  *
 // *****************************************************************
-void display(Customer c[])//Christina Camacho
-	{
-	int i;
-	int j;
-//open file
-	fstream file("custFile.dat", ios::out | ios::binary);
-
-	cout << "Display a record. " << endl;
-cout << "---------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
-
-
-
-cout << "Select which customer record you would like to pull up by entering their First Name, Space, Last Name. For example: John Smith." << endl;
-		cin >> c[i].name;
-		search();//call search function
-	while([i] == [j]){
-			cout << "Name: " << c[j].name << endl;
-			cout << "Address: " << c[j].address << endl;
-			cout << "City: " << c[j].city << " State: " << c[i].state
-			<< "Zip code: " << c[j].zip << endl;
-			cout << "Phone Number: " << c[j].phone << endl;
-			cout << "Current Balance: " << c[j].balance << endl;
-			cout << "Last Payment: " << c[j].lastPay << endl;
-	}
-
-	//close the file
-file.close();
-
-}
+//void display(Customer c[])//Christina Camacho
+//	{
+//	int i;
+//	int j;
+////open file
+//	fstream file("custFile.dat", ios::out | ios::binary);
+//
+//	cout << "Display a record. " << endl;
+//cout << "---------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+//
+//
+//
+//cout << "Select which customer record you would like to pull up by entering their First Name, Space, Last Name. For example: John Smith." << endl;
+//		cin >> c[i].name;
+//		search();//call search function
+//	while([i] == [j]){
+//			cout << "Name: " << c[j].name << endl;
+//			cout << "Address: " << c[j].address << endl;
+//			cout << "City: " << c[j].city << " State: " << c[i].state
+//			<< "Zip code: " << c[j].zip << endl;
+//			cout << "Phone Number: " << c[j].phone << endl;
+//			cout << "Current Balance: " << c[j].balance << endl;
+//			cout << "Last Payment: " << c[j].lastPay << endl;
+//	}
+//
+//	//close the file
+//file.close();
+//
+//}
 
 // *****************************************************************
 // The search function returns the file pointer position.          *
@@ -194,16 +196,20 @@ long search()
 	fstream file("custFile.dat", ios::out | ios::binary);
 	fstream fileTemp("tempFile.dat", ios::out | ios::binary);
 
-	string sName = "";
+	
+	char sName[45] = {};
 	cout << "What name do you wish to search for...?" << endl;
-	getline(cin, sName);
+	cin >> sName;
+
+	// 
 
 	bool flag = false; // found
 
 	long pos = 0; // position in the file
 
-	string tIndex[CUSTSIZE]; // terminator Index
-
+	Customer tIndex[CUSTSIZE]; // terminator Index
+	// name take
+	tIndex[CUSTSIZE].name = sName;
 	// address
 	file.read(reinterpret_cast<char*>(&info), sizeof(info));
 
@@ -212,72 +218,86 @@ long search()
 
 	file.seekg(0L, ios::beg); // to the end
 
+	while (!file.eof()) // Not at end of file
+	{
+		//string temp = "";
+		//getline(file, temp); // get from file
+		for (int i = 0; i < info.size(); i++)
+		{
+			if (info[i].name == tIndex[i].name)
+			{
+				flag = 1;
+			}
+			else
+			{
+				flag = 0;
+				break;
+			}
+		}
+
+		if (flag)
+		{
+			for (int i = tIndex[i].name() + 1; i < info.size(); i++)
+			{
+				cout << info[i];
+				break;
+			}
+		}
+
+		if (file.eof() && (!flag))
+		{
+			cout << "Name not found!\n";
+		}
+		//if (pos != hadangeki)
+		//{
+		//	file.read(reinterpret_cast<char*>(&pos), sizeof(pos));
+		//}
+		//else
+		//{
+		//	flag = true;
+		//}
+
+		//// list search for comparisons
+		//file.seekg(0L, 324L); // intervals
+		//// each customer is 323bytes so each one has an address
+		//file.read(reinterpret_cast<char*>(&info[1]), sizeof(info[1]));
+		//// next
+		//file.seekg(324L, 647L);
+		//file.read(reinterpret_cast<char*>(&info[2]), sizeof(info[2]));
+		//// next
+		//file.seekg(647L, 970L);
+		//file.read(reinterpret_cast<char*>(&info[3]), sizeof(info[3]));
+		//// next
+		//file.seekg(970L, 1293L);
+		//file.read(reinterpret_cast<char*>(&info[4]), sizeof(info[4]));
+		//// next
+		//file.seekg(1293L, 1615L);
+		//file.read(reinterpret_cast<char*>(&info[5]), sizeof(info[5]));
+		
+	}
 	// hadangeki copys from the input that is converted to bytes
 	long hadangeki = static_cast<long>(sName.size());
-
-	while (!file.eof) // Not at end of file
-	{
-		if (pos != hadangeki)
-		{
-			file.read(reinterpret_cast<char*>(&pos), sizeof(pos));
-		}
-		else
-		{
-			flag = true;
-		}
-
-		// list search for comparisons
-		file.seekg(0L, 324L); // intervals
-		// each customer is 323bytes so each one has an address
-		file.read(reinterpret_cast<char*>(&info[1]), sizeof(info[1]));
-		// next
-		file.seekg(324L, 647L);
-		file.read(reinterpret_cast<char*>(&info[2]), sizeof(info[2]));
-		// next
-		file.seekg(647L, 970L);
-		file.read(reinterpret_cast<char*>(&info[3]), sizeof(info[3]));
-		// next
-		file.seekg(970L, 1293L);
-		file.read(reinterpret_cast<char*>(&info[4]), sizeof(info[4]));
-		// next
-		file.seekg(1293L, 1615L);
-		file.read(reinterpret_cast<char*>(&info[5]), sizeof(info[5]));
-	}
-
-	//// search loop for comparison
-	//for (int i = 1; i < 5; i++)
-	//{
-	//	if (sName != tIndex[i])
-	//	{
-	//		tIndex[i] = info[i];
-	//	}
-	//	else {
-	//		cout << "Here is your personel" << info[i]; // output
-	//		// comparison done
-	//		pos = static_cast<long>();
-	//	}
-	//}
-
+	
 	//close the files
 	fileTemp.close();
 	file.close();
 
-	return info[]; // returns that long
+	return hadangeki;//pos; // returns that long
 }
-
-string toString()
-{
-	Customer m;
-
-	cout << m[].address;
-	cout << m[].balance;
-	cout << m[].city;
-	cout << m[].lastPay;
-	cout << m[].name;
-	cout << m[].phone;
-	cout << m[].state;
-	cout << m[].zip;
-}
+//
+//string toString()
+//{
+//	Customer m;
+//
+//	cout << m[].address;
+//	cout << m[].balance;
+//	cout << m[].city;
+//	cout << m[].lastPay;
+//	cout << m[].name;
+//	cout << m[].phone;
+//	cout << m[].state;
+//	cout << m[].zip;
+//}
 
 // *****************************************************************
 // The showAll function shows all the customer records.            *
