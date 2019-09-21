@@ -190,26 +190,21 @@ void setInfo(long fp)
 // *****************************************************************
 // The search function returns the file pointer position.          *
 // *****************************************************************
-long search()
+long search() // todo fix
 {
 	Customer info[CUSTSIZE];
 	fstream file("custFile.dat", ios::out | ios::binary);
-	fstream fileTemp("tempFile.dat", ios::out | ios::binary);
 
-	
-	char sName[45] = {};
-	cout << "What name do you wish to search for...?" << endl;
-	cin >> sName;
-
-	// 
+	string sName = "";
+	cout << "Select which customer record you would like to pull up by entering their First Name, Space, Last Name. For example: John Smith." << endl;
+	getline(cin, sName);
 
 	bool flag = false; // found
 
 	long pos = 0; // position in the file
 
-	Customer tIndex[CUSTSIZE]; // terminator Index
-	// name take
-	tIndex[CUSTSIZE].name = sName;
+	//string tIndex[CUSTSIZE]; // terminator Index
+
 	// address
 	file.read(reinterpret_cast<char*>(&info), sizeof(info));
 
@@ -218,86 +213,54 @@ long search()
 
 	file.seekg(0L, ios::beg); // to the end
 
-	while (!file.eof()) // Not at end of file
-	{
-		//string temp = "";
-		//getline(file, temp); // get from file
-		for (int i = 0; i < info.name; i++)
-		{
-			if (info[i].name == tIndex[i].name)
-			{
-				flag = 1;
-			}
-			else
-			{
-				flag = 0;
-				break;
-			}
-		}
-
-		if (flag)
-		{
-			for (int i = tIndex[i].name + 1; i < info[i].name; i++)
-			{
-				cout << info[i].name;
-				break;
-			}
-		}
-
-		if (file.eof() && (!flag))
-		{
-			cout << "Name not found!\n";
-		}
-		//if (pos != hadangeki)
-		//{
-		//	file.read(reinterpret_cast<char*>(&pos), sizeof(pos));
-		//}
-		//else
-		//{
-		//	flag = true;
-		//}
-
-		//// list search for comparisons
-		//file.seekg(0L, 324L); // intervals
-		//// each customer is 323bytes so each one has an address
-		//file.read(reinterpret_cast<char*>(&info[1]), sizeof(info[1]));
-		//// next
-		//file.seekg(324L, 647L);
-		//file.read(reinterpret_cast<char*>(&info[2]), sizeof(info[2]));
-		//// next
-		//file.seekg(647L, 970L);
-		//file.read(reinterpret_cast<char*>(&info[3]), sizeof(info[3]));
-		//// next
-		//file.seekg(970L, 1293L);
-		//file.read(reinterpret_cast<char*>(&info[4]), sizeof(info[4]));
-		//// next
-		//file.seekg(1293L, 1615L);
-		//file.read(reinterpret_cast<char*>(&info[5]), sizeof(info[5]));
-		
-	}
 	// hadangeki copys from the input that is converted to bytes
 	long hadangeki = static_cast<long>(sName.size());
-	
+
+	while (!file.eof()) // Not at end of file
+	{
+		if (pos != hadangeki)
+		{
+			file.read(reinterpret_cast<char*>(&pos), sizeof(pos));
+		}
+		else
+		{
+			flag = true;
+		}
+
+		// list search for comparisons
+		file.seekg(0L, 324L); // intervals
+		// each customer is 323bytes so each one has an address
+		file.read(reinterpret_cast<char*>(&info[1]), sizeof(info[1]));
+		// next
+		file.seekg(324L, 647L);
+		file.read(reinterpret_cast<char*>(&info[2]), sizeof(info[2]));
+		// next
+		file.seekg(647L, 970L);
+		file.read(reinterpret_cast<char*>(&info[3]), sizeof(info[3]));
+		// next
+		file.seekg(970L, 1293L);
+		file.read(reinterpret_cast<char*>(&info[4]), sizeof(info[4]));
+		// next
+		file.seekg(1293L, 1615L);
+		file.read(reinterpret_cast<char*>(&info[5]), sizeof(info[5]));
+	}
+
+	// search loop for comparison
+	for (int i = 1; i < 5; i++) // todo fix
+	{
+		if (sName == info[i].name)
+		{
+			string v = info[i].name;
+			hadangeki = static_cast<long>(v.size);
+			pos = hadangeki;
+		}
+	}
+
 	//close the files
-	fileTemp.close();
 	file.close();
 
-	return hadangeki;//pos; // returns that long
+	return pos; // returns that long
 }
-//
-//string toString()
-//{
-//	Customer m;
-//
-//	cout << m[].address;
-//	cout << m[].balance;
-//	cout << m[].city;
-//	cout << m[].lastPay;
-//	cout << m[].name;
-//	cout << m[].phone;
-//	cout << m[].state;
-//	cout << m[].zip;
-//}
 
 // *****************************************************************
 // The showAll function shows all the customer records.            *
