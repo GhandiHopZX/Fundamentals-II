@@ -241,7 +241,7 @@ void setInfo(long& fp)
 // *****************************************************************
 // The search function returns the file pointer position.          *
 // *****************************************************************
-long search() // todo fix
+long search()
 {
 	Customer info[CUSTSIZE];
 	Customer reader;
@@ -308,13 +308,17 @@ long search() // todo fix
 			flag = true;
 			cout << "found" << endl;
 			// search loop for comparison
-			for (int i = 1; i < 5; i++) // todo fix
+			for (int i = 1; i < 5; i++) // todo
 			{
 				if (sName == info[i].name)
 				{
 					string v = info[i].name;
+					// only add the below if the returned position isn't what you needed...
+					// Honestly I need to know where that position is everytime I close the file
+					// do I need to go back or stop after reading where I left off?
+					/*
 					hadangeki = static_cast<long>(v.size());
-					pos = hadangeki;
+					pos = hadangeki;*/ 
 				}
 			}
 		}
