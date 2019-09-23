@@ -18,6 +18,7 @@ Showall  Christion
 #include <string>
 #include <fstream>
 #include <iomanip>
+#include <ctype.h>
 using namespace std;
 
 
@@ -109,20 +110,56 @@ int main() //Christina Camacho
 // *****************************************************************
 // The setInfo function write record to the file.                  *
 // *****************************************************************
-void setInfo(long fp)
-{
-	Customer info[CUSTSIZE];
-	custFile.open("custFile.dat", ios::out | ios::binary);
 
-	// Get the information of each customer
+void setInfo(long& fp)
+{
+	//add null terminator to the set info null terminator is like setfocus for data files. You can put the cursor of a specific point in the file.
+
+	Customer info[CUSTSIZE];
+	
+	custFile.open("custFile.dat", ios::out | ios::binary);
+	if
+		(custFile.read(reinterpret_cast<char*>(&info), sizeof(info)));
+	do
+	{
+		rnew = false;
+		//check for available record
+		while (!custFile.eof() && !rnew)
+		{
+			//check availability
+			if (strlen(info->name) == 0)
+				//int byteNum;
+				//move back to the beginning of the current record
+				custFile.seekg(isleadbyte(-1), ios::cur); //byteNum
+			//set rnew to true to exit while loop
+			rnew = true;
+		}
+		if (!rnew)
+		{
+			//read the next record to continue while loop
+			custFile.read(reinterpret_cast<char*>(&info, sizeof(info));
+		}
+	}//end of while;
+	while (custFile.eof());
+
+		// Get the information of each customer
 	for (int count = 0; count < CUSTSIZE; count++)
 	{
 		cout << "Please Enter Your Name: ";
 		do { //will repeat until the correct information is provided
 			cin >> info[count].name;
 		} while (info[count].name[0] == '\0'); //while choice is null repeat
+
+		//Another way to avoid null values
 		cout << "Please Enter Your Home Address: ";
 		cin >> info[count].address;
+		while (strlen(info[count].address) == 0)
+		{
+			cout << "Address can not be empty" << endl;
+			cout << "Re-Enter Address:";
+			cin >> info[count].address;
+		}
+
 		cout << "Please Enter Your City: ";
 		cin >> info[count].city;
 		cout << "Please Enter Your State: ";
@@ -133,6 +170,7 @@ void setInfo(long fp)
 		cout << "Please Enter Your Telephone Number: ";
 		cin >> info[count].phone;
 		cout << "Please Enter Your Account Balance: ";
+
 		cin >> info[count].balance;
 		// validate the account balance 
 		if (info[count].balance < 0)
@@ -140,6 +178,9 @@ void setInfo(long fp)
 			cout << "Sorry, We Don't Accept Negative Value!"
 				<< "Try Again: ";
 			cin >> info[count].balance;
+			//alternative code
+			//info[count].balance=atof(info[count]String.c_str());
+			//research this later
 		}
 		else
 		{
@@ -149,11 +190,21 @@ void setInfo(long fp)
 		cin >> info[count].lastPay;
 		cout << endl;
 		cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
-		custFile.write(reinterpret_cast<char*>(&info), sizeof(info));
+		char again;            // to or hold Y or N
+		do
+		{
+			fp = search(); ///pos
+			cout << "Do you want to add another record? " << endl;
+			cin >> again;
+			setInfo(search());
+		} while (again == 'Y' || again == 'y');
 
+		custFile.write(reinterpret_cast<char*>(&info), sizeof(info));
 	}
 	custFile.close();
 }
+
+
 // *****************************************************************
 // The display function displays a single record.                  *
 // *****************************************************************
@@ -193,35 +244,47 @@ void setInfo(long fp)
 long search() // todo fix
 {
 	Customer info[CUSTSIZE];
-	fstream file("custFile.dat", ios::out | ios::binary);
+	Customer reader;
+    fstream file("custFile.dat", ios::out | ios::binary);
+	file.open( "custFile.dat", ios::out | ios::binary );
 
-	string sName = "";
+	if (!file)
+	{
+		cout << "Melm.. The file cannot be found." << endl;
+	}
+
+	string sName;
 	cout << "Select which customer record you would like to pull up by" << endl;
 	cout << "entering their First Name, Space, Last Name. For example: John Smith." << endl;
 	cin >> sName;
 
 	bool flag = false; // found
 
+	// element
+	int element = 0;
+
 	long pos = 0; // position in the file
 
 	//string tIndex[CUSTSIZE]; // terminator Index
 
-	// address
-	file.read(reinterpret_cast<char*>(&info), sizeof(info));
-
-	// The five rings
-	//tIndex[CUSTSIZE] = {};
-
 	file.seekg(0L, ios::beg); // to the end
+
+	
+	//file.read(reinterpret_cast<char*>(&info), sizeof(info));
 
 	// hadangeki copys from the input that is converted to bytes
 	long hadangeki = static_cast<long>(sName.size());
 
-	while (!file.eof()) // Not at end of file
+	do
 	{
+		// address
 		if (pos != hadangeki)
 		{
+			info[element] = reader;
+			element++;
+			file.read(reinterpret_cast<char*>(&reader), sizeof(reader));
 			file.read(reinterpret_cast<char*>(&pos), sizeof(pos));
+
 			// list search for comparisons
 			//file.seekg(0L, 324L); // intervals
 			//// each customer is 323bytes so each one has an address
@@ -241,25 +304,26 @@ long search() // todo fix
 		}
 		else
 		{
+			file.close();
 			flag = true;
-			cout << "No name found..." << endl;
+			cout << "found" << endl;
+			// search loop for comparison
+			for (int i = 1; i < 5; i++) // todo fix
+			{
+				if (sName == info[i].name)
+				{
+					string v = info[i].name;
+					hadangeki = static_cast<long>(v.size());
+					pos = hadangeki;
+				}
+			}
 		}
-	}
+	} while (!file.eof()); // at end of file
 
-	// search loop for comparison
-	for (int i = 1; i < 5; i++) // todo fix
-	{
-		if (sName == info[i].name)
-		{
-			string v = info[i].name;
-			hadangeki = static_cast<long>(v.size());
-			pos = hadangeki;
-		}
-	}
-
-	//close the files
+	//close the file
 	file.close();
 
+	cout << pos;
 	return pos; // returns that long
 }
 
