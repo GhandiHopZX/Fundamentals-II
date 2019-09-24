@@ -91,16 +91,16 @@ int main() //Christina Camacho
 			cout << "Display a record. " << endl;
 			cout << "---------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
 			//call the position in the search function
-			fp = search();
+			 search();
 			//if the file found then display it
-			if (fp != -1)
-			{
-				display(fp);//call display function
-			}
+			//if (fp != -1)
+			//{
+			//	display(fp);//call display function
+			//}
 			//Otherwise throw an error
-			else
+			/*else
 				cout << "Record not found" << endl;
-			break;
+			break;*/
 			//case 3:
 				//deleteRec(); //call delete record function
 				//search();
@@ -122,102 +122,102 @@ int main() //Christina Camacho
 // *****************************************************************
 // The setInfo function write record to the file.                  *
 // *****************************************************************
-
-void setInfo(long fp)
-{
-
-	Customer info;
-	fstream custFile;
-
-	char again = 'Y';            // to or hold Y or N
-	int count = 0;
-
-	// Get the information of each customer
-
-
-
-	cout << "RECORD #: " << count + 1 << endl;
-	do
-	{
-		cout << "Please Enter Your Name: ";
-		cin.getline(info.name, SIZE);
-	} while (info.name[0] == '\0');
-
-	do
-	{
-		cout << "Please Enter Your Home Address: ";
-		cin.getline(info.address, SIZE);
-	} while (info.address[0] == '\0');
-
-	do
-	{
-		cout << "Please Enter Your City: ";
-		cin.getline(info.city, SIZE);
-	} while (info.city[0] == '\0');
-
-	do
-	{
-		cout << "Please Enter Your State: ";
-		cin.getline(info.state, SIZE);
-	} while (info.state[0] == '\0');
-
-	do
-	{
-		cout << "Please Enter Your Zip Code: ";
-		cin.getline(info.zip, SIZE);
-	} while (info.zip[0] == '\0');
-
-	do
-	{
-		cout << "Please Enter Your Telephone Number: ";
-		cin.getline(info.phone, SIZE);
-	} while (info.phone[0] == '\0');
-
-	do
-	{
-		cout << "Please Enter Your Account Balance: ";
-		cin >> info.balance;
-		// validate the account balance 
-		if (info.balance < 0)
-		{
-			cout << "Sorry, We Don't Accept Negative Value!"
-				<< "Try Again: ";
-			cin >> info.balance;
-		}
-	} while (info.balance == '\0');
-
-	cin.ignore();
-
-	do
-	{
-		cout << "Please Enter Date of Your Last Payment: ";
-		cin.getline(info.lastPay, SIZE);
-	} while (strlen(info.lastPay) == '\0');
-
-	if (rnew)
-	{
-		custFile.open("customer.dat", ios::out | ios::app | ios::binary);
-	}
-	else if (mod)
-	{
-		custFile.open("customer.dat", ios::in | ios::out | ios::binary);
-		custFile.seekp(fp, ios::beg);
-	}
-	cout << endl;
-	cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
-	custFile.write(reinterpret_cast<char*>(&info), sizeof(info));
-
-	cout << "Do you want to add another record? \n"
-		<< " Press Y for yes and N for no: ";
-	cin.get(again);
-
-	cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
-	count++;
-
-
-	custFile.close();
-
-}
+//
+//void setInfo(long fp)
+//{
+//
+//	Customer info;
+//	fstream custFile;
+//
+//	char again = 'Y';            // to or hold Y or N
+//	int count = 0;
+//
+//	// Get the information of each customer
+//
+//
+//
+//	cout << "RECORD #: " << count + 1 << endl;
+//	do
+//	{
+//		cout << "Please Enter Your Name: ";
+//		cin.getline(info.name, SIZE);
+//	} while (info.name[0] == '\0');
+//
+//	do
+//	{
+//		cout << "Please Enter Your Home Address: ";
+//		cin.getline(info.address, SIZE);
+//	} while (info.address[0] == '\0');
+//
+//	do
+//	{
+//		cout << "Please Enter Your City: ";
+//		cin.getline(info.city, SIZE);
+//	} while (info.city[0] == '\0');
+//
+//	do
+//	{
+//		cout << "Please Enter Your State: ";
+//		cin.getline(info.state, SIZE);
+//	} while (info.state[0] == '\0');
+//
+//	do
+//	{
+//		cout << "Please Enter Your Zip Code: ";
+//		cin.getline(info.zip, SIZE);
+//	} while (info.zip[0] == '\0');
+//
+//	do
+//	{
+//		cout << "Please Enter Your Telephone Number: ";
+//		cin.getline(info.phone, SIZE);
+//	} while (info.phone[0] == '\0');
+//
+//	do
+//	{
+//		cout << "Please Enter Your Account Balance: ";
+//		cin >> info.balance;
+//		// validate the account balance 
+//		if (info.balance < 0)
+//		{
+//			cout << "Sorry, We Don't Accept Negative Value!"
+//				<< "Try Again: ";
+//			cin >> info.balance;
+//		}
+//	} while (info.balance == '\0');
+//
+//	cin.ignore();
+//
+//	do
+//	{
+//		cout << "Please Enter Date of Your Last Payment: ";
+//		cin.getline(info.lastPay, SIZE);
+//	} while (strlen(info.lastPay) == '\0');
+//
+//	if (rnew)
+//	{
+//		custFile.open("customer.dat", ios::out | ios::app | ios::binary);
+//	}
+//	else if (mod)
+//	{
+//		custFile.open("customer.dat", ios::in | ios::out | ios::binary);
+//		custFile.seekp(fp, ios::beg);
+//	}
+//	cout << endl;
+//	cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
+//	custFile.write(reinterpret_cast<char*>(&info), sizeof(info));
+//
+//	cout << "Do you want to add another record? \n"
+//		<< " Press Y for yes and N for no: ";
+//	cin.get(again);
+//
+//	cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
+//	count++;
+//
+//
+//	custFile.close();
+//
+//}
 //
 //// *****************************************************************
 //// The display function displays a single record.                  *
@@ -294,12 +294,12 @@ long search()
 	file.read(reinterpret_cast<char*>(&reader), sizeof(reader));
 
 	// hadangeki copys from the input that is converted to bytes
-	long hadangeki = static_cast<long>(sName.size());
+	//long hadangeki = static_cast<long>(sName.size());
 
 	while (!file.eof())
 	{
 		// address
-		if (pos != hadangeki)
+		if (pos != sName)
 		{
 			info[element] = reader;
 			element++;
@@ -329,18 +329,19 @@ long search()
 			flag = true;
 			std::cout << "found" << endl;
 			// search loop for comparison
-			for (int i = 1; i < 5; i++) // todo
+			
+		}
+		for (int i = 1; i < 5; i++) // todo
+		{
+			if (sName == info[i].name)
 			{
-				if (sName == info[i].name)
-				{
-					string v = info[i].name;
-					// only add the below if the returned position isn't what you needed...
-					// Honestly I need to know where that position is everytime I close the file
-					// do I need to go back or stop after reading where I left off?
-					/*
-					hadangeki = static_cast<long>(v.size());
-					pos = hadangeki;*/
-				}
+				string v = info[i].name;
+				// only add the below if the returned position isn't what you needed...
+				// Honestly I need to know where that position is everytime I close the file
+				// do I need to go back or stop after reading where I left off?
+				/*
+				hadangeki = static_cast<long>(v.size());
+				pos = hadangeki;*/
 			}
 		}
 	}
@@ -379,75 +380,75 @@ long search()
 // *****************************************************************
 // The showAll function shows all the customer records.            *
 // *****************************************************************
-void showAll(Customer c[])    //christion butterworth
-{
-	fstream file("custFile.dat", ios::out | ios::binary);
-	fstream fileTemp("tempFile.dat", ios::out | ios::binary);
-
-	for (int x = 0; x < CUSTSIZE; x++)
-	{
-		cout << "All Customer Accounts\n";
-		cout << "Name: " << c[x].name << endl;
-		cout << "Address: " << c[x].address << endl;
-		cout << "City and State:  " << c[x].state << c[x].city << endl;
-		cout << "Zip: " << c[x].zip << endl;
-		cout << "Phone Number : " << c[x].phone << endl;
-		cout << "Current Balance : " << c[x].balance << endl;
-		cout << "Last Payment : " << c[x].lastPay << endl;
-	}
-
-	//close the files
-	fileTemp.close();
-	file.close();
-}
-
-// *****************************************************************
-// This function marks a record for deletion by placing            *
-// the null terminator at the beginning of the name member.        *
-// The contents of the file are then copied to a temporary file,   *
-// then the temporary file is copied back to the Customer file     *
-// -- without the deleted record.                                  *
-// Ideally, this function would be expanded to allow multiple      *
-// record deletions before the final file swap takes place.        *
-// *****************************************************************
-void deleteRec(long fp)    // Jeremy Laney
-{
-	Customer cust;
-
-	//open customer file for both output and input data
-	custFile.open("custFile.dat", ios::out | ios::in | ios::binary);
-	// test to ensure file opened
-	if (custFile.fail())
-	{
-		cout << "/Error! Unable to open file.";
-		custFile.close();
-		return;
-	}
-
-	custFile.seekp(fp, ios::beg);
-	// place a null terminator to the beginning of the name member searched for
-	strcpy_s(cust.name, "\0");
-	custFile.write(reinterpret_cast<char*>(&cust), sizeof(cust));
-	custFile.close();
-	custFile.open("custFile.dat", ios:: in | ios :: binary);
-	tempFile.open("tempFile.dat", ios:: out | ios::binary);
-
-	custFile.read(reinterpret_cast<char*>(&cust), sizeof(cust));
-
-
-
-
-	////char again;            // to or hold Y or N
-	//do
-	//{
-	//    pos = search();
-	//    cout << "Do you want to delete another record? " << endl;
-	//    cin >> again;
-	//} while (again == 'Y' || again == 'y');
-
-	// close the files
-	custFile.close();
-	tempFile.close();
-}
-
-
+//void showAll(Customer c[])    //christion butterworth
+//{
+//	fstream file("custFile.dat", ios::out | ios::binary);
+//	fstream fileTemp("tempFile.dat", ios::out | ios::binary);
+//
+//	for (int x = 0; x < CUSTSIZE; x++)
+//	{
+//		cout << "All Customer Accounts\n";
+//		cout << "Name: " << c[x].name << endl;
+//		cout << "Address: " << c[x].address << endl;
+//		cout << "City and State:  " << c[x].state << c[x].city << endl;
+//		cout << "Zip: " << c[x].zip << endl;
+//		cout << "Phone Number : " << c[x].phone << endl;
+//		cout << "Current Balance : " << c[x].balance << endl;
+//		cout << "Last Payment : " << c[x].lastPay << endl;
+//	}
+//
+//	//close the files
+//	fileTemp.close();
+//	file.close();
+//}
+//
+//// *****************************************************************
+//// This function marks a record for deletion by placing            *
+//// the null terminator at the beginning of the name member.        *
+//// The contents of the file are then copied to a temporary file,   *
+//// then the temporary file is copied back to the Customer file     *
+//// -- without the deleted record.                                  *
+//// Ideally, this function would be expanded to allow multiple      *
+//// record deletions before the final file swap takes place.        *
+//// *****************************************************************
+//void deleteRec(long fp)    // Jeremy Laney
+//{
+//	Customer cust;
+//
+//	//open customer file for both output and input data
+//	custFile.open("custFile.dat", ios::out | ios::in | ios::binary);
+//	// test to ensure file opened
+//	if (custFile.fail())
+//	{
+//		cout << "/Error! Unable to open file.";
+//		custFile.close();
+//		return;
+//	}
+//
+//	custFile.seekp(fp, ios::beg);
+//	// place a null terminator to the beginning of the name member searched for
+//	strcpy_s(cust.name, "\0");
+//	custFile.write(reinterpret_cast<char*>(&cust), sizeof(cust));
+//	custFile.close();
+//	custFile.open("custFile.dat", ios:: in | ios :: binary);
+//	tempFile.open("tempFile.dat", ios:: out | ios::binary);
+//
+//	custFile.read(reinterpret_cast<char*>(&cust), sizeof(cust));
+//
+//
+//
+//
+//	////char again;            // to or hold Y or N
+//	//do
+//	//{
+//	//    pos = search();
+//	//    cout << "Do you want to delete another record? " << endl;
+//	//    cin >> again;
+//	//} while (again == 'Y' || again == 'y');
+//
+//	// close the files
+//	custFile.close();
+//	tempFile.close();
+//}
+//
+//
