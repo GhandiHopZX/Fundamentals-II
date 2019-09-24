@@ -18,7 +18,6 @@ Showall  Christion
 #include <string>
 #include <fstream>
 #include <iomanip>
-#include <ctype.h>
 using namespace std;
 
 
@@ -61,182 +60,157 @@ int main() //Christina Camacho
 
 	//calls structure into the main function
 	Customer info[SIZE];
-	cout << "*****************************************************************" << endl;
-	cout << "                         CUSTOMER ACCOUNTS                       " << endl;
-	cout << "                        By: THE TERMINATORS					  " << endl;
-	cout << "						 MODDED alpha BY ZERO					  " << endl;
-	cout << "*****************************************************************" << endl << endl;
+	std::cout << "*****************************************************************" << endl;
+	std::cout << "                         CUSTOMER ACCOUNTS                       " << endl;
+	std::cout << "                        By: THE TERMINATORS                      " << endl;
+	std::cout << "*****************************************************************" << endl << endl;
 
 	int choice = 0;
 	//enter choice
-	cout << "The following program allows you to alter Customer Account information." << endl;
-	cout << "To write a record to a file select 1." << endl;
-	cout << "Test Sol's function 2." << endl; // even tho mine is better >)
-	//cout << "To display a record of your choice select 2." << endl;
-	cout << "To delete a record select 3. " << endl;
-	cout << "To show all records select 4." << endl;
-	cout << "Select 5 to quit the program." << endl << endl;
-
-	cin >> choice; // user input
+	std::cout << "The following program allows you to alter Customer Account information." << endl;
+	std::cout << "To write a record to a file select 1." << endl;
+	std::cout << "To display a record of your choice select 2." << endl;
+	std::cout << "To delete a record select 3. " << endl;
+	std::cout << "To show all records select 4." << endl;
+	std::cout << "Select 5 to quit the program." << endl << endl;
 
 	while (choice != 5)
 	{
 		switch (choice) {
 		case 1:
-			//setInfo(); //write a record to a file
+			search;//write a record to a file
 			break;
 		case 2:
-			search();//display(info);//call display function
+			display(info);//call display function
 			break;
 		case 3:
-			//deleteRec(); //call delete record function
+			//deleteRec(search); //call delete record function
 			break;
 		case 4:
 			//showAll(); //call show all function
 			break;
 		}
 		//Option to request that a person write a record first or to return an error message is no records exists
-		cout << "What is your selection now?" << endl;
-		cout << "To write a record to a file select 1." << endl;
-		cout << "To display a record of your choice select 2." << endl;
-		cout << "To delete a record select 3. " << endl;
-		cout << "To show all records select 4." << endl;
-		cout << "Select 5 to quit the program." << endl << endl;
+		std::cout << "What is your selection now?" << endl;
+		std::cout << "To write a record to a file select 1." << endl;
+		std::cout << "To display a record of your choice select 2." << endl;
+		std::cout << "To delete a record select 3. " << endl;
+		std::cout << "To show all records select 4." << endl;
+		std::cout << "Select 5 to quit the program." << endl << endl;
 	}
+
+
 
 	return 0;
 }
 
+
 // *****************************************************************
 // The setInfo function write record to the file.                  *
 // *****************************************************************
-
-void setInfo(long& fp)
+void setInfo(long fp)
 {
-	//add null terminator to the set info null terminator is like setfocus for data files. You can put the cursor of a specific point in the file.
+	Customer info[SIZE];
+	fstream custFile;
+	custFile.open("customer.dat", ios::out | ios::binary);
 
-	Customer info[CUSTSIZE];
-	
-	custFile.open("custFile.dat", ios::out | ios::binary);
-	if
-		(custFile.read(reinterpret_cast<char*>(&info), sizeof(info)));
-	do
-	{
-		rnew = false;
-		//check for available record
-		while (!custFile.eof() && !rnew)
-		{
-			//check availability
-			if (strlen(info->name) == 0)
-				//int byteNum;
-				//move back to the beginning of the current record
-				custFile.seekg(isleadbyte(-1), ios::cur); //byteNum
-			//set rnew to true to exit while loop
-			rnew = true;
-		}
-		if (!rnew)
-		{
-			//read the next record to continue while loop
-			custFile.read(reinterpret_cast<char*>(&info, sizeof(info));
-		}
-	}//end of while;
-	while (custFile.eof());
-
-		// Get the information of each customer
+	// Get the information of each customer
 	for (int count = 0; count < CUSTSIZE; count++)
 	{
-		cout << "Please Enter Your Name: ";
-		do { //will repeat until the correct information is provided
-			cin >> info[count].name;
-		} while (info[count].name[0] == '\0'); //while choice is null repeat
 
-		//Another way to avoid null values
-		cout << "Please Enter Your Home Address: ";
-		cin >> info[count].address;
-		while (strlen(info[count].address) == 0)
-		{
-			cout << "Address can not be empty" << endl;
-			cout << "Re-Enter Address:";
-			cin >> info[count].address;
-		}
-
-		cout << "Please Enter Your City: ";
-		cin >> info[count].city;
-		cout << "Please Enter Your State: ";
-		cin >> info[count].state;
-		cout << "Please Enter Your Zip Code: ";
-		cin >> info[count].zip;
-		cout << "Zip code must be 5 numbers. Please try again." << endl;
-		cout << "Please Enter Your Telephone Number: ";
-		cin >> info[count].phone;
-		cout << "Please Enter Your Account Balance: ";
-
-		cin >> info[count].balance;
-		// validate the account balance 
-		if (info[count].balance < 0)
-		{
-			cout << "Sorry, We Don't Accept Negative Value!"
-				<< "Try Again: ";
-			cin >> info[count].balance;
-			//alternative code
-			//info[count].balance=atof(info[count]String.c_str());
-			//research this later
-		}
-		else
-		{
-			cin >> info[count].balance;
-		}
-		cout << "Please Enter Date of Your Last Payment: ";
-		cin >> info[count].lastPay;
-		cout << endl;
-		cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
-		char again;            // to or hold Y or N
 		do
 		{
-			fp = search(); ///pos
-			cout << "Do you want to add another record? " << endl;
-			cin >> again;
-			setInfo(search());
-		} while (again == 'Y' || again == 'y');
+			std::cout << "Please Enter Your Name: ";
+			cin.getline(info[count].name, SIZE);
+		} while (info[count].name[0] == '\0');
 
+		do
+		{
+			std::cout << "Please Enter Your Home Address: ";
+			cin.getline(info[count].address, SIZE);
+		} while (info[count].address[0] == '\0');
+
+		do
+		{
+			std::cout << "Please Enter Your City: ";
+			cin.getline(info[count].city, SIZE);
+		} while (info[count].city[0] == '\0');
+
+		do
+		{
+			std::cout << "Please Enter Your State: ";
+			cin.getline(info[count].state, SIZE);
+		} while (info[count].state[0] == '\0');
+
+		do
+		{
+			std::cout << "Please Enter Your Zip Code: ";
+			cin.getline(info[count].zip, SIZE);
+		} while (info[count].zip[0] == '\0');
+
+		do
+		{
+			std::cout << "Please Enter Your Telephone Number: ";
+			cin.getline(info[count].phone, SIZE);
+		} while (info[count].phone[0] == '\0');
+
+		do
+		{
+			std::cout << "Please Enter Your Account Balance: ";
+			cin >> info[count].balance;
+			// validate the account balance 
+			if (info[count].balance < 0)
+			{
+				std::cout << "Sorry, We Don't Accept Negative Value!"
+					<< "Try Again: ";
+				cin >> info[count].balance;
+			}
+		} while (info[count].balance == '\0');
+
+		cin.ignore();
+		std::cout << "Please Enter Date of Your Last Payment: ";
+		cin.getline(info[count].lastPay, SIZE);
+		std::cout << endl;
+		std::cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
 		custFile.write(reinterpret_cast<char*>(&info), sizeof(info));
+
 	}
 	custFile.close();
 }
 
-
-// *****************************************************************
-// The display function displays a single record.                  *
-// *****************************************************************
-//void display(Customer c[])//Christina Camacho
-//	{
+//// *****************************************************************
+//// The display function displays a single record.                  *
+//// *****************************************************************
+//void display(Customer c[])//Christina Camacho // todo fix
+//{
 //	int i;
-//	int j;
 ////open file
 //	fstream file("custFile.dat", ios::out | ios::binary);
 //
-//	cout << "Display a record. " << endl;
-//cout << "---------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+//	std::cout << "Display a record. " << endl;
+//	std::cout << "---------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
 //
 //
 //
-//cout << "Select which customer record you would like to pull up by entering their First Name, Space, Last Name. For example: John Smith." << endl;
+//	std::cout << "Select which customer record you would like to pull up by entering their First Name, Space, Last Name. For example: John Smith." << endl;
 //		cin >> c[i].name;
-//		search();//call search function
-//	while([i] == [j]){
-//			cout << "Name: " << c[j].name << endl;
-//			cout << "Address: " << c[j].address << endl;
-//			cout << "City: " << c[j].city << " State: " << c[i].state
-//			<< "Zip code: " << c[j].zip << endl;
-//			cout << "Phone Number: " << c[j].phone << endl;
-//			cout << "Current Balance: " << c[j].balance << endl;
-//			cout << "Last Payment: " << c[j].lastPay << endl;
-//	}
+//		&search(position);//call search function
+//			while([i] == [j]) // todo fix
+//				std::cout << "Name: " << c[j].name << endl;
+//			std::cout << "Address: " << c[j].address << endl;
+//			std::cout << "City: " << c[j].city << " State: " << c[i].state;
+//				std:: cout << "Zip code: " << c[j].zip << endl;
+//			std::cout << "Phone Number: " << c[j].phone << endl;
+//			std::cout << "Current Balance: " << c[j].balance << endl;
+//			std::cout << "Last Payment: " << c[j].lastPay << endl;
+//
 //
 //	//close the file
 //file.close();
 //
 //}
+
+
 
 // *****************************************************************
 // The search function returns the file pointer position.          *
@@ -250,12 +224,12 @@ long search()
 
 	if (!file)
 	{
-		cout << "Melm.. The file cannot be found." << endl;
+		std::cout << "Melm.. The file cannot be found." << endl;
 	}
 
 	string sName;
-	cout << "Select which customer record you would like to pull up by" << endl;
-	cout << "entering their First Name, Space, Last Name. For example: John Smith." << endl;
+	std::cout << "Select which customer record you would like to pull up by" << endl;
+	std::cout << "entering their First Name, Space, Last Name. For example: John Smith." << endl;
 	cin >> sName;
 
 	bool flag = false; // found
@@ -269,8 +243,7 @@ long search()
 
 	file.seekg(0L, ios::beg); // to the end
 
-	
-	//file.read(reinterpret_cast<char*>(&info), sizeof(info));
+	file.read(reinterpret_cast<char*>(&reader), sizeof(reader));
 
 	// hadangeki copys from the input that is converted to bytes
 	long hadangeki = static_cast<long>(sName.size());
@@ -282,7 +255,7 @@ long search()
 		{
 			info[element] = reader;
 			element++;
-			file.read(reinterpret_cast<char*>(&reader), sizeof(reader));
+			//file.read(reinterpret_cast<char*>(&reader), sizeof(reader));
 			file.read(reinterpret_cast<char*>(&pos), sizeof(pos));
 
 			// list search for comparisons
@@ -306,7 +279,7 @@ long search()
 		{
 			file.close();
 			flag = true;
-			cout << "found" << endl;
+			std::cout << "found" << endl;
 			// search loop for comparison
 			for (int i = 1; i < 5; i++) // todo
 			{
@@ -327,7 +300,7 @@ long search()
 	//close the file
 	file.close();
 
-	cout << pos;
+	std::cout << pos;
 	return pos; // returns that long
 }
 
@@ -341,7 +314,7 @@ void showAll(Customer c[])    //christion butterworth
 
 	for (int x = 0; x < CUSTSIZE; x++)
 	{
-		cout << "All Customer Accounts\n";
+		std::cout << "All Customer Accounts\n";
 		cout << "Name: " << c[x].name << endl;
 		cout << "Address: " << c[x].address << endl;
 		cout << "City and State:  " << c[x].state << c[x].city << endl;
@@ -364,11 +337,11 @@ void showAll(Customer c[])    //christion butterworth
 // -- without the deleted record.                                  *
 // Ideally, this function would be expanded to allow multiple      *
 // record deletions before the final file swap takes place.        *
-// *****************************************************************
-void deleteRec(long fp)    // Jeremy Laney
-{
-	custFile.open("customer.txt", ios::out | ios::in | ios::binary);
-	string name;    // variable to hold name
-	Customer tempInfo[SIZE];
-	cout << "Please enter the customer or customers name whose file you would like to delete: " << endl;
-}
+//// *****************************************************************
+//void deleteRec(long fp)    // Jeremy Laney
+//{
+//	custFile.open("customer.txt", ios::out | ios::in | ios::binary);
+//	string name;    // variable to hold name
+//	Customer tempInfo[SIZE];
+//	std::cout << "Please enter the customer or customers name whose file you would like to delete: " << endl;
+//}
