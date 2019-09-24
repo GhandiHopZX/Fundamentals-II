@@ -103,7 +103,7 @@ int main() //Christina Camacho
 
 	return 0;
 }
-
+// OREH
 
 // *****************************************************************
 // The setInfo function write record to the file.                  *
@@ -219,8 +219,8 @@ long search()
 {
 	Customer info[CUSTSIZE];
 	Customer reader;
-    fstream file("custFile.dat", ios::out | ios::binary);
-	file.open( "custFile.dat", ios::out | ios::binary );
+    fstream file("custFile.dat", ios::in | ios::binary);
+	file.open( "custFile.dat", ios::in | ios::binary );
 
 	if (!file)
 	{
@@ -241,14 +241,14 @@ long search()
 
 	//string tIndex[CUSTSIZE]; // terminator Index
 
-	file.seekg(0L, ios::beg); // to the end
+	file.seekg(0L, ios::end); // to the end
 
 	file.read(reinterpret_cast<char*>(&reader), sizeof(reader));
 
 	// hadangeki copys from the input that is converted to bytes
 	long hadangeki = static_cast<long>(sName.size());
 
-	do
+	while (!file.eof()) 
 	{
 		// address
 		if (pos != hadangeki)
@@ -291,11 +291,11 @@ long search()
 					// do I need to go back or stop after reading where I left off?
 					/*
 					hadangeki = static_cast<long>(v.size());
-					pos = hadangeki;*/ 
+					pos = hadangeki;*/
 				}
 			}
 		}
-	} while (!file.eof()); // at end of file
+	}
 
 	//close the file
 	file.close();
