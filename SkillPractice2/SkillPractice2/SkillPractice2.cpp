@@ -14,7 +14,7 @@ using namespace std;
 // Function declarations
 int getMedian(int*, int);
 int* arrayAllocator(int);
-void X();
+void x();
 
 int main()
 {
@@ -31,7 +31,6 @@ int main()
 	// and even
 	int theMedeven = getMedian(even, 8);
 
-	/*X();*/
 
 	//	Make sure we place the end message on a new line
 	cout << endl;
@@ -51,7 +50,7 @@ int main()
 // an array of ints on the number passed in, returns a pointer to the 
 // array
 
-void X()
+void x()
 {
 	cout << setprecision(2) << endl;
 	//	Your code goes here
@@ -107,7 +106,7 @@ int getMedian(int* array0, int size)
 
 	//median equations
 	median = pointer[count] / 2;
-	median2 = (pointer[count] / 2) + 2;
+	median2 = (pointer[count] / 2) + 1;
 	median3 = (median + median2) / 2;
 
 	cout << " Here is the Median " << median << endl;
