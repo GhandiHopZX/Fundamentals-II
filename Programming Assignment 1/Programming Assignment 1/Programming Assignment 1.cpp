@@ -241,8 +241,8 @@ void setInfo(long fp)
 			cout << "Sorry, We Don't Accept Negative Value!\n"
 				<< "Try Again: ";
 			cin >> info.balance;
-			break;
 		}
+		break;
 	} while (info.balance == '\0');
 
 	cin.ignore();
