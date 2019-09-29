@@ -241,8 +241,8 @@ void setInfo(long fp)
 			cout << "Sorry, We Don't Accept Negative Value!\n"
 				<< "Try Again: ";
 			cin >> info.balance;
+			break;
 		}
-		break;
 	} while (info.balance == '\0');
 
 	cin.ignore();
@@ -278,10 +278,8 @@ void setInfo(long fp)
 	{
 		cout << "Record Successed\n";
 	}
-
 	// close the file
 	custFile.close();
-
 }
 
 // *****************************************************************
@@ -304,7 +302,6 @@ void display(long fp)//Christina Camacho // todo fix
 		cout << "\nFile is empty.";
 		custFile.close();
 		return;
-
 	}
 
 	//search through the file
@@ -409,11 +406,13 @@ void showAll()    //christion butterworth
 // *****************************************************************
 void deleteRec(long fp)    // Jeremy Laney
 {
-	Customer cust;
-	//long ps = fp + sizeof(cust);
+	// variable declaration
+	Customer cust;    // hold customer record of type customer
+
 	//open customer file for both output and input data
 	custFile.open("customer.dat", ios::out | ios::in | ios::binary);
-	// test to ensure file opened
+
+	// test to ensure file open
 	if (custFile.fail())
 	{
 		cout << "/Error! Unable to open file.";
@@ -423,47 +422,44 @@ void deleteRec(long fp)    // Jeremy Laney
 
 	// place a null terminator to the beginning of the name member searched for
 	strcpy_s(cust.name, "\0"); //null terminator write to a cust.name in the file position
+
 	//write to this position from the beginning
 	custFile.seekg(fp, ios::beg);
-
 	//null terminator (c name) being placed
 	custFile.write(reinterpret_cast<char*>(&cust), sizeof(cust));
 	custFile.close();
 
-	custFile.open("customer.dat", ios::in | ios::binary);//reading from the main file
-	tempFile.open("temporary.dat", ios::out | ios::binary);//writing to the temp  file
-
-	// swap the cust into the temp file
-	custFile.read(reinterpret_cast<char*>(&cust), sizeof(cust));
+	// open to swap from customer to temporary file
+	custFile.open("customer.dat", ios::in | ios::binary);//reading from the cust file
+	tempFile.open("temporary.dat", ios::out | ios::binary);//writing to the temp  fil
+	// swap the customer into the temporary file
 	while (custFile.peek() != EOF)
 	{
 		custFile.read(reinterpret_cast<char*>(&cust), sizeof(cust));
 		tempFile.write(reinterpret_cast<char*>(&cust), sizeof(cust));
 	}
+	// close both file to open again
 	custFile.close();
 	tempFile.close();
 
+	// open to swap from temporary file back into customer file
 	tempFile.open("temporary.dat", ios::in | ios::binary);
 	custFile.open("customer.dat", ios::out | ios::binary | ios::trunc);
-
-
-	// swap the temp back to cust fill
+	// swap the temporary back into customer file
 	tempFile.read(reinterpret_cast<char*>(&cust), sizeof(cust));
-	while (!tempFile.eof())
+	while (!tempFile.eof())        // while not at the end of file
 	{
+		// if not null terminator
 		if (cust.name[0] != '\0')
 		{
+			// write back into customer file
 			custFile.write(reinterpret_cast<char*>(&cust), sizeof(cust));
 		}
 		tempFile.read(reinterpret_cast<char*>(&cust), sizeof(cust));
 	}
 
+	// close both files
 	custFile.close();
 	tempFile.close();
 	cout << "Delete Success !!\n";
 }
-
-
-
-
-
