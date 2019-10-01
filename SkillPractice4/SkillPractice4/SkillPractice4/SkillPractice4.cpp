@@ -1,8 +1,12 @@
 /******************************
    Solomon Pattee
-   9/30/2019
+   10/1/2019
    SkillPractice4.cpp
-   Description
+   This program takes in three test scores 
+   and outputs the average
+   into the console 
+   utilizing a class call and its 
+   functions.
 *******************************/
 
 #include <iostream>
