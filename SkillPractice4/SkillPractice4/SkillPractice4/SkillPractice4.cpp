@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <string>
 #include <fstream>
+#include "testScores.h"
 
 using namespace std;
 
