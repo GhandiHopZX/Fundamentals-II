@@ -22,7 +22,6 @@ const int NUM_TESTS = 3;
 
 // test objects
 
-
 int main()
 {
 	// variables
@@ -30,6 +29,9 @@ int main()
 
 	// total scores
 	int total;
+
+	// test instantiation
+	/*testScores test(NUM_TESTS);*/
 
 	// Integers for tests to take in
 	cout << "Enter the first test score: " << endl;
@@ -40,6 +42,16 @@ int main()
 	
 	cout << "Enter the third test score: " << endl;
 	cin >> t3;
+
+	// test 
+	testScores test(t1, t2, t3);
+
+	// outputting the test scores
+	total = test.averageOut();
+
+	// formatting
+	cout << endl;
+	cout << "Here is the Average of the three test scores: " << total;
 
 	//	Make sure we place the end message on a new line
 	cout << endl;

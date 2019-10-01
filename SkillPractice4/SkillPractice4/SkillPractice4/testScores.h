@@ -8,8 +8,9 @@ private:
 	int scores;		// number of scores
 
 public:
-	testScores();
+	testScores(int m);
 	testScores(int t1, int t2, int t3);
+	int averageOut();
 	~testScores();
 
 protected:
