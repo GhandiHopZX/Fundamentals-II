@@ -152,6 +152,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="SkillPractice4.cpp" />
+    <ClCompile Include="testScores.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="testScores.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

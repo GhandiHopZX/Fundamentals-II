@@ -13,26 +13,9 @@
 using namespace std;
 
 // Global variables
-// Test scores
-class testS 
-{
-	private:
 
-	public:
-		testS ();
-		~testS ();
-	
-	protected:
-
-};
-
-testS ::testS ()
-{
-}
-
-testS ::~testS ()
-{
-}
+// constants 
+const int NUM_TESTS = 3;
 
 // Function declarations
 
@@ -40,6 +23,18 @@ int main()
 {
 	//	Your code goes here
 
+	// variables
+	int t1, t2, t3;
+
+	// Integers for tests to take in
+	cout << "Enter the first test score: " << endl;
+	cin >> t1;
+
+	cout << "Enter the second test score: " << endl;
+	cin >> t2;
+	
+	cout << "Enter the third test score: " << endl;
+	cin >> t3;
 
 	//	Make sure we place the end message on a new line
 	cout << endl;
