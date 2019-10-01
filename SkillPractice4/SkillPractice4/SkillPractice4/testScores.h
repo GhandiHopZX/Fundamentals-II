@@ -12,7 +12,6 @@ public:
 	testScores(int t1, int t2, int t3);
 	~testScores();
 
-
 protected:
 
 };

@@ -21,10 +21,11 @@ const int NUM_TESTS = 3;
 
 int main()
 {
-	//	Your code goes here
-
 	// variables
 	int t1, t2, t3;
+
+	// total scores
+	int total;
 
 	// Integers for tests to take in
 	cout << "Enter the first test score: " << endl;

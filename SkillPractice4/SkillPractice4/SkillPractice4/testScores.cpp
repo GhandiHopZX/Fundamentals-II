@@ -1,5 +1,4 @@
-#include <cstdlib>			// for the rand and srand
-#include <ctime>			// for the time function
+// testscores here
 #include "testScores.h"
 
 using namespace std;
