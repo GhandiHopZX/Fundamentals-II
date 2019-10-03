@@ -1,36 +1,37 @@
 #pragma once
 // specs for the class
-#ifndef Surgery
-#define Surgery
+#ifndef Surgery_H
+#define Surgery_H
 
 class Surgery
 {
 
 private:
 
-	const double knee_Surgery = 100.00;
-	const double back_Surgery = 200.00;
-	const double heart_Surgery = 300.00;
-	const double brain_Surgery = 400.00;
-	const double eyeball_Surgery = 500.00;
-	const double none = 0.00;
+	 double kneeSurgery = 100.00;
+	 double backSurgery = 200.00;
+	 double heartSurgery = 300.00;
+	 double brainSurgery = 400.00;
+	 double eyeballSurgery = 500.00;
+	 double no = 0.00;
 
 public:
 
 	Surgery();
-	~Surgery();
 
-	knee();
+	double knee();
 
-	back();
+	double back();
 
-	heart();
+	double heart();
 
-	brain();
+	double brain();
 
-	eyeBall();
+	double eyeBall();
 
-	none();
+	double none();
+
+	double surgeryCharge(int);
 
 };
 #endif // !Surgery

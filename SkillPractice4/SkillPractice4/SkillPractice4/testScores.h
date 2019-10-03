@@ -8,6 +8,7 @@ private:
 	int scores;		// number of scores
 
 public:
+	// these are alike prototypes
 	testScores(int m);
 	testScores(int t1, int t2, int t3);
 	int averageOut();
