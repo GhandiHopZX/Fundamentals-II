@@ -16,7 +16,7 @@ using namespace std;
 int getSurgeryType();
 int getMedicationType();
 
-int main() // Christion butterworth
+int main() // Christion Butterworth
 {
 	//variable declaration for everything used in program c.b
 	int days;            // hold number of days stay at the hospital
