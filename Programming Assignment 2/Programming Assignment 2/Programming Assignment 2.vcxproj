@@ -151,10 +151,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="PatientAccount.cpp" />
+    <ClCompile Include="Pharmacy.cpp" />
     <ClCompile Include="Surgery.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="PatientAccount.h" />
+    <ClInclude Include="Pharmacy.h" />
     <ClInclude Include="Surgery.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,8 +1,8 @@
 // Christina Camacho
 #pragma once
 // specification file for the PATIENT ACCOUNT class
-#ifndef PatientAccount_h
-#define PatientAccount_h
+#ifndef PatientAccount_H
+#define PatientAccount_H
 
 class PatientAccount
 {
@@ -35,3 +35,4 @@ public:
 	void setTotalCharges(double sc, double pc, double dc);
 
 };
+#endif

@@ -32,9 +32,9 @@ int main() // Christion butterworth
 	PatientAccount patient;     // patient of patient account class
 
 	// display
-	cout << endl;
+	cout << endl
 	<< "||Welcome to a VERY NORMAL Hospital!?!||\n"
-		<< "(we'll try not to 'cure' (oops!) kill you (*v*) \n";
+		<< "(we'll try to 'kill' (oops!) cure you (*v*) \n";
 	cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n";
 
 	// for surgery
@@ -72,9 +72,9 @@ int getSurgeryType()    //Jeremy Laney
 	cout << "Please select the surgery provided from the following list: " << endl
 		<< "1. Knee Surgery        = $100.00" << endl
 		<< "2. Back surgery        = $200.00" << endl
-		<< "3. Heart Surgery    = $300.00" << endl
-		<< "4. Brain surgery    = $400.00" << endl
-		<< "5. Eyeball surgery    = $500.00" << endl
+		<< "3. Heart Surgery	   = $300.00" << endl
+		<< "4. Brain surgery	   = $400.00" << endl
+		<< "5. Eyeball surgery     = $500.00" << endl
 		<< "6. None: For Those Who Don't Want to Risk Their Life " << endl << endl
 		<< "Please Select (1-6): ";
 	// get user input
@@ -102,11 +102,11 @@ int getMedicationType()    // Jeremy Laney
 	// display menu for user to select from
 	cout << "------------------------------------------------------------\n";
 	cout << "Please select medication from the following list: " << endl
-		<< "1. OxyContin            = $100.00" << endl
-		<< "2. Morphine            = $200.00" << endl
-		<< "3. Aspirin            = $400.00" << endl
-		<< "4. Memory Medication        = $500.00" << endl
-		<< "5. Glasses            = $600.00" << endl
+		<< "1. OxyContin			  = $100.00" << endl
+		<< "2. Morphine				  = $200.00" << endl
+		<< "3. Aspirin				  = $400.00" << endl
+		<< "4. Memory Medication      = $500.00" << endl
+		<< "5. Glasses				  = $600.00" << endl
 		<< "6. None: For Those Who Don't Want to Risk Their Life" << endl << endl
 		<< "Please Select (1-6): ";
 	cin >> choice;

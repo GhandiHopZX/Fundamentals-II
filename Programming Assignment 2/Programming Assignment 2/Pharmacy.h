@@ -1,19 +1,19 @@
 // Sao Nguyen
 #pragma once
 // specification file for the Pharmacy class
-#ifndef Pharmacy_H
-#define Pharmacy_H
+#ifndef PHARMACY_H
+#define PHARMACY_H
 
 class Pharmacy
 {
 private:
 	// variables
-	double oxyCotin;
-	double morphine;
-	double aspirin;
-	double memoryMedication;
-	double glasses;
-	double no;
+	double oxyContin = 100.00;
+	double morphine = 200.00;
+	double aspirin = 400.00;
+	double memoryMedication = 500.00;
+	double glasses = 600.00;
+	double no = 0.00;
 
 public:
 	// constructor

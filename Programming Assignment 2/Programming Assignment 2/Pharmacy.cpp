@@ -6,15 +6,11 @@
 #include "Pharmacy.h"
 
 using namespace std;
+
 // constructor don't accept arguement
 Pharmacy::Pharmacy()
 {
-	oxyContin = 100.00;
-	morphine = 200.00;
-	aspirin = 400.00;
-	memoryMedication = 500.00;
-	glasses = 600.00;
-	no = 0.00;
+	
 }
 
 
