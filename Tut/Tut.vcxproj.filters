@@ -18,5 +18,8 @@
     <ClCompile Include="Tut.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Zero.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
