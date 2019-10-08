@@ -9,41 +9,46 @@
 //Surgery::none() 
 using namespace std;
 
+// implementations for all the surgeries
+
+// constructor
 Surgery::Surgery()
 {
 
 }
 
+// knee surgery
 double Surgery::knee()
 {
 	return kneeSurgery;
 }
-
+// Back surgery
 double Surgery::back()
 {
 	return backSurgery;
 }
-
+// heart surgery
 double Surgery::heart()
 {
 	return heartSurgery;
 }
-
+// brain surgery
 double Surgery::brain()
 {
 	return brainSurgery;
 }
-
+// eyeBall surgery
 double Surgery::eyeBall()
 {
 	return eyeballSurgery;
 }
-
+// no surgery selected
 double Surgery::none()
 {
 	return no;
 }
 
+// return values for the case function in main
 double Surgery::surgeryCharge(int choice)
 {
 	switch (choice)
