@@ -1,28 +1,17 @@
 #pragma once
-// specification file for the Die class
-
+// specification file for the die class
 #ifndef DIE_H
 #define DIE_H
-
 class Die
 {
-public:
-	/*Die();*/
-	/*~Die();*/
-
 private:
-	Die(int); // Constructor
-	void roll();
+	int sides;		// number of sides
+	int value;		// the die's values
 
-	int getSides(); // returns the number sides
-	int getValue(); // returns  the die's value
+public:
+	Die(int);			// constructor
+	void roll();		// rolls the die
+	int getSides();		// returns the number of sides
+	int getValue();		// returns the die's value
 };
-//
-//Die::Die()
-//{
-//}
-//
-//Die::~Die()
-//{
-//}
-#endif 
+#endif
