@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <iostream>
 #include <cstdlib>
 
 using namespace std;
@@ -16,14 +17,4 @@ public:
 	void print();
 	void setDay(int day) { this->day = day; }
 	
-	DayOfYear();
-	~DayOfYear();
 };
-
-DayOfYear::DayOfYear()
-{
-}
-
-DayOfYear::~DayOfYear()
-{
-}
