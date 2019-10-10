@@ -5,10 +5,7 @@ using namespace std;
 class Zero
 {
 protected:
-	struct soul
-	{
-
-	};
+	
 
 private:
 	int x = 0;
@@ -17,7 +14,10 @@ private:
 public:
 	Zero();
 	~Zero();
+	struct soul
+	{
 
+	};
 
 
 	// here are

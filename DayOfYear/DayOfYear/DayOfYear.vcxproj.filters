@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleApplication5.cpp">
+    <ClCompile Include="DayOfYear.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Die.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Die.h">
+    <ClInclude Include="DayOfYear.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
