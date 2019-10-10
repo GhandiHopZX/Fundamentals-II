@@ -14,6 +14,10 @@ string Numbers::tens[9] =
 { "ten", "twenty", "thirty", "fourty", "fifty", "sixty",
 "seventy", "eighty", "ninety" };
 
+string Numbers::hundred = "hundred";
+
+string Numbers::thousand = "thousand";
+
 
 // print functions prints the english words for the number
 
@@ -36,7 +40,7 @@ void Numbers :: print()
 
 		// take care of thousands, if any
 		int n_thousands = remainder / 1000;
-		remainder %= 100;
+		remainder %= 1000;
 		if (n_thousands > 0)
 		{
 			cout << " " << lessThan20[n_thousands];
@@ -47,7 +51,7 @@ void Numbers :: print()
 		// take care of the hundreds if any
 
 		int n_hundreds = remainder / 100;
-		
+		remainder %= 100;
 		if (n_hundreds > 0)
 		{
 			cout << " " << lessThan20[n_hundreds];

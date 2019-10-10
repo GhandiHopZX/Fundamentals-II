@@ -32,7 +32,7 @@ int main()
 	//print english description of our number
 	n.print();
 
-
+	cout << endl;
 
 	system("PAUSE");
 
