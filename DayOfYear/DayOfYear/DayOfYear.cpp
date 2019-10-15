@@ -11,6 +11,20 @@ int DayOfYear::daysAtEndOfMonth[] = { 31,59,90,120,151,181,212,243,273,304,334,3
 string DayOfYear::monthName[] = { "January", "February", "March", "April", "May",
 "June", "July", "August", "September", "October", "November", "December"};
 
+DayOfYear::DayOfYear()
+{
+
+}
+
+DayOfYear::DayOfYear(string month, int day[30])
+{ 
+	// if the day of the year is outside the range of the days of the month given 
+	if (month < day[])
+	{
+
+	}
+}
+
 // dayOfYear Print convert and print day of the year
 void ::DayOfYear::print()
 {
