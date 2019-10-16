@@ -22,6 +22,11 @@ DayOfYear::DayOfYear(string month, int day[30])
 	// day initialized by the month and day of that month
 	day[30] = {30};
 	// if the day of the year is outside the range of days then the 
+	if (day[] > 30)
+	{
+
+	}
+
 	// program should terminate
 
 	// the new value of the DayOfYear object at the end of the year will 
