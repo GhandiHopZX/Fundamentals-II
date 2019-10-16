@@ -6,7 +6,7 @@
 using namespace std;
 
 
-int DayOfYear::daysAtEndOfMonth[] = { 31,59,90,120,151,181,212,243,273,304,334,365 };
+int DayOfYear::daysAtEndOfMonth[] = { 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365 };
 
 string DayOfYear::monthName[] = { "January", "February", "March", "April", "May",
 "June", "July", "August", "September", "October", "November", "December" };
