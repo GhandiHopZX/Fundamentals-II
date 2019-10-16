@@ -18,11 +18,7 @@ DayOfYear::DayOfYear()
 
 DayOfYear::DayOfYear(string month, int day)
 { 
-	// if the day of the year is outside the range of the days of the month given 
-	if (month < day)
-	{
-
-	}
+	// if the day of the year is outside the r
 }
 
 // dayOfYear Print convert and print day of the year

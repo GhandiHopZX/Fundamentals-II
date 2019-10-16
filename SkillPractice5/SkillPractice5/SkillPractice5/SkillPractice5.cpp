@@ -1,20 +1,33 @@
-// SkillPractice5.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <cstdlib>
+#include <string>
+#include "DayOfYear.h"
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	DayOfYear dayofyearobj;
+	int day;
+
+	cout << "This program converts a number into a string representing the\n"
+		<< "" << endl;
+
+	cout << "Enter a whole number between 1 and 365: ";
+	cin >> day;
+
+	// set the day
+	dayofyearobj.setDay(day);
+
+	// display the object
+	dayofyearobj.print();
+
+	// new line
+	cout << endl;
+
+	// pause
+	system("PAUSE");
+
+	return 0;
+
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
