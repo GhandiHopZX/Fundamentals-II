@@ -13,97 +13,113 @@ string DayOfYear::monthName[] = { "January", "February", "March", "April", "May"
 
 DayOfYear::DayOfYear()
 {
-
+	
 }
 
 DayOfYear::DayOfYear(string month, int d)
 {
 	// if the day of the year is outside the last day of the month 
 	// spit out an error
-	if (daysAtEndOfMonth[day] < d)
+	int m;
+	m = (m + 1) % 12;
+
+	if (daysAtEndOfMonth[m] < d)
 	{
 		throw new exception("Cannot go outside the number of days.");
+	}
+
+	// if the day goes over the max 
+	// number of days in that month
+
+	if (d >= daysAtEndOfMonth[m])
+	{
+		for (int i = 0; i < d; i++)
+		{
+			--d;
+		}
 	}
 
 	// Setting the day of the month for the particular month
 	// If its a certain day for the month of Jan - Dec
 
-	if (d <= daysAtEndOfMonth[31])
-	{
-		month = "January";
-		setDay(d);
-	}
+	{ // day validations for the months
+		if (d <= daysAtEndOfMonth[31])
+		{
+			month = "January";
+			setDay(d);
+		}
 
-	if (d <= daysAtEndOfMonth[59])
-	{
-		month = "February";
-		setDay(d);
-	}
+		if (d <= daysAtEndOfMonth[59])
+		{
+			month = "February";
+			setDay(d);
+		}
 
-	if (d <= daysAtEndOfMonth[90])
-	{
-		month = "March";
-		setDay(d);
-	}
+		if (d <= daysAtEndOfMonth[90])
+		{
+			month = "March";
+			setDay(d);
+		}
 
-	if (d <= daysAtEndOfMonth[120])
-	{
-		month = "April";
-		setDay(d);
-	}
+		if (d <= daysAtEndOfMonth[120])
+		{
+			month = "April";
+			setDay(d);
+		}
 
-	if (d <= daysAtEndOfMonth[151])
-	{
-		month = "May";
-		setDay(d);
-	}
+		if (d <= daysAtEndOfMonth[151])
+		{
+			month = "May";
+			setDay(d);
+		}
 
-	if (d <= daysAtEndOfMonth[181])
-	{
-		month = "June";
-		setDay(d);
-	}
+		if (d <= daysAtEndOfMonth[181])
+		{
+			month = "June";
+			setDay(d);
+		}
 
-	if (d <= daysAtEndOfMonth[212])
-	{
-		month = "July";
-		setDay(d);
-	}
+		if (d <= daysAtEndOfMonth[212])
+		{
+			month = "July";
+			setDay(d);
+		}
 
-	if (d <= daysAtEndOfMonth[243])
-	{
-		month = "August";
-		setDay(d);
-	}
+		if (d <= daysAtEndOfMonth[243])
+		{
+			month = "August";
+			setDay(d);
+		}
 
-	if (d <= daysAtEndOfMonth[273])
-	{
-		month = "September";
-		setDay(d);
-	}
+		if (d <= daysAtEndOfMonth[273])
+		{
+			month = "September";
+			setDay(d);
+		}
 
-	if (d <= daysAtEndOfMonth[304])
-	{
-		month = "October";
-		setDay(d);
-	}
+		if (d <= daysAtEndOfMonth[304])
+		{
+			month = "October";
+			setDay(d);
+		}
 
-	if (d <= daysAtEndOfMonth[334])
-	{
-		month = "November";
-		setDay(d);
-	}
+		if (d <= daysAtEndOfMonth[334])
+		{
+			month = "November";
+			setDay(d);
+		}
 
-	if (d <= daysAtEndOfMonth[365])
-	{
-		month = "December";
-		setDay(d);
+		if (d <= daysAtEndOfMonth[365])
+		{
+			month = "December";
+			setDay(d);
+		}
 	}
-
+	
 }
 
 // dayOfYear Print convert and print day of the year
-void ::DayOfYear::print()
+void::DayOfYear::print()
 {
 	int month = 0;
 	while (daysAtEndOfMonth[month] < day)
