@@ -18,8 +18,9 @@ public:
 	// constructors
 	DayOfYear();
 
-	DayOfYear(string month, int day[30]); // month string and day int range 0 - 31
+	DayOfYear(string month, int);
 
+	//setters getters and mutators
 	static int daysAtEndOfMonth[];
 	static string monthName[];
 	void print();

@@ -16,25 +16,89 @@ DayOfYear::DayOfYear()
 
 }
 
-DayOfYear::DayOfYear(string month, int day[30])
+DayOfYear::DayOfYear(string month, int d)
 {
-	month;
-	// day initialized by the month and day of that month
-	day[30] = {30};
-	// if the day of the year is outside the range of days then the 
-	if (day[] > 30)
+	// if the day of the year is outside the last day of the month 
+	// spit out an error
+	if (daysAtEndOfMonth[day] < d)
 	{
-
+		throw new exception("Cannot go outside the number of days.");
 	}
 
-	// program should terminate
+	// Setting the day of the month for the particular month
+	// If its a certain day for the month of Jan - Dec
 
-	// the new value of the DayOfYear object at the end of the year will 
-	// represent a new day (or the next using the ++ operator)
+	if (d <= daysAtEndOfMonth[31])
+	{
+		month = "January";
+		setDay(d);
+	}
 
-	// -- prefix represents the previous day if the day is already the firest day of the year
-	// the new value of the object will be the last day of the year. 
+	if (d <= daysAtEndOfMonth[59])
+	{
+		month = "February";
+		setDay(d);
+	}
 
+	if (d <= daysAtEndOfMonth[90])
+	{
+		month = "March";
+		setDay(d);
+	}
+
+	if (d <= daysAtEndOfMonth[120])
+	{
+		month = "April";
+		setDay(d);
+	}
+
+	if (d <= daysAtEndOfMonth[151])
+	{
+		month = "May";
+		setDay(d);
+	}
+
+	if (d <= daysAtEndOfMonth[181])
+	{
+		month = "June";
+		setDay(d);
+	}
+
+	if (d <= daysAtEndOfMonth[212])
+	{
+		month = "July";
+		setDay(d);
+	}
+
+	if (d <= daysAtEndOfMonth[243])
+	{
+		month = "August";
+		setDay(d);
+	}
+
+	if (d <= daysAtEndOfMonth[273])
+	{
+		month = "September";
+		setDay(d);
+	}
+
+	if (d <= daysAtEndOfMonth[304])
+	{
+		month = "October";
+		setDay(d);
+	}
+
+	if (d <= daysAtEndOfMonth[334])
+	{
+		month = "November";
+		setDay(d);
+	}
+
+	if (d <= daysAtEndOfMonth[365])
+	{
+		month = "December";
+		setDay(d);
+	}
 
 }
 
