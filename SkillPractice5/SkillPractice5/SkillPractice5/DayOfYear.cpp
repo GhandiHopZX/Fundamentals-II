@@ -22,13 +22,19 @@ DayOfYear::DayOfYear(string month, int d)
 	// spit out an error
 
 	// month int
-	int m;
+	int m = 0;
 	m = (m + 1) % 12;
-
-	if (daysAtEndOfMonth[m] < d)
+	
+	try
 	{
-		throw new exception("Cannot go outside the number of days.");
+		daysAtEndOfMonth[m];
 	}
+	catch (const std::exception&)
+	{
+		if (daysAtEndOfMonth[m] < d)
+		throw std:: invalid_argument ("Cannot go outside the number of days.");
+	}
+	
 
 	// if the day goes over the max 
 	// number of days in that month
