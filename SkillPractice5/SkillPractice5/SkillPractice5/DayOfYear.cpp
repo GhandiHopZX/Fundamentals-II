@@ -20,6 +20,8 @@ DayOfYear::DayOfYear(string month, int d)
 {
 	// if the day of the year is outside the last day of the month 
 	// spit out an error
+
+	// month int
 	int m;
 	m = (m + 1) % 12;
 
@@ -33,9 +35,18 @@ DayOfYear::DayOfYear(string month, int d)
 
 	if (d >= daysAtEndOfMonth[m])
 	{
-		for (int i = 0; i < d; i++)
+		for (int i = daysAtEndOfMonth[m]; i < d; i++)
 		{
 			--d;
+		}
+	}
+
+	// and the inverse
+	if (d <= daysAtEndOfMonth[m])
+	{
+		for (int i = daysAtEndOfMonth[m]; i > d; i--)
+		{
+			d++;
 		}
 	}
 
