@@ -32,14 +32,14 @@ DayOfYear::DayOfYear(string month, int d)
 	catch (const std::exception&)
 	{
 		if (daysAtEndOfMonth[m] < d)
-		throw std:: invalid_argument ("Cannot go outside the number of days.");
+		throw invalid_argument ("Cannot go outside the number of days.");
 	}
 	
 
 	// if the day goes over the max 
 	// number of days in that month
 
-	if (d >= daysAtEndOfMonth[m])
+	if (d > daysAtEndOfMonth[m])
 	{
 		for (int i = daysAtEndOfMonth[m]; i < d; i++)
 		{
@@ -48,9 +48,9 @@ DayOfYear::DayOfYear(string month, int d)
 	}
 
 	// and the inverse
-	if (d <= daysAtEndOfMonth[m])
+	if (d <= 0)
 	{
-		for (int i = daysAtEndOfMonth[m]; i > d; i--)
+		for (int i = 1; i > d; i--)
 		{
 			d++;
 		}
