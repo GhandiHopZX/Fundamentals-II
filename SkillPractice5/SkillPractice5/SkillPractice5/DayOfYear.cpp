@@ -18,43 +18,53 @@ DayOfYear::DayOfYear()
 
 DayOfYear::DayOfYear(string month, int d)
 {
-	// if the day of the year is outside the last day of the month 
-	// spit out an error
-
 	// month int
 	int m = 0;
 	m = (m + 1) % 12;
+
+	//month
+	month = monthName[m];
 	
 	try
 	{
-		daysAtEndOfMonth[m];
+		// if the day of the year is outside the last day of the month 
+	// spit out an error
+
+	// day of the year
+
+		d = day; // put at the end of this ?
 	}
 	catch (const std::exception&)
 	{
-		if (daysAtEndOfMonth[m] < d)
-		throw invalid_argument ("Cannot go outside the number of days.");
+		if (daysAtEndOfMonth[m] < d || d <= 0) {
+			cout << "Cannot go outside the number of days.";
+
+			cout << "Terminating..." << endl;
+			throw;
+		}
 	}
 	
-
 	// if the day goes over the max 
 	// number of days in that month
 
-	if (d > daysAtEndOfMonth[m])
-	{
-		for (int i = daysAtEndOfMonth[m]; i < d; i++)
-		{
-			--d;
-		}
-	}
+	//if (d > daysAtEndOfMonth[m])
+	//{
+	//	for (int i = daysAtEndOfMonth[m]; i < d; i++)
+	//	{
+	//		--d;
+	//	}
+	//	setDay(d);
+	//}
 
-	// and the inverse
-	if (d <= 0)
-	{
-		for (int i = 1; i > d; i--)
-		{
-			d++;
-		}
-	}
+	//// and the inverse
+	//if (d <= 0)
+	//{
+	//	for (int i = 1; i > d; i--)
+	//	{
+	//		d++;
+	//	}
+	//	setDay(d);
+	//}
 
 	// Setting the day of the month for the particular month
 	// If its a certain day for the month of Jan - Dec
@@ -150,5 +160,6 @@ void::DayOfYear::print()
 		cout << endl << monthName[month] << " "
 			<< day - daysAtEndOfMonth[month - 1]
 			<< endl << endl;
+		
 	}
 }

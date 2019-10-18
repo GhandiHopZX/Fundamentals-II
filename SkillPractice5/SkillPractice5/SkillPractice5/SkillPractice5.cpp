@@ -10,7 +10,7 @@ int main()
 	DayOfYear dayofyearobj;
 	int day;
 
-	cout << "This program converts a number into a string representing the\n"
+	cout << "This program converts a number into a string representing the day of the year.\n"
 		<< "" << endl;
 
 	cout << "Enter a whole number between 1 and 365: ";
