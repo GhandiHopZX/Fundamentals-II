@@ -13,7 +13,6 @@ string DayOfYear::monthName[] = { "January", "February", "March", "April", "May"
 
 DayOfYear::DayOfYear()
 {
-	
 }
 
 DayOfYear::DayOfYear(string month, int d)
@@ -22,28 +21,35 @@ DayOfYear::DayOfYear(string month, int d)
 	int m = 0;
 	m = (m + 1) % 12;
 
+	// min and max days allowed
+	int min = 0;
+	int max = 30;
+
 	//month
 	month = monthName[m];
+
+	DayOfYear dX;
+
+	dX.day = day;
 	
-	try
-	{
-		// if the day of the year is outside the last day of the month 
-	// spit out an error
-
-	// day of the year
-
-		d = day; // put at the end of this ?
+	if (daysAtEndOfMonth[m] < dX.day || dX.day <= 0) {
+		cout << "Cannot go outside the number of days.";
+		cout << "Terminating..." << endl;
 	}
-	catch (const std::exception&)
-	{
-		if (daysAtEndOfMonth[m] < d || d <= 0) {
-			cout << "Cannot go outside the number of days.";
 
-			cout << "Terminating..." << endl;
-			throw;
-		}
-	}
-	
+		//try
+		//{
+		//	// if the day of the year is outside the last day of the month 
+		//// spit out an error
+
+		//// day of the year
+
+		//	d = day; // put at the end of this ?
+		//}
+		//catch (out_of_range exception)
+		//{
+		//	throw exception;
+		//}
 	// if the day goes over the max 
 	// number of days in that month
 
@@ -70,73 +76,73 @@ DayOfYear::DayOfYear(string month, int d)
 	// If its a certain day for the month of Jan - Dec
 
 	{ // day validations for the months
-		if (d <= daysAtEndOfMonth[31])
+		if (d <= daysAtEndOfMonth[0])
 		{
 			month = "January";
 			setDay(d);
 		}
 
-		if (d <= daysAtEndOfMonth[59])
+		if (d <= daysAtEndOfMonth[1])
 		{
 			month = "February";
 			setDay(d);
 		}
 
-		if (d <= daysAtEndOfMonth[90])
+		if (d <= daysAtEndOfMonth[2])
 		{
 			month = "March";
 			setDay(d);
 		}
 
-		if (d <= daysAtEndOfMonth[120])
+		if (d <= daysAtEndOfMonth[3])
 		{
 			month = "April";
 			setDay(d);
 		}
 
-		if (d <= daysAtEndOfMonth[151])
+		if (d <= daysAtEndOfMonth[4])
 		{
 			month = "May";
 			setDay(d);
 		}
 
-		if (d <= daysAtEndOfMonth[181])
+		if (d <= daysAtEndOfMonth[5])
 		{
 			month = "June";
 			setDay(d);
 		}
 
-		if (d <= daysAtEndOfMonth[212])
+		if (d <= daysAtEndOfMonth[6])
 		{
 			month = "July";
 			setDay(d);
 		}
 
-		if (d <= daysAtEndOfMonth[243])
+		if (d <= daysAtEndOfMonth[7])
 		{
 			month = "August";
 			setDay(d);
 		}
 
-		if (d <= daysAtEndOfMonth[273])
+		if (d <= daysAtEndOfMonth[8])
 		{
 			month = "September";
 			setDay(d);
 		}
 
-		if (d <= daysAtEndOfMonth[304])
+		if (d <= daysAtEndOfMonth[9])
 		{
 			month = "October";
 			setDay(d);
 		}
 
-		if (d <= daysAtEndOfMonth[334])
+		if (d <= daysAtEndOfMonth[10])
 		{
 			month = "November";
 			setDay(d);
 		}
 
-		if (d <= daysAtEndOfMonth[365])
+		if (d <= daysAtEndOfMonth[11])
 		{
 			month = "December";
 			setDay(d);
