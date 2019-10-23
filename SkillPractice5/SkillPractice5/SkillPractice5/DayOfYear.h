@@ -24,6 +24,7 @@ public:
 	static int daysAtEndOfMonth[];
 	static string monthName[];
 	void print();
+	// accessor
 	void setDay(int day) { this->day = day; }
 
 };

@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 int DayOfYear::daysAtEndOfMonth[] = { 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365 };
 
 string DayOfYear::monthName[] = { "January", "February", "March", "April", "May",
@@ -13,7 +12,6 @@ string DayOfYear::monthName[] = { "January", "February", "March", "April", "May"
 
 DayOfYear::DayOfYear()
 {
-	
 }
 
 DayOfYear::DayOfYear(string month, int d)
@@ -22,22 +20,35 @@ DayOfYear::DayOfYear(string month, int d)
 	int m = 0;
 	m = (m + 1) % 12;
 
+	d = day;
+
 	// min and max days allowed
 	int min = 0;
 	int max = 30;
 
 	//month
 	month = monthName[m];
-
-	DayOfYear dX;
-
-	dX.day = day;
 	
-	if (daysAtEndOfMonth[m] < dX.day || dX.day <= 0) {
+	if (daysAtEndOfMonth[m] < day || day <= 0) 
+	{
 		cout << "Cannot go outside the number of days.";
 		cout << "Terminating..." << endl;
 	}
 
+	if (day = daysAtEndOfMonth[m])
+	{
+		d = 0;
+		monthName[m+1];
+		d++;
+		daysAtEndOfMonth[m + 1];
+	}
+
+	if (day < daysAtEndOfMonth[m])
+	{
+		monthName[m-1];
+		daysAtEndOfMonth[m - 1];
+		d--;
+	}
 		//try
 		//{
 		//	// if the day of the year is outside the last day of the month 
