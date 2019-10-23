@@ -17,7 +17,14 @@ int main()
 	cin >> day;
 
 	// set the day
-	dayofyearobj.setDay(day);
+	try
+	{
+		dayofyearobj.setDay(day);
+	}
+	catch (dayofyearobj)
+	{
+		
+	}
 
 	// display the object
 	dayofyearobj.print();

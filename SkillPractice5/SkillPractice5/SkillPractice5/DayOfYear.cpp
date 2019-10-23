@@ -20,7 +20,7 @@ DayOfYear::DayOfYear(string month, int d)
 	int m = 0;
 	m = (m + 1) % 12;
 
-	d = day;
+	this->day = d;
 
 	// min and max days allowed
 	int min = 0;
@@ -41,13 +41,14 @@ DayOfYear::DayOfYear(string month, int d)
 		monthName[m+1];
 		d++;
 		daysAtEndOfMonth[m + 1];
+		this->day = d;
 	}
 
 	if (day < daysAtEndOfMonth[m])
 	{
 		monthName[m-1];
 		daysAtEndOfMonth[m - 1];
-		d--;
+		this->day = d--;
 	}
 		//try
 		//{
