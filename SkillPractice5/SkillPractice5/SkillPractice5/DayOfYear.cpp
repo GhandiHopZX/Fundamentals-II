@@ -12,6 +12,7 @@ string DayOfYear::monthName[] = { "January", "February", "March", "April", "May"
 
 DayOfYear::DayOfYear()
 {
+	
 }
 
 DayOfYear::DayOfYear(string month, int d)
@@ -28,28 +29,29 @@ DayOfYear::DayOfYear(string month, int d)
 
 	//month
 	month = monthName[m];
-	
-	if (daysAtEndOfMonth[m] < day || day <= 0) 
+
+	if (daysAtEndOfMonth[m] < day || day <= 0)
 	{
 		cout << "Cannot go outside the number of days.";
 		cout << "Terminating..." << endl;
+		throw invalid_argument("This does not work as a day of the year.");
 	}
 
-	if (day = daysAtEndOfMonth[m])
-	{
-		d = 0;
-		monthName[m+1];
-		d++;
-		daysAtEndOfMonth[m + 1];
-		this->day = d;
-	}
+		if (day = daysAtEndOfMonth[m])
+		{
+			d = 0;
+			monthName[m + 1];
+			d++;
+			daysAtEndOfMonth[m + 1];
+			this->day = d;
+		}
 
-	if (day < daysAtEndOfMonth[m])
-	{
-		monthName[m-1];
-		daysAtEndOfMonth[m - 1];
-		this->day = d--;
-	}
+		if (day < daysAtEndOfMonth[m])
+		{
+			monthName[m - 1];
+			daysAtEndOfMonth[m - 1];
+			this->day = d--;
+		}
 		//try
 		//{
 		//	// if the day of the year is outside the last day of the month 
@@ -88,80 +90,79 @@ DayOfYear::DayOfYear(string month, int d)
 	// Setting the day of the month for the particular month
 	// If its a certain day for the month of Jan - Dec
 
-	{ // day validations for the months
-		if (d <= daysAtEndOfMonth[0])
-		{
-			month = "January";
-			setDay(d);
-		}
+		{ // day validations for the months
+			if (d <= daysAtEndOfMonth[0])
+			{
+				month = "January";
+				setDay(d);
+			}
 
-		if (d <= daysAtEndOfMonth[1])
-		{
-			month = "February";
-			setDay(d);
-		}
+			if (d <= daysAtEndOfMonth[1])
+			{
+				month = "February";
+				setDay(d);
+			}
 
-		if (d <= daysAtEndOfMonth[2])
-		{
-			month = "March";
-			setDay(d);
-		}
+			if (d <= daysAtEndOfMonth[2])
+			{
+				month = "March";
+				setDay(d);
+			}
 
-		if (d <= daysAtEndOfMonth[3])
-		{
-			month = "April";
-			setDay(d);
-		}
+			if (d <= daysAtEndOfMonth[3])
+			{
+				month = "April";
+				setDay(d);
+			}
 
-		if (d <= daysAtEndOfMonth[4])
-		{
-			month = "May";
-			setDay(d);
-		}
+			if (d <= daysAtEndOfMonth[4])
+			{
+				month = "May";
+				setDay(d);
+			}
 
-		if (d <= daysAtEndOfMonth[5])
-		{
-			month = "June";
-			setDay(d);
-		}
+			if (d <= daysAtEndOfMonth[5])
+			{
+				month = "June";
+				setDay(d);
+			}
 
-		if (d <= daysAtEndOfMonth[6])
-		{
-			month = "July";
-			setDay(d);
-		}
+			if (d <= daysAtEndOfMonth[6])
+			{
+				month = "July";
+				setDay(d);
+			}
 
-		if (d <= daysAtEndOfMonth[7])
-		{
-			month = "August";
-			setDay(d);
-		}
+			if (d <= daysAtEndOfMonth[7])
+			{
+				month = "August";
+				setDay(d);
+			}
 
-		if (d <= daysAtEndOfMonth[8])
-		{
-			month = "September";
-			setDay(d);
-		}
+			if (d <= daysAtEndOfMonth[8])
+			{
+				month = "September";
+				setDay(d);
+			}
 
-		if (d <= daysAtEndOfMonth[9])
-		{
-			month = "October";
-			setDay(d);
-		}
+			if (d <= daysAtEndOfMonth[9])
+			{
+				month = "October";
+				setDay(d);
+			}
 
-		if (d <= daysAtEndOfMonth[10])
-		{
-			month = "November";
-			setDay(d);
-		}
+			if (d <= daysAtEndOfMonth[10])
+			{
+				month = "November";
+				setDay(d);
+			}
 
-		if (d <= daysAtEndOfMonth[11])
-		{
-			month = "December";
-			setDay(d);
+			if (d <= daysAtEndOfMonth[11])
+			{
+				month = "December";
+				setDay(d);
+			}
 		}
-	}
-	
 }
 
 // dayOfYear Print convert and print day of the year
