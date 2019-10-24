@@ -29,7 +29,7 @@ public:
 	//getters/accessor 
 	int getDay() { this->day; }
 	string setMonth(int s);
-	string getMonth();
+	string validateMonth(string th);
 	//void operandD = (const DayOfYear & this->day);
 	// operand 
 	DayOfYear operator++(int day);
