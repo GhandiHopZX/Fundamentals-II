@@ -20,12 +20,12 @@ public:
 
 	DayOfYear(string month, int);
 
-	//setters getters and mutators
+	//setters/mutator 
 	static int daysAtEndOfMonth[];
 	static string monthName[];
 	void print();
-	// accessor
+	//getters/accessor 
 	void setDay(int day) { this->day = day; }
-
+	void getDay() { this->day; }
 };
 #endif

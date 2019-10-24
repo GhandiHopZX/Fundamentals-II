@@ -17,6 +17,13 @@ int main()
 	cin >> day;
 
 	// set the day
+	while (day > 365)
+	{
+		cout << "Cannot go outside the number of days.";
+		cout << "\n";
+		cout << "Enter a whole number between 1 and 365: ";
+		cin >> day;
+	}
 		dayofyearobj.setDay(day);
 
 

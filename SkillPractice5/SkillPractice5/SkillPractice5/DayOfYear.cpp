@@ -12,46 +12,25 @@ string DayOfYear::monthName[] = { "January", "February", "March", "April", "May"
 
 DayOfYear::DayOfYear()
 {
-	
 }
 
 DayOfYear::DayOfYear(string month, int d)
 {
-	// month int
-	int m = 0;
-	m = (m + 1) % 12;
+	// notas
+	DayOfYear(month, d);
 
 	this->day = d;
 
-	// min and max days allowed
+	int m = 0;
+
+	// min and 
 	int min = 0;
+	// max days allowed
 	int max = 30;
 
 	//month
-	month = monthName[m];
 
-	if (daysAtEndOfMonth[m] < day || day <= 0)
-	{
-		cout << "Cannot go outside the number of days.";
-		cout << "Terminating..." << endl;
-		throw invalid_argument("This does not work as a day of the year.");
-	}
-
-		if (day = daysAtEndOfMonth[m])
-		{
-			d = 0;
-			monthName[m + 1];
-			d++;
-			daysAtEndOfMonth[m + 1];
-			this->day = d;
-		}
-
-		if (day < daysAtEndOfMonth[m])
-		{
-			monthName[m - 1];
-			daysAtEndOfMonth[m - 1];
-			this->day = d--;
-		}
+		
 		//try
 		//{
 		//	// if the day of the year is outside the last day of the month 
@@ -94,74 +73,109 @@ DayOfYear::DayOfYear(string month, int d)
 			if (d <= daysAtEndOfMonth[0])
 			{
 				month = "January";
+				m = 0;
 				setDay(d);
 			}
 
 			if (d <= daysAtEndOfMonth[1])
 			{
 				month = "February";
+				m = 1;
 				setDay(d);
 			}
 
 			if (d <= daysAtEndOfMonth[2])
 			{
 				month = "March";
+				m = 2;
 				setDay(d);
 			}
 
 			if (d <= daysAtEndOfMonth[3])
 			{
 				month = "April";
+				m = 3;
 				setDay(d);
 			}
 
 			if (d <= daysAtEndOfMonth[4])
 			{
 				month = "May";
+				m = 4;
 				setDay(d);
 			}
 
 			if (d <= daysAtEndOfMonth[5])
 			{
 				month = "June";
+				m = 5;
 				setDay(d);
 			}
 
 			if (d <= daysAtEndOfMonth[6])
 			{
 				month = "July";
+				m = 6;
 				setDay(d);
 			}
 
 			if (d <= daysAtEndOfMonth[7])
 			{
 				month = "August";
+				m = 7;
 				setDay(d);
 			}
 
 			if (d <= daysAtEndOfMonth[8])
 			{
 				month = "September";
+				m = 8;
 				setDay(d);
 			}
 
 			if (d <= daysAtEndOfMonth[9])
 			{
 				month = "October";
+				m = 9;
 				setDay(d);
 			}
 
 			if (d <= daysAtEndOfMonth[10])
 			{
 				month = "November";
+				m = 10;
 				setDay(d);
 			}
 
 			if (d <= daysAtEndOfMonth[11])
 			{
 				month = "December";
+				m = 11;
 				setDay(d);
 			}
+
+			if (day = daysAtEndOfMonth[m])
+			{
+				m + 1;
+				month = monthName[m];
+				d++;
+				this->day = d;
+			}
+
+			if (day < daysAtEndOfMonth[m])
+			{
+				m - 1;
+				month = monthName[m];
+				this->day = d--;
+			}
+
+			if (day > daysAtEndOfMonth[11])
+			{
+				m = 0;
+				month = monthName[0];
+				this->day = 1;
+			}
+
 		}
 }
 
