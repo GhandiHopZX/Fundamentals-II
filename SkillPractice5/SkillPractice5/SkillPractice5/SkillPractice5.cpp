@@ -26,7 +26,6 @@ int main()
 	}
 		dayofyearobj.setDay(day);
 
-
 	// display the object
 	dayofyearobj.print();
 

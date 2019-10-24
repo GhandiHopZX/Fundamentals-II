@@ -6,6 +6,7 @@
 #include <string>
 #include <iostream>
 #include <cstdlib>
+#include <string>
 
 using namespace std;
 
@@ -24,8 +25,17 @@ public:
 	static int daysAtEndOfMonth[];
 	static string monthName[];
 	void print();
-	//getters/accessor 
 	void setDay(int day) { this->day = day; }
-	void getDay() { this->day; }
+	//getters/accessor 
+	int getDay() { this->day; }
+	string setMonth(int s);
+	string getMonth();
+	//void operandD = (const DayOfYear & this->day);
+	// operand 
+	DayOfYear operator++(int day);
+	DayOfYear operator--(int day);
+
 };
 #endif
+
+
