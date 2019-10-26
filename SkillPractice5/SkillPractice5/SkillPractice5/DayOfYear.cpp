@@ -17,7 +17,7 @@ DayOfYear::DayOfYear()
 DayOfYear::DayOfYear(string month, int d)
 {
 	// notas
-	DayOfYear(month, d);
+	//DayOfYear(month, d);
 
 	d = DayOfYear::getDay();
 
@@ -27,10 +27,141 @@ DayOfYear::DayOfYear(string month, int d)
 	int min = 0;
 	// max days allowed
 	int max = 30;
+	
+	//You store the day in the data structure. 
+	//Any time you get->day it recalculates the month/day based on the master day.
+	//Shouldn’t need to worry about rolling over a month.
+	//You just have to know what value you set/get.. I think you’re overthinking it. 
 
 	//month
+	// send in the month 
+	validateMonth();
+	
+#pragma region stuff
+	//{ // day validations for the months
+	//	if (d <= daysAtEndOfMonth[0])
+	//	{
+	//		month = "January";
+	//		m = 0;
+	//		setMonth(m);
+	//		setDay(d);
+	//	}
 
-		
+	//	if (d <= daysAtEndOfMonth[1])
+	//	{
+	//		month = "February";
+	//		
+	//		m = 1;
+	//		setMonth(m);
+	//		setDay(d);
+	//	}
+
+	//	if (d <= daysAtEndOfMonth[2])
+	//	{
+	//		month = "March";
+	//		m = 2;
+	//		setMonth(m);
+	//		setDay(d);
+	//	}
+
+	//	if (d <= daysAtEndOfMonth[3])
+	//	{
+	//		month = "April";
+	//		m = 3;
+	//		setMonth(m);
+	//		setDay(d);
+	//	}
+
+	//	if (d <= daysAtEndOfMonth[4])
+	//	{
+	//		month = "May";
+	//		m = 4;
+	//		setMonth(m);
+	//		setDay(d);
+	//	}
+
+	//	if (d <= daysAtEndOfMonth[5])
+	//	{
+	//		month = "June";
+	//		m = 5;
+	//		setMonth(m);
+	//		setDay(d);
+	//	}
+
+	//	if (d <= daysAtEndOfMonth[6])
+	//	{
+	//		month = "July";
+	//		m = 6;
+	//		setMonth(m);
+	//		setDay(d);
+	//	}
+
+	//	if (d <= daysAtEndOfMonth[7])
+	//	{
+	//		month = "August";
+	//		m = 7;
+	//		setMonth(m);
+	//		setDay(d);
+	//	}
+
+	//	if (d <= daysAtEndOfMonth[8])
+	//	{
+	//		month = "September";
+	//		m = 8;
+	//		setMonth(m);
+	//		setDay(d);
+	//	}
+
+	//	if (d <= daysAtEndOfMonth[9])
+	//	{
+	//		month = "October";
+	//		m = 9;
+	//		setMonth(m);
+	//		setDay(d);
+	//	}
+
+	//	if (d <= daysAtEndOfMonth[10])
+	//	{
+	//		month = "November";
+	//		m = 10;
+	//		setMonth(m);
+	//		setDay(d);
+	//	}
+
+	//	if (d <= daysAtEndOfMonth[11])
+	//	{
+	//		month = "December";
+	//		m = 11;
+	//		setMonth(m);
+	//		setDay(d);
+	//	}
+
+	//	if (day = daysAtEndOfMonth[m])
+	//	{
+	//		m + 1;
+	//		month = monthName[m];
+	//		setMonth(m);
+	//		DayOfYear::operator++(m);
+	//	}
+
+	//	if (day < daysAtEndOfMonth[m])
+	//	{
+	//		m - 1;
+	//		month = monthName[m];
+	//		setMonth(m);
+	//		DayOfYear::operator--(m);
+	//	}
+
+	//	if (day > daysAtEndOfMonth[11])
+	//	{
+	//		m = 0;
+	//		month = monthName[0];
+	//		setMonth(m);
+	//		this->day = 1;
+	//	}
+
+	//}
+
 		//try
 		//{
 		//	// if the day of the year is outside the last day of the month 
@@ -65,7 +196,7 @@ DayOfYear::DayOfYear(string month, int d)
 	//	}
 	//	setDay(d);
 	//}
-
+#pragma endregion
 	
 }
 
@@ -77,13 +208,14 @@ void::DayOfYear::print()
 
 		month = (month + 1) % 12;
 	if (month == 0)
-
+		
 		cout << "January " << day << endl << endl;
 	else
 	{
 		cout << endl << monthName[month] << " "
 			<< day - daysAtEndOfMonth[month - 1]
 			<< endl << endl;
+		
 	}
 }
 
@@ -92,12 +224,19 @@ string DayOfYear::setMonth(int s)
 	return monthName[s];
 }
 
-string DayOfYear::validateMonth(string month)
+string DayOfYear::validateMonth()
 {
+	string month;
 	int d = getDay();
-	int m = 0; // <<< fix this
+
+	int m = 0; // <<< fix 
 	// Setting the day of the month for the particular month
 	// If its a certain day for the month of Jan - Dec
+
+	if (d == 0)
+	{
+		d = 1;
+	}
 
 	{ // day validations for the months
 		if (d <= daysAtEndOfMonth[0])
@@ -105,6 +244,7 @@ string DayOfYear::validateMonth(string month)
 			month = "January";
 			setMonth(m);
 			m = 0;
+			DayOfYear::operator++(d);
 			setDay(d);
 		}
 
@@ -221,28 +361,26 @@ string DayOfYear::validateMonth(string month)
 		}
 
 	}
-	return string();
+	return month;
 }
 
 //
-//string DayOfYear::getMonth()
-//{
-//	return;
-//}
 
 DayOfYear DayOfYear::operator++(int day)
 {
+	// if day = 0 
+	// add 1
 	int h = 0;
-	string month = setMonth(h);
+	string month = validateMonth();
 	day = getDay();
-	day++;
+	++day;
 	return DayOfYear(month, day);
 }
 
 DayOfYear DayOfYear::operator--(int day)
 {
 	int h = 0;
-	string month = setMonth(h);
+	string month = validateMonth();
 	day = getDay();
 	day--;
 	return DayOfYear(month, day);

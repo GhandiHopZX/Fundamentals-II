@@ -27,9 +27,10 @@ public:
 	void print();
 	void setDay(int day) { this->day = day; }
 	//getters/accessor 
-	int getDay() { this->day; }
+	int getDay() { // set day
+		return this->day; }
 	string setMonth(int s);
-	string validateMonth(string th);
+	string validateMonth();
 	//void operandD = (const DayOfYear & this->day);
 	// operand 
 	DayOfYear operator++(int day);
