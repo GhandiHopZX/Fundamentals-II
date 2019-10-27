@@ -4,7 +4,6 @@
 
 #include <iostream>
 #include <string>
-#include <iostream>
 #include <cstdlib>
 #include <string>
 
@@ -25,7 +24,10 @@ public:
 	static int daysAtEndOfMonth[];
 	static string monthName[];
 	void print();
-	void setDay(int day) { this->day = day; }
+	void setDay(int day)
+	{
+		this->day = day;
+	};
 
 	//getters/accessor 
 	int getDay() { // set day
