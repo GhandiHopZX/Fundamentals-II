@@ -29,7 +29,8 @@ public:
 
 	//getters/accessor 
 	int getDay() { // set day
-		return this->day; }
+		return this->day;
+	}
 	// operand 
 	DayOfYear operator++(int day);
 };

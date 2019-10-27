@@ -30,7 +30,7 @@ DayOfYear::DayOfYear(string month, int d)
 
 	if (d == 0)
 	{
-		d = 1;
+		DayOfYear += 1;
 	}
 	
 
@@ -190,11 +190,6 @@ void::DayOfYear::print()
 			<< endl << endl;
 	}
 }
-
-int getDay() {
-
-}
-
 //
 
 DayOfYear DayOfYear::operator++(int day)
