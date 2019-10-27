@@ -196,11 +196,12 @@ DayOfYear DayOfYear::operator++(int day)
 {
 	// if day = 0 
 	// add 1
+	DayOfYear(monthName[h], day)
 	int month = 0;
 
 	int h = month;
 	day = getDay();
 	day++;
-	return DayOfYear(monthName[h], day);
+	return ;
 }
 
