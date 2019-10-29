@@ -1,8 +1,6 @@
 #pragma once
 #include <string>
 
-#include "Employee.H"
-#define Employee_H
 using namespace std;
 
 class Employee
@@ -22,7 +20,9 @@ public:
 	// constructor
 	Employee(string aName, string aNumber, string aDate)
 	{
-
+		name = aName;
+		number = aNumber;
+		hireDate = aDate;
 	}
 	
 	// mutator
@@ -57,11 +57,11 @@ public:
 		return hireDate;
 	}
 
-	string getAll()
+	/*string getAll()
 	{
 		string temp;
 		temp = name + "~" + number + "~" + hireDate;
 		return temp;
-	}
+	}*/
 
 };

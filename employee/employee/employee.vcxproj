@@ -156,6 +156,7 @@
   <ItemGroup>
     <ClInclude Include="Employee.h" />
     <ClInclude Include="ProductionWorker.h" />
+    <ClInclude Include="ShiftSupervisor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

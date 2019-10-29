@@ -26,5 +26,8 @@
     <ClInclude Include="ProductionWorker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ShiftSupervisor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

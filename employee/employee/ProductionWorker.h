@@ -55,5 +55,7 @@ public:
 	{
 		return payRate;
 	}
+
+
 };
 
