@@ -23,5 +23,8 @@
     <ClInclude Include="Employee.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ProductionWorker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
