@@ -55,7 +55,7 @@ void displayInfo(ProductionWorker e)
 	cout << "PayRate: " << e.getPayRate() << endl;
 }
 
-void displayInfo2(ProductionWorker e)
+void displayInfo2(ShiftSupervisor e)
 {
 	cout << setprecision(2) << fixed << showpoint;
 	cout << "Name: " << e.getName() << endl;

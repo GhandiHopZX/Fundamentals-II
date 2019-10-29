@@ -22,7 +22,6 @@ public:
 		double aSalary, double aBonus): Employee(aName, aNumber, aDate)
 	{
 		salary = aSalary; bonus = aBonus;
-
 	}
 	
 	//mutator 
@@ -42,7 +41,7 @@ public:
 		return salary;
 	}
 
-	double getDate() const
+	double getBonus() const
 	{
 		return bonus;
 	}
