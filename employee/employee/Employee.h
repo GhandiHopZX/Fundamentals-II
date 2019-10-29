@@ -47,12 +47,12 @@ public:
 		return name;
 	}
 
-	string getNumber()
+	string getNumber() const
 	{
 		return number;
 	}
 
-	string getHireDate()
+	string getHireDate() const
 	{
 		return hireDate;
 	}

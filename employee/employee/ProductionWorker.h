@@ -19,7 +19,8 @@ public:
 
 	}
 	// constructor (the hard one)
-	ProductionWorker(string aName, string aNumber, string aDate, int aShift, double aPayRate) :Employee(aName, aNumber, aDate)
+	ProductionWorker(string aName, string aNumber, string aDate,
+		int aShift, double aPayRate) :Employee(aName, aNumber, aDate)
 	{
 		shift = aShift; payRate = aPayRate;
 	}

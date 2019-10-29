@@ -18,7 +18,8 @@ public:
 
 	}
 	// the "fun" constructor
-	ShiftSupervisor(string aName, string aNumber, string aDate, double aSalary, double aBonus): Employee(aName, aNumber, aDate)
+	ShiftSupervisor(string aName, string aNumber, string aDate,
+		double aSalary, double aBonus): Employee(aName, aNumber, aDate)
 	{
 		salary = aSalary; bonus = aBonus;
 
