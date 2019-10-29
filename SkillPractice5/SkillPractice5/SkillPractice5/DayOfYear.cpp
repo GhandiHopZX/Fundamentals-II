@@ -13,16 +13,12 @@ string DayOfYear::monthName[] = { "January", "February", "March", "April", "May"
 
 DayOfYear::DayOfYear()
 {
-
+	string month;
+	int day = getDay();
 }
 
 DayOfYear::DayOfYear(string month, int d)
 {
-
-	// notas
-	//DayOfYear(month, d);
-
-	d = DayOfYear::getDay();
 
 	// min and 
 	int min = 0;
@@ -114,7 +110,6 @@ DayOfYear::DayOfYear(string month, int d)
 			DayOfYear g = g++;
 		}
 	
-	
 }
 
 // dayOfYear Print convert and print day of the year
@@ -136,10 +131,11 @@ void::DayOfYear::print()
 }
 //
 
-DayOfYear DayOfYear::operator++(int day)
+DayOfYear DayOfYear::operator++(int m)
 {
-	day = getDay();
-	day++;
-	return *this;
+	DayOfYear brandNew;
+	brandNew.day = getDay();
+	brandNew.day += m++;
+	return(brandNew);
 }
 

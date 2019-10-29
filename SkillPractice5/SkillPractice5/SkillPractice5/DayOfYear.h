@@ -34,7 +34,7 @@ public:
 		return this->day;
 	}
 	// operand 
-	DayOfYear operator++(int day);
+	DayOfYear operator++(int);
 };
 #endif
 
