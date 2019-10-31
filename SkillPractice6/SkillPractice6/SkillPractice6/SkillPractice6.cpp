@@ -11,7 +11,6 @@
 #include <string>
 #include <iomanip>
 #include "ProductionWorker.h"
-#include "ShiftSupervisor.h"
 
 using namespace std;
 
@@ -20,7 +19,6 @@ using namespace std;
 // Function declarations
 
 void displayInfo(ProductionWorker);
-void displayInfo2(ShiftSupervisor);
 
 int main()
 {
@@ -28,9 +26,9 @@ int main()
 	ProductionWorker pw("John Jones", "123", "10/12/2010", 2, 18.00);
 	displayInfo(pw);
 
-	ShiftSupervisor supervisor("Kim Jones", "321", "12/15/2012",
-		75000.0, 15000.0);
-	displayInfo2(supervisor);
+	//ShiftSupervisor supervisor("Kim Jones", "321", "12/15/2012",
+		//75000.0, 15000.0);
+	//displayInfo2(supervisor);
 	//	Make sure we place the end message on a new line
 	cout << endl;
 
@@ -55,13 +53,13 @@ void displayInfo(ProductionWorker e)
 	cout << "PayRate: " << e.getPayRate() << endl;
 }
 
-void displayInfo2(ShiftSupervisor e)
-{
-	cout << setprecision(2) << fixed << showpoint;
-	cout << "Name: " << e.getName() << endl;
-	cout << "Employee number: " << e.getNumber() << endl;
-	cout << "Hire Date : " << e.getHireDate() << endl;
-	cout << "Annual Salary: $ " << e.getSalary() << endl;
-	cout << "Annual production Bonus: $ " << e.getBonus() << endl;
-
-}
+//void displayInfo2(ShiftSupervisor e)
+//{
+//	cout << setprecision(2) << fixed << showpoint;
+//	cout << "Name: " << e.getName() << endl;
+//	cout << "Employee number: " << e.getNumber() << endl;
+//	cout << "Hire Date : " << e.getHireDate() << endl;
+//	cout << "Annual Salary: $ " << e.getSalary() << endl;
+//	cout << "Annual production Bonus: $ " << e.getBonus() << endl;
+//
+//}
