@@ -13,8 +13,7 @@ string DayOfYear::monthName[] = { "January", "February", "March", "April", "May"
 
 DayOfYear::DayOfYear()
 {
-	string month;
-	int day = getDay();
+	day = getDay();
 }
 
 DayOfYear::DayOfYear(string month, int d)
