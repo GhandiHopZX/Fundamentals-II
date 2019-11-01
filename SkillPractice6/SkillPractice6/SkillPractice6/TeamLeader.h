@@ -6,4 +6,3 @@ class TeamLeader : public ProductionWorker
 {
 
 };
-
