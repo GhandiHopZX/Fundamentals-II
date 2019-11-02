@@ -155,6 +155,7 @@
     <ClCompile Include="Tut.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Ship.h" />
     <ClInclude Include="Zero.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -94,10 +94,10 @@ int main() //Christina Camacho
 			 search();
 			 break;
 			//if the file found then display it
-			//if (fp != -1)
-			//{
-			//	display(fp);//call display function
-			//}
+			if (fp != -1)
+			{
+				display(fp);//call display function
+			}
 			//Otherwise throw an error
 			/*else
 				cout << "Record not found" << endl;
@@ -229,7 +229,7 @@ void display(long fp)//Christina Camacho // todo fix
 	Customer c;
 	//open file
 	fstream custFile("custFile.dat", ios::out | ios::binary);
-	string a = custFile; // size in bytes to chars 
+	string a = ""; // size in bytes to chars 
 	//error message
 	if (custFile.fail())
 	{
@@ -237,12 +237,12 @@ void display(long fp)//Christina Camacho // todo fix
 		return;
 	}
 	//check if the file has data in it
-	if (sizeof(custFile) = null)
+	/*if ()
 	{
 		cout << "File is empty";
 		custFile.close();
 		return;
-	}
+	}*/
 
 	//search through the file
 	custFile.seekg(fp, ios::beg);
@@ -296,34 +296,35 @@ long search()
 	file.read(reinterpret_cast<char*>(&reader), sizeof(reader));
 
 	// hadangeki copys from the input that is converted to bytes
-	//long hadangeki = static_cast<long>(sName.size());
+	long had = static_cast<long>(sName.size());
 
 	while (!file.eof())
 	{
 		// address
-		if (pos != sName)
+		if (info[pos].name != sName)
 		{
 			info[element] = reader;
 			element++;
 			//file.read(reinterpret_cast<char*>(&reader), sizeof(reader));
-			file.read(reinterpret_cast<char*>(&pos), sizeof(pos));
-
+			/*file.read(reinterpret_cast<char*>(&pos), sizeof(pos));
+*/
 			// list search for comparisons
 			//file.seekg(0L, 324L); // intervals
+
 			//// each customer is 323bytes so each one has an address
-			//file.read(reinterpret_cast<char*>(&info[1]), sizeof(info[1]));
+			//file.read(reinterpret_cast<char*>(&info[0].name), sizeof(info[0].name));
 			//// next
 			//file.seekg(324L, 647L);
-			//file.read(reinterpret_cast<char*>(&info[2]), sizeof(info[2]));
+			//file.read(reinterpret_cast<char*>(&info[1].name), sizeof(info[1].name));
 			//// next
 			//file.seekg(647L, 970L);
-			//file.read(reinterpret_cast<char*>(&info[3]), sizeof(info[3]));
+			//file.read(reinterpret_cast<char*>(&info[2].name), sizeof(info[2].name));
 			//// next
 			//file.seekg(970L, 1293L);
-			//file.read(reinterpret_cast<char*>(&info[4]), sizeof(info[4]));
+			//file.read(reinterpret_cast<char*>(&info[3].name), sizeof(info[3].name));
 			//// next
 			//file.seekg(1293L, 1615L);
-			//file.read(reinterpret_cast<char*>(&info[5]), sizeof(info[5]));
+			//file.read(reinterpret_cast<char*>(&info[4].name), sizeof(info[4].name));
 		}
 		else
 		{
@@ -342,7 +343,7 @@ long search()
 				// Honestly I need to know where that position is everytime I close the file
 				// do I need to go back or stop after reading where I left off?
 				/*
-				hadangeki = static_cast<long>(v.size());
+				had = static_cast<long>(v.size());
 				pos = hadangeki;*/
 			}
 		}
@@ -360,7 +361,6 @@ long search()
 	//close the file
 	file.close();
 
-	std::cout << pos;
 	return pos; // returns that long
 }
 
