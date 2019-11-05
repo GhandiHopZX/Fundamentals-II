@@ -41,7 +41,7 @@ private:
 	T score;
 
 };
-
+							// |x|
 // Function prototypes
 long S(char* a, char* b);
 
