@@ -31,6 +31,17 @@ struct Customer
 	char lastPay[SIZE];
 };
 
+// templates 
+template <class T>
+class MyClass
+{
+public:
+
+private:
+	T score;
+
+};
+
 // Function prototypes
 long S(char* a, char* b);
 
@@ -237,3 +248,4 @@ long S(char* a, char* b)
 
 	return pos; // returns that long
 }
+

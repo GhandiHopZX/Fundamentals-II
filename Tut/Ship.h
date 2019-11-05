@@ -41,8 +41,11 @@ public:
 	}
 
 	// member function
-	virtual void print() //use virtual so the children can inherit the function print with the same name. 
-		//The children now get the Name and the Max Passengers in their classes and not the Name + year.
+	virtual void print()
+		//use virtual so the children can inherit
+		//the function print with the same name. 
+		//The children now get the Name and the
+		//Max Passengers in their classes and not the Name + year.
 	{
 		cout << "Ship" << endl;
 		cout << "	Ship Name: " << getName() << endl;
