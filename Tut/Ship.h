@@ -1,60 +1,52 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include <cstdlib>
-#include <iomanip>
-
 using namespace std;
 
 class Ship
 {
 private:
-	//variables
-	string shipName;
-	string year;
+	string name;	// holds ship name
+	string year;	// holds year ship was built
 
 public:
-	//constructor
-	Ship();// default
+	// default constructor
+	Ship()
+	{
+		name = ""; year = "";
+	}
+	//construtor with variable parameters
+	Ship(string aName, string aYear)
+	{
+		name = aName; year = aYear;
+	}
 
-	Ship(string n, string y);
+	// mutators
+	void setName(string n)
+	{
+		name = n;
+	}
+	void setYear(string y)
+	{
+		year = y;
+	}
+	// accessors
+	string getName() const
+	{
+		return name;
+	}
+	string getYear() const
+	{
+		return year;
+	}
+
+	// member function
+	virtual void print() //use virtual so the children can inherit the function print with the same name. 
+		//The children now get the Name and the Max Passengers in their classes and not the Name + year.
+	{
+		cout << "Ship" << endl;
+		cout << "	Ship Name: " << getName() << endl;
+		cout << "	Ship Year: " << getYear() << endl << endl;
+	}
+
 };
-
-// constructor set
-Ship::Ship() {
-	shipName = "";
-	year = "";
-}
-
-Ship::Ship(string n, string y) {
-	shipName = n;
-	year = y;
-}
-
-//mutator
-void setName(string n)
-{
-	shipName = n;
-}
-
-void setDate(string y)
-{
-	year = y;
-}
-
-virtual void print()
-{
-	cout << "Name: " << getName() << endl
-		<< "Date: " << getDate() << endl;
-}
-
-//accessor
-string getName() const
-{
-	return shipName;
-}
-
-string getDate() const
-{
-	return year;
-}
