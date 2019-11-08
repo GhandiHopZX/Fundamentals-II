@@ -15,6 +15,18 @@ fstream JOM("class.txt", ios::in, ios::out);
 
 fstream outfile("monday.txt", ios::in | ios::out | ios::trunc);
 
+// Templates
+
+template <class T> class a
+{
+	int x;
+	int y;
+	if (x >= y) { x = true; }
+	else { x = false; }
+};
+
+//structs
+
 struct SD
 {
 	string name;
@@ -88,6 +100,8 @@ int main()
 	cout << "     Here it is " + c;
 
 	cout << "\n";
+
+
 	system("PAUSE");
 	return 0;
 }
