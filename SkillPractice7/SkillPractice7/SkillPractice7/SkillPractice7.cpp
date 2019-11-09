@@ -1,6 +1,6 @@
 /*
 //	Name: Solomon Pattee
-//	Date: 11/12/2019
+//	Date: 11/11/2019
 //	Filename: SkillPractice7.cpp
 //	Description: Absolute value calculator
 */
