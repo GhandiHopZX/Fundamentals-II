@@ -2,10 +2,24 @@
 //
 
 #include <iostream>
+#include <string>
+#include <cstdio>
+#include <cstdlib>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+
+using namespace std;
+
+// templates
+
+// classes
+// globals
+// stubs
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    cout << "Hello World!\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
