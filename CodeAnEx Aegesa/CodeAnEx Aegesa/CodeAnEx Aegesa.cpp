@@ -7,15 +7,22 @@
 #include <cstdlib>
 #include <vector>
 #include <algorithm>
+#include <iomanip>
 #include <cmath>
 
 using namespace std;
 
 // templates
+template <class printedT>
+printedT output(string i)
+{
+	cout << setprecision(2) << fixed << endl;
+	return i;
+}
 
-// classes
 // globals
-// stubs
+
+// function declarations
 
 int main()
 {

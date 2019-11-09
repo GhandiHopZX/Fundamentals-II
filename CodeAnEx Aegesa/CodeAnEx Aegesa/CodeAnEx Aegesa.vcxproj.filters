@@ -21,7 +21,7 @@
     <ClCompile Include="battleSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="message.cpp">
+    <ClCompile Include="Inventory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="battleSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="message.h">
+    <ClInclude Include="inventory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,4 +1,4 @@
-#include "message.h"
+#include "inventory.h"
 #include <iostream>
 
 using namespace std;
