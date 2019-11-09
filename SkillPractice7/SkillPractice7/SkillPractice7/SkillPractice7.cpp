@@ -9,6 +9,7 @@
 #include <string>
 #include <cstdlib>
 #include <cmath>
+#include <iomanip>
 
 using namespace std;
 
@@ -17,9 +18,13 @@ template <class T>
 T absolute(T ab1)
 {
 	// variables
-	double abd = ab1;
-	int abi = ab1; 
-	float abf = ab1;
+	double abd = 0.0;
+	int abi = 0; 
+	float abf = 0.0;
+
+	abi = ab1;
+	abf = ab1;
+	abd = ab1;
 
 	// convert to an integer
 	static_cast<int>(abd);
@@ -47,11 +52,15 @@ T absolute(T ab1)
 
 int main()
 {
+	// integer for input
 	double d = 0.0;
+
+	// greet the viewer
+	cout << fixed << "\t\t\t" << "=====:: Here is the absolute value calculator for any number ::=====" << endl;
+
 	// input the number to convert into an absolute value
 	cout << "Input a number: " << endl;
 	cin >> d;
 	// here is the absolute value
 	cout << "Absolute value of inputed number: " << absolute(d) << endl;
 }
-
