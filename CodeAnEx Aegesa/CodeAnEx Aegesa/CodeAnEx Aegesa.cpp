@@ -53,6 +53,8 @@ T absolute(T ab0, T ab1, T ab2, T ab3)
 int main()
 {
     cout << "Hello World!\n";
+
+	cout << endl;
+
+	system("PAUSE");
 }
-
-

@@ -5,13 +5,7 @@ using namespace std;
 
 inventory::inventory()
 {
-}
+	name = "";
+	dec = "";
+};
 
-string inventory::getItem()
-{
-	return string();
-}
-
-void inventory::setItem(string)
-{
-}
