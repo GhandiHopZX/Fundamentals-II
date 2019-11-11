@@ -27,10 +27,10 @@ void battleSystem::turnSystem()
 			// enemy turn check
 		case (b):
 			break;
-
+			// yor tuarn
 		case (c):
 			break;
-
+			// TurnA
 		case (d):
 			break;
 
