@@ -154,10 +154,12 @@
     <ClCompile Include="battleSystem.cpp" />
     <ClCompile Include="CodeAnEx Aegesa.cpp" />
     <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="Item.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="battleSystem.h" />
     <ClInclude Include="inventory.h" />
+    <ClInclude Include="Item.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

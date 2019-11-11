@@ -2,50 +2,29 @@
 #include "inventory.h"
 #include <iostream>
 #include <string>
+
 class inventory
 {
 private:
-	string name;
-	string dec;
-	int d = 0;
-
+	
+	// inventory
+	int capacity;
 public:
 
 	// variables
-
+	static const int MAX_INTEGRITY = 20;
 	// constructor
 	inventory()
 	{
-		name = ""; dec = "";
+		capacity = MAX_INTEGRITY;
 	};
 
 	// getters/accessors
-
-	string getItem()
-	{
-		return name;
-	};
-
-	string getDec()
-	{
-		return dec;
-	};
+	
 
 	// setters/mutators
-	void setItemName(string h, string d)
-	{
-		dec = d;
-		name = h;
-	};
-
 	// functions
 
 	// templates
-
-	template <class Item>
-	Item item()
-	{
-
-	};
 	
 };
