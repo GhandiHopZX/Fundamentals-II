@@ -9,6 +9,7 @@ private:
 	
 	// inventory
 	int capacity;
+
 public:
 
 	// variables
@@ -21,8 +22,8 @@ public:
 
 	// getters/accessors
 	
-
 	// setters/mutators
+
 	// functions
 
 	// templates
