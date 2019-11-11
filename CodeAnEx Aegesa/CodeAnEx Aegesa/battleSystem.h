@@ -3,11 +3,16 @@ class battleSystem
 {
 private:
 	// variables
-	bool turnA; // YOR TUARN!
-	bool turnB; // enemy turn
-	bool turnC; // counter
+	bool* aGuage;
+	enum t 
+	{
+		a , b , c, d
+	}; //turn number
+
 
 public:
+	// constructor
+	battleSystem();
 
 	// variables
 
@@ -16,7 +21,7 @@ public:
 	// setters/mutators
 
 	// functions
-
+	void turnSystem();
 	// templates
 
 };

@@ -1,29 +1,41 @@
 #pragma once
-
+#include "inventory.h"
+#include <iostream>
+#include <string>
 class inventory
 {
 private:
 	string name;
 	string dec;
-	
+	int d = 0;
+
 public:
 
 	// variables
 
 	// constructor
-	inventory();
+	inventory()
+	{
+		name = ""; dec = "";
+	};
 
 	// getters/accessors
-	string getItem(string n, string d)
+
+	string getItem()
 	{
-		dec = d;
-		name = n;
+		return name;
+	};
+
+	string getDec()
+	{
+		return dec;
 	};
 
 	// setters/mutators
-	string setItemName(string h)
+	void setItemName(string h, string d)
 	{
-		return h;
+		dec = d;
+		name = h;
 	};
 
 	// functions
@@ -34,6 +46,6 @@ public:
 	Item item()
 	{
 
-	}
+	};
 	
 };

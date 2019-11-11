@@ -5,7 +5,5 @@ using namespace std;
 
 inventory::inventory()
 {
-	name = "";
-	dec = "";
 };
 
