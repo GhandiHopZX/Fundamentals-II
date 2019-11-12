@@ -38,6 +38,10 @@ private:
 
 public:
 	// variables
+	string name; // YOUR NAME!
+	string bio; // YOUR STORY!
+
+	// stuff
 	std::string statusEff[20] = {}; // status change
 	string *Status = new string; // a new status
 
