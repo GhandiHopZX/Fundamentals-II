@@ -1,9 +1,14 @@
 #pragma once
+#include <string>
+
+using namespace std;
+
 class Player_Actor
 {
 private:
 
 	// variables
+#pragma region vars
 
 	// statbase
 	int hp; // health
@@ -28,13 +33,18 @@ private:
 
 	// experience
 	int EXP; // experience to obtain the per level ap gain
+#pragma endregion
+
 
 public:
 	// variables
-	
+	std::string statusEff[20] = {}; // status change
+	string *Status = new string; // a new status
+
+	// Constructors
 	Player_Actor();
 
-	// getters
+	// getters / accessors
 #pragma region getters
 
 		//Hp Getter
@@ -127,13 +137,19 @@ public:
 		return CON;
 	};
 
+	//get Status
+	string getStatus();
+
+	
+
 	//exp Getter
 	int getExp()
 	{
 		return EXP;
 	};
 #pragma endregion
-	// setters
+	// setters / mutators
+	void setStatus();
 #pragma region setters
 
 	void setHp(int hpin)
@@ -202,5 +218,6 @@ public:
 	}
 #pragma endregion
 
+	// Deconstructor
 	//~Player_Actor();
 };

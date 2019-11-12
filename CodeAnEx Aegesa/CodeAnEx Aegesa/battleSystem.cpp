@@ -5,14 +5,17 @@ using namespace std;
 
 battleSystem::battleSystem()
 {
+	turnGuage = 0;
 
+
+	turnSystem(); // battle mode
 }
 
 void battleSystem::turnSystem()
 {
 	bool guagek;
 	guagek = aGuage;
-	a == 0; // a = no turn at the moment, b = enemy turn check, c = yor TUARN check, d = conflict turn for turn A clash
+	// a = no turn at the moment, b = enemy turn check, c = yor TUARN check, d = conflict turn for turn A clash
 	int dummy = 10;
 	// infinite turns
 	for (int i = 0; i < dummy; i++)

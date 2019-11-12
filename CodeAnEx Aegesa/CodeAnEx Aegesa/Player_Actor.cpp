@@ -4,6 +4,8 @@
 
 Player_Actor::Player_Actor()
 {
+#pragma region Stat_Instantiation
+
 	// base stats
 	hp = 10;
 	sp = 5;
@@ -26,6 +28,26 @@ Player_Actor::Player_Actor()
 
 	// exp
 	EXP = 0;
+#pragma endregion
+
+}
+
+string Player_Actor::getStatus()
+{
+	// a criterion is checked here and used to see what statuses are present in said 
+	// player status then are passed into the statusEFF index then the index is passed into 
+	// gameSystem...
+	// this is where the statuses are taken
+
+	return string();
+}
+
+void Player_Actor::setStatus()
+{
+	// this is where the game and 
+	// battle system look for the 
+	// setStatuses used for said Actor
+
 }
 
 // use this to kill the player and when they die GAME OVER
