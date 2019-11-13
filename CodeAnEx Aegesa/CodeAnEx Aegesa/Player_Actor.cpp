@@ -42,12 +42,20 @@ string Player_Actor::getStatus()
 	return string();
 }
 
-void Player_Actor::setStatus()
+void Player_Actor::setStatus(string statusName[])
 {
 	// this is where the game and 
 	// battle system look for the 
 	// setStatuses used for said Actor
+	// the size of this is compared 
+	// and the status effect is used
+	// 
 
+	for (int i; i < statusName->size; i++)
+	{
+		statusEff[0] += statusName[i];
+	}
+	
 }
 
 // use this to kill the player and when they die GAME OVER

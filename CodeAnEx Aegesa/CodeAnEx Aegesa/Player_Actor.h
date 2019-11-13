@@ -153,7 +153,7 @@ public:
 	};
 #pragma endregion
 	// setters / mutators
-	void setStatus();
+	void setStatus(string statusName[]);
 #pragma region setters
 
 	void setHp(int hpin)
