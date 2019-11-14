@@ -34,7 +34,7 @@ private:
 	// experience
 	int EXP; // experience to obtain the per level ap gain
 #pragma endregion
-
+	
 
 public:
 	// variables
@@ -42,8 +42,9 @@ public:
 	string bio; // YOUR STORY!
 
 	// stuff
-	std::string statusEff[20] = {}; // status change
+	
 	string *Status = new string; // a new status
+	string statusEff[20] = {};
 
 	// Constructors
 	Player_Actor();
@@ -144,8 +145,6 @@ public:
 	//get Status
 	string getStatus();
 
-	
-
 	//exp Getter
 	int getExp()
 	{
@@ -153,7 +152,7 @@ public:
 	};
 #pragma endregion
 	// setters / mutators
-	void setStatus(string statusName[]);
+
 #pragma region setters
 
 	void setHp(int hpin)
@@ -195,7 +194,7 @@ public:
 	{
 		DEF = dein;
 	}
-	
+
 	void setAGI(int agin)
 	{
 		AGI = agin;
@@ -221,7 +220,7 @@ public:
 		EXP = expin;
 	}
 #pragma endregion
-
+	void setStatus(string statusName[]);
 	// Deconstructor
 	//~Player_Actor();
 };

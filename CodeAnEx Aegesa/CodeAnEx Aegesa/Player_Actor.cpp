@@ -2,8 +2,16 @@
 #include <string>
 #include "Player_Actor.h"
 
+
 Player_Actor::Player_Actor()
 {
+	name = "";
+	bio = "";
+}
+
+Player_Actor::Player_Actor()
+{
+
 #pragma region Stat_Instantiation
 
 	// base stats
@@ -25,21 +33,11 @@ Player_Actor::Player_Actor()
 	SPR = 5;
 	STR = 5;
 	CON = 5;
-
 	// exp
+
 	EXP = 0;
-#pragma endregion
 
-}
 
-string Player_Actor::getStatus()
-{
-	// a criterion is checked here and used to see what statuses are present in said 
-	// player status then are passed into the statusEFF index then the index is passed into 
-	// gameSystem...
-	// this is where the statuses are taken
-
-	return string();
 }
 
 void Player_Actor::setStatus(string statusName[])
@@ -49,14 +47,26 @@ void Player_Actor::setStatus(string statusName[])
 	// setStatuses used for said Actor
 	// the size of this is compared 
 	// and the status effect is used
-	// 
 
-	for (int i; i < statusName->size; i++)
+	for (int i = 0; i < statusName->size; i++)
 	{
-		statusEff[0] += statusName[i];
+		statusEff[i] += statusName[i];
 	}
-	
+
 }
+
+
+string Player_Actor::getStatus()
+{
+	// a criterion is checked here and used to see what statuses are present in said 
+	// player status then are passed into the statusEFF index then the index is passed into 
+	// gameSystem...
+	// this is where the statuses are taken
+
+	return statusEff->operator[];
+}
+
+
 
 // use this to kill the player and when they die GAME OVER
 //Player_Actor::~Player_Actor()

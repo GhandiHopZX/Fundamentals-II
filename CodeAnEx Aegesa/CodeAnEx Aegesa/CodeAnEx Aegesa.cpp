@@ -1,5 +1,5 @@
 // CodeAnEx Aegesa.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// Created by: Solomon Pattee
 
 #include <iostream>
 #include <string>
@@ -9,6 +9,8 @@
 #include <algorithm>
 #include <iomanip>
 #include <cmath>
+#include <list>
+#include <iterator>
 
 using namespace std;
 
