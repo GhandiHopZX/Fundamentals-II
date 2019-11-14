@@ -35,7 +35,6 @@ private:
 	int EXP; // experience to obtain the per level ap gain
 #pragma endregion
 	
-
 public:
 	// variables
 	string name; // YOUR NAME!
@@ -49,6 +48,7 @@ public:
 	Player_Actor();
 
 	// getters / accessors
+
 #pragma region getters
 
 		//Hp Getter
@@ -220,6 +220,7 @@ public:
 	}
 #pragma endregion
 	void setStatus(string statusName[]);
+
 	// Deconstructor
-	//~Player_Actor();
+	~Player_Actor();
 };

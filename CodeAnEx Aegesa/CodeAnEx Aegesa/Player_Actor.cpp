@@ -7,12 +7,8 @@ Player_Actor::Player_Actor()
 {
 	name = "";
 	bio = "";
-}
-
-Player_Actor::Player_Actor()
-{
 #pragma region Stat_Instantiation
-
+	
 	// base stats
 	hp = 10;
 	sp = 5;
@@ -46,10 +42,14 @@ void Player_Actor::setStatus(string statusName[])
 	// setStatuses used for said Actor
 	// the size of this is compared 
 	// and the status effect is used
+	
+	int o = 0;
 
-	for (int i = 0; i < statusName->size; i++)
+	o = statusName->assign.max_size;
+
+	for (int i = 0; i < o; i++)
 	{
-		statusEff[i] += statusName[i];
+		statusEff[i] += statusName[o];
 	}
 
 }
@@ -64,7 +64,7 @@ string Player_Actor::getStatus()
 	// gameSystem...
 	// this is where the statuses are taken
 
-	return statusEff->operator[];
+	return statusEff->operator[].assign;
 }
 
 
