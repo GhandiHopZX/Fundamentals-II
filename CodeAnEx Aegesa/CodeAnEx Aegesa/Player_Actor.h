@@ -42,7 +42,6 @@ public:
 	string bio; // YOUR STORY!
 
 	// stuff
-	
 	string *Status = new string; // a new status
 	string statusEff[20] = {};
 

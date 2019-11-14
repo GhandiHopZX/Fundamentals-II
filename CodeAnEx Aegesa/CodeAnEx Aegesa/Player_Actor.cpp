@@ -11,7 +11,6 @@ Player_Actor::Player_Actor()
 
 Player_Actor::Player_Actor()
 {
-
 #pragma region Stat_Instantiation
 
 	// base stats
@@ -33,11 +32,11 @@ Player_Actor::Player_Actor()
 	SPR = 5;
 	STR = 5;
 	CON = 5;
+
 	// exp
 
 	EXP = 0;
-
-
+#pragma endregion
 }
 
 void Player_Actor::setStatus(string statusName[])
@@ -58,8 +57,10 @@ void Player_Actor::setStatus(string statusName[])
 
 string Player_Actor::getStatus()
 {
-	// a criterion is checked here and used to see what statuses are present in said 
-	// player status then are passed into the statusEFF index then the index is passed into 
+	// a criterion is checked here 
+	// and used to see what statuses are present in said 
+	// player status then are passed 
+	// into the statusEFF index then the index is passed into 
 	// gameSystem...
 	// this is where the statuses are taken
 
@@ -69,6 +70,6 @@ string Player_Actor::getStatus()
 
 
 // use this to kill the player and when they die GAME OVER
-//Player_Actor::~Player_Actor()
-//{
-//}
+Player_Actor::~Player_Actor()
+{
+}
