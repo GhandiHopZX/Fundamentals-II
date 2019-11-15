@@ -1,5 +1,8 @@
 #pragma once
 #include <string>
+#include <list>
+#include <vector>
+#include "battleSystem.h"
 
 using namespace std;
 
@@ -41,9 +44,9 @@ public:
 	string bio; // YOUR STORY!
 
 	// stuff
-	string *Status = new string; // a new status
-	string statusEff[20] = {};
-
+	
+	string statusEff[20] = {}; // wip
+	
 	// Constructors
 	Player_Actor();
 
@@ -142,7 +145,7 @@ public:
 	};
 
 	//get Status
-	string getStatus();
+	void getStatus();
 
 	//exp Getter
 	int getExp()
@@ -150,6 +153,7 @@ public:
 		return EXP;
 	};
 #pragma endregion
+
 	// setters / mutators
 
 #pragma region setters
@@ -219,7 +223,7 @@ public:
 		EXP = expin;
 	}
 #pragma endregion
-	void setStatus(string statusName[]);
+	void setStatus(string statusName);
 
 	// Deconstructor
 	~Player_Actor();

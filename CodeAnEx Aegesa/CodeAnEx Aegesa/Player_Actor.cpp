@@ -7,6 +7,7 @@ Player_Actor::Player_Actor()
 {
 	name = "";
 	bio = "";
+
 #pragma region Stat_Instantiation
 	
 	// base stats
@@ -35,27 +36,31 @@ Player_Actor::Player_Actor()
 #pragma endregion
 }
 
-void Player_Actor::setStatus(string statusName[])
+
+void Player_Actor::setStatus(string statusName)
 {
+	// this is where the statuses go in	
+	
+
 	// this is where the game and 
 	// battle system look for the 
 	// setStatuses used for said Actor
-	// the size of this is compared 
 	// and the status effect is used
-	
-	int o = 0;
 
-	o = statusName->assign.max_size;
+	/*int o = 0;
+	const int N = const_cast<const int&>(o);
+
+	o = statusName->size;
 
 	for (int i = 0; i < o; i++)
 	{
 		statusEff[i] += statusName[o];
-	}
+	}*/
 
 }
 
 
-string Player_Actor::getStatus()
+void Player_Actor::getStatus()
 {
 	// a criterion is checked here 
 	// and used to see what statuses are present in said 
@@ -64,7 +69,11 @@ string Player_Actor::getStatus()
 	// gameSystem...
 	// this is where the statuses are taken
 
-	return statusEff->operator[].assign;
+	
+
+	// beta test
+	string beta = "test";
+	// statusEff;
 }
 
 

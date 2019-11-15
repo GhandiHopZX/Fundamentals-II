@@ -1,13 +1,13 @@
-#include "battleSystem.h"
 #include <iostream>
+#include "battleSystem.h"
+#include "Player_Actor.h"
 
 using namespace std;
 
 battleSystem::battleSystem()
 {
 	turnGuage = 0;
-
-
+	aGuage = 0;
 	turnSystem(); // battle mode
 }
 
@@ -22,7 +22,7 @@ void battleSystem::turnSystem()
 	{
 		// turn switch checking whose turn it is
 	
-		switch (a) // check system for whose turn it is
+		switch (guagek) // check system for whose turn it is
 		{
 			// no turn wait...
 		case (a): // turn a is always at 0 if its at one or more... CLASH this is why its called TURN A clash
@@ -43,6 +43,5 @@ void battleSystem::turnSystem()
 			break;
 		}
 		
-
 	}
 }
