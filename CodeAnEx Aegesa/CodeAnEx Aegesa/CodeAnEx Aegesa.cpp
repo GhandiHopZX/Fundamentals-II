@@ -51,11 +51,14 @@ T absolute(T ab0, T ab1, T ab2, T ab3)
 // globals
 
 // function declarations
+void menyu();
 
 int main()
 {
 	// formating
 	// title screen
+#pragma region Title
+
 	cout << "####################################################################################################################\n"
 		<< "#####################################################################################################################\n"
 		<< "#####################################################################################################################\n"
@@ -63,11 +66,11 @@ int main()
 		<< "  CCCCC              OOO        OOO         DD       DD           EEEEEEEE    \n"
 		<< " CC                 OO           OO         DD         DD          EE     \n"
 		<< "CC                 OO              OO       DD         DD          EE   \n"
-		<< "CC       =====  ==  OO             OO  ==  DD         DD   ==    EEEEEEEEE    === \n"
+		<< "CC       =====  == OO              OO  ==  DD         DD   ==    EEEEEEEEE    === \n"
 		<< "CC       =====  == OO             OO ==   DD         DD   ==    EEEEEEEEEE   === \n"
 		<< " CC                OO            OO      DD        DD           EE                                       XXXXX    XXXXXXX\n"
-		<< "  CC                OO          OO      DD       DD            EE                                     XXXXX     XXXXXX\n"
-		<< "   CCCCC             OO        OO       DD     DDD             EEEEEE                               XXXX    XXXXX\n"
+		<< "  CC                OO          OO      DD       DD            EE                                    XXXX      XXXXXX\n"
+		<< "   CCCCC             OO        OO      DD     DDD             EEEEEE                               XXXX    XXXXX\n"
 		<< "    CCCCCCCCCCC       OOOOOOO         DDDDDDDDD              EEEEEEEEEEEEEEEEE                    XXX    XXXX\n"
 		<< "                                                                     XXXXXX     XXXX          XXXXX  XXXXX\n"
 		<< "   AAAAAAA                                     EEEEEEEEEEEEEEEE             XXX     XX      XXX   XXX\n"
@@ -91,14 +94,61 @@ int main()
 		<< "=====    ========    =======    ====-=------ --       = = =====   -  = -======    ====-=----- ===========         ====    ========    == + +   + +     \n"
 		<< "=====    ========     =======               -=-- -                -= -=========               ===              =======    ========     =   +  + +  + +   \n"
 		<< "=================---------------------=--------========================-=- -  = -= -=-=- = ========---- === ========    \n"
-		// gamemenu
-
-
-
 
 		<< endl;
+#pragma endregion
+
+	cout << "Press Enter to Play" << endl;
+	cin.get();
+
+
+	// gamemenu
+
+	menyu();
 
 	cout << endl;
+	cout << "GoodBye!" << endl;
 
 	system("PAUSE");
+}
+
+void menyu()
+{
+	system("CLS");
+	char choice = 's';
+	cout << "Main Menu\n"
+		<< "\n"
+		<< "New Game (n)\n"
+		<< "Continue (c)\n"
+		<< "Quit Game (q)"<< endl;
+	
+	cin >> choice;
+	do
+	{
+		switch (choice)
+		{
+		case 'n':
+		case 'N':
+
+			break;
+
+		case 'c':
+		case 'C':
+
+			break;
+
+		case 'q':
+		case 'Q':
+			choice = 3;
+			break;
+
+		default:
+			cout << "Invalid option..." << endl;
+			menyu();
+			break;
+		};
+
+	} while (choice != 3);
+
+	
 }
