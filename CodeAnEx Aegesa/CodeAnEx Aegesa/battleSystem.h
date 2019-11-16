@@ -33,7 +33,19 @@ public:
 	// setters/mutators
 
 	// functions
+
+	// output types
 	void turnSystem();
+
+	void healOutput(string);
+
+	void normalOutput(string);
+
+	void damageOutput(string);
+
+	void critDmgOutput(string);
+
+	void multiDamageOutput(string[]);
 
 	// templates
 	

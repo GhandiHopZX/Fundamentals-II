@@ -1,6 +1,9 @@
 #include <iostream>
+#include "windows.h"
+#include "stdlib.h"
 #include "battleSystem.h"
 #include "Player_Actor.h"
+#include <stdlib.h>
 
 using namespace std;
 
@@ -16,9 +19,9 @@ void battleSystem::turnSystem()
 	bool guagek;
 	guagek = aGuage;
 	// a = no turn at the moment, b = enemy turn check, c = yor TUARN check, d = conflict turn for turn A clash
-	int dummy = 10;
-	// infinite turns
-	for (int i = 0; i < dummy; i++)
+	// infinite turns till its over
+
+	do
 	{
 		// turn switch checking whose turn it is
 	
@@ -43,5 +46,57 @@ void battleSystem::turnSystem()
 			break;
 		}
 		
+	} while (battleTime == true);
+}
+
+// normal output
+void battleSystem::normalOutput(string ein)
+{
+	system("Color 0F");
+	cout << ein << endl;
+	cout << "Press Enter";
+	cin.get();
+}
+
+// damage output
+void battleSystem::damageOutput(string bin)
+{
+	system("Color 0E");
+	cout << bin << endl;
+	cout << "Press Enter";
+	cin.get();
+}
+
+void battleSystem::critDmgOutput(string din)
+{
+	system("Color 0C");
+	cout << din << endl;
+	cout << "Press Enter";
+	cin.get();
+}
+
+// heal output
+void battleSystem::healOutput(string hin)
+{
+	system("Color 0B");
+	cout << hin << endl;
+	cout << "Press Enter";
+	cin.get();
+}
+
+// an experiment?
+void battleSystem::multiDamageOutput(string n[])
+{
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	// you can loop k higher to see more color choices
+	for (int k = 1; k < 255; k++)
+	{
+
+		// pick the colorattribute k you want
+		SetConsoleTextAttribute(hConsole, k);
+		cout << k << n[k] << endl;
+
 	}
+	cout << "Press Enter";
+	cin.get();
 }
