@@ -225,6 +225,8 @@ public:
 #pragma endregion
 	void setStatus(string statusName);
 
+	void setGuage();
+
 	// Deconstructor
 	~Player_Actor();
 };

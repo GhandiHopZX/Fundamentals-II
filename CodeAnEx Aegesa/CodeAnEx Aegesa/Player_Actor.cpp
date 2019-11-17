@@ -59,6 +59,11 @@ void Player_Actor::setStatus(string statusName)
 
 }
 
+void Player_Actor::setGuage()
+{
+
+}
+
 
 void Player_Actor::getStatus()
 {
