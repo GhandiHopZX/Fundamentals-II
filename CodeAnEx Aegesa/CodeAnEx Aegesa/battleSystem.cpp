@@ -57,6 +57,8 @@ bool battleSystem::tGuage(int spdPlus, int spd, int fp)
 	tm guage;
 	guage.tm_sec = (spd * spdPlus);
 
+	cout << "priming..." << endl;
+
 	for (size_t i = 0; i < fp; i++)
 	{
 		guage.tm_sec++;
