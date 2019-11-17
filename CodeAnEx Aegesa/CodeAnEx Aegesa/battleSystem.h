@@ -2,6 +2,7 @@
 #include <string>
 #include <list>
 #include <vector>
+#include <ctime>
 
 using namespace std;
 
@@ -31,8 +32,9 @@ public:
 	// getters/accessors
 
 	// setters/mutators
-
+	
 	// functions
+	bool tGuage(int, int spd, int fp);
 
 	// output types
 	void turnSystem();

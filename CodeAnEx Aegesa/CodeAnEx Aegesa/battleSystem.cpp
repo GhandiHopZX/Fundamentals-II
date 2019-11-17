@@ -14,6 +14,8 @@ battleSystem::battleSystem()
 	turnSystem(); // battle mode
 }
 
+
+
 void battleSystem::turnSystem()
 {
 	bool guagek;
@@ -47,6 +49,20 @@ void battleSystem::turnSystem()
 		}
 		
 	} while (battleTime == true);
+}
+
+//turn guage
+bool battleSystem::tGuage(int spdPlus, int spd, int fp)
+{
+	tm guage;
+	guage.tm_sec = (spd * spdPlus);
+
+	for (size_t i = 0; i < fp; i++)
+	{
+		guage.tm_sec++;
+	}
+
+	return aGuage;
 }
 
 // normal output

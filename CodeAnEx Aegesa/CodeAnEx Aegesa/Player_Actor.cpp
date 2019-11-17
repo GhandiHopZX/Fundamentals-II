@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <ctime>
 #include "Player_Actor.h"
 
 
@@ -61,7 +62,7 @@ void Player_Actor::setStatus(string statusName)
 
 void Player_Actor::setGuage()
 {
-
+	
 }
 
 
