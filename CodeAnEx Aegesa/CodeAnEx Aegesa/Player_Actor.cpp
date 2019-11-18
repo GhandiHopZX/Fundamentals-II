@@ -2,6 +2,7 @@
 #include <string>
 #include <ctime>
 #include "Player_Actor.h"
+#include "battleSystem.h"
 
 
 Player_Actor::Player_Actor()
@@ -17,7 +18,7 @@ Player_Actor::Player_Actor()
 	sp = 5;
 	ap = 5;
 	dp = 0;
-	fp = 0;
+	fp = 1;
 
 	// battler stats
 	ATK = 5;
@@ -61,9 +62,9 @@ void Player_Actor::setStatus(string statusName)
 
 }
 
-void Player_Actor::setGuage()
+void Player_Actor::battleGuage()
 {
-	
+
 }
 
 

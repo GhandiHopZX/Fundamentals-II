@@ -473,7 +473,7 @@ public:
 #pragma endregion
 	void setStatus(string statusName);
 
-	void setGuage();
+	void battleGuage();
 
 	// Deconstructor
 	~Player_Actor();

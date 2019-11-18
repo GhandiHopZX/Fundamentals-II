@@ -9,26 +9,28 @@ using namespace std;
 
 battleSystem::battleSystem()
 {
-	turnGuage = 0;
+	turnGuageNum = 0; // this is if more than one is set, its usually reset
 	aGuage = 0;
 	battleMode(); // battle mode
 	
+}
+ 
+// how many turns is your status eff or plus gonna last???
+void battleSystem::statTurn() 
+{
 }
 
 void battleSystem::battleMode()
 {
 	Player_Actor h; 
 	
-	tGuage(h.dummyPlus,h.getSPD(),h.getFp());
+	playerTGuage(h.dummyPlus,h.getSPD(),h.getFp());
 
-	if (true)
-	{
-		turnSystem();
-	}
-	
+	// enemy database needed..
+	//enemyTGuage()
 }
 
-void battleSystem::turnSystem()
+void battleSystem::turnSystem(t jumpTurn)
 {
 	bool guagek;
 	guagek = aGuage;
@@ -64,27 +66,47 @@ void battleSystem::turnSystem()
 }
 
 //turn guage
-bool battleSystem::tGuage(int spdPlus, int spd, int fp)
+bool battleSystem::playerTGuage(int spdPlus, int spd, int fp)
 {
 	tm guage;
-	guage.tm_sec = (spd + spdPlus);
+	guage.tm_sec = 0.00; // prototype timer or max?
 
 	normalOutput("priming for attack....");
-	int i = 0;
+	int max = (spd + spdPlus * (fp / 2));
 
-	if (fp >= i)
+	while (max >= guage.tm_sec)
 	{
-		for (i = 0; i < fp; i++)
-		{
-			guage.tm_sec++;
-		}
+		++guage.tm_sec;
 	}
-	else
+	
+	*aGuage = true;
+	turnSystem(c);
+	normalOutput("primed..!");
+	return aGuage;
+	
+}
+
+// this will also be the general ai turn guage since it doesn't really matter.
+// if two party members have the same turn then I'll call unity attack the 
+// target will already be set since this is a single player game.
+bool battleSystem::enemyTGuage(int spdPlus, int spd, int fp)
+{
+	tm guage;
+	guage.tm_sec = 0.00; // prototype timer or max?
+
+	normalOutput("priming for attack....");
+	int max = (spd + spdPlus * (fp / 2));
+
+	while (max >= guage.tm_sec)
 	{
-		*aGuage = true;
-		normalOutput("primed..!");
-		return aGuage;
+		++guage.tm_sec;
 	}
+
+	*aGuage = true;
+	turnSystem(b);
+	normalOutput("primed..!");
+	return aGuage;
+
 }
 
 // normal output

@@ -24,7 +24,7 @@ public:
 	battleSystem();
 
 	// variables
-	int turnGuage;
+	int turnGuageNum;
 	string* Status = new string; // a new status
 
 	list <string> statusIndex = {};
@@ -38,10 +38,11 @@ public:
 
 	void battleMode();
 
-	bool tGuage(int, int spd, int fp);
+	bool playerTGuage(int, int spd, int fp);
+	bool enemyTGuage(int, int spd, int fp);
 
 	// output types
-	void turnSystem();
+	void turnSystem(t);
 
 	void healOutput(string);
 
