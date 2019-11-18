@@ -8,6 +8,7 @@ Player_Actor::Player_Actor()
 {
 	name = "";
 	bio = "";
+	statmulti = false;
 
 #pragma region Stat_Instantiation
 	

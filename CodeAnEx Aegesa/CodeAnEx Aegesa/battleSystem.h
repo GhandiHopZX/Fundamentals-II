@@ -34,6 +34,10 @@ public:
 	// setters/mutators
 	
 	// functions
+	void statTurn(); // recalls all or any stat plus modifier functions for reauthentications when a number of turns are up
+
+	void battleMode();
+
 	bool tGuage(int, int spd, int fp);
 
 	// output types

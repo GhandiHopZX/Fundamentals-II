@@ -11,10 +11,22 @@ battleSystem::battleSystem()
 {
 	turnGuage = 0;
 	aGuage = 0;
-	turnSystem(); // battle mode
+	battleMode(); // battle mode
+	
 }
 
+void battleSystem::battleMode()
+{
+	Player_Actor h; 
+	
+	tGuage(h.dummyPlus,h.getSPD(),h.getFp());
 
+	if (true)
+	{
+		turnSystem();
+	}
+	
+}
 
 void battleSystem::turnSystem()
 {
@@ -55,16 +67,24 @@ void battleSystem::turnSystem()
 bool battleSystem::tGuage(int spdPlus, int spd, int fp)
 {
 	tm guage;
-	guage.tm_sec = (spd * spdPlus);
+	guage.tm_sec = (spd + spdPlus);
 
-	cout << "priming..." << endl;
+	normalOutput("priming for attack....");
+	int i = 0;
 
-	for (size_t i = 0; i < fp; i++)
+	if (fp >= i)
 	{
-		guage.tm_sec++;
+		for (i = 0; i < fp; i++)
+		{
+			guage.tm_sec++;
+		}
 	}
-
-	return aGuage;
+	else
+	{
+		*aGuage = true;
+		normalOutput("primed..!");
+		return aGuage;
+	}
 }
 
 // normal output

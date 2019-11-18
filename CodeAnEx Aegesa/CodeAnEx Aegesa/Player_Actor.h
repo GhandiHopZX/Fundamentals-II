@@ -36,6 +36,8 @@ private:
 
 	// experience
 	int EXP; // experience to obtain the per level ap gain
+
+	
 #pragma endregion
 	
 public:
@@ -43,6 +45,10 @@ public:
 	string name; // YOUR NAME!
 	string bio; // YOUR STORY!
 
+	// stat multiplier flag
+	bool statmulti;
+	int dummyPlus;
+	
 	// stuff
 	
 	string statusEff[20] = {}; // wip
@@ -152,6 +158,7 @@ public:
 	{
 		return EXP;
 	};
+
 #pragma endregion
 
 	// setters / mutators
@@ -218,10 +225,251 @@ public:
 		CON = coin;
 	}
 
-	void setEXP(int expin)
+	void setEXP(int expin, int plus)
 	{
-		EXP = expin;
+		//int eDrain = plus;
+
+		if (statmulti == true)
+		{
+			EXP = expin + plus;
+		}
+		else
+		{
+			battleSystem b;
+			b.normalOutput("EXP multiplier gain has faded.");
+			EXP = expin;
+			//EXP -= eDrain;
+		}
 	}
+
+	void statPlus(char stat, int plus)
+	{
+		int *eDrain = new int;
+
+		switch (stat)
+		{
+		case 'h':
+			*eDrain = plus;
+			if (statmulti == true)
+			{
+				int cHp = getHp();
+				cHp += plus;
+				setHp(cHp);
+			}
+			else if (statmulti == false)
+			{
+				battleSystem b;
+				b.normalOutput("HP plus modifier has faded");
+
+				int dHp = getHp();
+				dHp - *eDrain;
+				setHp(dHp);
+			}
+			break;
+		case 's':
+			*eDrain = plus;
+			if (statPlus)
+			{
+				int cSp = getSp();
+				cSp += plus;
+				setSp(cSp);
+			}
+			else
+			{
+				battleSystem b;
+				b.normalOutput("SP plus modifier has faded");
+
+				int dSp = getSp();
+				dSp - *eDrain;
+				setSp(dSp);
+			}
+			break;
+		case 'f':
+			*eDrain = plus;
+			if (statPlus)
+			{
+				int cFp = getFp();
+				cFp += plus;
+				setFp(cFp);
+			}
+			else
+			{
+				battleSystem b;
+				b.normalOutput("FP plus modifier has faded");
+
+				int dFp = getFp();
+				dFp - *eDrain;
+				setFp(dFp);
+			}
+			break;
+		case 'a':
+			*eDrain = plus;
+			if (statPlus)
+			{
+				int cAp = getAp();
+				cAp += plus;
+				setSp(cAp);
+			}
+			else
+			{
+				battleSystem b;
+				b.normalOutput("AP plus modifier has faded");
+
+				int dAp = getAp();
+				dAp - *eDrain;
+				setHp(dAp);
+			}
+			break;
+		case 'd':
+			*eDrain = plus;
+			if (statPlus)
+			{
+				int cDp = getDp();
+				cDp += plus;
+				setDp(cDp);
+			}
+			else
+			{
+				battleSystem b;
+				b.normalOutput("DP plus modifier has faded");
+
+				int dDp = getDp();
+				dDp - *eDrain;
+				setDp(dDp);
+			}
+			break;
+		case 'str':
+			*eDrain = plus;
+			if (statPlus)
+			{
+				int cStr = getSTR();
+				cStr += plus;
+				setSTR(cStr);
+			}
+			else
+			{
+				battleSystem b;
+				b.normalOutput("STR plus modifier has faded");
+
+				int dStr = getSTR();
+				dStr - *eDrain;
+				setSTR(dStr);
+			}
+			break;
+		case 'atk':
+			*eDrain = plus;
+			if (statPlus)
+			{
+				int cAtk = getATK();
+				cAtk += plus;
+				setATK(cAtk);
+			}
+			else
+			{
+				battleSystem b;
+				b.normalOutput("ATK plus modifier has faded");
+
+				int dAtk = getATK();
+				dAtk - *eDrain;
+				setATK(dAtk);
+			}
+			break;
+		case 'def':
+			*eDrain = plus;
+			if (statPlus)
+			{
+				int cDef = getDEF();
+				cDef += plus;
+				setDEF(cDef);
+			}
+			else
+			{
+				battleSystem b;
+				b.normalOutput("DEF plus modifier has faded");
+
+				int dDef = getDEF();
+				dDef - *eDrain;
+				setDEF(dDef);
+			}
+			break;
+		case 'agi':
+			*eDrain = plus;
+			if (statPlus)
+			{
+				int cAgi = getAGI();
+				cAgi += plus;
+				setSp(cAgi);
+			}
+			else
+			{
+				battleSystem b;
+				b.normalOutput("AGI plus modifier has faded");
+
+				int dAgi = getAGI();
+				dAgi - *eDrain;
+				setAGI(dAgi);
+			}
+			break;
+		case 'spd':
+			*eDrain = plus;
+			if (statPlus)
+			{
+				int cSpd = getSPD();
+				cSpd += plus;
+				setSp(cSpd);
+			}
+			else
+			{
+				battleSystem b;
+				b.normalOutput("SPD plus modifier has faded");
+
+				int dSpd = getSPD();
+				dSpd - *eDrain;
+				setSPD(dSpd);
+			}
+			break;
+		case 'end':
+			*eDrain = plus;
+			if (statPlus)
+			{
+				int cEnd = getEND();
+				cEnd += plus;
+				setEND(cEnd);
+			}
+			else
+			{
+				battleSystem b;
+				b.normalOutput("END plus modifier has faded");
+
+				int dEnd = getEND();
+				dEnd - *eDrain;
+				setEND(dEnd);
+			}
+			break;
+		case 'con':
+			*eDrain = plus;
+			if (statPlus)
+			{
+				int cCon = getCON();
+				cCon += plus;
+				setCON(cCon);
+			}
+			else
+			{
+				battleSystem b;
+				b.normalOutput("CON plus modifier has faded");
+
+				int dCon = getCON();
+				dCon - *eDrain;
+				setHp(dCon);
+			}
+			break;
+		default:
+			break;
+		}
+	}
+
+
 #pragma endregion
 	void setStatus(string statusName);
 
