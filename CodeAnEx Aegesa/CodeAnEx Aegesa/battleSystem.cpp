@@ -80,7 +80,7 @@ bool battleSystem::playerTGuage(int spdPlus, int spd, int fp)
 
 	int rate = (spd + spdPlus * (fp / 2));
 
-	if (true)
+	if (a)
 	{
 		while (max >= guage.tm_sec)
 		{
@@ -88,12 +88,14 @@ bool battleSystem::playerTGuage(int spdPlus, int spd, int fp)
 		}
 	}
 	
-	
+	// push turn
+	int push = 2;
+
 	*aGuage = true;
-	turnSystem(c);
+	turnSystem(static_cast<t>(push));
 	normalOutput("primed..!");
+	guage.tm_sec = 0.00; // reset
 	return aGuage;
-	
 }
 
 // this will also be the general ai turn guage since it doesn't really matter.
@@ -109,7 +111,7 @@ bool battleSystem::enemyTGuage(int spdPlus, int spd, int fp)
 
 	int rate = (spd + spdPlus * (fp / 2));
 
-	if (true)
+	if (a)
 	{
 		while (max >= guage.tm_sec)
 		{
@@ -117,9 +119,13 @@ bool battleSystem::enemyTGuage(int spdPlus, int spd, int fp)
 		}
 	}
 
+	// push turn
+	int push = 1;
+	
 	*aGuage = true;
-	turnSystem(b);
+	turnSystem(static_cast<t>(push));
 	normalOutput("primed..!");
+	guage.tm_sec = 0.00; // reset
 	return aGuage;
 
 }
