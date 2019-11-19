@@ -39,7 +39,7 @@ Player_Actor::Player_Actor()
 #pragma endregion
 }
 
-
+// use a linked list?
 void Player_Actor::setStatus(string statusName)
 {
 	// this is where the statuses go in	

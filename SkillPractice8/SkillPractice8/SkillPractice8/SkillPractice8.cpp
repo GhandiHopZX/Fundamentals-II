@@ -1,4 +1,5 @@
-// SkillPractice8.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// SkillPractice8.cpp : This file contains the 'main' function.
+// Program execution begins and ends there.
 //
 
 #include <iostream>
@@ -12,21 +13,21 @@ template <class T>
 T recursiveMulti(T n)
 {
 	if (n == 0)
-		return 1;
+		return 1; // back to here
 	else
 	{
 		int fact = recursiveMulti(n - 1);
-		return fact * n;
+		return fact * n; // from here 
 	}
 	//return n;
 }
 
 int main()
 {
-	int m;
+	double m;
 	cout << "Imput a number for factorial: " << endl;
 	cin >> m;
-	cout << recursiveMulti(m);
+	cout << recursiveMulti(m) << endl;
 	cout << endl;
 
 	cout << endl;

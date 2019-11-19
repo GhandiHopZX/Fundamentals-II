@@ -15,7 +15,8 @@ World::World()
 
 void World::beginningStory()
 {
-	system("COLOR e4");
+	system("COLOR e4"); // shop color
+	system("COLOR 09");
 
 	string nameIn;
 	string bioIn;
@@ -33,8 +34,15 @@ void World::beginningStory()
 	Player_Actor().bio = bioIn;
 
 	//opening setting
-
+	system("COLOR 07");
 	cout << "*Wake up....*" << endl;
 	cout << "Huhhh..." << endl;
-
+	cout << "" << endl;
+	cout << "" << endl;
+	cout << "" << endl;
+	cout << "" << endl;
+	cout << "" << endl;
+	cout << "" << endl;
+	cout << "" << endl;
+	cout << "" << endl;
 }

@@ -44,16 +44,21 @@ void battleSystem::turnSystem(t jumpTurn)
 		switch (guagek) // check system for whose turn it is
 		{
 			// no turn wait...
-		case (a): // turn a is always at 0 if its at one or more... CLASH this is why its called TURN A clash
+		case (a):
+			// turn a is always at 0 if its at d which = 4... 
+			// CLASH this is why its called TURN A clash
 			break;
-			// enemy turn check
-		case (b):
+			
+		case (b): 
+			// enemy turn or ai turn check
 			break;
-			// yor tuarn
+			
 		case (c):
+			// yor tuarn
 			break;
-			// TurnA
+			
 		case (d):
+			// TurnA
 			break;
 
 		default:
@@ -72,7 +77,9 @@ bool battleSystem::playerTGuage(int spdPlus, int spd, int fp)
 	guage.tm_sec = 0.00; // prototype timer or max?
 
 	normalOutput("priming for attack....");
-	int max = (spd + spdPlus * (fp / 2));
+	int max = (fp+fp);
+
+	int rate = (spd + spdPlus * (fp / 2));
 
 	while (max >= guage.tm_sec)
 	{
@@ -95,7 +102,9 @@ bool battleSystem::enemyTGuage(int spdPlus, int spd, int fp)
 	guage.tm_sec = 0.00; // prototype timer or max?
 
 	normalOutput("priming for attack....");
-	int max = (spd + spdPlus * (fp / 2));
+	int max = (fp+fp);
+
+	int rate = (spd + spdPlus * (fp / 2));
 
 	while (max >= guage.tm_sec)
 	{
@@ -115,6 +124,7 @@ void battleSystem::normalOutput(string ein)
 	system("Color 0F");
 	cout << ein << endl;
 	cout << "Press Enter";
+	system("COLOR 07");
 	cin.get();
 }
 
@@ -124,6 +134,7 @@ void battleSystem::damageOutput(string bin)
 	system("Color 0E");
 	cout << bin << endl;
 	cout << "Press Enter";
+	system("COLOR 07");
 	cin.get();
 }
 
@@ -132,6 +143,7 @@ void battleSystem::critDmgOutput(string din)
 	system("Color 0C");
 	cout << din << endl;
 	cout << "Press Enter";
+	system("COLOR 07");
 	cin.get();
 }
 
@@ -141,6 +153,7 @@ void battleSystem::healOutput(string hin)
 	system("Color 0B");
 	cout << hin << endl;
 	cout << "Press Enter";
+	system("COLOR 07");
 	cin.get();
 }
 
@@ -157,6 +170,7 @@ void battleSystem::multiDamageOutput(string n[])
 		cout << k << n[k] << endl;
 
 	}
+	system("COLOR 07");
 	cout << "Press Enter";
 	cin.get();
 }
