@@ -17,8 +17,7 @@ battleSystem::battleSystem()
  
 // how many turns is your status eff or plus gonna last???
 void battleSystem::statTurn() 
-{
-}
+{}
 
 void battleSystem::battleMode()
 {
@@ -81,10 +80,14 @@ bool battleSystem::playerTGuage(int spdPlus, int spd, int fp)
 
 	int rate = (spd + spdPlus * (fp / 2));
 
-	while (max >= guage.tm_sec)
+	if (true)
 	{
-		++guage.tm_sec;
+		while (max >= guage.tm_sec)
+		{
+			++guage.tm_sec;
+		}
 	}
+	
 	
 	*aGuage = true;
 	turnSystem(c);
@@ -106,9 +109,12 @@ bool battleSystem::enemyTGuage(int spdPlus, int spd, int fp)
 
 	int rate = (spd + spdPlus * (fp / 2));
 
-	while (max >= guage.tm_sec)
+	if (true)
 	{
-		++guage.tm_sec;
+		while (max >= guage.tm_sec)
+		{
+			++guage.tm_sec;
+		}
 	}
 
 	*aGuage = true;

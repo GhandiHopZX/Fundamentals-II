@@ -16,7 +16,8 @@ T recursiveMulti(T n)
 		return 1; // back to here
 	else
 	{
-		int fact = recursiveMulti(n - 1);
+		unsigned 
+			long long int fact = recursiveMulti(n - 1);
 		return fact * n; // from here 
 	}
 	//return n;
@@ -24,7 +25,7 @@ T recursiveMulti(T n)
 
 int main()
 {
-	double m;
+	unsigned long long int m;
 	cout << "Imput a number for factorial: " << endl;
 	cin >> m;
 	cout << recursiveMulti(m) << endl;
