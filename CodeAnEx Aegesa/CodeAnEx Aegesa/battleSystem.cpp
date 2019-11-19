@@ -84,7 +84,7 @@ bool battleSystem::playerTGuage(int spdPlus, int spd, int fp)
 	{
 		while (max >= guage.tm_sec)
 		{
-			++guage.tm_sec;
+			++guage.tm_sec*rate;
 		}
 	}
 	
@@ -115,7 +115,7 @@ bool battleSystem::enemyTGuage(int spdPlus, int spd, int fp)
 	{
 		while (max >= guage.tm_sec)
 		{
-			++guage.tm_sec;
+			++guage.tm_sec*rate;
 		}
 	}
 
