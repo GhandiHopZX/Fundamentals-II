@@ -3,6 +3,7 @@
 #include <list>
 #include <vector>
 #include "battleSystem.h"
+#include <stack>
 
 using namespace std;
 
@@ -50,7 +51,6 @@ public:
 	int dummyPlus;
 	
 	// stuff
-	
 	string statusEff[20] = {}; // wip
 	
 	// Constructors

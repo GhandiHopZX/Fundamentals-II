@@ -1,9 +1,9 @@
 #include <iostream>
+#include <stdlib.h>
 #include "windows.h"
 #include "stdlib.h"
 #include "battleSystem.h"
 #include "Player_Actor.h"
-#include <stdlib.h>
 
 using namespace std;
 
