@@ -268,13 +268,13 @@ public:
 			break;
 		case 's':
 			*eDrain = plus;
-			if (statPlus)
+			if (statmulti == true)
 			{
 				int cSp = getSp();
 				cSp += plus;
 				setSp(cSp);
 			}
-			else
+			else if (statmulti == false)
 			{
 				battleSystem b;
 				b.normalOutput("SP plus modifier has faded");
@@ -286,13 +286,13 @@ public:
 			break;
 		case 'f':
 			*eDrain = plus;
-			if (statPlus)
+			if (statmulti == true)
 			{
 				int cFp = getFp();
 				cFp += plus;
 				setFp(cFp);
 			}
-			else
+			else if (statmulti == false)
 			{
 				battleSystem b;
 				b.normalOutput("FP plus modifier has faded");
@@ -304,13 +304,13 @@ public:
 			break;
 		case 'a':
 			*eDrain = plus;
-			if (statPlus)
+			if (statmulti == true)
 			{
 				int cAp = getAp();
 				cAp += plus;
 				setSp(cAp);
 			}
-			else
+			else if (statmulti == false)
 			{
 				battleSystem b;
 				b.normalOutput("AP plus modifier has faded");
@@ -322,13 +322,13 @@ public:
 			break;
 		case 'd':
 			*eDrain = plus;
-			if (statPlus)
+			if (statmulti == true)
 			{
 				int cDp = getDp();
 				cDp += plus;
 				setDp(cDp);
 			}
-			else
+			else if (statmulti == false)
 			{
 				battleSystem b;
 				b.normalOutput("DP plus modifier has faded");
@@ -340,13 +340,13 @@ public:
 			break;
 		case 'str':
 			*eDrain = plus;
-			if (statPlus)
+			if (statmulti == true)
 			{
 				int cStr = getSTR();
 				cStr += plus;
 				setSTR(cStr);
 			}
-			else
+			else if(statmulti == false)
 			{
 				battleSystem b;
 				b.normalOutput("STR plus modifier has faded");
@@ -358,13 +358,13 @@ public:
 			break;
 		case 'atk':
 			*eDrain = plus;
-			if (statPlus)
+			if (statmulti == true)
 			{
 				int cAtk = getATK();
 				cAtk += plus;
 				setATK(cAtk);
 			}
-			else
+			else if (statmulti == false)
 			{
 				battleSystem b;
 				b.normalOutput("ATK plus modifier has faded");
@@ -376,13 +376,13 @@ public:
 			break;
 		case 'def':
 			*eDrain = plus;
-			if (statPlus)
+			if (statmulti == true)
 			{
 				int cDef = getDEF();
 				cDef += plus;
 				setDEF(cDef);
 			}
-			else
+			else if (statmulti == false)
 			{
 				battleSystem b;
 				b.normalOutput("DEF plus modifier has faded");
@@ -394,13 +394,13 @@ public:
 			break;
 		case 'agi':
 			*eDrain = plus;
-			if (statPlus)
+			if (statmulti == true)
 			{
 				int cAgi = getAGI();
 				cAgi += plus;
 				setSp(cAgi);
 			}
-			else
+			else if (statmulti == false)
 			{
 				battleSystem b;
 				b.normalOutput("AGI plus modifier has faded");
@@ -412,13 +412,13 @@ public:
 			break;
 		case 'spd':
 			*eDrain = plus;
-			if (statPlus)
+			if (statmulti == true)
 			{
 				int cSpd = getSPD();
 				cSpd += plus;
 				setSp(cSpd);
 			}
-			else
+			else if (statmulti == false)
 			{
 				battleSystem b;
 				b.normalOutput("SPD plus modifier has faded");
@@ -430,13 +430,13 @@ public:
 			break;
 		case 'end':
 			*eDrain = plus;
-			if (statPlus)
+			if (statmulti == true)
 			{
 				int cEnd = getEND();
 				cEnd += plus;
 				setEND(cEnd);
 			}
-			else
+			else if (statmulti == false)
 			{
 				battleSystem b;
 				b.normalOutput("END plus modifier has faded");
@@ -448,13 +448,13 @@ public:
 			break;
 		case 'con':
 			*eDrain = plus;
-			if (statPlus)
+			if (statmulti == true)
 			{
 				int cCon = getCON();
 				cCon += plus;
 				setCON(cCon);
 			}
-			else
+			else if(statmulti == false)
 			{
 				battleSystem b;
 				b.normalOutput("CON plus modifier has faded");
