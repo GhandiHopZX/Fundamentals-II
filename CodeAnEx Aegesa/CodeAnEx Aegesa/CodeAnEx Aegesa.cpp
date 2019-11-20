@@ -11,6 +11,7 @@
 #include <cmath>
 #include <list>
 #include <iterator>
+#include "World.h"
 
 using namespace std;
 
@@ -49,6 +50,8 @@ T absolute(T ab0, T ab1, T ab2, T ab3)
 }
 
 // globals
+
+World d;
 
 // function declarations
 void menyu();
@@ -129,7 +132,8 @@ void menyu()
 		{
 		case 'n':
 		case 'N':
-
+			
+			d.beginningStory();
 			break;
 
 		case 'c':
