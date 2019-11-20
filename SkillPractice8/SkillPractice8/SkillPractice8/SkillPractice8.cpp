@@ -37,7 +37,19 @@ using namespace std;
 //	}
 //}
 
-int product(int x, int y);
+template <class T>
+T product(T x, T y)
+{
+	if (y > 1)
+		return(x + (product(y - 1, x)));
+
+	else if ((x == 0) || (y == 0))
+		return 0;
+	else if (y == 1)
+		return x;
+	return x;
+}
+
 
 int main()
 {
@@ -53,18 +65,6 @@ int main()
 
 	cout << endl;
 	system("PAUSE");
-}
-
-int product(int x, int y)
-{
-	if (y > 1)
-		return(x + (product(y - 1, x)));
-
-	else if ((x == 0) || (y == 0))
-		return 0;
-	else if (y == 1)
-		return x;
-	return x;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
