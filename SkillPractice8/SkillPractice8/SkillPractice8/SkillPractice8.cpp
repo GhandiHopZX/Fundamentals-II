@@ -40,14 +40,21 @@ using namespace std;
 template <class T>
 T product(T x, T y)
 {
-	if (y > 1)
+	if (y > 1) {
 		return(x + (product(y - 1, x)));
-
+	}
 	else if ((x == 0) || (y == 0))
+	{
 		return 0;
+	}
 	else if (y == 1)
+	{
 		return x;
-	return x;
+	}
+	else
+	{
+		return x;
+	}	
 }
 
 
