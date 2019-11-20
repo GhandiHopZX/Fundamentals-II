@@ -10,25 +10,61 @@
 using namespace std;
 
 template <class T> 
-T recursiveMulti(T n)
+T factorial(T n)
 {
 	if (n == 0)
 		return 1; // back to here
 	else
 	{
-		unsigned 
+		unsigned
 			long long int fact = recursiveMulti(n - 1);
 		return fact * n; // from here 
 	}
 	//return n;
 }
 
+template <class T>
+T recursiveAddition(T x, T y)
+{
+	int z; // equals x * y
+	z = x + y;
+
+	if (z >= x)
+	{
+		x += y;
+		return x;
+	}
+	else 
+	{
+		return z = x + y;
+	}
+}
+
+template <class T>
+T recursiveMulti(T x, T y)
+{
+	int z = y + x;
+
+	if (z + y > x)
+	{
+		x += y;
+		return x;
+	}
+	else
+	{
+		return z = x + y;
+	}
+}
+
 int main()
 {
 	unsigned long long int m;
-	cout << "Imput a number for factorial: " << endl;
+	unsigned long long int d;
+
+	cout << "Input two numbers for multiplication..." << endl;
 	cin >> m;
-	cout << recursiveMulti(m) << endl;
+	cin >> d;
+	cout << recursiveMulti(m, d) << endl;
 	cout << endl;
 
 	cout << endl;

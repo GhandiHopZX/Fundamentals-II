@@ -37,4 +37,5 @@ bool inventory::isEmpty() const
 
 inventory::~inventory()
 {
+	delete [] stackArray;
 }
