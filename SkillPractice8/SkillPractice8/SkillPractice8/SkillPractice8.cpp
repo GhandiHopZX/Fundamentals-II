@@ -6,10 +6,6 @@ Description: This program does multiplication through recursion
 */
 
 #include <iostream>
-#include <string>
-#include <cstdio>
-#include <cmath>
-#include <iomanip>
 
 using namespace std;
 
@@ -32,7 +28,6 @@ T product(T x, T y)
 		return x;
 	}	
 }
-
 
 int main()
 {
