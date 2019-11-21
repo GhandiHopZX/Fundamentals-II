@@ -18,7 +18,7 @@ int z = 0;
 void sign(unsigned long long int);
 
 template <class T> 
-T recMulti(T x, T y)
+T recMulti(T x, T y) // this is broken
 {
 	if (y != 0) // if need be return
 	{
