@@ -1,31 +1,55 @@
-// CA10.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/******************************
+   Name
+   Date
+   File Name template.cpp
+   Description
+********************************/
 
+// Headers
 #include <iostream>
-
+#include <cstdlib>
+#include <string>
 using namespace std;
 
-void printFun(int);
+// Global variables
+
+// Function declarations
+void sign(unsigned long long int);
 
 int main()
 {
-	int test = 3;
-	printFun(test);
+	//	Your code goes here
+	int number; 
+
+	cout << "enter a value and I will enter a sign: ";
+	cin >> number;
+
+	sign(number);
+
+	//	Make sure we place the end message on a new line
 	cout << endl;
 
-	system("PAUSE");
+	//	The following is system dependent.  It will only work on Windows
+	// system("PAUSE");
+
+	/*
+	// A non-system dependent method is below
+	cout << "Press any key to continue";
+	cin.get();
+	*/
 	return 0;
 }
 
-void printFun(int t)
+void sign(unsigned long long int num) // this was a while loop and now its a recursive function
 {
-	if (t < 1)
-		return;
+	if (num > 0)
+	{
+		cout << num << endl;
+		cout << "No parking." << endl;
+		sign(--num);
+	}
 	else
 	{
-		cout << t << " ";
-		printFun(t - 1);
-		cout << endl << "This is after recursive call\n";
 		return;
 	}
 }

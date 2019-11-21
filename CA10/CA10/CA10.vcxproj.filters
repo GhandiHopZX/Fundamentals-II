@@ -15,6 +15,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="funRecursive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="CA10.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
