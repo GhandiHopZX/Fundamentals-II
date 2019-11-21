@@ -12,19 +12,55 @@
 using namespace std;
 
 // Global variables
+int z = 0;
 
 // Function declarations
 void sign(unsigned long long int);
+
+template <class T> 
+T recMulti(T x, T y)
+{
+	if (y != 0) // if need be return
+	{
+		z += y;
+		
+		recMulti(x, --y);
+	}
+	else
+	{
+		return z;
+	}
+	//else if(y == 0) // if 0
+	//{
+	//	return 0;
+	//}
+	//else if(y < 0) // negative
+	//{
+	//	z = x + y;
+	//	return recMulti(x, --y);
+	//
+	//}
+	//else // irrational
+	//{
+	//	return x;
+	//}
+	//if (y < 0)
+	//{
+	//	return -z;
+	//}
+}
 
 int main()
 {
 	//	Your code goes here
 	int number; 
+	int numberTwo;
 
-	cout << "enter a value and I will enter a sign: ";
+	cout << "enter two numbers";
 	cin >> number;
+	cin >> numberTwo;
 
-	sign(number);
+	cout << recMulti(number, numberTwo);
 
 	//	Make sure we place the end message on a new line
 	cout << endl;
@@ -53,3 +89,5 @@ void sign(unsigned long long int num) // this was a while loop and now its a rec
 		return;
 	}
 }
+
+
