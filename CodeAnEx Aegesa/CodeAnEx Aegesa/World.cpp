@@ -17,11 +17,13 @@ void World::beginningStory()
 {
 	system("COLOR e4"); // shop color
 	system("COLOR 09");
+	system("CLS");
 
 	string nameIn;
 	string bioIn;
 
 	// What's Your Name?
+	
 	cout << "What's Your Name?: " << endl;
 	cin >> nameIn;
 
