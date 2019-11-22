@@ -262,7 +262,7 @@ public:
 				b.normalOutput("HP plus modifier has faded");
 
 				int dHp = getHp();
-				dHp - *eDrain;
+				dHp = dHp - *eDrain;
 				setHp(dHp);
 			}
 			break;
@@ -280,7 +280,7 @@ public:
 				b.normalOutput("SP plus modifier has faded");
 
 				int dSp = getSp();
-				dSp - *eDrain;
+				dSp = dSp - *eDrain;
 				setSp(dSp);
 			}
 			break;
@@ -298,7 +298,7 @@ public:
 				b.normalOutput("FP plus modifier has faded");
 
 				int dFp = getFp();
-				dFp - *eDrain;
+				dFp = dFp - *eDrain;
 				setFp(dFp);
 			}
 			break;
@@ -316,7 +316,7 @@ public:
 				b.normalOutput("AP plus modifier has faded");
 
 				int dAp = getAp();
-				dAp - *eDrain;
+				dAp = dAp - *eDrain;
 				setHp(dAp);
 			}
 			break;
@@ -334,7 +334,7 @@ public:
 				b.normalOutput("DP plus modifier has faded");
 
 				int dDp = getDp();
-				dDp - *eDrain;
+				dDp = dDp - *eDrain;
 				setDp(dDp);
 			}
 			break;
@@ -352,7 +352,7 @@ public:
 				b.normalOutput("STR plus modifier has faded");
 
 				int dStr = getSTR();
-				dStr - *eDrain;
+				dStr = dStr - *eDrain;
 				setSTR(dStr);
 			}
 			break;
@@ -370,7 +370,7 @@ public:
 				b.normalOutput("ATK plus modifier has faded");
 
 				int dAtk = getATK();
-				dAtk - *eDrain;
+				dAtk = dAtk - *eDrain;
 				setATK(dAtk);
 			}
 			break;
@@ -388,7 +388,7 @@ public:
 				b.normalOutput("DEF plus modifier has faded");
 
 				int dDef = getDEF();
-				dDef - *eDrain;
+				dDef = dDef - *eDrain;
 				setDEF(dDef);
 			}
 			break;
@@ -406,7 +406,7 @@ public:
 				b.normalOutput("AGI plus modifier has faded");
 
 				int dAgi = getAGI();
-				dAgi - *eDrain;
+				dAgi = dAgi - *eDrain;
 				setAGI(dAgi);
 			}
 			break;
@@ -424,7 +424,7 @@ public:
 				b.normalOutput("SPD plus modifier has faded");
 
 				int dSpd = getSPD();
-				dSpd - *eDrain;
+				dSpd = dSpd - *eDrain;
 				setSPD(dSpd);
 			}
 			break;
@@ -442,7 +442,7 @@ public:
 				b.normalOutput("END plus modifier has faded");
 
 				int dEnd = getEND();
-				dEnd - *eDrain;
+				dEnd = dEnd - *eDrain;
 				setEND(dEnd);
 			}
 			break;
@@ -460,7 +460,7 @@ public:
 				b.normalOutput("CON plus modifier has faded");
 
 				int dCon = getCON();
-				dCon - *eDrain;
+				dCon = dCon - *eDrain;
 				setHp(dCon);
 			}
 			break;

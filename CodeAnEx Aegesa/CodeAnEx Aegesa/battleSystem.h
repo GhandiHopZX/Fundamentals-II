@@ -15,7 +15,7 @@ private:
 	bool* aGuage;
 	enum t 
 	{
-		a , b , c, d
+		a , b , c , d 
 	}; //turn number
 
 public:

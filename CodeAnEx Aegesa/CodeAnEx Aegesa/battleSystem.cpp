@@ -12,7 +12,6 @@ battleSystem::battleSystem()
 	turnGuageNum = 0; // this is if more than one is set, its usually reset
 	aGuage = 0;
 	battleMode(); // battle mode
-	
 }
  
 // how many turns is your status eff or plus gonna last???
@@ -23,14 +22,15 @@ void battleSystem::battleMode()
 {
 	Player_Actor h; 
 	
-	playerTGuage(h.dummyPlus,h.getSPD(),h.getFp());
+	playerTGuage(h.dummyPlus, h.getSPD(), h.getFp());
 
-	// enemy database needed..
+	//enemy database needed..
 	//enemyTGuage()
 }
 
 void battleSystem::turnSystem(t jumpTurn)
 {
+
 	bool guagek;
 	guagek = aGuage;
 	// a = no turn at the moment, b = enemy turn check, c = yor TUARN check, d = conflict turn for turn A clash
