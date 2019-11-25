@@ -99,11 +99,11 @@ bool battleSystem::playerTGuage(int spdPlus, int spd, int fp)
 	} 
 	else if (c) //player turn
 	{
-
+		normalOutput("Attacking...");
 	}
 	else 
 	{
-		
+		normalOutput("Guage Inactive...");
 	}
 
 	// push turn
@@ -124,12 +124,14 @@ bool battleSystem::enemyTGuage(int spdPlus, int spd, int fp)
 	tm guage;
 	guage.tm_sec = 0; // prototype timer or max?
 
-	normalOutput("priming for attack....");
+	normalOutput("Other priming attack....");
+
 	int max = (fp+fp);
 
 	int rate = (spd + spdPlus * (fp / 2));
 
 	int add = 0;
+
 	if (a)
 	{
 		while (max >= guage.tm_sec)
@@ -139,11 +141,9 @@ bool battleSystem::enemyTGuage(int spdPlus, int spd, int fp)
 	}
 	else if (b) // enemy turn or ai
 	{
-
 	}
 	else 
 	{
-
 	}
 
 	// push turn
