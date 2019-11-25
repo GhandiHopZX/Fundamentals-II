@@ -13,9 +13,10 @@ private:
 	// variables
 	bool battleTime; // if its time to fight
 	bool* aGuage;
+
 	enum t 
 	{
-		a , b , c , d 
+		a = 0, b = 1, c = 2, d = 3, e = 4, f = 5
 	}; //turn number
 
 public:
@@ -34,6 +35,8 @@ public:
 	// setters/mutators
 	
 	// functions
+	void turn(); // the core functions of what the player can do when the player can do
+
 	void statTurn(); // recalls all or any stat plus modifier functions for reauthentications when a number of turns are up
 
 	void battleMode();
@@ -42,7 +45,7 @@ public:
 	bool enemyTGuage(int, int spd, int fp);
 
 	// output types
-	void turnSystem(t);
+	void turnSystem(int);
 
 	void healOutput(string);
 

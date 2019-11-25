@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
+#include <cstdlib>
 #include "windows.h"
 #include "stdlib.h"
 #include "battleSystem.h"
@@ -13,7 +14,11 @@ battleSystem::battleSystem()
 	aGuage = 0;
 	battleMode(); // battle mode
 }
- 
+
+void battleSystem::turn()
+{
+}
+
 // how many turns is your status eff or plus gonna last???
 void battleSystem::statTurn() 
 {}
@@ -28,36 +33,40 @@ void battleSystem::battleMode()
 	//enemyTGuage()
 }
 
-void battleSystem::turnSystem(t jumpTurn)
+void battleSystem::turnSystem(int turn)
 {
-
 	bool guagek;
 	guagek = aGuage;
 	// a = no turn at the moment, b = enemy turn check, c = yor TUARN check, d = conflict turn for turn A clash
 	// infinite turns till its over
-
 	do
 	{
 		// turn switch checking whose turn it is
-	
-		switch (guagek) // check system for whose turn it is
+		switch (turn)
 		{
-			// no turn wait...
 		case (a):
 			// turn a is always at 0 if its at d which = 4... 
 			// CLASH this is why its called TURN A clash
 			break;
-			
-		case (b): 
+
+		case (b):
 			// enemy turn or ai turn check
 			break;
-			
+
 		case (c):
 			// yor tuarn
 			break;
-			
+
 		case (d):
 			// TurnA
+			break;
+
+		case (e):
+			// Turncheck
+			break;
+
+		case (f):
+			// Turncheck
 			break;
 
 		default:
@@ -73,28 +82,37 @@ void battleSystem::turnSystem(t jumpTurn)
 bool battleSystem::playerTGuage(int spdPlus, int spd, int fp)
 {
 	tm guage;
-	guage.tm_sec = 0.00; // prototype timer or max?
+	guage.tm_sec = 0; // prototype timer or max?
 
 	normalOutput("priming for attack....");
 	int max = (fp+fp);
 
 	int rate = (spd + spdPlus * (fp / 2));
 
-	if (a)
+	int add = 0;
+	if (a) // no turn
 	{
 		while (max >= guage.tm_sec)
 		{
-			++guage.tm_sec*rate;
+			++add = guage.tm_sec*rate;
 		}
+	} 
+	else if (c) //player turn
+	{
+
 	}
-	
+	else 
+	{
+		
+	}
+
 	// push turn
 	int push = 2;
 
 	*aGuage = true;
 	turnSystem(static_cast<t>(push));
 	normalOutput("primed..!");
-	guage.tm_sec = 0.00; // reset
+	guage.tm_sec = 0; // reset
 	return aGuage;
 }
 
@@ -104,19 +122,28 @@ bool battleSystem::playerTGuage(int spdPlus, int spd, int fp)
 bool battleSystem::enemyTGuage(int spdPlus, int spd, int fp)
 {
 	tm guage;
-	guage.tm_sec = 0.00; // prototype timer or max?
+	guage.tm_sec = 0; // prototype timer or max?
 
 	normalOutput("priming for attack....");
 	int max = (fp+fp);
 
 	int rate = (spd + spdPlus * (fp / 2));
 
+	int add = 0;
 	if (a)
 	{
 		while (max >= guage.tm_sec)
 		{
-			++guage.tm_sec*rate;
+			++add = guage.tm_sec * rate;
 		}
+	}
+	else if (b) // enemy turn or ai
+	{
+
+	}
+	else 
+	{
+
 	}
 
 	// push turn
@@ -125,7 +152,7 @@ bool battleSystem::enemyTGuage(int spdPlus, int spd, int fp)
 	*aGuage = true;
 	turnSystem(static_cast<t>(push));
 	normalOutput("primed..!");
-	guage.tm_sec = 0.00; // reset
+	guage.tm_sec = 0; // reset
 	return aGuage;
 
 }
