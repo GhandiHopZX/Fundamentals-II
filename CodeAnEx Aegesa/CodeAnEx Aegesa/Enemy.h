@@ -39,7 +39,7 @@ public:
 
 	void enemiesList();
 
-	// added enemy types and methods
+	// list of enemy types and methods
 	list <Enemy> enemyList = {};
 };
 
