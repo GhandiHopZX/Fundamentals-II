@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <cstdlib>
+#include <chrono>
 #include "windows.h"
 #include "stdlib.h"
 #include "battleSystem.h"
@@ -21,7 +22,8 @@ void battleSystem::turn()
 
 // how many turns is your status eff or plus gonna last???
 void battleSystem::statTurn() 
-{}
+{
+}
 
 void battleSystem::battleMode()
 {

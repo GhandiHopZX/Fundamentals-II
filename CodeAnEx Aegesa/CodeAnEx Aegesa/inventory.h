@@ -1,7 +1,11 @@
 #pragma once
-#include "inventory.h"
 #include <iostream>
 #include <string>
+#include <cstdio>
+#include "Player_Actor.h"
+#include "inventory.h"
+
+using namespace std;
 
 class inventory
 {
@@ -13,6 +17,60 @@ private:
 	int size;
 
 public:
+	// structs
+	struct weapon
+	{
+		string name;
+		int atkAdd;
+		int defAdd;
+		int spdAdd;
+
+		int dexAdd;
+		int intAdd;
+		int sprAdd;
+		int endAdd;
+		int conAdd;
+		int strAdd;
+		int agiAdd;
+	};
+
+	struct armor
+	{
+		string name;
+		int atkAdd;
+		int defAdd;
+		int spdAdd;
+
+		int dexAdd;
+		int intAdd;
+		int sprAdd;
+		int endAdd;
+		int conAdd;
+		int strAdd;
+		int agiAdd;
+	};
+
+	struct item
+	{
+		string name;
+		int hpAdd;
+		int spAdd;
+		int fpAdd;
+		int apAdd;
+	    // no dp plus plz
+
+		int atkAdd;
+		int defAdd;
+		int spdAdd;
+
+		int dexAdd;
+		int intAdd;
+		int sprAdd;
+		int endAdd;
+		int conAdd;
+		int strAdd;
+		int agiAdd;
+	};
 
 	// variables
 	static const int MAX_INTEGRITY = 20;
@@ -20,6 +78,12 @@ public:
 	inventory(int);
 
 	inventory(const inventory &);
+
+	inventory(weapon);
+
+	inventory(armor);
+
+	inventory(item);
 
 	// getters/accessors
 	

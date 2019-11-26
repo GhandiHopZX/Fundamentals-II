@@ -17,6 +17,18 @@ inventory::inventory(const inventory&)
 	capacity = MAX_INTEGRITY;
 }
 
+inventory::inventory(weapon)
+{
+}
+
+inventory::inventory(armor)
+{
+}
+
+inventory::inventory(item)
+{
+}
+
 void inventory::push(int)
 {
 }
