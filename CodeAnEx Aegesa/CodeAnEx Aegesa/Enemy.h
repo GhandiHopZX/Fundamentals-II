@@ -37,7 +37,7 @@ public:
 
 	Enemy(string name, elementType, int expA, int gA, int item);
 
-	void enemiesList();
+	Enemy enemiesList(int indexPass);
 
 	// list of enemy types and methods
 	list <Enemy> enemyList = {};

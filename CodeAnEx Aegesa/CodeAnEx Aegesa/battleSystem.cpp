@@ -18,6 +18,29 @@ battleSystem::battleSystem()
 
 void battleSystem::turn()
 {
+	// initialized choice char
+	char c = {'n'}; 
+
+	if (c != 'n')
+	{
+		switch (c)
+		{
+		case 'i': // inventory
+			//your Item functionCall for listup check goes here...
+			break;
+		case 's': // skills 
+			break;
+		case 'h': // hack
+			break;
+		case 'd': // defend
+			break;
+		case 'a': // attack
+			break;
+		default:
+			break;
+		}
+	}
+	
 }
 
 // how many turns is your status eff or plus gonna last???
@@ -87,18 +110,33 @@ bool battleSystem::playerTGuage(int spdPlus, int spd, int fp)
 	guage.tm_sec = 0; // prototype timer or max?
 
 	normalOutput("priming for attack....");
-	int max = (fp+fp);
+	int maxim = (fp+fp);
 
 	int rate = (spd + spdPlus * (fp / 2));
 
 	int add = 0;
-	if (a) // no turn
+	if (a)
 	{
-		while (max >= guage.tm_sec)
+		//std::chrono::seconds = ; counter
+		std::chrono::seconds::duration(maxim - rate); // maximum
+		while (maxim >= add)
 		{
-			++add = guage.tm_sec*rate;
+			++add;
+			if (add >= maxim)
+			{
+				add = 0;
+				// push turn
+				int push = 1;
+
+				*aGuage = true;
+				turnSystem(static_cast<t>(push));
+				normalOutput("primed..!");
+				guage.tm_sec = 0; // reset
+				return aGuage;
+			}
+
 		}
-	} 
+	}
 	else if (c) //player turn
 	{
 		normalOutput("Attacking...");
@@ -128,7 +166,7 @@ bool battleSystem::enemyTGuage(int spdPlus, int spd, int fp)
 
 	normalOutput("Other priming attack....");
 
-	int max = (fp+fp);
+	int maxim = (fp+fp);
 
 	int rate = (spd + spdPlus * (fp / 2));
 
@@ -136,26 +174,33 @@ bool battleSystem::enemyTGuage(int spdPlus, int spd, int fp)
 
 	if (a)
 	{
-		while (max >= guage.tm_sec)
+		std::chrono::seconds::count;
+		std::chrono::seconds::duration(maxim - rate);
+		while (maxim >= add)
 		{
-			++add = guage.tm_sec * rate;
+			++add;
+			if (add >= maxim)
+			{
+				add = 0;
+				// push turn
+					int push = 1;
+
+				*aGuage = true;
+				turnSystem(static_cast<t>(push));
+				normalOutput("primed..!");
+				guage.tm_sec = 0; // reset
+				return aGuage;
+			}
+			
 		}
 	}
+
 	else if (b) // enemy turn or ai
 	{
 	}
 	else 
 	{
 	}
-
-	// push turn
-	int push = 1;
-	
-	*aGuage = true;
-	turnSystem(static_cast<t>(push));
-	normalOutput("primed..!");
-	guage.tm_sec = 0; // reset
-	return aGuage;
 
 }
 

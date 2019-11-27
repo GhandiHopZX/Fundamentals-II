@@ -39,6 +39,16 @@ Player_Actor::Player_Actor()
 #pragma endregion
 }
 
+void Player_Actor::setWeapon(inventory::weapon weapon)
+{
+	wEQ = weapon; // I might change these
+}
+
+void Player_Actor::setArmor(inventory::armor gear)
+{
+	aEQ = gear; // this one too
+}
+
 // use a linked list?
 void Player_Actor::setStatus(string statusName)
 {
