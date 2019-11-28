@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <cstdlib>
 #include <chrono>
+#include <thread>
 #include "windows.h"
 #include "stdlib.h"
 #include "battleSystem.h"
@@ -19,7 +20,7 @@ battleSystem::battleSystem()
 void battleSystem::turn()
 {
 	// initialized choice char
-	char c = {'n'}; 
+	char c = { 'n' };
 
 	if (c != 'n')
 	{
@@ -28,7 +29,7 @@ void battleSystem::turn()
 		case 'i': // inventory
 			//your Item functionCall for listup check goes here...
 			break;
-		case 's': // skills 
+		case 's': // skills
 			break;
 		case 'h': // hack
 			break;
@@ -40,18 +41,17 @@ void battleSystem::turn()
 			break;
 		}
 	}
-	
 }
 
 // how many turns is your status eff or plus gonna last???
-void battleSystem::statTurn() 
+void battleSystem::statTurn()
 {
 }
 
 void battleSystem::battleMode()
 {
-	Player_Actor h; 
-	
+	Player_Actor h;
+
 	playerTGuage(h.dummyPlus, h.getSPD(), h.getFp());
 
 	//enemy database needed..
@@ -70,7 +70,7 @@ void battleSystem::turnSystem(int turn)
 		switch (turn)
 		{
 		case (a):
-			// turn a is always at 0 if its at d which = 4... 
+			// turn a is always at 0 if its at d which = 4...
 			// CLASH this is why its called TURN A clash
 			break;
 
@@ -99,7 +99,6 @@ void battleSystem::turnSystem(int turn)
 			guagek = aGuage;
 			break;
 		}
-		
 	} while (battleTime == true);
 }
 
@@ -110,54 +109,42 @@ bool battleSystem::playerTGuage(int spdPlus, int spd, int fp)
 	guage.tm_sec = 0; // prototype timer or max?
 
 	normalOutput("priming for attack....");
-	int maxim = (fp+fp);
+	long maxim = (fp + fp);
 
-	int rate = (spd + spdPlus * (fp / 2));
+	long rate = (spd + spdPlus * (fp / 2));
 
-	int add = 0;
+	long dura = maxim;
+
+	long add = 0;
+
 	if (a)
 	{
-		//std::chrono::seconds = ; counter
-		std::chrono::seconds::duration(maxim - rate); // maximum
-		while (maxim >= add)
-		{
-			++add;
-			if (add >= maxim)
-			{
-				add = 0;
-				// push turn
-				int push = 1;
+		auto start = std::chrono::high_resolution_clock::now;// start
+		std::this_thread::sleep_for(static_cast<chrono::seconds>(dura));
+		auto end = std::chrono::high_resolution_clock::now();
 
-				*aGuage = true;
-				turnSystem(static_cast<t>(push));
-				normalOutput("primed..!");
-				guage.tm_sec = 0; // reset
-				return aGuage;
-			}
+		add = 0;
+		// push turn
+		int push = 2;
 
-		}
+		*aGuage = true;
+		turnSystem(static_cast<t>(push));
+		normalOutput("primed..!");
+		guage.tm_sec = 0; // reset
+		return aGuage;
 	}
 	else if (c) //player turn
 	{
 		normalOutput("Attacking...");
 	}
-	else 
+	else
 	{
 		normalOutput("Guage Inactive...");
 	}
-
-	// push turn
-	int push = 2;
-
-	*aGuage = true;
-	turnSystem(static_cast<t>(push));
-	normalOutput("primed..!");
-	guage.tm_sec = 0; // reset
-	return aGuage;
 }
 
 // this will also be the general ai turn guage since it doesn't really matter.
-// if two party members have the same turn then I'll call unity attack the 
+// if two party members have the same turn then I'll call unity attack the
 // target will already be set since this is a single player game.
 bool battleSystem::enemyTGuage(int spdPlus, int spd, int fp)
 {
@@ -166,42 +153,37 @@ bool battleSystem::enemyTGuage(int spdPlus, int spd, int fp)
 
 	normalOutput("Other priming attack....");
 
-	int maxim = (fp+fp);
+	long maxim = (fp + fp);
 
-	int rate = (spd + spdPlus * (fp / 2));
+	long rate = (spd + spdPlus * (fp / 2));
 
-	int add = 0;
+	long dura = maxim;
+
+	long add = 0;
 
 	if (a)
 	{
-		std::chrono::seconds::count;
-		std::chrono::seconds::duration(maxim - rate);
-		while (maxim >= add)
-		{
-			++add;
-			if (add >= maxim)
-			{
-				add = 0;
-				// push turn
-					int push = 1;
+		auto start = std::chrono::high_resolution_clock::now;// start
+		std::this_thread::sleep_for(static_cast<chrono::seconds>(dura));
+		auto end = std::chrono::high_resolution_clock::now();
 
-				*aGuage = true;
-				turnSystem(static_cast<t>(push));
-				normalOutput("primed..!");
-				guage.tm_sec = 0; // reset
-				return aGuage;
-			}
-			
-		}
+		add = 0;
+		// push turn
+		int push = 1;
+
+		*aGuage = true;
+		turnSystem(static_cast<t>(push));
+		normalOutput("primed..!");
+		guage.tm_sec = 0; // reset
+		return aGuage;
 	}
 
 	else if (b) // enemy turn or ai
 	{
 	}
-	else 
+	else
 	{
 	}
-
 }
 
 // normal output
@@ -250,11 +232,9 @@ void battleSystem::multiDamageOutput(string n[])
 	// you can loop k higher to see more color choices
 	for (int k = 1; k < 255; k++)
 	{
-
 		// pick the colorattribute k you want
 		SetConsoleTextAttribute(hConsole, k);
 		cout << k << n[k] << endl;
-
 	}
 	system("COLOR 07");
 	cout << "Press Enter";

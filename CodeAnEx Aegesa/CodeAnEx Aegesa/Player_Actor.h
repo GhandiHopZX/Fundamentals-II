@@ -3,6 +3,7 @@
 #include <list>
 #include <vector>
 #include <stack>
+#include <thread>
 #include "battleSystem.h"
 #include "inventory.h"
 
@@ -47,10 +48,6 @@ public:
 	// variables
 	string name; // YOUR NAME!
 	string bio; // YOUR STORY!
-	
-	// weapons and armor
-	inventory::weapon wEQ;
-	inventory::armor aEQ;
 
 	// stat multiplier flag
 	bool statmulti;
@@ -167,15 +164,7 @@ public:
 
 #pragma endregion
 
-	inventory::weapon getWeapon()
-	{
-		return wEQ;
-	}
-
-	inventory::armor getArmor()
-	{
-		return aEQ;
-	}
+	
 
 	// setters / mutators
 
@@ -503,11 +492,7 @@ public:
 
 #pragma endregion
 
-	void setWeapon(inventory::weapon weapon);
 
-	void setArmor(inventory::armor gear);
-
-	void setStatus(string statusName);
 
 	void battleGuage();
 

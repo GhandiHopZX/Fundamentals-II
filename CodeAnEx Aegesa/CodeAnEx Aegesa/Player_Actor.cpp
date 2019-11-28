@@ -39,18 +39,39 @@ Player_Actor::Player_Actor()
 #pragma endregion
 }
 
-void Player_Actor::setWeapon(inventory::weapon weapon)
+// weapons and armor
+inventory::weapon wEQ;
+inventory::armor aEQ;
+
+inventory::weapon getWeapon()
+{
+	return wEQ;
+}
+
+inventory::armor getArmor()
+{
+	return aEQ;
+}
+
+// leftover prototypes
+void setWeapon(inventory::weapon weapon);
+
+void setArmor(inventory::armor gear);
+
+void setStatus(string statusName);
+
+void setWeapon(inventory::weapon weapon)
 {
 	wEQ = weapon; // I might change these
 }
 
-void Player_Actor::setArmor(inventory::armor gear)
+void setArmor(inventory::armor gear)
 {
 	aEQ = gear; // this one too
 }
 
 // use a linked list?
-void Player_Actor::setStatus(string statusName)
+void setStatus(string statusName)
 {
 	// this is where the statuses go in	
 	

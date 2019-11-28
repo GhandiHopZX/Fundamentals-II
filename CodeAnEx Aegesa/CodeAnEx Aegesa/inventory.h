@@ -32,6 +32,9 @@ public:
 		int conAdd;
 		int strAdd;
 		int agiAdd;
+
+		int wvalue; // node
+		struct weapon* next; //next item
 	};
 
 	struct armor
@@ -48,6 +51,9 @@ public:
 		int conAdd;
 		int strAdd;
 		int agiAdd;
+
+		int avalue; //node
+		struct armor* next; //next armor
 	};
 
 	struct item
@@ -70,11 +76,23 @@ public:
 		int conAdd;
 		int strAdd;
 		int agiAdd;
+
+		int ivalue; // node for items
+		struct item* node; // next item
 	};
+
+	//node heads
+	weapon* headw;
+
+	armor* heada;
+
+	item* headi;
 
 	// variables
 	static const int MAX_INTEGRITY = 20;
 	// constructor
+	inventory();
+
 	inventory(int);
 
 	inventory(const inventory &);
@@ -94,6 +112,26 @@ public:
 	void pop(int&);
 	bool isFull() const;
 	bool isEmpty() const;
+
+	// append
+	void appendNodeItem(item, int);
+	void appendNodeWeapon(weapon, int);
+	void appendNodeArmor(armor, int);
+	
+	// insert
+	void insertNodeItem(item, int);
+	void insertNodeWeapon(weapon, int);
+	void insertNodeArmor(armor, int);
+
+	// delete node
+	void deleteNodeItem(item, int);
+	void deleteNodeWeapon(weapon, int);
+	void deleteNodeArmor(armor, int);
+
+	// displayListo =)
+	void displaylistItem() const;
+	void displaylistWeapon() const;
+	void displaylistArmor() const;
 
 	// templates
 	
