@@ -141,6 +141,7 @@ bool battleSystem::playerTGuage(int spdPlus, int spd, int fp)
 	{
 		normalOutput("Guage Inactive...");
 	}
+	return false;
 }
 
 // this will also be the general ai turn guage since it doesn't really matter.
@@ -180,10 +181,12 @@ bool battleSystem::enemyTGuage(int spdPlus, int spd, int fp)
 
 	else if (b) // enemy turn or ai
 	{
+		normalOutput("enemy guage inactive..");
 	}
 	else
 	{
 	}
+	return false;
 }
 
 // normal output

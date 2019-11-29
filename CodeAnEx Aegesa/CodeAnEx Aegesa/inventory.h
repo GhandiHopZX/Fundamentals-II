@@ -21,63 +21,63 @@ public:
 	struct weapon
 	{
 		string name;
-		int atkAdd;
-		int defAdd;
-		int spdAdd;
+		unsigned int atkAdd = 0;
+		unsigned int defAdd = 0;
+		unsigned int spdAdd = 0;
 
-		int dexAdd;
-		int intAdd;
-		int sprAdd;
-		int endAdd;
-		int conAdd;
-		int strAdd;
-		int agiAdd;
+		unsigned int dexAdd = 0;
+		unsigned int intAdd = 0;
+		unsigned int sprAdd = 0;
+		unsigned int endAdd = 0;
+		unsigned int conAdd = 0;
+		unsigned int strAdd = 0;
+		unsigned int agiAdd = 0;
 
-		int wvalue; // node
+		unsigned int wvalue = 0; // node
 		struct weapon* next; //next item
 	};
 
 	struct armor
 	{
 		string name;
-		int atkAdd;
-		int defAdd;
-		int spdAdd;
+		unsigned int atkAdd = 0;
+		unsigned int defAdd = 0;
+		unsigned int spdAdd = 0;
 
-		int dexAdd;
-		int intAdd;
-		int sprAdd;
-		int endAdd;
-		int conAdd;
-		int strAdd;
-		int agiAdd;
+		unsigned int dexAdd = 0;
+		unsigned int intAdd = 0;
+		unsigned int sprAdd = 0;
+		unsigned int endAdd = 0;
+		unsigned int conAdd = 0;
+		unsigned int strAdd = 0;
+		unsigned int agiAdd = 0;
 
-		int avalue; //node
+		unsigned int avalue = 0; //node
 		struct armor* next; //next armor
 	};
 
 	struct item
 	{
 		string name;
-		int hpAdd;
-		int spAdd;
-		int fpAdd;
-		int apAdd;
+		unsigned int hpAdd = 0;
+		unsigned int spAdd = 0;
+		unsigned int fpAdd = 0;
+		unsigned int apAdd = 0;
 	    // no dp plus plz
 
-		int atkAdd;
-		int defAdd;
-		int spdAdd;
+		unsigned int atkAdd = 0;
+		unsigned int defAdd = 0;
+		unsigned int spdAdd = 0;
 
-		int dexAdd;
-		int intAdd;
-		int sprAdd;
-		int endAdd;
-		int conAdd;
-		int strAdd;
-		int agiAdd;
+		unsigned int dexAdd = 0;
+		unsigned int intAdd = 0;
+		unsigned int sprAdd = 0;
+		unsigned int endAdd = 0;
+		unsigned int conAdd = 0;
+		unsigned int strAdd = 0;
+		unsigned int agiAdd = 0;
 
-		int ivalue; // node for items
+		unsigned int ivalue = 0; // node for items
 		struct item* node; // next item
 	};
 
@@ -93,15 +93,15 @@ public:
 	// constructor
 	inventory();
 
-	inventory(int);
+	//inventory(int);
 
 	inventory(const inventory &);
 
-	inventory(weapon);
+	inventory(int, weapon);
 
-	inventory(armor);
+	inventory(int, armor);
 
-	inventory(item);
+	inventory(int, item);
 
 	// getters/accessors
 	
