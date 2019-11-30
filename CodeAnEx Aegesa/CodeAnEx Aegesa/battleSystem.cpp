@@ -5,8 +5,11 @@
 #include <thread>
 #include "windows.h"
 #include "stdlib.h"
+#include "inventory.h"
 #include "battleSystem.h"
 #include "Player_Actor.h"
+#include "Enemy.h"
+#include "World.h" // for encounters
 
 using namespace std;
 
@@ -50,12 +53,15 @@ void battleSystem::statTurn()
 
 void battleSystem::battleMode()
 {
-	Player_Actor h;
+	cout << "============ E N G A D G E ============" << endl;
+	Player_Actor h; //call vars
+	Enemy e; // call vars
 
+	//player set
 	playerTGuage(h.dummyPlus, h.getSPD(), h.getFp());
 
-	//enemy database needed..
-	//enemyTGuage()
+	//enemy set
+	enemyTGuage(e.dummyPlus, e.getSPD(), e.getFp());
 }
 
 void battleSystem::turnSystem(int turn)
@@ -242,4 +248,10 @@ void battleSystem::multiDamageOutput(string n[])
 	system("COLOR 07");
 	cout << "Press Enter";
 	cin.get();
+}
+
+// battle_system calls
+void battleSystem::rewardOutput(int itemCallin)
+{
+	
 }

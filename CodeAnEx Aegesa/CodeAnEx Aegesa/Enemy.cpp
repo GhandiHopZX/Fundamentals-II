@@ -1,12 +1,12 @@
 #include <iostream>
 #include <cstdio>
+#include <cstdlib>
 #include <string>
 #include <map>
 #include <stack>
 #include <stdlib.h>
 #include <malloc.h>
 #include "Enemy.h"
-constexpr auto MAX_SIZE = 150812;
 
 using namespace std;
 
@@ -23,69 +23,74 @@ Enemy::Enemy(string, elementType, int expAw, int gA, int item)
 	goldA = 0;
 }
 
-// todo: free up some memory
-Enemy Enemy::enemiesList(int indexPoint)
+Enemy Enemy::enemyRandEncounter()
 {
-	// mobs allowed in the game
-	const int m = 100;
+	// constants
+	const int MAX_ERAND = 13;
+	const int MAX_GOLD = 1100;
+	const int MAX_ITEM = 14;
+	const int MAX_STATN = 10;
 
-#pragma region Enemy_region
+	const int MIN = 0; 
+	const int GOLD_MIN = 100;
 
-	Enemy Ninja("Ninja", elementType::Normal, 50, 100, 5);
-	Enemy Goblin("Goblin", elementType::Normal, 23, 43, 4);
-	Enemy Rock_Demon("Rock Demon", elementType::Earth, 1000, 0, 3);
-	Enemy Tormuloid("Tormuloid", elementType::Air, 60, 0, 6);
-	Enemy FireWitch("Fire Witch", elementType::Fire, 90, 230, 2);
-	Enemy Entling("Entling", elementType::Bio, 23, 0, 1);
-	Enemy MorphVirus("Morph Virus", elementType::Phase, 15, 0, 30);
-	Enemy MorphTrojan("Morph Trojan", elementType::Phase, 40, 0, 41);
-	Enemy Light_Nimph("Light Nimph", elementType::Light, 32, 45, 17);
-	Enemy Dark_Nimph("Dark Nimph", elementType::Dark, 32, 45, 16);
-	Enemy Static_Vectrite("Static Vectrite", elementType::Lightning, 35, 0, 10);
-	Enemy Crystallina("Crystallina", elementType::Water, 56, 0, 50);
+	string lvl1names[14] = 
+	{ "Mongrel", "Rancor", "Mandrake", "Jumpsuit Man",
+		"Gorgon Eye", "Jackal", "Golem", "Worm", "Pci Eater",
+	"Temptest", "Mecha Recon", "Harpy", "Leech", "Gorigami"};
 
-	//lv 1 Bosses 
-	Enemy MorphQueen("MorphQueen", elementType::Phase, 160, 400, 42);
+	int enemyRand = (rand() % (MAX_ERAND - MIN + 1)) + MIN; // 0 - 13
+	int goldRand = (rand() % (MAX_GOLD - GOLD_MIN + 1)) + GOLD_MIN; // 100 - 1100
+	int itemRand = (rand() % (MAX_ITEM - MIN + 1)) + MIN; // 0 - 14
+	int statRand = (rand() % (MAX_STATN - MIN + 1)) + MIN; // 0 - 10
+
+	// random ranges
+
+	string enemyName;
+
+	enemyName = lvl1names[enemyRand];
+
+	Enemy Randlvl1(enemyName, elementType::Phase, enemyRand, goldRand, itemRand);
+
+#pragma region stats 
+	Randlvl1.setHp(100);
+	Randlvl1.setSp(16);
+	Randlvl1.setAp(statRand);
+	Randlvl1.setFp(statRand);
+	Randlvl1.setDp(0);
+
+	Randlvl1.setAGI(statRand);
+	Randlvl1.setSTR(statRand);
+	Randlvl1.setEND(statRand);
+	Randlvl1.setCON(statRand);
+	Randlvl1.setSPR(statRand);
+	Randlvl1.setINT(statRand);
+	Randlvl1.setDEX(statRand);
+
+	Randlvl1.setATK(statRand);
+	Randlvl1.setSPD(statRand);
+	Randlvl1.setDEF(statRand);
 #pragma endregion
 
-	// storing index
-	Enemy lv1baddies[m] =
+	return Randlvl1;
+}
+
+Enemy Enemy::BossCall(int call)
+{
+	const int MAX_BOSS = 12;
+	
+	// call 0 for tha boss
+	//lv 1 Bosses 
+	Enemy MorphQueen("MorphQueen", elementType::Phase, 160, 400, 2);
+	Enemy GiggaRaugght("GiggaRaugght", elementType::Normal, 2000 /*if you manage to beat him*/, 15000, 12);
+
+	Enemy lvl1index[MAX_BOSS] =
 	{
-		FireWitch,
-		Ninja,
-		Goblin,
-		Rock_Demon,
-		Tormuloid,
-		Entling,
-		MorphVirus,
-		MorphTrojan,
-		Light_Nimph,
-		Dark_Nimph,
-		Static_Vectrite,
-		Crystallina,
-		//bosses
-		MorphQueen
+		MorphQueen,
+		GiggaRaugght
 	};
 
-	
-	// this will be used for specific stats only
-#pragma region BaddieStats
-	// general brushing of difficulty for this assignment
-	lv1baddies->setHp(100);
-	lv1baddies->setSp(40);
-
-	FireWitch.setAGI(2);
-	FireWitch.setSTR(3);
-	FireWitch.setEND(2);
-	FireWitch.setATK(7);
-	FireWitch.setSPD(8);
-	FireWitch.setDEF(1);
-	FireWitch.setCON(3);
-	FireWitch.setAp(2);
-	FireWitch.setFp(4);
-#pragma endregion
-
-#pragma region BossStats
+#pragma region MQBossStats
 	MorphQueen.setATK(20);
 	MorphQueen.setDEF(13);
 	MorphQueen.setSPD(10);
@@ -98,15 +103,32 @@ Enemy Enemy::enemiesList(int indexPoint)
 	MorphQueen.setDEX(10);
 	MorphQueen.setSTR(15);
 
-	MorphQueen.setDp(22);
+	MorphQueen.setDp(0);
 	MorphQueen.setFp(20);
 	MorphQueen.setAp(10);
 	MorphQueen.setSp(300);
 	MorphQueen.setHp(250);
 #pragma endregion
 
-	//maybe fix this
-	/*enemyList.begin.assign(lv1baddies);
-	enemyList.begin.assign(lv1bosses);*/
-	return lv1baddies[indexPoint];
+#pragma region GRBossStats
+	GiggaRaugght.setATK(500);
+	GiggaRaugght.setDEF(430);
+	GiggaRaugght.setSPD(100);
+
+	GiggaRaugght.setSPR(140);
+	GiggaRaugght.setAGI(90);
+	GiggaRaugght.setCON(150);
+	GiggaRaugght.setINT(240);
+	GiggaRaugght.setEND(200);
+	GiggaRaugght.setDEX(100);
+	GiggaRaugght.setSTR(150);
+
+	GiggaRaugght.setDp(0);
+	GiggaRaugght.setFp(200);
+	GiggaRaugght.setAp(100);
+	GiggaRaugght.setSp(3000);
+	GiggaRaugght.setHp(2500);
+#pragma endregion
+
+	return lvl1index[call];
 }

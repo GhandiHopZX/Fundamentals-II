@@ -37,7 +37,11 @@ public:
 
 	Enemy(string name, elementType, int expA, int gA, int item);
 
-	Enemy enemiesList(int indexPass);
+	//Enemy enemiesList(int indexPass); please leave me alone
+
+	Enemy enemyRandEncounter();
+
+	Enemy BossCall(int);
 
 	// list of enemy types and methods
 	list <Enemy> enemyList = {};

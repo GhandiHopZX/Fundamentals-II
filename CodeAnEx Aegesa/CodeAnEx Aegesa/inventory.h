@@ -93,7 +93,7 @@ public:
 	// constructor
 	inventory();
 
-	//inventory(int);
+	inventory(int);
 
 	inventory(const inventory &);
 
@@ -102,6 +102,11 @@ public:
 	inventory(int, armor);
 
 	inventory(int, item);
+
+	// all item calls in the game
+	int itemListCall(int);
+	int armorListCall(int);
+	int weaponListCall(int);
 
 	// getters/accessors
 	
@@ -134,6 +139,125 @@ public:
 	void displaylistArmor() const;
 
 	// templates
+
+	// shop_time
+
+	template <class T>
+	T allitemList(T integer)
+	{
+		const int MAX_ITEMS = 100;
+#pragma region All_items
+		item AEGESA_FRAGMENT;
+		item kaider_shard;
+		item greenball_bun;
+		item enchantment_crystal;
+		item music_chord;
+		item static_weave;
+		item marble_eye;
+		item tiny_fingers;
+		item chared_beast_skin;
+		item magical_mane;
+		item masters_cane;
+		item broken_wing;
+		item ripped_coat;
+		item shattered_broach;
+#pragma endregion
+
+		item itemlist[MAX_ITEMS] =
+		{
+			AEGESA_FRAGMENT,
+			kaider_shard,
+			greenball_bun,
+			enchantment_crystal,
+			music_chord,
+			static_weave,
+			marble_eye,
+			tiny_fingers,
+			chared_beast_skin,
+			magical_mane,
+			masters_cane,
+			broken_wing,
+			ripped_coat,
+			shattered_broach,
+		};
+
+		return itemlist[integer];
+	}
+
+	template <class T>
+	T allarmorList(T integer)
+	{
+		const int MAX_ARMORS = 100;
+#pragma region All_items
+		armor brawd_armor;
+		armor kavelar_gear;
+		armor carbonite_gear;
+		armor crystalline_armor;
+		armor aerolite_gear;
+		armor vandham_armor;
+		armor antiImpact_armor;
+		armor katType_armor;
+		armor grenadier_composite_armor;
+		armor anti_nuclear_armor;
+#pragma endregion
+
+		armor armorlist[MAX_ARMORS] =
+		{
+			brawd_armor,
+			kavelar_gear,
+			carbonite_gear,
+			crystalline_armor,
+			aerolite_gear,
+			vandham_armor,
+			antiImpact_armor,
+			katType_armor,
+			grenadier_composite_armor,
+			anti_nuclear_armor
+		};
+
+		return armorlist[integer];
+	}
+	
+	template <class T>
+	T allweaponList(T integer)
+	{
+		const int MAX_WEAPONS = 100;
+
+#pragma region All_items
+		weapon brawd_injector;
+		weapon glass_gauntlet;
+		weapon carbonite_knuckle;
+		weapon crystalline_injector;
+		weapon aerolite_gauntlet;
+		weapon vandham_gauntlet;
+		weapon antimatter_injector;
+		weapon shinobi_claws;
+		weapon tacheyon_injector;
+		weapon magic_glove;
+		weapon bomber_injector;
+		weapon titanium_infused_gauntlet;
+		weapon anti_nuclear_injector;
+#pragma endregion
+
+		weapon weaponlist[MAX_WEAPONS] =
+		{
+		 brawd_injector,
+		 glass_gauntlet,
+		 carbonite_knuckle,
+		 crystalline_injector,
+		 aerolite_gauntlet,
+		 vandham_gauntlet,
+		 antimatter_injector,
+		 shinobi_claws,
+		 tacheyon_injector,
+		 magic_glove,
+		 bomber_injector,
+		 titanium_infused_gauntlet,
+		 anti_nuclear_injector
+		};
+
+		return weaponlist[integer];
+	}
 	
 	// Deconstructor
 	~inventory();

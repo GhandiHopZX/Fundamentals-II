@@ -12,6 +12,7 @@
 #include <list>
 #include <iterator>
 #include "World.h"
+#include "World.cpp"
 
 using namespace std;
 
@@ -103,7 +104,6 @@ int main()
 
 	cout << "Press Enter to Play" << endl;
 	cin.get();
-
 
 	// gamemenu
 

@@ -57,6 +57,8 @@ public:
 
 	void multiDamageOutput(string[]);
 
+	void rewardOutput(int itemCallin);
+
 	// templates
 };
 

@@ -164,8 +164,6 @@ public:
 
 #pragma endregion
 
-	
-
 	// setters / mutators
 
 #pragma region setters
@@ -491,8 +489,6 @@ public:
 
 
 #pragma endregion
-
-
 
 	void battleGuage();
 

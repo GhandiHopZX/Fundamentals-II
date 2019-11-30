@@ -15,13 +15,13 @@ inventory::inventory()
 	headi = nullptr;
 	size = 20;
 	capacity = 15;
-	;
+	
 }
 
-//inventory::inventory(int)
-//{
-//
-//}
+inventory::inventory(int)
+{
+
+}
 
 inventory::inventory(const inventory&)
 {
@@ -29,19 +29,34 @@ inventory::inventory(const inventory&)
 	heada = nullptr;
 	headw = nullptr;
 	headi = nullptr;
-
 }
 
-inventory::inventory(int wIndex, weapon)
+inventory::inventory(int wIndex, weapon w)
 {
 }
 
-inventory::inventory(int aIndex, armor)
+inventory::inventory(int aIndex, armor a)
 {
 }
 
-inventory::inventory(int iIndex, item)
+inventory::inventory(int iIndex, item i)
 {
+}
+
+// call the templates from here
+int inventory::itemListCall(int iIndex)
+{
+	return allitemList(iIndex);
+}
+
+int inventory::armorListCall(int a)
+{
+	return allarmorList(a);
+}
+
+int inventory::weaponListCall(int w)
+{
+	return allweaponList(w);
 }
 
 void inventory::push(int)

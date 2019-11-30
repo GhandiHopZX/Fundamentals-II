@@ -2,8 +2,16 @@
 #include <string>
 #include <list>
 #include <vector>
+#include <cstdlib>
+#include <cstdio>
+#include <iomanip>
+#include <cmath>
+#include <chrono>
+#include <thread>
 #include "battleSystem.h"
 #include "Player_Actor.h"
+#include "inventory.h"
+#include "enemy.h"
 #include "World.h"
 
 World::World()
