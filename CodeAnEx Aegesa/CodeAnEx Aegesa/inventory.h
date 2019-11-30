@@ -32,6 +32,7 @@ public:
 		unsigned int conAdd = 0;
 		unsigned int strAdd = 0;
 		unsigned int agiAdd = 0;
+		unsigned int goldValue = 0;
 
 		unsigned int wvalue = 0; // node
 		struct weapon* next; //next item
@@ -51,6 +52,7 @@ public:
 		unsigned int conAdd = 0;
 		unsigned int strAdd = 0;
 		unsigned int agiAdd = 0;
+		unsigned int goldValue = 0;
 
 		unsigned int avalue = 0; //node
 		struct armor* next; //next armor
@@ -76,6 +78,7 @@ public:
 		unsigned int conAdd = 0;
 		unsigned int strAdd = 0;
 		unsigned int agiAdd = 0;
+		unsigned int goldValue = 0;
 
 		unsigned int ivalue = 0; // node for items
 		struct item* node; // next item
@@ -104,9 +107,9 @@ public:
 	inventory(int, item);
 
 	// all item calls in the game
-	int itemListCall(int);
-	int armorListCall(int);
-	int weaponListCall(int);
+	int itemListCall(int i);
+	int armorListCall(int a);
+	int weaponListCall(int w);
 
 	// getters/accessors
 	
@@ -138,10 +141,12 @@ public:
 	void displaylistWeapon() const;
 	void displaylistArmor() const;
 
-	// templates
+	// battleSystem
+	void rewardCall(int);
 
 	// shop_time
 
+	// templates
 	template <class T>
 	T allitemList(T integer)
 	{
@@ -261,4 +266,5 @@ public:
 	
 	// Deconstructor
 	~inventory();
+	
 };

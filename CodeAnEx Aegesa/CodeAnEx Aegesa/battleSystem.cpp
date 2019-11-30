@@ -13,6 +13,11 @@
 
 using namespace std;
 
+Player_Actor h; //call vars
+Enemy en; // call vars
+
+//todo: callin enemy encouter data
+
 battleSystem::battleSystem()
 {
 	turnGuageNum = 0; // this is if more than one is set, its usually reset
@@ -22,6 +27,7 @@ battleSystem::battleSystem()
 
 void battleSystem::turn()
 {
+	cout << + " turn..." << endl;
 	// initialized choice char
 	char c = { 'n' };
 
@@ -54,14 +60,13 @@ void battleSystem::statTurn()
 void battleSystem::battleMode()
 {
 	cout << "============ E N G A D G E ============" << endl;
-	Player_Actor h; //call vars
-	Enemy e; // call vars
+	
 
 	//player set
 	playerTGuage(h.dummyPlus, h.getSPD(), h.getFp());
 
 	//enemy set
-	enemyTGuage(e.dummyPlus, e.getSPD(), e.getFp());
+	enemyTGuage(en.dummyPlus, en.getSPD(), en.getFp());
 }
 
 void battleSystem::turnSystem(int turn)
@@ -250,8 +255,15 @@ void battleSystem::multiDamageOutput(string n[])
 	cin.get();
 }
 
+void inventory::rewardCall(int index)
+{
+	// todo reward call 
+	itemListCall(index);
+}
+
 // battle_system calls
-void battleSystem::rewardOutput(int itemCallin)
+void battleSystem::rewardOutput()
 {
 	
 }
+

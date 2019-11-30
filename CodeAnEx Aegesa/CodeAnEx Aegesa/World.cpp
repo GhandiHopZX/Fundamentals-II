@@ -56,3 +56,6 @@ void World::beginningStory()
 	cout << "" << endl;
 	cout << "" << endl;
 }
+
+//Enemy Encounter call ins
+// call the battle system stuff
