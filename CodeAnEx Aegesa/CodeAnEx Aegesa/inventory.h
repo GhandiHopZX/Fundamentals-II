@@ -106,11 +106,6 @@ public:
 
 	inventory(int, item);
 
-	// all item calls in the game
-	inventory::item itemListCall(int i);
-	inventory::armor armorListCall(int a);
-	inventory::weapon weaponListCall(int w);
-
 	// getters/accessors
 	
 	// setters/mutators
@@ -142,12 +137,8 @@ public:
 	void displaylistArmor() const;
 
 	// battleSystem
-	void rewardCall(int);
+	inventory::item rewardCall(int);
 
-	// shop_time
-
-	// templates
-	
 	inventory::item allitemList(int integer)
 	{
 		const int MAX_ITEMS = 100;
@@ -262,6 +253,9 @@ public:
 		return weaponlist[integer];
 	}
 
+	// shop_time
+
+	// templates
 	
 	// Deconstructor
 	~inventory();

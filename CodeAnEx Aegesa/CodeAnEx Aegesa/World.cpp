@@ -8,11 +8,13 @@
 #include <cmath>
 #include <chrono>
 #include <thread>
-#include "battleSystem.h"
 #include "Player_Actor.h"
+#include "battleSystem.h"
 #include "inventory.h"
 #include "enemy.h"
 #include "World.h"
+
+using namespace std;
 
 World::World()
 {
@@ -55,6 +57,28 @@ void World::beginningStory()
 	cout << "sdf" << endl;
 	cout << "sgrg" << endl;
 	cout << "sgg" << endl;
+}
+
+void World::chapter1()
+{
+	int i = 0;
+	
+}
+
+void World::chapter2()
+{
+}
+
+void World::chapter3()
+{
+}
+
+void World::chapter4()
+{
+}
+
+void World::chapter5()
+{
 }
 
 //Enemy Encounter call ins

@@ -44,20 +44,9 @@ inventory::inventory(int iIndex, item i)
 
 }
 
-inventory::item inventory::itemListCall(int i)
-{
-	return allitemList(i);
-}
 
-inventory::armor inventory::armorListCall(int a)
-{
-	return allarmorList(a);
-}
 
-inventory::weapon inventory::weaponListCall(int w)
-{
-	return allweaponList(w);
-}
+
 
 void inventory::push(int)
 {

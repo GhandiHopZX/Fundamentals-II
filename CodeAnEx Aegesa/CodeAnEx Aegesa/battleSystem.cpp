@@ -255,10 +255,10 @@ void battleSystem::multiDamageOutput(string n[])
 	cin.get();
 }
 
-void inventory::rewardCall(int index)
+inventory::item inventory::rewardCall(int index)
 {
 	// todo reward call 
-	itemListCall(index);
+	return allitemList(index);
 }
 
 // battle_system calls
