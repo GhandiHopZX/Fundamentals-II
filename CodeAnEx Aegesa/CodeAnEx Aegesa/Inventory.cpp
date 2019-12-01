@@ -41,20 +41,20 @@ inventory::inventory(int aIndex, armor a)
 
 inventory::inventory(int iIndex, item i)
 {
+
 }
 
-// call the templates from here
-int inventory::itemListCall(int iIndex)
+inventory::item inventory::itemListCall(int i)
 {
-	return allitemList(iIndex);
+	return allitemList(i);
 }
 
-int inventory::armorListCall(int a)
+inventory::armor inventory::armorListCall(int a)
 {
 	return allarmorList(a);
 }
 
-int inventory::weaponListCall(int w)
+inventory::weapon inventory::weaponListCall(int w)
 {
 	return allweaponList(w);
 }

@@ -47,14 +47,14 @@ void World::beginningStory()
 	system("COLOR 07");
 	cout << "*Wake up....*" << endl;
 	cout << "Huhhh..." << endl;
-	cout << "" << endl;
-	cout << "" << endl;
-	cout << "" << endl;
-	cout << "" << endl;
-	cout << "" << endl;
-	cout << "" << endl;
-	cout << "" << endl;
-	cout << "" << endl;
+	cout << "d" << endl;
+	cout << "g" << endl;
+	cout << "h" << endl;
+	cout << "h" << endl;
+	cout << "sf" << endl;
+	cout << "sdf" << endl;
+	cout << "sgrg" << endl;
+	cout << "sgg" << endl;
 }
 
 //Enemy Encounter call ins
