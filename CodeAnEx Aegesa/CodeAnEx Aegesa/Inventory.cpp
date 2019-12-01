@@ -20,7 +20,7 @@ inventory::inventory()
 
 inventory::inventory(int)
 {
-
+	
 }
 
 inventory::inventory(const inventory&)
@@ -43,10 +43,6 @@ inventory::inventory(int iIndex, item i)
 {
 
 }
-
-
-
-
 
 void inventory::push(int)
 {
@@ -388,6 +384,38 @@ void inventory::displaylistArmor() const
 		cout << nodePtr->next << '\t' << '\t' << nodePtr->avalue << endl;
 		nodePtr = nodePtr->next;
 	}
+}
+
+inventory inventory::PlayerItemInventory() // gotta make an inventory that'll work in the world menu
+{
+	system("CLS");
+	// show choices'
+	cout << "What menu would you like to select..?" << endl;
+	cout << "Items(i), Armors(a), Weapons(w), Quit(q)" << endl;
+	char choice = {};
+	switch (choice)
+	{
+	case 'i':
+		displaylistItem();
+		// select an item? using a #
+		break;
+	case 'a':
+		displaylistArmor();
+		// select an item?
+		break;
+	case 'w':
+		displaylistWeapon();
+		// select an item?
+		break;
+	case 'q':
+		return;
+		break;
+
+	default:
+		return;
+		break;
+	}
+	return; 
 }
 
 inventory::~inventory()

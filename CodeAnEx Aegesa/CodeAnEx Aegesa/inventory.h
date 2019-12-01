@@ -136,6 +136,8 @@ public:
 	void displaylistWeapon() const;
 	void displaylistArmor() const;
 
+	inventory PlayerItemInventory();
+
 	// battleSystem
 	inventory::item rewardCall(int);
 

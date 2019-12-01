@@ -37,6 +37,7 @@ void battleSystem::turn()
 		{
 		case 'i': // inventory
 			//your Item functionCall for listup check goes here...
+			
 			break;
 		case 's': // skills
 			break;
@@ -61,7 +62,6 @@ void battleSystem::battleMode()
 {
 	cout << "============ E N G A D G E ============" << endl;
 	
-
 	//player set
 	playerTGuage(h.dummyPlus, h.getSPD(), h.getFp());
 
@@ -73,7 +73,8 @@ void battleSystem::turnSystem(int turn)
 {
 	bool guagek;
 	guagek = aGuage;
-	// a = no turn at the moment, b = enemy turn check, c = yor TUARN check, d = conflict turn for turn A clash
+	int turnBack;
+	// a = no turn at the moment or turnA clash, b = enemy turn check, c = yor TUARN check, d = conflict turn for turn A clash
 	// infinite turns till its over
 	do
 	{
@@ -83,26 +84,34 @@ void battleSystem::turnSystem(int turn)
 		case (a):
 			// turn a is always at 0 if its at d which = 4...
 			// CLASH this is why its called TURN A clash
+			
 			break;
 
 		case (b):
 			// enemy turn or ai turn check
+			statTurn();// one turn = one and done
 			break;
 
 		case (c):
 			// yor tuarn
+			statTurn(); // one turn = one and done
 			break;
 
 		case (d):
 			// TurnA
+			statTurn(); // one turn = one and done
+
 			break;
 
 		case (e):
 			// Turncheck
+			turnBack = -4; // if nobodys turn
+
 			break;
 
 		case (f):
 			// Turncheck
+			turnBack = -5; // if nobodys turn
 			break;
 
 		default:
@@ -133,7 +142,7 @@ bool battleSystem::playerTGuage(int spdPlus, int spd, int fp)
 		auto start = std::chrono::high_resolution_clock::now;// start
 		std::this_thread::sleep_for(static_cast<chrono::seconds>(dura));
 		auto end = std::chrono::high_resolution_clock::now();
-
+		
 		add = 0;
 		// push turn
 		int push = 2;
@@ -257,7 +266,6 @@ void battleSystem::multiDamageOutput(string n[])
 
 inventory::item inventory::rewardCall(int index)
 {
-	// todo reward call 
 	return allitemList(index);
 }
 

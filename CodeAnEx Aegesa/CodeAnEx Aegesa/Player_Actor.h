@@ -43,7 +43,6 @@ private:
 	
 #pragma endregion
 
-	
 public:
 	// variables
 	string name; // YOUR NAME!
@@ -54,8 +53,33 @@ public:
 	int dummyPlus;
 	
 	// stuff
-	string statusEff[20] = {}; // wip
 	
+	struct statusEff
+	{
+		string buffName;
+		int turns_Of_aff = 0;
+		// afflictions statbase
+		unsigned int hp; // health
+		unsigned int sp; // special
+		unsigned int fp; // fighter (aural)
+
+		// battler statbase <- ap goes here
+		unsigned int ATK; // attack
+		unsigned int DEF; // defence (armor based) 
+		unsigned int SPD; // speed
+
+		// ability stats <- dp goes here
+		unsigned int AGI; // agility
+		unsigned int DEX; // dexterity
+		unsigned int INT; // intelligence
+		unsigned int SPR; // spirit
+		unsigned int STR; // strength (also effects status)
+		unsigned int END; // endurance (bodily based / also effects status)
+		unsigned int CON; // constitution (mental, body, soul, based / also effects status)
+	};
+
+	statusEff allEffGet[20] = {}; // wip
+
 	// Constructors
 	Player_Actor();
 
