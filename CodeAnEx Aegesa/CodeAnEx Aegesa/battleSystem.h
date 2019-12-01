@@ -42,6 +42,7 @@ public:
 	void battleMode();
 
 	bool playerTGuage(int, int spd, int fp);
+
 	bool enemyTGuage(int, int spd, int fp);
 
 	// output types
