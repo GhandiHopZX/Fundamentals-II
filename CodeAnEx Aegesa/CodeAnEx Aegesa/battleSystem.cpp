@@ -27,7 +27,7 @@ battleSystem::battleSystem()
 
 void battleSystem::turn()
 {
-	cout << + " turn..." << endl;
+	cout << h.name + " turn..." << endl;
 	// initialized choice char
 	char c = { 'n' };
 
@@ -37,7 +37,6 @@ void battleSystem::turn()
 		{
 		case 'i': // inventory
 			//your Item functionCall for listup check goes here...
-			
 			break;
 		case 's': // skills
 			break;

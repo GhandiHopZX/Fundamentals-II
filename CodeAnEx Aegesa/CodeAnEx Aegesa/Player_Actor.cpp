@@ -4,7 +4,6 @@
 #include "Player_Actor.h"
 #include "battleSystem.h"
 
-
 Player_Actor::Player_Actor()
 {
 	name = "";
@@ -39,36 +38,7 @@ Player_Actor::Player_Actor()
 #pragma endregion
 }
 
-// weapons and armor
-inventory::weapon wEQ;
-inventory::armor aEQ;
-
-inventory::weapon getWeapon()
-{
-	return wEQ;
-}
-
-inventory::armor getArmor()
-{
-	return aEQ;
-}
-
-// leftover prototypes
-void setWeapon(inventory::weapon weapon);
-
-void setArmor(inventory::armor gear);
-
 void setStatus(string statusName);
-
-void setWeapon(inventory::weapon weapon)
-{
-	wEQ = weapon; // I might change these
-}
-
-void setArmor(inventory::armor gear)
-{
-	aEQ = gear; // this one too
-}
 
 // use a linked list?
 void setStatus(string statusName)
@@ -93,11 +63,18 @@ void setStatus(string statusName)
 
 }
 
+void Player_Actor::setWeapon(inventory::weapon weapon)
+{
+}
+
+void Player_Actor::setArmor(inventory::armor gear)
+{
+}
+
 void Player_Actor::battleGuage()
 {
 
 }
-
 
 void Player_Actor::getStatus()
 {
@@ -114,6 +91,9 @@ void Player_Actor::getStatus()
 	string beta = "test";
 	// statusEff;
 }
+
+// armors and weapons?
+
 
 
 

@@ -53,29 +53,33 @@ public:
 	int dummyPlus;
 	
 	// stuff
-	
+
+	// weapons and armor
+	/*inventory::weapon wEQ;
+	inventory::armor aEQ;*/
+
 	struct statusEff
 	{
 		string buffName;
 		int turns_Of_aff = 0;
 		// afflictions statbase
-		unsigned int hp; // health
-		unsigned int sp; // special
-		unsigned int fp; // fighter (aural)
+		unsigned int hp = 0; // health
+		unsigned int sp = 0; // special
+		unsigned int fp = 0; // fighter (aural)
 
 		// battler statbase <- ap goes here
-		unsigned int ATK; // attack
-		unsigned int DEF; // defence (armor based) 
-		unsigned int SPD; // speed
+		unsigned int ATK = 0; // attack
+		unsigned int DEF = 0; // defence (armor based) 
+		unsigned int SPD = 0; // speed
 
 		// ability stats <- dp goes here
-		unsigned int AGI; // agility
-		unsigned int DEX; // dexterity
-		unsigned int INT; // intelligence
-		unsigned int SPR; // spirit
-		unsigned int STR; // strength (also effects status)
-		unsigned int END; // endurance (bodily based / also effects status)
-		unsigned int CON; // constitution (mental, body, soul, based / also effects status)
+		unsigned int AGI = 0; // agility
+		unsigned int DEX = 0; // dexterity
+		unsigned int INT = 0; // intelligence
+		unsigned int SPR = 0; // spirit
+		unsigned int STR = 0; // strength (also effects status)
+		unsigned int END = 0; // endurance (bodily based / also effects status)
+		unsigned int CON = 0; // constitution (mental, body, soul, based / also effects status)
 	};
 
 	statusEff allEffGet[20] = {}; // wip
@@ -186,6 +190,7 @@ public:
 		return EXP;
 	};
 
+	
 #pragma endregion
 
 	// setters / mutators
@@ -511,6 +516,8 @@ public:
 		}
 	}
 
+	void setWeapon(inventory::weapon weapon);
+	void setArmor(inventory::armor gear);
 
 #pragma endregion
 

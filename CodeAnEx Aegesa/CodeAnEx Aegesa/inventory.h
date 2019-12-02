@@ -35,6 +35,7 @@ public:
 		unsigned int goldValue = 0;
 
 		unsigned int wvalue = 0; // node
+		unsigned int quantity = 0;
 		struct weapon* next; //next item
 	};
 
@@ -55,6 +56,7 @@ public:
 		unsigned int goldValue = 0;
 
 		unsigned int avalue = 0; //node
+		unsigned int quantity = 0;
 		struct armor* next; //next armor
 	};
 
@@ -81,7 +83,10 @@ public:
 		unsigned int goldValue = 0;
 
 		unsigned int ivalue = 0; // node for items
-		struct item* node; // next item
+		unsigned int quantity = 0;
+		struct item* node;
+		
+		// next item
 	};
 
 	//node heads
@@ -91,8 +96,23 @@ public:
 
 	item* headi;
 
-	// variables
+	unsigned int sum_weapons = 0; // total number of nodes
+	unsigned int sum_armors = 0; // total number of nodes
+	unsigned int sum_items = 0; // total number of nodes
+
+	// constant variables
 	static const int MAX_INTEGRITY = 20;
+
+	// arrays for the player's inventory.
+	weapon my_weapons[MAX_INTEGRITY] =
+	{};
+
+	armor my_armors[MAX_INTEGRITY] =
+	{};
+
+	item my_items[MAX_INTEGRITY] =
+	{};
+	
 	// constructor
 	inventory();
 
@@ -100,15 +120,16 @@ public:
 
 	inventory(const inventory &);
 
-	inventory(int, weapon);
+	/*inventory(int, weapon);
 
 	inventory(int, armor);
 
-	inventory(int, item);
+	inventory(int, item);*/
 
 	// getters/accessors
 	
 	// setters/mutators
+	
 
 	// functions
 	void push(int);
@@ -254,6 +275,13 @@ public:
 
 		return weaponlist[integer];
 	}
+
+	// selections
+	inventory::item selectlistItem(int);
+
+	inventory::armor selectlistArmor(int u);
+
+	inventory::weapon selectlistWeapon(int u);
 
 	// shop_time
 
