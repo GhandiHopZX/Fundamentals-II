@@ -23,7 +23,7 @@ public:
 	// setters/mutators
 
 	void beginningStory(); //Awaken Marko(or Player one)
-	void chapter1(); //
+	void chapter1(); //RE-BIRTH
 	void chapter2(); //Shattered and Hollow
 	void chapter3(); //Green Gold 
 	void chapter4(); //Renae's Secret/Lost Civilization
