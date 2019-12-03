@@ -22,12 +22,12 @@ public:
 	
 	// setters/mutators
 
-	void beginningStory();
-	void chapter1();
-	void chapter2();
-	void chapter3();
-	void chapter4();
-	void chapter5();
+	void beginningStory(); //Awaken Marko(or Player one)
+	void chapter1(); //
+	void chapter2(); //Shattered and Hollow
+	void chapter3(); //Green Gold 
+	void chapter4(); //Renae's Secret/Lost Civilization
+	void chapter5(); //Alicia's Verdict
 
 	// getters/accessors
 

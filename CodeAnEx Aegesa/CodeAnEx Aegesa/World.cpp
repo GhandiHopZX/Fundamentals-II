@@ -49,7 +49,7 @@ void World::beginningStory()
 	system("COLOR 07");
 	cout << "*Wake up....*" << endl;
 	cout << "Huhhh..." << endl;
-	cout << "d" << endl;
+	cout << "e" << endl;
 	cout << "g" << endl;
 	cout << "h" << endl;
 	cout << "h" << endl;
