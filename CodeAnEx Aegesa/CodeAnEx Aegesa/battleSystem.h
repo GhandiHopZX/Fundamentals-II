@@ -26,9 +26,10 @@ public:
 
 	// variables
 	int turnGuageNum;
-	string* Status = new string; // a new status
 
-	list <string> statusIndex = {};
+	Player_Actor::statusEff* Status = new Player_Actor::statusEff; // a new status
+
+	list <Player_Actor::statusEff> statusIndex = {};
 
 	// getters/accessors
 

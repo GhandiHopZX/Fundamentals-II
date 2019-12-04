@@ -159,6 +159,8 @@ public:
 
 	inventory PlayerItemInventory();
 
+	void itemCall();
+
 	// battleSystem
 	inventory::item rewardCall(int);
 

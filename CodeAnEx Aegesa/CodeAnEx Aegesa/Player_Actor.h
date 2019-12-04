@@ -91,7 +91,7 @@ public:
 
 #pragma region getters
 
-		//Hp Getter
+	//Hp Getter
 	int getHp()
 	{
 		return hp;
@@ -182,7 +182,7 @@ public:
 	};
 
 	//get Status
-	void getStatus();
+	statusEff getStatus(int);
 
 	//exp Getter
 	int getExp()
@@ -190,7 +190,15 @@ public:
 		return EXP;
 	};
 
-	
+	inventory::weapon getWeapon(int index)
+	{
+		return Player_Actor::ActorWeaponE[index];
+	}
+
+	inventory::armor getArmor(int index)
+	{
+		return Player_Actor::ActorArmorE[index];
+	}
 #pragma endregion
 
 	// setters / mutators
@@ -516,10 +524,12 @@ public:
 		}
 	}
 
-	void setWeapon(inventory::weapon weapon);
-	void setArmor(inventory::armor gear);
+	void setWeapon(inventory::weapon weapon, int index);
+	void setArmor(inventory::armor gear, int index);
 
 #pragma endregion
+
+	void setStatus(Player_Actor::statusEff statusName[]);
 
 	void battleGuage();
 

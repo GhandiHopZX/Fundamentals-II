@@ -36,7 +36,8 @@ void battleSystem::turn()
 		switch (c)
 		{
 		case 'i': // inventory
-			//your Item functionCall for listup check goes here...
+			//your itemCall for listup check goes here...
+
 			break;
 		case 's': // skills
 			break;
@@ -52,9 +53,57 @@ void battleSystem::turn()
 	}
 }
 
+// use a linked list?
+void Player_Actor::setStatus(Player_Actor::statusEff statusName[])
+{
+	// this is where the statuses go in	
+
+
+	// this is where the game and 
+	// battle system look for the 
+	// setStatuses used for said Actor
+	// and the status effect is used
+
+	Player_Actor::statusEff o;
+	//const int N = const_cast<const int&>(o);
+
+
+	for (int i = 0; i < 20; i++)
+	{
+		allEffGet[i] = statusName[i];
+	}
+}
+
+Player_Actor::statusEff Player_Actor::getStatus(int index)
+{
+	// a criterion is checked here 
+	// and used to see what statuses are present in said 
+	// player status then are passed 
+	// into the statusEFF index then the index is passed into 
+	// gameSystem...
+	// this is where the statuses are taken
+
+	statusEff me[20] = {};
+	for (int i = 0; i < 20; i++)
+	{
+		me[i] = allEffGet[i];
+	}
+
+	// beta test
+	string beta = "test";
+	// statusEff;
+	return me[index];
+}
+
 // how many turns is your status eff or plus gonna last???
 void battleSystem::statTurn()
 {
+	statusIndex.begin();
+	for(int i = 0; i < statusIndex.size; i++) 
+	{
+		statusIndex; //put the statuses in here
+	}
+	statusIndex.end();
 }
 
 void battleSystem::battleMode()
@@ -119,6 +168,11 @@ void battleSystem::turnSystem(int turn)
 			break;
 		}
 	} while (battleTime == true);
+}
+
+void inventory::itemCall()
+{
+
 }
 
 //turn guage
