@@ -309,6 +309,7 @@ public:
 				int cHp = getHp();
 				cHp += plus;
 				setHp(cHp);
+				delete eDrain;
 			}
 			else if (statmulti == false)
 			{
@@ -318,6 +319,7 @@ public:
 				int dHp = getHp();
 				dHp = dHp - *eDrain;
 				setHp(dHp);
+				delete eDrain;
 			}
 			break;
 		case 's':
@@ -327,6 +329,7 @@ public:
 				int cSp = getSp();
 				cSp += plus;
 				setSp(cSp);
+				delete eDrain;
 			}
 			else if (statmulti == false)
 			{
@@ -336,6 +339,7 @@ public:
 				int dSp = getSp();
 				dSp = dSp - *eDrain;
 				setSp(dSp);
+				delete eDrain;
 			}
 			break;
 		case 'f':
@@ -345,6 +349,7 @@ public:
 				int cFp = getFp();
 				cFp += plus;
 				setFp(cFp);
+				delete eDrain;
 			}
 			else if (statmulti == false)
 			{
@@ -354,6 +359,7 @@ public:
 				int dFp = getFp();
 				dFp = dFp - *eDrain;
 				setFp(dFp);
+				delete eDrain;
 			}
 			break;
 		case 'a':
@@ -363,6 +369,7 @@ public:
 				int cAp = getAp();
 				cAp += plus;
 				setSp(cAp);
+				delete eDrain;
 			}
 			else if (statmulti == false)
 			{
@@ -372,6 +379,7 @@ public:
 				int dAp = getAp();
 				dAp = dAp - *eDrain;
 				setHp(dAp);
+				delete eDrain;
 			}
 			break;
 		case 'd':
@@ -381,6 +389,7 @@ public:
 				int cDp = getDp();
 				cDp += plus;
 				setDp(cDp);
+				delete eDrain;
 			}
 			else if (statmulti == false)
 			{
@@ -390,6 +399,7 @@ public:
 				int dDp = getDp();
 				dDp = dDp - *eDrain;
 				setDp(dDp);
+				delete eDrain;
 			}
 			break;
 		case 'str':
@@ -399,6 +409,7 @@ public:
 				int cStr = getSTR();
 				cStr += plus;
 				setSTR(cStr);
+				delete eDrain;
 			}
 			else if (statmulti == false)
 			{
@@ -408,6 +419,7 @@ public:
 				int dStr = getSTR();
 				dStr = dStr - *eDrain;
 				setSTR(dStr);
+				delete eDrain;
 			}
 			break;
 		case 'atk':
@@ -417,6 +429,7 @@ public:
 				int cAtk = getATK();
 				cAtk += plus;
 				setATK(cAtk);
+				delete eDrain;
 			}
 			else if (statmulti == false)
 			{
@@ -426,6 +439,7 @@ public:
 				int dAtk = getATK();
 				dAtk = dAtk - *eDrain;
 				setATK(dAtk);
+				delete eDrain;
 			}
 			break;
 		case 'def':
@@ -435,6 +449,7 @@ public:
 				int cDef = getDEF();
 				cDef += plus;
 				setDEF(cDef);
+				delete eDrain;
 			}
 			else if (statmulti == false)
 			{
@@ -444,6 +459,7 @@ public:
 				int dDef = getDEF();
 				dDef = dDef - *eDrain;
 				setDEF(dDef);
+				delete eDrain;
 			}
 			break;
 		case 'agi':
@@ -453,6 +469,7 @@ public:
 				int cAgi = getAGI();
 				cAgi += plus;
 				setSp(cAgi);
+				delete eDrain;
 			}
 			else if (statmulti == false)
 			{
@@ -462,6 +479,7 @@ public:
 				int dAgi = getAGI();
 				dAgi = dAgi - *eDrain;
 				setAGI(dAgi);
+				delete eDrain;
 			}
 			break;
 		case 'spd':
@@ -471,6 +489,7 @@ public:
 				int cSpd = getSPD();
 				cSpd += plus;
 				setSp(cSpd);
+				delete eDrain;
 			}
 			else if (statmulti == false)
 			{
@@ -480,6 +499,7 @@ public:
 				int dSpd = getSPD();
 				dSpd = dSpd - *eDrain;
 				setSPD(dSpd);
+				delete eDrain;
 			}
 			break;
 		case 'end':
@@ -489,6 +509,7 @@ public:
 				int cEnd = getEND();
 				cEnd += plus;
 				setEND(cEnd);
+				delete eDrain;
 			}
 			else if (statmulti == false)
 			{
@@ -498,6 +519,7 @@ public:
 				int dEnd = getEND();
 				dEnd = dEnd - *eDrain;
 				setEND(dEnd);
+				delete eDrain;
 			}
 			break;
 		case 'con':
@@ -507,6 +529,7 @@ public:
 				int cCon = getCON();
 				cCon += plus;
 				setCON(cCon);
+				delete eDrain;
 			}
 			else if (statmulti == false)
 			{
@@ -516,6 +539,7 @@ public:
 				int dCon = getCON();
 				dCon = dCon - *eDrain;
 				setHp(dCon);
+				delete eDrain;
 			}
 			break;
 		default:

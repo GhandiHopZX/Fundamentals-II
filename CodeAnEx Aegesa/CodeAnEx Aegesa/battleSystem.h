@@ -3,6 +3,7 @@
 #include <list>
 #include <vector>
 #include <ctime>
+#include "Player_Actor.h"
 
 using namespace std;
 

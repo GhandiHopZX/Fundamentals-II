@@ -267,7 +267,7 @@ void inventory::deleteNodeItem(item, int i)
 			previousNode = nodePtr;
 			nodePtr = nodePtr->node;
 		}
-		if (nodePtr)
+		if (nodePtr->quantity <= 0)
 		{
 			previousNode->node = nodePtr->node;
 			delete nodePtr;
@@ -298,7 +298,7 @@ void inventory::deleteNodeWeapon(weapon, int w)
 			previousNode = nodePtr;
 			nodePtr = nodePtr->next;
 		}
-		if (nodePtr)
+		if (nodePtr->quantity <= 0)
 		{
 			previousNode->next = nodePtr->next;
 			delete nodePtr;
@@ -329,7 +329,7 @@ void inventory::deleteNodeArmor(armor, int a)
 			previousNode = nodePtr;
 			nodePtr = nodePtr->next;
 		}
-		if (nodePtr)
+		if (nodePtr->quantity <= 0)
 		{
 			previousNode->next = nodePtr->next;
 			delete nodePtr;
