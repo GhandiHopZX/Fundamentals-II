@@ -15,6 +15,8 @@ using namespace std;
 
 Player_Actor h; //call vars
 Enemy en; // call vars
+inventory inv; // call tha listos
+World warudo;
 
 //todo: callin enemy encouter data
 
@@ -37,16 +39,20 @@ void battleSystem::turn()
 		switch (c)
 		{
 		case 'i': // inventory
-			//your itemCall for listup check goes here...
-			inventory::PlayerItemInventory;
+			//your itemCall for listup...
+			inv.PlayerItemInventory();
 			break;
 		case 's': // skills
+			hack();
 			break;
 		case 'h': // hack
+			skill();
 			break;
 		case 'd': // defend
+			defend();
 			break;
 		case 'a': // attack
+			attack();
 			break;
 		default:
 			normalOutput("Try using the single letter prompts..");
@@ -297,6 +303,12 @@ void battleSystem::multiDamageOutput(string n[])
 }
 
 // battle_system calls
+void battleSystem::attack(){
+
+}
+void battleSystem::defend(){}
+void battleSystem::skill(){}
+void battleSystem::hack(){}
 void battleSystem::rewardOutput()
 {
 }

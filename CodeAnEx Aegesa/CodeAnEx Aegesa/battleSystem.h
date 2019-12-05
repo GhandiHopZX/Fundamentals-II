@@ -58,6 +58,14 @@ public:
 
 	void multiDamageOutput(string[]);
 
+	void attack();
+
+	void defend();
+
+	void skill();
+
+	void hack();
+
 	void rewardOutput();
 
 	// templates
