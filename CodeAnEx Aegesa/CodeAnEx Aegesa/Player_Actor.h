@@ -6,10 +6,11 @@
 #include <thread>
 #include "battleSystem.h"
 #include "inventory.h"
+#include "skillAction.h"
 
 using namespace std;
 
-class Player_Actor
+class Player_Actor : skillAction
 {
 private:
 
