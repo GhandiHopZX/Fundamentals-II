@@ -15,6 +15,7 @@ class Player_Actor : skillAction
 private:
 
 	// variables
+
 #pragma region vars
 
 	// statbase
@@ -44,6 +45,7 @@ private:
 #pragma endregion
 
 public:
+
 	// variables
 	string name; // YOUR NAME!
 	string bio; // YOUR STORY!
