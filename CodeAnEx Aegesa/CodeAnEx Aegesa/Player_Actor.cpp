@@ -11,7 +11,7 @@ Player_Actor::Player_Actor()
 	statmulti = false;
 
 #pragma region Stat_Instantiation
-	
+
 	// base stats
 	hp = 10;
 	sp = 5;
@@ -38,7 +38,6 @@ Player_Actor::Player_Actor()
 #pragma endregion
 }
 
-
 void Player_Actor::setWeapon(inventory::weapon weapon, int index)
 {
 	ActorWeaponE[index] = weapon;
@@ -51,10 +50,27 @@ void Player_Actor::setArmor(inventory::armor gear, int index)
 
 void Player_Actor::battleGuage()
 {
-
 }
 
+Player_Actor::statusEff Player_Actor::getStatus(int index)
+{
+	// a criterion is checked here
+	// and used to see what statuses are present in said
+	// player status then are passed
+	// into the statusEFF index then the index is passed into
+	// gameSystem...
+	// this is where the statuses are taken
 
+	statusEff me[20] = {};
+	for (int i = 0; i < 20; i++)
+	{
+		me[i] = allEffGet[i];
+	}
+	// beta test
+	string beta = "test";
+	// statusEff;
+	return me[index];
+}
 // armors and weapons?
 
 // use this to kill the player and when they die GAME OVER

@@ -14,27 +14,25 @@ private:
 	bool battleTime; // if its time to fight
 	bool* aGuage;
 
-	enum t 
+	enum t
 	{
 		a = 0, b = 1, c = 2, d = 3, e = 4, f = 5
 	}; //turn number
 
 public:
-	
+
 	// constructor
 	battleSystem();
 
 	// variables
 	int turnGuageNum;
 
-	Player_Actor::statusEff* Status = new Player_Actor::statusEff; // a new status
-
 	list <Player_Actor::statusEff> statusIndex = {};
 
 	// getters/accessors
 
 	// setters/mutators
-	
+
 	// functions
 	void turn(); // the core functions of what the player can do when the player can do
 
@@ -63,4 +61,3 @@ public:
 
 	// templates
 };
-

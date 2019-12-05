@@ -31,13 +31,13 @@ Enemy Enemy::enemyRandEncounter()
 	const int MAX_ITEM = 14;
 	const int MAX_STATN = 10;
 
-	const int MIN = 0; 
+	const int MIN = 0;
 	const int GOLD_MIN = 100;
 
-	string lvl1names[14] = 
+	string lvl1names[14] =
 	{ "Mongrel", "Rancor", "Mandrake", "Jumpsuit Man",
 		"Gorgon Eye", "Jackal", "Golem", "Worm", "Pci Eater",
-	"Temptest", "Mecha Recon", "Harpy", "Leech", "Gorigami"};
+	"Temptest", "Mecha Recon", "Harpy", "Leech", "Gorigami" };
 
 	int enemyRand = (rand() % (MAX_ERAND - MIN + 1)) + MIN; // 0 - 13
 	int goldRand = (rand() % (MAX_GOLD - GOLD_MIN + 1)) + GOLD_MIN; // 100 - 1100
@@ -52,7 +52,7 @@ Enemy Enemy::enemyRandEncounter()
 
 	Enemy Randlvl1(enemyName, elementType::Phase, enemyRand, goldRand, itemRand);
 
-#pragma region stats 
+#pragma region stats
 	Randlvl1.setHp(100);
 	Randlvl1.setSp(16);
 	Randlvl1.setAp(statRand);
@@ -78,9 +78,9 @@ Enemy Enemy::enemyRandEncounter()
 Enemy Enemy::BossCall(int call)
 {
 	const int MAX_BOSS = 12;
-	
+
 	// call 0 for tha boss
-	//lv 1 Bosses 
+	//lv 1 Bosses
 	Enemy MorphQueen("MorphQueen", elementType::Phase, 160, 400, 2);
 	Enemy GiggaRaugght("GiggaRaugght", elementType::Normal, 2000 /*if you manage to beat him*/, 15000, 12);
 

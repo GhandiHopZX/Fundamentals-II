@@ -27,7 +27,8 @@ battleSystem::battleSystem()
 
 void battleSystem::turn()
 {
-	cout << h.name + " turn..." << endl;
+	normalOutput(h.name + " turn...");
+	normalOutput("Attack(a),\n Defend(d),\n Hack(h),\n Skills(s),\n Inventory(i) ");
 	// initialized choice char
 	char c = { 'n' };
 
@@ -48,6 +49,8 @@ void battleSystem::turn()
 		case 'a': // attack
 			break;
 		default:
+			normalOutput("Try using the single letter prompts..");
+			turn();
 			break;
 		}
 	}
@@ -56,17 +59,15 @@ void battleSystem::turn()
 // use a linked list?
 void Player_Actor::setStatus(Player_Actor::statusEff statusName[])
 {
-	// this is where the statuses go in	
+	// this is where the statuses go in
 
-
-	// this is where the game and 
-	// battle system look for the 
+	// this is where the game and
+	// battle system look for the
 	// setStatuses used for said Actor
 	// and the status effect is used
 
 	Player_Actor::statusEff o;
 	//const int N = const_cast<const int&>(o);
-
 
 	for (int i = 0; i < 20; i++)
 	{
@@ -74,34 +75,13 @@ void Player_Actor::setStatus(Player_Actor::statusEff statusName[])
 	}
 }
 
-Player_Actor::statusEff Player_Actor::getStatus(int index)
-{
-	// a criterion is checked here 
-	// and used to see what statuses are present in said 
-	// player status then are passed 
-	// into the statusEFF index then the index is passed into 
-	// gameSystem...
-	// this is where the statuses are taken
-
-	statusEff me[20] = {};
-	for (int i = 0; i < 20; i++)
-	{
-		me[i] = allEffGet[i];
-	}
-
-	// beta test
-	string beta = "test";
-	// statusEff;
-	return me[index];
-}
-
 // how many turns is your status eff or plus gonna last???
 void battleSystem::statTurn()
 {
 	statusIndex.begin();
-	for(int i = 0; i < statusIndex.size; i++) 
+	for (int i = 0; i < statusIndex.size; i++)
 	{
-		 statusIndex.insert; //put the statuses in here
+		//put the statuses in here
 	}
 	statusIndex.end();
 }
@@ -109,7 +89,7 @@ void battleSystem::statTurn()
 void battleSystem::battleMode()
 {
 	cout << "============ E N G A D G E ============" << endl;
-	
+
 	//player set
 	playerTGuage(h.dummyPlus, h.getSPD(), h.getFp());
 
@@ -132,7 +112,7 @@ void battleSystem::turnSystem(int turn)
 		case (a):
 			// turn a is always at 0 if its at d which = 4...
 			// CLASH this is why its called TURN A clash
-			
+
 			break;
 
 		case (b):
@@ -172,7 +152,6 @@ void battleSystem::turnSystem(int turn)
 
 void inventory::itemCall()
 {
-
 }
 
 //turn guage
@@ -195,7 +174,7 @@ bool battleSystem::playerTGuage(int spdPlus, int spd, int fp)
 		auto start = std::chrono::high_resolution_clock::now;// start
 		std::this_thread::sleep_for(static_cast<chrono::seconds>(dura));
 		auto end = std::chrono::high_resolution_clock::now();
-		
+
 		add = 0;
 		// push turn
 		int push = 2;
@@ -320,6 +299,4 @@ void battleSystem::multiDamageOutput(string n[])
 // battle_system calls
 void battleSystem::rewardOutput()
 {
-	
 }
-

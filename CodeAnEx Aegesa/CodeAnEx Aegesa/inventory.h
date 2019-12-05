@@ -10,7 +10,7 @@ using namespace std;
 class inventory
 {
 private:
-	
+
 	// inventory
 	int* stackArray;
 	int capacity; // stack size
@@ -67,7 +67,7 @@ public:
 		unsigned int spAdd = 0;
 		unsigned int fpAdd = 0;
 		unsigned int apAdd = 0;
-	    // no dp plus plz
+		// no dp plus plz
 
 		unsigned int atkAdd = 0;
 		unsigned int defAdd = 0;
@@ -85,7 +85,7 @@ public:
 		unsigned int ivalue = 0; // node for items
 		unsigned int quantity = 0;
 		struct item* node;
-		
+
 		// next item
 	};
 
@@ -112,13 +112,13 @@ public:
 
 	item my_items[MAX_INTEGRITY] =
 	{};
-	
+
 	// constructor
 	inventory();
 
 	inventory(int);
 
-	inventory(const inventory &);
+	inventory(const inventory&);
 
 	/*inventory(int, weapon);
 
@@ -127,9 +127,8 @@ public:
 	inventory(int, item);*/
 
 	// getters/accessors
-	
+
 	// setters/mutators
-	
 
 	// functions
 	void push(int);
@@ -141,7 +140,7 @@ public:
 	void appendNodeItem(item, int);
 	void appendNodeWeapon(weapon, int);
 	void appendNodeArmor(armor, int);
-	
+
 	// insert
 	void insertNodeItem(item, int);
 	void insertNodeWeapon(weapon, int);
@@ -288,8 +287,7 @@ public:
 	// shop_time
 
 	// templates
-	
+
 	// Deconstructor
 	~inventory();
-	
 };

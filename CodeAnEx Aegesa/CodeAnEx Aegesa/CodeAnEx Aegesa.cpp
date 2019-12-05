@@ -122,8 +122,8 @@ void menyu()
 		<< "\n"
 		<< "New Game (n)\n"
 		<< "Continue (c)\n"
-		<< "Quit Game (q)"<< endl;
-	
+		<< "Quit Game (q)" << endl;
+
 	cin >> choice;
 	do
 	{
@@ -131,7 +131,7 @@ void menyu()
 		{
 		case 'n':
 		case 'N':
-			
+
 			d.beginningStory();
 			break;
 
@@ -150,8 +150,5 @@ void menyu()
 			menyu();
 			break;
 		};
-
 	} while (choice != 3);
-
-	
 }

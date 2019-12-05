@@ -25,7 +25,7 @@ private:
 
 	// battler statbase <- ap goes here
 	unsigned int ATK = 0; // attack
-	unsigned int DEF = 0; // defence (armor based) 
+	unsigned int DEF = 0; // defence (armor based)
 	unsigned int SPD = 0; // speed
 
 	// ability stats <- dp goes here
@@ -40,7 +40,6 @@ private:
 	// experience
 	unsigned int EXP; // experience to obtain the per level ap gain
 
-	
 #pragma endregion
 
 public:
@@ -51,7 +50,7 @@ public:
 	// stat multiplier flag
 	bool statmulti;
 	int dummyPlus;
-	
+
 	// stuff
 
 	// weapons and armor
@@ -69,7 +68,7 @@ public:
 
 		// battler statbase <- ap goes here
 		unsigned int ATK = 0; // attack
-		unsigned int DEF = 0; // defence (armor based) 
+		unsigned int DEF = 0; // defence (armor based)
 		unsigned int SPD = 0; // speed
 
 		// ability stats <- dp goes here
@@ -299,7 +298,7 @@ public:
 
 	void statPlus(char stat, int plus)
 	{
-		int *eDrain = new int;
+		int* eDrain = new int;
 
 		switch (stat)
 		{
@@ -401,7 +400,7 @@ public:
 				cStr += plus;
 				setSTR(cStr);
 			}
-			else if(statmulti == false)
+			else if (statmulti == false)
 			{
 				battleSystem b;
 				b.normalOutput("STR plus modifier has faded");
@@ -509,7 +508,7 @@ public:
 				cCon += plus;
 				setCON(cCon);
 			}
-			else if(statmulti == false)
+			else if (statmulti == false)
 			{
 				battleSystem b;
 				b.normalOutput("CON plus modifier has faded");

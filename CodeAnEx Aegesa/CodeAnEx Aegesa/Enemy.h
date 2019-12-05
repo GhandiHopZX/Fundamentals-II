@@ -17,18 +17,18 @@ private:
 	int goldA; //gold awarded
 
 public:
-	// check this for a weakness 
+	// check this for a weakness
 	enum class elementType
 	{
 		Water = 0,
 		Fire = 1,
-		Earth = 2, 
-		Air = 3, 
-		Lightning = 4, 
+		Earth = 2,
+		Air = 3,
+		Lightning = 4,
 		Phase = 5,
-		Bio = 6, 
+		Bio = 6,
 		Light = 7,
-		Dark = 8, 
+		Dark = 8,
 		Normal = 9
 	};
 
@@ -46,4 +46,3 @@ public:
 	// list of enemy types and methods
 	list <Enemy> enemyList = {};
 };
-

@@ -20,7 +20,6 @@ inventory::inventory()
 
 inventory::inventory(int)
 {
-
 }
 
 inventory::inventory(const inventory&)
@@ -69,7 +68,7 @@ void inventory::appendNodeItem(item, int sitm)
 
 	// allocation
 	newNode = new item;
-	newNode->ivalue = sitm; //value 
+	newNode->ivalue = sitm; //value
 	newNode->node = nullptr;
 
 	if (!headi)
@@ -81,7 +80,6 @@ void inventory::appendNodeItem(item, int sitm)
 			nodePtr = nodePtr->node;
 		nodePtr->node = newNode;
 	}
-
 }
 
 void inventory::appendNodeWeapon(weapon, int w)
@@ -91,7 +89,7 @@ void inventory::appendNodeWeapon(weapon, int w)
 
 	// allocation
 	newNode = new weapon;
-	newNode->wvalue = w; //value 
+	newNode->wvalue = w; //value
 	newNode->next = nullptr;
 
 	if (!headw)
@@ -112,7 +110,7 @@ void inventory::appendNodeArmor(armor, int a)
 
 	// allocation
 	newNode = new armor;
-	newNode->avalue = a; //value 
+	newNode->avalue = a; //value
 	newNode->next = nullptr;
 
 	if (!heada)
@@ -164,7 +162,6 @@ void inventory::insertNodeItem(item, int i)
 			newNode->node = nodePtr;
 		}
 	}
-
 }
 
 void inventory::insertNodeWeapon(weapon, int w)
@@ -205,7 +202,6 @@ void inventory::insertNodeWeapon(weapon, int w)
 			newNode->next = nodePtr;
 		}
 	}
-
 }
 
 void inventory::insertNodeArmor(armor, int a)
@@ -246,14 +242,13 @@ void inventory::insertNodeArmor(armor, int a)
 			newNode->next = nodePtr;
 		}
 	}
-
 }
 
 void inventory::deleteNodeItem(item, int i)
 {
 	item* nodePtr;
 	item* previousNode = {};
-	
+
 	if (!headi)
 	{
 		return;
@@ -277,9 +272,7 @@ void inventory::deleteNodeItem(item, int i)
 			previousNode->node = nodePtr->node;
 			delete nodePtr;
 		}
-
 	}
-
 }
 
 void inventory::deleteNodeWeapon(weapon, int w)
@@ -310,9 +303,7 @@ void inventory::deleteNodeWeapon(weapon, int w)
 			previousNode->next = nodePtr->next;
 			delete nodePtr;
 		}
-
 	}
-
 }
 
 void inventory::deleteNodeArmor(armor, int a)
@@ -343,7 +334,6 @@ void inventory::deleteNodeArmor(armor, int a)
 			previousNode->next = nodePtr->next;
 			delete nodePtr;
 		}
-
 	}
 }
 
@@ -530,6 +520,6 @@ inventory::~inventory()
 		delete nodeWPtr;
 		nodeWPtr = nextWNode;
 	}
-	
+
 	//delete [] stackArray;
 }

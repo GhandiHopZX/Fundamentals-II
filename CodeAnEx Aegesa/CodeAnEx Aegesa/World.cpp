@@ -33,7 +33,7 @@ void World::beginningStory()
 	string bioIn;
 
 	// What's Your Name?
-	
+
 	cout << "What's Your Name?: " << endl;
 	cin >> nameIn;
 
@@ -41,7 +41,7 @@ void World::beginningStory()
 	cout << "What's Your Story?: " << endl;
 	cin >> bioIn;
 	cout << endl;
-		
+
 	Player_Actor().name = nameIn;
 	Player_Actor().bio = bioIn;
 
@@ -62,7 +62,6 @@ void World::beginningStory()
 void World::chapter1()
 {
 	int i = 0;
-	
 }
 
 void World::chapter2()
