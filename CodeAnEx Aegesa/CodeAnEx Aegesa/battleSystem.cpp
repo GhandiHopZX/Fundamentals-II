@@ -37,7 +37,7 @@ void battleSystem::turn()
 		{
 		case 'i': // inventory
 			//your itemCall for listup check goes here...
-
+			inventory::PlayerItemInventory;
 			break;
 		case 's': // skills
 			break;
@@ -101,7 +101,7 @@ void battleSystem::statTurn()
 	statusIndex.begin();
 	for(int i = 0; i < statusIndex.size; i++) 
 	{
-		statusIndex; //put the statuses in here
+		 statusIndex.insert; //put the statuses in here
 	}
 	statusIndex.end();
 }
@@ -315,11 +315,6 @@ void battleSystem::multiDamageOutput(string n[])
 	system("COLOR 07");
 	cout << "Press Enter";
 	cin.get();
-}
-
-inventory::item inventory::rewardCall(int index)
-{
-	return allitemList(index);
 }
 
 // battle_system calls

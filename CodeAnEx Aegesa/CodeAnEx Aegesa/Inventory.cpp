@@ -492,6 +492,11 @@ inventory inventory::PlayerItemInventory() // gotta make an inventory that'll wo
 	return;
 }
 
+inventory::item inventory::rewardCall(int index)
+{
+	return allitemList(index);
+}
+
 inventory::~inventory()
 {
 	armor* nodeAPtr;
