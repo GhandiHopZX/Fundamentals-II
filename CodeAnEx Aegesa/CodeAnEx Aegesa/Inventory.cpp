@@ -75,6 +75,7 @@ void inventory::appendNodeItem(item, int sitm)
 		headi = newNode;
 	else
 	{
+		my_items[headi->ivalue].quantity += sitm;
 		nodePtr = headi;
 		while (nodePtr->node)
 			nodePtr = nodePtr->node;
@@ -148,6 +149,7 @@ void inventory::insertNodeItem(item, int i)
 		{
 			previousItem = nodePtr;
 			nodePtr = nodePtr->node;
+			my_items[headi->ivalue].quantity += i; // calls the index and adds 1
 		}
 
 		if (previousItem == nullptr)
@@ -487,6 +489,9 @@ inventory::item inventory::rewardCall(int index)
 	cout << /*item name*/ "" << endl;
 	return allitemList(index);
 }
+
+void inventory::addItem() {} //adding to the struct array
+void inventory::remItem() {} //removing to the struct array
 
 inventory::~inventory()
 {

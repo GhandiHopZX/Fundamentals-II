@@ -163,6 +163,10 @@ public:
 	// battleSystem
 	inventory::item rewardCall(int);
 
+	void addItem();
+
+	void remItem();
+
 	inventory::item allitemList(int integer)
 	{
 		const int MAX_ITEMS = 100;
