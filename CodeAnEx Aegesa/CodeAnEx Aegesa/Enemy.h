@@ -13,7 +13,7 @@ class Enemy : public Player_Actor
 private:
 
 	int expA; //exp awarded
-
+	int itemN;
 	int goldA; //gold awarded
 
 public:
@@ -42,6 +42,18 @@ public:
 	Enemy enemyRandEncounter();
 
 	Enemy BossCall(int);
+
+	int getItem();
+
+	int getGold();
+
+	int getEXP();
+
+	void setItem(int);
+
+	void setGold(int);
+
+	void setEXP(int);
 
 	// list of enemy types and methods
 	list <Enemy> enemyList = {};

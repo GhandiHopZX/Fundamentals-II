@@ -13,7 +13,7 @@
 
 using namespace std;
 
-Player_Actor h; //call vars
+Player_Actor he; //call vars
 Enemy en; // call vars
 inventory inv; // call tha listos
 World warudo;
@@ -29,7 +29,7 @@ battleSystem::battleSystem()
 
 void battleSystem::turn()
 {
-	normalOutput(h.name + " turn...");
+	normalOutput(he.name + " turn...");
 	normalOutput("Attack(a),\n Defend(d),\n Hack(h),\n Skills(s),\n Inventory(i) ");
 	// initialized choice char
 	char c = { 'n' };
@@ -97,7 +97,7 @@ void battleSystem::battleMode()
 	cout << "============ E N G A D G E ============" << endl;
 
 	//player set
-	playerTGuage(h.dummyPlus, h.getSPD(), h.getFp());
+	playerTGuage(he.dummyPlus, he.getSPD(), he.getFp());
 
 	//enemy set
 	enemyTGuage(en.dummyPlus, en.getSPD(), en.getFp());
@@ -307,8 +307,23 @@ void battleSystem::attack(){
 
 }
 void battleSystem::defend(){}
-void battleSystem::skill(){}
+void battleSystem::skill()
+{
+	he.statPlus('h', 40);
+}
 void battleSystem::hack(){}
+
 void battleSystem::rewardOutput()
 {
+	// iterate all the enemies that were on 
+	// the battle field and run this at least
+	// once for all of their rewards.
+	// also store them in the player inventoru
+
+	inv.rewardCall(en.getItem);
+	normalOutput("");
+
+	inv.my_items(inv.allitemList(en.getItem), en.getItem);
+	
+
 }

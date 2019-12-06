@@ -19,8 +19,9 @@ Enemy::Enemy()
 
 Enemy::Enemy(string, elementType, int expAw, int gA, int item)
 {
-	expA = 0;
-	goldA = 0;
+	expA = expAw;
+	goldA = gA;
+	itemN = item;
 }
 
 Enemy Enemy::enemyRandEncounter()
@@ -132,3 +133,34 @@ Enemy Enemy::BossCall(int call)
 
 	return lvl1index[call];
 }
+
+int Enemy::getItem()
+{
+	return itemN;
+}
+
+int Enemy::getGold()
+{
+	return goldA;
+}
+
+int Enemy::getEXP()
+{
+	return expA;
+}
+
+void Enemy::setItem(int rei)
+{
+	itemN += rei;
+}
+
+void Enemy::setGold(int reg)
+{
+	goldA += reg;
+}
+
+void Enemy::setEXP(int rexp)
+{
+	expA = rexp;
+}
+

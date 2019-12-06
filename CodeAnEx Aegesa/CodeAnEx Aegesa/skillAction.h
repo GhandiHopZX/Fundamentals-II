@@ -15,13 +15,14 @@ private:
 #pragma endregion
 
 public:
+	
 	struct skill
 	{
 		int num;
 		string name;
 
 	#pragma region statModifiers
-
+	
 	#pragma endregion
 
 	};
