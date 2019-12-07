@@ -43,11 +43,11 @@ inventory::inventory(const inventory&)
 //
 //}
 
-void inventory::push(int)
+void inventory::push(int val)
 {
 }
 
-void inventory::pop(int&)
+void inventory::pop(int& a)
 {
 }
 

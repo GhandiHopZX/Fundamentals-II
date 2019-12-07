@@ -49,6 +49,8 @@ public:
 
 	int getEXP();
 
+	int getSPDPlus();
+
 	void setItem(int);
 
 	void setGold(int);

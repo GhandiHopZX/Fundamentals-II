@@ -13,6 +13,10 @@ using namespace std;
 class Player_Actor : skillAction
 {
 private:
+	// I might have to move most of if not all of these instantiations into a
+	// Higher parent class so that Enemy.h does not seek to take from this 
+	// class as it is a base for the enemy
+	// but make a dummy class that enemy takes from instead...
 
 	// variables
 

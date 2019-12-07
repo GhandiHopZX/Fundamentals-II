@@ -100,7 +100,7 @@ void battleSystem::battleMode()
 	playerTGuage(he.dummyPlus, he.getSPD(), he.getFp());
 
 	//enemy set
-	enemyTGuage(en.dummyPlus, en.getSPD(), en.getFp());
+	enemyTGuage(en.getSPDPlus(), en.getSPD(), en.getFp());
 }
 
 void battleSystem::turnSystem(int turn)
@@ -323,7 +323,7 @@ void battleSystem::rewardOutput()
 	inv.rewardCall(en.getItem);
 	normalOutput("");
 
-	inv.my_items(inv.allitemList(en.getItem), en.getItem);
+	//inv.my_items(inv.allitemList(en.getItem), en.getItem);
 	
 
 }

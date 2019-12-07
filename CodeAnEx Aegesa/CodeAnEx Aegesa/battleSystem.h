@@ -35,9 +35,13 @@ public:
 	// setters/mutators
 
 	// functions
-	void turn(); // the core functions of what the player can do when the player can do
 
-	void statTurn(); // recalls all or any stat plus modifier functions for reauthentications when a number of turns are up
+	// the core functions of what the player can do when the player can do
+	void turn(); 
+
+	// recalls all or any stat plus modifier 
+	//functions for reauthentications when a number of turns are up
+	void statTurn(); 
 
 	void battleMode();
 
@@ -46,6 +50,7 @@ public:
 	bool enemyTGuage(int, int spd, int fp);
 
 	// output types
+
 	void turnSystem(int);
 
 	void healOutput(string);

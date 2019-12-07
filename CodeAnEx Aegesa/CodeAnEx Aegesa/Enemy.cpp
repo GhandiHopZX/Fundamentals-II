@@ -10,15 +10,22 @@
 
 using namespace std;
 
+Enemy d;
+
 Enemy::Enemy()
 {
 	elementType();
 	goldA = 0;
 	expA = 0;
+	name = "";
+	bio = "";
+	this->ActorArmorE[0];
+	this->ActorWeaponE[0];
 }
 
-Enemy::Enemy(string, elementType, int expAw, int gA, int item)
+Enemy::Enemy(string namer, elementType, int expAw, int gA, int item)
 {
+	name = namer;
 	expA = expAw;
 	goldA = gA;
 	itemN = item;
@@ -31,8 +38,10 @@ Enemy Enemy::enemyRandEncounter()
 	const int MAX_GOLD = 1100;
 	const int MAX_ITEM = 14;
 	const int MAX_STATN = 10;
+	const int MAX_HP = 120;
+	const int MAX_SP = 23;
 
-	const int MIN = 0;
+	const int MIN = 1;
 	const int GOLD_MIN = 100;
 
 	string lvl1names[14] =
@@ -40,10 +49,12 @@ Enemy Enemy::enemyRandEncounter()
 		"Gorgon Eye", "Jackal", "Golem", "Worm", "Pci Eater",
 	"Temptest", "Mecha Recon", "Harpy", "Leech", "Gorigami" };
 
-	int enemyRand = (rand() % (MAX_ERAND - MIN + 1)) + MIN; // 0 - 13
-	int goldRand = (rand() % (MAX_GOLD - GOLD_MIN + 1)) + GOLD_MIN; // 100 - 1100
-	int itemRand = (rand() % (MAX_ITEM - MIN + 1)) + MIN; // 0 - 14
-	int statRand = (rand() % (MAX_STATN - MIN + 1)) + MIN; // 0 - 10
+	unsigned int enemyRand = (rand() % (MAX_ERAND - MIN + 1)) + MIN; // 1 - 13
+	unsigned int goldRand = (rand() % (MAX_GOLD - GOLD_MIN + 1)) + GOLD_MIN; // 100 - 1100
+	unsigned int itemRand = (rand() % (MAX_ITEM - MIN + 1)) + MIN; // 1 - 14
+	unsigned int statRand = (rand() % (MAX_STATN - MIN + 1)) + MIN; // 1 - 10
+	unsigned int hpRand = (rand() % (MAX_HP - MIN + 1)) + MIN;
+	unsigned int spRand = (rand() % (MAX_SP - MIN + 1)) + MIN;
 
 	// random ranges
 
@@ -54,8 +65,8 @@ Enemy Enemy::enemyRandEncounter()
 	Enemy Randlvl1(enemyName, elementType::Phase, enemyRand, goldRand, itemRand);
 
 #pragma region stats
-	Randlvl1.setHp(100);
-	Randlvl1.setSp(16);
+	Randlvl1.setHp(hpRand);
+	Randlvl1.setSp(spRand);
 	Randlvl1.setAp(statRand);
 	Randlvl1.setFp(statRand);
 	Randlvl1.setDp(0);
@@ -147,6 +158,11 @@ int Enemy::getGold()
 int Enemy::getEXP()
 {
 	return expA;
+}
+
+int Enemy::getSPDPlus()
+{
+	return d.dummyPlus;
 }
 
 void Enemy::setItem(int rei)
