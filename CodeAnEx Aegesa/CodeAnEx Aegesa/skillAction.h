@@ -35,6 +35,7 @@ public:
 	string name;
 	string dec;
 	elementType type;
+	bool rangeType;
 #pragma region statModifiers
 	unsigned int hpAdd = 0;
 	unsigned int spAdd = 0;
@@ -59,7 +60,7 @@ public:
 
 	skillAction(int);
 
-	skillAction(int num, string name, elementType, string dec);
+	skillAction(int num, string name, elementType, string dec, bool);
 
 	skillAction skillcall(int);
 
@@ -73,6 +74,8 @@ public:
 	void displayElementType();
 
 	void getDescription();
+
+	void getRangeType();
 
 	//state changes - wip
 };

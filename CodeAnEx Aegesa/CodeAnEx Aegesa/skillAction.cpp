@@ -17,6 +17,7 @@ skillAction::skillAction(int call)
 	skillcall(call).dec;
 	displayElementType();
 	getElementType();
+	getRangeType();
 	cout << skillcall(call).num + '\n' +
 		 skillcall(call).hpAdd + '\n' +
 		 skillcall(call).spAdd + '\n' +
@@ -38,16 +39,16 @@ skillAction::skillAction(int call)
 	<< endl;
 }
 
-skillAction::skillAction(int num, string name, elementType, string dec)
+skillAction::skillAction(int num, string name, elementType, string dec, bool rangeType)
 {
-	
+
 }
 
 skillAction skillAction::skillcall(int p)
 {
 #pragma region Skillist
-	skillAction FireWeave(0, "FireWeave", skillAction::elementType::Fire, "AN AOE ATTACK THAT ENGULFS ALL ENEMIES.");
-	skillAction WaterFlash(1, "WaterFlash", skillAction::elementType::Water, "");
+	skillAction FireWeave(0, "FireWeave", skillAction::elementType::Fire, "AN AOE ATTACK THAT ENGULFS ALL ENEMIES.", true);
+	skillAction WaterFlash(1, "WaterFlash", skillAction::elementType::Water, "A singular riptide of water..", false);
 #pragma endregion
 
 	skillAction allSkills[50] =
@@ -66,27 +67,36 @@ skillAction::elementType skillAction::getElementType()
 		return elementType::Water;
 		break;
 	case skillAction::elementType::Fire:
+		return elementType::Fire;
 		break;
 	case skillAction::elementType::Earth:
+		return elementType::Earth;
 		break;
 	case skillAction::elementType::Air:
+		return elementType::Air;
 		break;
 	case skillAction::elementType::Lightning:
+		return elementType::Lightning;
 		break;
 	case skillAction::elementType::Phase:
+		return elementType::Phase;
 		break;
 	case skillAction::elementType::Bio:
+		return elementType::Bio;
 		break;
 	case skillAction::elementType::Light:
+		return elementType::Light;
 		break;
 	case skillAction::elementType::Dark:
+		return elementType::Dark;
 		break;
 	case skillAction::elementType::Normal:
+		return elementType::Normal;
 		break;
 	default:
+		return elementType::Normal;
 		break;
 	}
-	return elementType::Water;
 }
 
 skillAction::elementType skillAction::setElementType(int m)
@@ -129,11 +139,24 @@ void skillAction::displayElementType()
 		cout << "Normal" << endl;
 		break;
 	default:
+		cout << "Normal" << endl;
 		break;
 	}
 }
 
 void skillAction::getDescription()
 {
+	cout << dec;
 }
 
+void skillAction::getRangeType()
+{
+	if (rangeType = true)
+	{
+		cout << "AOE" << endl;
+	}
+	else
+	{
+		cout << "Single" << endl;
+	}
+}

@@ -47,7 +47,7 @@ void World::beginningStory()
 
 	//opening setting
 	system("COLOR 07");
-	cout << "*Wake up....*" << endl;
+	cout << "*You Wake Up*" << endl;
 	cout << "Huhhh..." << endl;
 	cout << "e" << endl;
 	cout << "g" << endl;
