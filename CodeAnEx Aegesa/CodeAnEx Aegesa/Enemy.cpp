@@ -29,6 +29,7 @@ Enemy::Enemy(string namer, elementType, int expAw, int gA, int item)
 	expA = expAw;
 	goldA = gA;
 	itemN = item;
+	elementType::Normal;
 }
 
 Enemy Enemy::enemyRandEncounter()

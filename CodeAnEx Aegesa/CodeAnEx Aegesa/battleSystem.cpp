@@ -17,6 +17,7 @@ Player_Actor he; //call vars
 Enemy en; // call vars
 inventory inv; // call tha listos
 World warudo;
+skillAction skilz;
 
 //todo: callin enemy encouter data
 
@@ -309,7 +310,9 @@ void battleSystem::attack(){
 void battleSystem::defend(){}
 void battleSystem::skill()
 {
-	he.statPlus('h', 40);
+	he.statPlus('h', skilz.allSkills->hpAdd);
+	he.statPlus('s', skilz.allSkills->spAdd);
+	he.statPlus('d', skilz.allSkills->defAdd);
 }
 void battleSystem::hack(){}
 

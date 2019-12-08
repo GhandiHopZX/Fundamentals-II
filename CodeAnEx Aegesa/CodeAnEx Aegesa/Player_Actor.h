@@ -10,14 +10,14 @@
 
 using namespace std;
 
-class Player_Actor : skillAction
+class Player_Actor
 {
 private:
 	// I might have to move most of if not all of these instantiations into a
 	// Higher parent class so that Enemy.h does not seek to take from this 
 	// class as it is a base for the enemy
 	// but make a dummy class that enemy takes from instead...
-
+	// Maybe an AEGESA class...
 	// variables
 
 #pragma region vars
@@ -236,10 +236,6 @@ public:
 		dp = dpin;
 	}
 
-	void setSTR(int stin)
-	{
-		STR = stin;
-	}
 
 	void setATK(int atin)
 	{
@@ -251,14 +247,20 @@ public:
 		DEF = dein;
 	}
 
-	void setAGI(int agin)
-	{
-		AGI = agin;
-	}
-
 	void setSPD(int sdin)
 	{
 		SPD = sdin;
+	}
+
+
+	void setSTR(int stin)
+	{
+		STR = stin;
+	}
+
+	void setAGI(int agin)
+	{
+		AGI = agin;
 	}
 
 	void setEND(int send)
@@ -545,7 +547,67 @@ public:
 
 				int dCon = getCON();
 				dCon = dCon - *eDrain;
-				setHp(dCon);
+				setCON(dCon);
+				delete eDrain;
+			}
+			break;
+		case 'int':
+			*eDrain = plus;
+			if (statmulti == true)
+			{
+				int cInt = getINT();
+				cInt += plus;
+				setINT(cInt);
+				delete eDrain;
+			}
+			else if (statmulti == false)
+			{
+				battleSystem b;
+				b.normalOutput("INT plus modifier has faded");
+
+				int cInt = getINT();
+				cInt = cInt - *eDrain;
+				setINT(cInt);
+				delete eDrain;
+			}
+			break;
+		case 'spr':
+			*eDrain = plus;
+			if (statmulti == true)
+			{
+				int cSpr = getSPR();
+				cSpr += plus;
+				setSPR(cSpr);
+				delete eDrain;
+			}
+			else if (statmulti == false)
+			{
+				battleSystem b;
+				b.normalOutput("SPR plus modifier has faded");
+
+				int dSpr = getSPR();
+				dSpr = dSpr - *eDrain;
+				setSPR(dSpr);
+				delete eDrain;
+			}
+			break;
+		case 'dex':
+			*eDrain = plus;
+			if (statmulti == true)
+			{
+				int cDex = getDEX();
+				cDex += plus;
+				setDEX(cDex);
+				delete eDrain;
+			}
+			else if (statmulti == false)
+			{
+				battleSystem b;
+				b.normalOutput("DEX plus modifier has faded");
+
+				int cDex = getDEX();
+				cDex = cDex - *eDrain;
+				setDEX(cDex);
 				delete eDrain;
 			}
 			break;

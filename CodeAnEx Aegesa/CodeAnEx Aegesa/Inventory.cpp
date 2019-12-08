@@ -486,8 +486,20 @@ inventory inventory::PlayerItemInventory() // gotta make an inventory that'll wo
 
 inventory::item inventory::rewardCall(int index)
 {
-	cout << /*item name*/ "" << endl;
+	cout << itemlist[index].name << endl;
 	return allitemList(index);
+}
+
+inventory::armor inventory::armorCall(int index)
+{
+	cout << armorlist[index].name << endl;
+	return allarmorList(index);
+}
+
+inventory::weapon inventory::weaponCall(int index)
+{
+	cout << weaponlist[index].name << endl;
+	return allweaponList(index);
 }
 
 void inventory::addItem() {} //adding to the struct array

@@ -30,30 +30,39 @@ public:
 		Dark = 8,
 		Normal = 9
 	};
-	struct skill
-	{
-		int num;
-		string name;
-		elementType type;
-	#pragma region statModifiers
-		unsigned int atkAdd = 0;
-		unsigned int defAdd = 0;
-		unsigned int spdAdd = 0;
+	
+	int num;
+	string name;
+	elementType type;
+#pragma region statModifiers
+	unsigned int hpAdd = 0;
+	unsigned int spAdd = 0;
+	unsigned int fpAdd = 0;
+	unsigned int apAdd = 0;
+	unsigned int dpAdd = 0;
 
-		unsigned int dexAdd = 0;
-		unsigned int intAdd = 0;
-		unsigned int sprAdd = 0;
-		unsigned int endAdd = 0;
-		unsigned int conAdd = 0;
-		unsigned int strAdd = 0;
-		unsigned int agiAdd = 0;
-	#pragma endregion
-	};
+	unsigned int atkAdd = 0;
+	unsigned int defAdd = 0;
+	unsigned int spdAdd = 0;
 
-	skill allSkills[50] =
-	{
+	unsigned int dexAdd = 0;
+	unsigned int intAdd = 0;
+	unsigned int sprAdd = 0;
+	unsigned int endAdd = 0;
+	unsigned int conAdd = 0;
+	unsigned int strAdd = 0;
+	unsigned int agiAdd = 0;
+#pragma endregion
+	
+	skillAction();
 
-	};
+	skillAction(int);
+
+	skillAction(int num, string name, elementType);
+
+	skillAction skillcall(int);
+
+
 
 	//state changes - wip
 };
