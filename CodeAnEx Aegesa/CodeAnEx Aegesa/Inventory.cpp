@@ -486,7 +486,7 @@ inventory inventory::PlayerItemInventory() // gotta make an inventory that'll wo
 
 inventory::item inventory::rewardCall(int index)
 {
-	cout << itemlist[index].name << endl;
+	cout << itemlist[index].name;
 	return allitemList(index);
 }
 

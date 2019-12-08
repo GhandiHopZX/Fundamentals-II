@@ -33,6 +33,7 @@ public:
 	
 	int num;
 	string name;
+	string dec;
 	elementType type;
 #pragma region statModifiers
 	unsigned int hpAdd = 0;
@@ -58,11 +59,20 @@ public:
 
 	skillAction(int);
 
-	skillAction(int num, string name, elementType);
+	skillAction(int num, string name, elementType, string dec);
 
 	skillAction skillcall(int);
 
+	// hooking to the skill the 
+	// enum class
+	elementType getElementType();
 
+	// for element changes
+	elementType setElementType(int m);
+
+	void displayElementType();
+
+	void getDescription();
 
 	//state changes - wip
 };

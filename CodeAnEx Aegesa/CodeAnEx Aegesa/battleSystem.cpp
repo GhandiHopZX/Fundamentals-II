@@ -21,6 +21,19 @@ skillAction skilz;
 
 //todo: callin enemy encouter data
 
+void battleSystem::battleMode()
+{
+	// this is where the insanity goes till hp drops for all members of either 
+	// troop size
+	cout << "============ E N G A D G E ============" << endl;
+
+	//player set
+	playerTGuage(he.dummyPlus, he.getSPD(), he.getFp());
+
+	//enemy set
+	enemyTGuage(en.getSPDPlus(), en.getSPD(), en.getFp());
+}
+
 battleSystem::battleSystem()
 {
 	turnGuageNum = 0; // this is if more than one is set, its usually reset
@@ -91,17 +104,6 @@ void battleSystem::statTurn()
 		//put the statuses in here
 	}
 	statusIndex.end();
-}
-
-void battleSystem::battleMode()
-{
-	cout << "============ E N G A D G E ============" << endl;
-
-	//player set
-	playerTGuage(he.dummyPlus, he.getSPD(), he.getFp());
-
-	//enemy set
-	enemyTGuage(en.getSPDPlus(), en.getSPD(), en.getFp());
 }
 
 void battleSystem::turnSystem(int turn)
@@ -310,9 +312,9 @@ void battleSystem::attack(){
 void battleSystem::defend(){}
 void battleSystem::skill()
 {
-	he.statPlus('h', skilz.allSkills->hpAdd);
-	he.statPlus('s', skilz.allSkills->spAdd);
-	he.statPlus('d', skilz.allSkills->defAdd);
+	/*he.statPlus('h', skilz.skillcall->hpAdd);
+	he.statPlus('s', skilz.skillcall->spAdd);
+	he.statPlus('d', skilz.skillcall->defAdd);*/
 }
 void battleSystem::hack(){}
 
@@ -324,7 +326,7 @@ void battleSystem::rewardOutput()
 	// also store them in the player inventoru
 
 	inv.rewardCall(en.getItem);
-	normalOutput("");
+	normalOutput(" Obtained...");
 
 	//inv.my_items(inv.allitemList(en.getItem), en.getItem);
 	

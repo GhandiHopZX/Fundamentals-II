@@ -31,10 +31,16 @@ public:
 	list <Player_Actor::statusEff> statusIndex = {};
 
 	// getters/accessors
-
+	battleSystem();
 	// setters/mutators
 
+	void enemyTroop();
+	void allyTroop();
+	
 	// functions
+
+	void targetEnemy();
+	void aiTargeting();
 
 	// the core functions of what the player can do when the player can do
 	void turn(); 
