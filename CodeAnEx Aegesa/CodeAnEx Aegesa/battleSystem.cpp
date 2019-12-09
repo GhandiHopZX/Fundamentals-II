@@ -42,6 +42,22 @@ battleSystem::battleSystem()
 	battleMode(); // battle mode
 }
 
+void battleSystem::enemyTroop()
+{
+}
+
+void battleSystem::allyTroop()
+{
+}
+
+void battleSystem::targetEnemy()
+{
+}
+
+void battleSystem::aiTargeting()
+{
+}
+
 void battleSystem::turn()
 {
 	normalOutput(he.name + " turn...");

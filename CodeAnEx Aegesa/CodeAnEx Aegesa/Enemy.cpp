@@ -11,7 +11,7 @@
 
 using namespace std;
 
-Enemy d;
+//Enemy d;
 
 Enemy::Enemy()
 {
@@ -184,7 +184,7 @@ int Enemy::getEXP()
 
 int Enemy::getSPDPlus()
 {
-	return d.dummyPlus;
+	return dummyPlus;
 }
 
 void Enemy::setItem(int rei)

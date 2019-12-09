@@ -29,18 +29,18 @@ inventory::inventory(const inventory&)
 	headi = nullptr;
 }
 
-//inventory::inventory(int wIndex, weapon w)
-//{
-//}
-//
-//inventory::inventory(int aIndex, armor a)
-//{
-//}
-//
-//inventory::inventory(int iIndex, item i)
-//{
-//
-//}
+inventory::inventory(int wIndex, weapon w)
+{
+}
+
+inventory::inventory(int aIndex, armor a)
+{
+}
+
+inventory::inventory(int iIndex, item i)
+{
+
+}
 
 void inventory::push(int val)
 {
@@ -390,7 +390,7 @@ inventory::item inventory::selectlistItem(int u)
 		cout << message;
 		return my_items[0];
 	}
-	my_items[u].quantity -= 1;
+	remItem(my_items[u].quantity);
 	return my_items[u];
 }
 
@@ -402,7 +402,7 @@ inventory::armor inventory::selectlistArmor(int u)
 		cout << message;
 		return my_armors[0];
 	}
-	my_armors[u].quantity -= 1;
+	remItem(my_armors[u].quantity);
 	return my_armors[u];
 }
 
@@ -414,7 +414,7 @@ inventory::weapon inventory::selectlistWeapon(int u)
 		cout << message;
 		return my_weapons[0];
 	}
-	my_weapons[u].quantity -= 1;
+	remItem(my_weapons[u].quantity);
 
 	return my_weapons[u];
 }
@@ -526,31 +526,35 @@ void inventory::setArmor(inventory::armor gear, int index)
 	ActorArmorE[index] = gear;
 }
 
-inventory::item inventory::rewardCall(int index)
+void inventory::rewardCall(int index)
 {
-	cout << itemlist[index].name;
-	return allitemList(index);
+	cout << itemlist[index].name << endl;
+	addItem(itemlist[index].quantity);
+	//return allitemList(index);
 }
 
-inventory::armor inventory::armorCall(int index)
+void inventory::armorCall(int index)
 {
 	cout << armorlist[index].name << endl;
-	return allarmorList(index);
+	addItem(armorlist[index].quantity);
+	//return allarmorList(index);
 }
 
-inventory::weapon inventory::weaponCall(int index)
+void inventory::weaponCall(int index)
 {
 	cout << weaponlist[index].name << endl;
-	return allweaponList(index);
+	addItem(weaponlist[index].quantity);
+	//return allweaponList(index);
 }
 
-void inventory::addItem() {
+void inventory::addItem(int find) {
 	int i = 1;
-	my_items[headi->ivalue].quantity += i; // calls the index and adds 1
+	my_items[find].quantity += i; // calls the index and adds 1
 } //adding to the struct array
-void inventory::remItem() {
+
+void inventory::remItem(int find) {
 	int i = 1;
-	my_items[headi->ivalue].quantity -= i; // calls the index and adds 1
+	my_items[find].quantity -= i; // calls the index and adds 1
 } //removing to the struct array
 
 inventory::~inventory()

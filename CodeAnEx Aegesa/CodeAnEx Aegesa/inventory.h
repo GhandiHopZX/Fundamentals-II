@@ -123,11 +123,11 @@ public:
 
 	inventory(const inventory&);
 
-	/*inventory(int, weapon);
+	inventory(int, weapon);
 
 	inventory(int, armor);
 
-	inventory(int, item);*/
+	inventory(int, item);
 
 	// getters/accessors
 	inventory::weapon getMyWeapons(int index)
@@ -175,15 +175,15 @@ public:
 	void itemCall();
 
 	// battleSystem
-	inventory::item rewardCall(int);
+	void rewardCall(int);
 
-	inventory::armor armorCall(int index);
+	void armorCall(int index);
 
-	inventory::weapon weaponCall(int index);
+	void weaponCall(int index);
 
-	void addItem();
+	void addItem(int);
 
-	void remItem();
+	void remItem(int);
 
 #pragma region All_items
 	inventory::item AEGESA_FRAGMENT;
