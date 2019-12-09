@@ -71,7 +71,7 @@ void battleSystem::turn()
 		{
 		case 'i': // inventory
 			//your itemCall for listup...
-			inv.PlayerItemInventory;
+			inv.PlayerItemInventory();
 			break;
 		case 's': // skills
 			hack();
@@ -186,6 +186,7 @@ int battleSystem::statusCall(int ti)
 {
 	return ti;
 };
+
 //turn guage
 bool battleSystem::playerTGuage(int spdPlus, int spd, int fp)
 {
@@ -346,8 +347,8 @@ void battleSystem::rewardOutput()
 	// the battle field and run this at least
 	// once for all of their rewards.
 	// also store them in the player inventoru
-
-	inv.rewardCall(en.getItem());
+	int rew = en.getItem();
+	inv.rewardCall(rew);
 	normalOutput(" Obtained...");
 
 	//inv.my_items(inv.allitemList(en.getItem), en.getItem);

@@ -441,11 +441,11 @@ void inventory::PlayerItemInventory() // gotta make an inventory that'll work in
 		if (isalpha(i))
 		{
 			cout << "invalid option" << endl;
-			return PlayerItemInventory();
+			PlayerItemInventory();
 			break;
 		}
 		cout << "Make another selection?" << endl;
-		return PlayerItemInventory();
+		PlayerItemInventory();
 		break;
 
 	case 'a':
@@ -465,7 +465,7 @@ void inventory::PlayerItemInventory() // gotta make an inventory that'll work in
 			break;
 		}
 		cout << "Make another selection?" << endl;
-		return PlayerItemInventory();
+		PlayerItemInventory();
 		break;
 
 	case 'w':
@@ -484,7 +484,7 @@ void inventory::PlayerItemInventory() // gotta make an inventory that'll work in
 			break;
 		}
 		cout << "Make another selection?" << endl;
-		return PlayerItemInventory();
+		PlayerItemInventory();
 		break;
 
 	case 'e':
@@ -508,7 +508,7 @@ void inventory::PlayerItemInventory() // gotta make an inventory that'll work in
 			break;
 		}
 		cout << "Make another selection?" << endl;
-		return PlayerItemInventory();
+		PlayerItemInventory();
 		break;
 
 	case 'q':
