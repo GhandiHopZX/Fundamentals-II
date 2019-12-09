@@ -419,7 +419,7 @@ inventory::weapon inventory::selectlistWeapon(int u)
 	return my_weapons[u];
 }
 
-inventory inventory::PlayerItemInventory() // gotta make an inventory that'll work in the world menu
+void inventory::PlayerItemInventory() // gotta make an inventory that'll work in the world menu
 {
 	system("CLS");
 	// show choices'
@@ -490,8 +490,11 @@ inventory inventory::PlayerItemInventory() // gotta make an inventory that'll wo
 	case 'e':
 		cout << "Weapons equipped: select one for overview.. 0 - " + sum_weapons << endl;
 		cout << "Armors equipped: select one for overview.. 0 - " + sum_armors << endl;
-		//displaylistWeapon();
-		cout << "select an weapon? using a #" << endl;
+		//displaylistEQWgear();
+		cout << endl;
+		//displaylistEQAgear();
+		cout << endl;
+		cout << "select a gear? using a #" << endl;
 		//int i = 0;
 		choice = 'N\A';
 		cin >> i;

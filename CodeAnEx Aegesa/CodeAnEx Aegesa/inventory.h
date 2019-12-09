@@ -170,7 +170,7 @@ public:
 	void displaylistWeapon() const;
 	void displaylistArmor() const;
 
-	inventory PlayerItemInventory();
+	void PlayerItemInventory();
 
 	void itemCall();
 

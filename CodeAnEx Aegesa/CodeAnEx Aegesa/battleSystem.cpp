@@ -71,7 +71,7 @@ void battleSystem::turn()
 		{
 		case 'i': // inventory
 			//your itemCall for listup...
-			inv.PlayerItemInventory();
+			inv.PlayerItemInventory;
 			break;
 		case 's': // skills
 			hack();
