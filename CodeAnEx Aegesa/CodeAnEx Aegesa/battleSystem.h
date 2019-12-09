@@ -30,9 +30,6 @@ public:
 
 	// getters/accessors
 	
-
-	aegesa::statusEff inBattleStatusesE[20]{
-	};
 	// setters/mutators
 
 	void enemyTroop();

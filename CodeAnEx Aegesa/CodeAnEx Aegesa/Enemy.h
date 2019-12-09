@@ -59,4 +59,7 @@ public:
 
 	// list of enemy types and methods
 	list <Enemy> enemyList = {};
+
+	aegesa::statusEff inBattleStatusesE[20]{
+	};
 };
