@@ -28,10 +28,8 @@ public:
 	// variables
 	int turnGuageNum;
 
-	list <Player_Actor::statusEff> statusIndex = {};
-
 	// getters/accessors
-	battleSystem();
+
 	// setters/mutators
 
 	void enemyTroop();

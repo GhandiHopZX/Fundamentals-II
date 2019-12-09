@@ -36,6 +36,7 @@ public:
 	string dec;
 	elementType type;
 	bool rangeType;
+
 #pragma region statModifiers
 	unsigned int hpAdd = 0;
 	unsigned int spAdd = 0;

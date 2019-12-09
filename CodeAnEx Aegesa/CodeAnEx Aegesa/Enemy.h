@@ -2,13 +2,13 @@
 #include <iostream>
 #include <string>
 #include <cstdio>
-#include "Player_Actor.h"
+#include "aegesa.h"
 #include "battleSystem.h"
 #include "inventory.h"
 
 using namespace std;
 
-class Enemy : public Player_Actor
+class Enemy : aegesa
 {
 private:
 
@@ -40,7 +40,7 @@ public:
 	//Enemy enemiesList(int indexPass); please leave me alone
 
 	Enemy enemyRandEncounter();
-
+	
 	Enemy BossCall(int);
 
 	int getItem();

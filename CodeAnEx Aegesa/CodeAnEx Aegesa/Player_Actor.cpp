@@ -3,6 +3,7 @@
 #include <ctime>
 #include "Player_Actor.h"
 #include "battleSystem.h"
+#include "inventory.h"
 
 Player_Actor::Player_Actor()
 {
@@ -38,15 +39,7 @@ Player_Actor::Player_Actor()
 #pragma endregion
 }
 
-void Player_Actor::setWeapon(inventory::weapon weapon, int index)
-{
-	ActorWeaponE[index] = weapon;
-}
-
-void Player_Actor::setArmor(inventory::armor gear, int index)
-{
-	ActorArmorE[index] = gear;
-}
+inventory inv;
 
 void Player_Actor::battleGuage()
 {

@@ -42,8 +42,8 @@ void World::beginningStory()
 	cin >> bioIn;
 	cout << endl;
 
-	Player_Actor().name = nameIn;
-	Player_Actor().bio = bioIn;
+	Player_Actor().getName() = nameIn;
+	Player_Actor().getBio() = bioIn;
 
 	//opening setting
 	system("COLOR 07");

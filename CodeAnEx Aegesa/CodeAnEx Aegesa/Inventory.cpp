@@ -1,10 +1,9 @@
-#include "inventory.h"
-#include "Player_Actor.h"
 #include <iostream>
 #include <string>
 #include <map>
 #include <stack>
-#include "Player_Actor.cpp"
+#include "inventory.h"
+#include "Player_Actor.h"
 // use tha multimap function
 
 using namespace std;
@@ -149,7 +148,7 @@ void inventory::insertNodeItem(item, int i)
 		{
 			previousItem = nodePtr;
 			nodePtr = nodePtr->node;
-			my_items[headi->ivalue].quantity += i; // calls the index and adds 1
+			
 		}
 
 		if (previousItem == nullptr)
@@ -426,8 +425,9 @@ inventory inventory::PlayerItemInventory() // gotta make an inventory that'll wo
 	system("CLS");
 	// show choices'
 	cout << "What menu would you like to select..?" << endl;
-	cout << "Items(i), Armors(a), Weapons(w), Quit(q)" << endl;
+	cout << "Items(i), Armors(a), Weapons(w), Equipped(e), Quit(q)" << endl;
 	char choice = {};
+	int i = 0;
 	switch (choice)
 	{
 	case 'i':
@@ -435,13 +435,18 @@ inventory inventory::PlayerItemInventory() // gotta make an inventory that'll wo
 		displaylistItem();
 		// select an item? using a #
 		cout << "select an item? using a #" << endl;
-		int i = {};
+		//int i = 0;
+		choice = 'N\A';
 		cin >> i;
 		selectlistItem(i);
 		if (isalpha(i))
 		{
+			cout << "invalid option" << endl;
+			return PlayerItemInventory();
 			break;
 		}
+		cout << "Make another selection?" << endl;
+		return PlayerItemInventory();
 		break;
 
 	case 'a':
@@ -449,28 +454,59 @@ inventory inventory::PlayerItemInventory() // gotta make an inventory that'll wo
 		displaylistArmor();
 		// select an armor? using a #
 		cout << "select an armor? using a #" << endl;
-		int i = {};
+		//int i = 0;
+		choice = 'N\A';
 		cin >> i;
 		selectlistArmor(i);
 		//equip armor
 		if (isalpha(i))
 		{
+			cout << "invalid option" << endl;
+			PlayerItemInventory();
 			break;
 		}
+		cout << "Make another selection?" << endl;
+		return PlayerItemInventory();
 		break;
 
 	case 'w':
 		cout << "Select an Weapon?: use an number to select one.. 0 - " + sum_weapons << endl;
 		displaylistWeapon();
 		cout << "select an weapon? using a #" << endl;
-		int i = {};
+		
+		choice = 'N\A';
 		cin >> i;
 		selectlistWeapon(i);
 		//equip armor
 		if (isalpha(i))
 		{
+			cout << "invalid option" << endl;
+			PlayerItemInventory();
 			break;
 		}
+		cout << "Make another selection?" << endl;
+		return PlayerItemInventory();
+		break;
+
+	case 'e':
+		cout << "Weapons equipped: select one for overview.. 0 - " + sum_weapons << endl;
+		cout << "Armors equipped: select one for overview.. 0 - " + sum_armors << endl;
+		//displaylistWeapon();
+		cout << "select an weapon? using a #" << endl;
+		//int i = 0; 
+		choice = 'N\A';
+		cin >> i;
+
+		//selectlistWeapon(i);
+		//equip armor
+		if (isalpha(i))
+		{
+			cout << "invalid option" << endl;
+			PlayerItemInventory();
+			break;
+		}
+		cout << "Make another selection?" << endl;
+		return PlayerItemInventory();
 		break;
 
 	case 'q':
@@ -482,6 +518,16 @@ inventory inventory::PlayerItemInventory() // gotta make an inventory that'll wo
 		break;
 	}
 	return;
+}
+
+void inventory::setWeapon(inventory::weapon weapon, int index)
+{
+	ActorWeaponE[index] = weapon;
+}
+
+void inventory::setArmor(inventory::armor gear, int index)
+{
+	ActorArmorE[index] = gear;
 }
 
 inventory::item inventory::rewardCall(int index)
@@ -502,8 +548,14 @@ inventory::weapon inventory::weaponCall(int index)
 	return allweaponList(index);
 }
 
-void inventory::addItem() {} //adding to the struct array
-void inventory::remItem() {} //removing to the struct array
+void inventory::addItem() {
+	int i = 1;
+	my_items[headi->ivalue].quantity += i; // calls the index and adds 1
+} //adding to the struct array
+void inventory::remItem() {
+	int i = 1;
+	my_items[headi->ivalue].quantity -= i; // calls the index and adds 1
+} //removing to the struct array
 
 inventory::~inventory()
 {

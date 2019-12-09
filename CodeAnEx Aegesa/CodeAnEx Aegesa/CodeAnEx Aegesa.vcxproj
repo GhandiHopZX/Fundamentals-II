@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="aegesa.cpp" />
     <ClCompile Include="battleSystem.cpp" />
     <ClCompile Include="CodeAnEx Aegesa.cpp" />
     <ClCompile Include="Enemy.cpp" />
@@ -160,6 +161,7 @@
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="aegesa.h" />
     <ClInclude Include="battleSystem.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="inventory.h" />

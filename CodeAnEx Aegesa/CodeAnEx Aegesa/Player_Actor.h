@@ -13,11 +13,7 @@ using namespace std;
 class Player_Actor
 {
 private:
-	// I might have to move most of if not all of these instantiations into a
-	// Higher parent class so that Enemy.h does not seek to take from this 
-	// class as it is a base for the enemy
-	// but make a dummy class that enemy takes from instead...
-	// Maybe an AEGESA class...
+	
 	// variables
 
 #pragma region vars
@@ -59,11 +55,9 @@ public:
 	int dummyPlus;
 
 	// stuff
-
+	
 	// weapons and armor
-	inventory::weapon ActorWeaponE[1] = {};
-	inventory::armor ActorArmorE[4] = {};
-
+	
 	struct statusEff
 	{
 		string buffName;
@@ -94,6 +88,10 @@ public:
 	Player_Actor();
 
 	// getters / accessors
+	string normalOutput(string normal)
+	{
+		return normal;
+	};
 
 #pragma region getters
 
@@ -196,15 +194,7 @@ public:
 		return EXP;
 	};
 
-	inventory::weapon getWeapon(int index)
-	{
-		return Player_Actor::ActorWeaponE[index];
-	}
-
-	inventory::armor getArmor(int index)
-	{
-		return Player_Actor::ActorArmorE[index];
-	}
+	
 #pragma endregion
 
 	// setters / mutators
@@ -298,8 +288,7 @@ public:
 		}
 		else
 		{
-			battleSystem b;
-			b.normalOutput("EXP multiplier gain has faded.");
+			cout << "EXP multiplier gain has faded." << endl;
 			EXP = expin;
 			//EXP -= eDrain;
 		}
@@ -322,9 +311,9 @@ public:
 			}
 			else if (statmulti == false)
 			{
-				battleSystem b;
-				b.normalOutput("HP plus modifier has faded");
-
+				//battleSystem b;
+				cout << "HP plus modifier has faded" << endl;
+				
 				int dHp = getHp();
 				dHp = dHp - *eDrain;
 				setHp(dHp);
@@ -342,9 +331,7 @@ public:
 			}
 			else if (statmulti == false)
 			{
-				battleSystem b;
-				b.normalOutput("SP plus modifier has faded");
-
+				cout << "SP plus modifier has faded" << endl;
 				int dSp = getSp();
 				dSp = dSp - *eDrain;
 				setSp(dSp);
@@ -362,8 +349,7 @@ public:
 			}
 			else if (statmulti == false)
 			{
-				battleSystem b;
-				b.normalOutput("FP plus modifier has faded");
+				cout << "FP plus modifier has faded" << endl;
 
 				int dFp = getFp();
 				dFp = dFp - *eDrain;
@@ -382,8 +368,7 @@ public:
 			}
 			else if (statmulti == false)
 			{
-				battleSystem b;
-				b.normalOutput("AP plus modifier has faded");
+				cout << "AP plus modifier has faded" << endl;
 
 				int dAp = getAp();
 				dAp = dAp - *eDrain;
@@ -402,8 +387,7 @@ public:
 			}
 			else if (statmulti == false)
 			{
-				battleSystem b;
-				b.normalOutput("DP plus modifier has faded");
+				cout << "DP plus modifier has faded" << endl;
 
 				int dDp = getDp();
 				dDp = dDp - *eDrain;
@@ -422,8 +406,7 @@ public:
 			}
 			else if (statmulti == false)
 			{
-				battleSystem b;
-				b.normalOutput("STR plus modifier has faded");
+				cout << "STR plus modifier has faded" << endl;
 
 				int dStr = getSTR();
 				dStr = dStr - *eDrain;
@@ -442,8 +425,7 @@ public:
 			}
 			else if (statmulti == false)
 			{
-				battleSystem b;
-				b.normalOutput("ATK plus modifier has faded");
+				cout << "ATK plus modifier has faded" << endl;
 
 				int dAtk = getATK();
 				dAtk = dAtk - *eDrain;
@@ -462,8 +444,7 @@ public:
 			}
 			else if (statmulti == false)
 			{
-				battleSystem b;
-				b.normalOutput("DEF plus modifier has faded");
+				cout << "DEF plus modifier has faded" << endl;
 
 				int dDef = getDEF();
 				dDef = dDef - *eDrain;
@@ -482,8 +463,7 @@ public:
 			}
 			else if (statmulti == false)
 			{
-				battleSystem b;
-				b.normalOutput("AGI plus modifier has faded");
+				cout << "AGI plus modifier has faded" << endl;
 
 				int dAgi = getAGI();
 				dAgi = dAgi - *eDrain;
@@ -502,8 +482,7 @@ public:
 			}
 			else if (statmulti == false)
 			{
-				battleSystem b;
-				b.normalOutput("SPD plus modifier has faded");
+				cout << "SPD plus modifier has faded" << endl;
 
 				int dSpd = getSPD();
 				dSpd = dSpd - *eDrain;
@@ -522,8 +501,7 @@ public:
 			}
 			else if (statmulti == false)
 			{
-				battleSystem b;
-				b.normalOutput("END plus modifier has faded");
+				cout << "END plus modifier has faded" << endl;
 
 				int dEnd = getEND();
 				dEnd = dEnd - *eDrain;
@@ -542,8 +520,7 @@ public:
 			}
 			else if (statmulti == false)
 			{
-				battleSystem b;
-				b.normalOutput("CON plus modifier has faded");
+				cout << "CON plus modifier has faded" << endl;
 
 				int dCon = getCON();
 				dCon = dCon - *eDrain;
@@ -562,8 +539,7 @@ public:
 			}
 			else if (statmulti == false)
 			{
-				battleSystem b;
-				b.normalOutput("INT plus modifier has faded");
+				cout << "INT plus modifier has faded" << endl;
 
 				int cInt = getINT();
 				cInt = cInt - *eDrain;
@@ -582,8 +558,7 @@ public:
 			}
 			else if (statmulti == false)
 			{
-				battleSystem b;
-				b.normalOutput("SPR plus modifier has faded");
+				cout << "SPR plus modifier has faded" << endl;
 
 				int dSpr = getSPR();
 				dSpr = dSpr - *eDrain;
@@ -602,8 +577,7 @@ public:
 			}
 			else if (statmulti == false)
 			{
-				battleSystem b;
-				b.normalOutput("DEX plus modifier has faded");
+				cout << "DEX plus modifier has faded" << endl;
 
 				int cDex = getDEX();
 				cDex = cDex - *eDrain;
@@ -616,8 +590,7 @@ public:
 		}
 	}
 
-	void setWeapon(inventory::weapon weapon, int index);
-	void setArmor(inventory::armor gear, int index);
+	
 
 #pragma endregion
 

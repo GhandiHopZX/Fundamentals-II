@@ -17,10 +17,31 @@ Enemy::Enemy()
 	elementType();
 	goldA = 0;
 	expA = 0;
+	itemN = 0;
+	
 	name = "";
 	bio = "";
-	this->ActorArmorE[0];
-	this->ActorWeaponE[0];
+	this->allEffGet[20] = {};
+	this->battleGuage();
+	this->dummyPlus = 0;
+	this->getAGI();
+	this->getAp();
+	this->getATK();
+	this->getCON();
+	this->getDEF();
+	this->getDEX();
+	this->getDp();
+	this->getEND();
+	this->getEXP();
+	this->Enemy::getExp();
+	this->getSPDPlus();
+	this->getINT();
+	this->getHp();
+	this->getSp();
+	this->getSPD();
+	this->getFp();
+	this->getSPR();
+
 }
 
 Enemy::Enemy(string namer, elementType, int expAw, int gA, int item)

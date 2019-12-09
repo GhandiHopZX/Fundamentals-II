@@ -98,12 +98,14 @@ void Player_Actor::setStatus(Player_Actor::statusEff statusName[])
 // how many turns is your status eff or plus gonna last???
 void battleSystem::statTurn()
 {
-	statusIndex.begin();
-	for (int i = 0; i < statusIndex.size; i++)
+	int max_Statuses;
+	// statusCall <- here call an integer for these status effects
+	// for this for loop use the interator to set how many turns for each individual status 
+	// and then count them down for each turn in another iterator.
+	for (int i = 0; i < he.getStatus(max_Statuses).turns_Of_aff; i++)
 	{
 		//put the statuses in here
 	}
-	statusIndex.end();
 }
 
 void battleSystem::turnSystem(int turn)
@@ -332,3 +334,5 @@ void battleSystem::rewardOutput()
 	
 
 }
+
+list <Player_Actor::statusEff> allEffGet{};

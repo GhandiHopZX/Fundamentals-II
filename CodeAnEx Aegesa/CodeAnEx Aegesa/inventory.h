@@ -113,6 +113,9 @@ public:
 	item my_items[MAX_INTEGRITY] =
 	{};
 
+	weapon ActorWeaponE[1] = { getMyWeapons(0) };
+	armor ActorArmorE[1] = { getMyArmors(0) };
+
 	// constructor
 	inventory();
 
@@ -127,8 +130,19 @@ public:
 	inventory(int, item);*/
 
 	// getters/accessors
+	inventory::weapon getMyWeapons(int index)
+	{
+		return ActorWeaponE[index];
+	}
+
+	inventory::armor getMyArmors(int index)
+	{
+		return ActorArmorE[index];
+	}
 
 	// setters/mutators
+	void setWeapon(inventory::weapon weapon, int index);
+	void setArmor(inventory::armor gear, int index);
 
 	// functions
 	void push(int);
