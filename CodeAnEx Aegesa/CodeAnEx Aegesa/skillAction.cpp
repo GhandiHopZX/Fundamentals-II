@@ -11,7 +11,7 @@ skillAction::skillAction()
 //calling the skill into existance
 skillAction::skillAction(int call)
 {
-	// using cout for the sake of simplicity 
+	// using cout for the sake of simplicity
 	// because normalOutput is for the battleSystem.
 	cout << skillcall(call).name << endl;
 	skillcall(call).dec;
@@ -19,29 +19,28 @@ skillAction::skillAction(int call)
 	getElementType();
 	getRangeType();
 	cout << skillcall(call).num + '\n' +
-		 skillcall(call).hpAdd + '\n' +
-		 skillcall(call).spAdd + '\n' +
-		 skillcall(call).dpAdd + '\n' +
-		 skillcall(call).fpAdd + '\n' +
-		 skillcall(call).apAdd + '\n' +
+		skillcall(call).hpAdd + '\n' +
+		skillcall(call).spAdd + '\n' +
+		skillcall(call).dpAdd + '\n' +
+		skillcall(call).fpAdd + '\n' +
+		skillcall(call).apAdd + '\n' +
 
-		 skillcall(call).atkAdd + '\n' +
-		 skillcall(call).defAdd + '\n' +
-		 skillcall(call).spdAdd + '\n' +
+		skillcall(call).atkAdd + '\n' +
+		skillcall(call).defAdd + '\n' +
+		skillcall(call).spdAdd + '\n' +
 
-		 skillcall(call).agiAdd + '\n' +
-		 skillcall(call).conAdd + '\n' +
-		 skillcall(call).dexAdd + '\n' +
-		 skillcall(call).endAdd + '\n' +
-		 skillcall(call).strAdd + '\n' +
-		 skillcall(call).intAdd + '\n' +
-		 skillcall(call).sprAdd + '\n'
-	<< endl;
+		skillcall(call).agiAdd + '\n' +
+		skillcall(call).conAdd + '\n' +
+		skillcall(call).dexAdd + '\n' +
+		skillcall(call).endAdd + '\n' +
+		skillcall(call).strAdd + '\n' +
+		skillcall(call).intAdd + '\n' +
+		skillcall(call).sprAdd + '\n'
+		<< endl;
 }
 
 skillAction::skillAction(int num, string name, elementType, string dec, bool rangeType)
 {
-
 }
 
 skillAction skillAction::skillcall(int p)

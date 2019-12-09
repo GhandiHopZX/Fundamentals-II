@@ -201,7 +201,7 @@ public:
 	inventory::item ripped_coat;
 	inventory::item shattered_broach;
 #pragma endregion
-	
+
 	inventory::item itemlist[100] =
 	{
 		AEGESA_FRAGMENT,

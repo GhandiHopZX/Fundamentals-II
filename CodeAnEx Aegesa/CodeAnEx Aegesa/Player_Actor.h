@@ -5,15 +5,13 @@
 #include <stack>
 #include <thread>
 #include "battleSystem.h"
-#include "inventory.h"
-#include "skillAction.h"
 
 using namespace std;
 
-class Player_Actor
+class Player_Actor : public aegesa
 {
 private:
-	
+
 	// variables
 
 #pragma region vars
@@ -45,7 +43,8 @@ private:
 #pragma endregion
 
 public:
-
+	aegesa::statusEff inBattleStatusesP[20]{
+	};
 	// variables
 	string name; // YOUR NAME!
 	string bio; // YOUR STORY!
@@ -55,34 +54,8 @@ public:
 	int dummyPlus;
 
 	// stuff
-	
+
 	// weapons and armor
-	
-	struct statusEff
-	{
-		string buffName;
-		int turns_Of_aff = 0;
-		// afflictions statbase
-		unsigned int hp = 0; // health
-		unsigned int sp = 0; // special
-		unsigned int fp = 0; // fighter (aural)
-
-		// battler statbase <- ap goes here
-		unsigned int ATK = 0; // attack
-		unsigned int DEF = 0; // defence (armor based)
-		unsigned int SPD = 0; // speed
-
-		// ability stats <- dp goes here
-		unsigned int AGI = 0; // agility
-		unsigned int DEX = 0; // dexterity
-		unsigned int INT = 0; // intelligence
-		unsigned int SPR = 0; // spirit
-		unsigned int STR = 0; // strength (also effects status)
-		unsigned int END = 0; // endurance (bodily based / also effects status)
-		unsigned int CON = 0; // constitution (mental, body, soul, based / also effects status)
-	};
-
-	statusEff allEffGet[20] = {}; // wip
 
 	// Constructors
 	Player_Actor();
@@ -199,16 +172,12 @@ public:
 		return CON;
 	};
 
-	//get Status
-	statusEff getStatus(int);
-
 	//exp Getter
 	int getExp()
 	{
 		return EXP;
 	};
 
-	
 #pragma endregion
 
 	// setters / mutators
@@ -255,7 +224,6 @@ public:
 		dp = dpin;
 	}
 
-
 	void setATK(int atin)
 	{
 		ATK = atin;
@@ -270,7 +238,6 @@ public:
 	{
 		SPD = sdin;
 	}
-
 
 	void setSTR(int stin)
 	{
@@ -342,7 +309,7 @@ public:
 			{
 				//battleSystem b;
 				cout << "HP plus modifier has faded" << endl;
-				
+
 				int dHp = getHp();
 				dHp = dHp - *eDrain;
 				setHp(dHp);
@@ -619,11 +586,9 @@ public:
 		}
 	}
 
-	
-
 #pragma endregion
 
-	void setStatus(Player_Actor::statusEff statusName[]);
+	void setStatus(aegesa::statusEff statusName[]);
 
 	void battleGuage();
 

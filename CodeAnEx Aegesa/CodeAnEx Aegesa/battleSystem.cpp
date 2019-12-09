@@ -10,6 +10,7 @@
 #include "Player_Actor.h"
 #include "Enemy.h"
 #include "World.h" // for encounters
+#include "skillAction.h"
 
 using namespace std;
 
@@ -23,7 +24,7 @@ skillAction skilz;
 
 void battleSystem::battleMode()
 {
-	// this is where the insanity goes till hp drops for all members of either 
+	// this is where the insanity goes till hp drops for all members of either
 	// troop size
 	cout << "============ E N G A D G E ============" << endl;
 
@@ -77,7 +78,7 @@ void battleSystem::turn()
 }
 
 // use a linked list?
-void Player_Actor::setStatus(Player_Actor::statusEff statusName[])
+void Player_Actor::setStatus(aegesa::statusEff statusName[])
 {
 	// this is where the statuses go in
 
@@ -86,29 +87,26 @@ void Player_Actor::setStatus(Player_Actor::statusEff statusName[])
 	// setStatuses used for said Actor
 	// and the status effect is used
 
-	Player_Actor::statusEff o;
 	//const int N = const_cast<const int&>(o);
 
 	for (int i = 0; i < 20; i++)
 	{
-		allEffGet[i] = statusName[i];
+		inBattleStatusesP[i] = statusName[i];
 	}
 }
 
 // how many turns is your status eff or plus gonna last???
-void battleSystem::statTurn(int call)
+void battleSystem::statTurn(aegesa::statusEff call)
 {
 	int maxNumber = 20;
 	int max_Statuses = maxNumber;
 	// statusCall <- here call an integer for these status effects
-	// for this for loop use the interator to set how many turns for each individual status 
+	// for this for loop use the interator to set how many turns for each individual status
 	// and then count them down for each turn in another iterator.
 	for (int i = 0; i < maxNumber; i++)
 	{
 		//put the statuses in here
 	}
-
-
 }
 
 void battleSystem::turnSystem(int turn)
@@ -131,17 +129,17 @@ void battleSystem::turnSystem(int turn)
 
 		case (b):
 			// enemy turn or ai turn check
-			statTurn(20);// one turn = one and done
+			//statTurn(statusCall(he.getStatus()));// call this whenever you get a SPECIFIC stat you want that is numbered
 			break;
 
 		case (c):
 			// yor tuarn
-			statTurn(20); // one turn = one and done
+			//statTurn(20); // one turn = one and done
 			break;
 
 		case (d):
 			// TurnA
-			statTurn(20); // one turn = one and done
+			//statTurn(20); // one turn = one and done
 
 			break;
 
@@ -315,21 +313,20 @@ void battleSystem::multiDamageOutput(string n[])
 }
 
 // battle_system calls
-void battleSystem::attack(){
-
+void battleSystem::attack() {
 }
-void battleSystem::defend(){}
+void battleSystem::defend() {}
 void battleSystem::skill()
 {
 	/*he.statPlus('h', skilz.skillcall->hpAdd);
 	he.statPlus('s', skilz.skillcall->spAdd);
 	he.statPlus('d', skilz.skillcall->defAdd);*/
 }
-void battleSystem::hack(){}
+void battleSystem::hack() {}
 
 void battleSystem::rewardOutput()
 {
-	// iterate all the enemies that were on 
+	// iterate all the enemies that were on
 	// the battle field and run this at least
 	// once for all of their rewards.
 	// also store them in the player inventoru
@@ -338,8 +335,5 @@ void battleSystem::rewardOutput()
 	normalOutput(" Obtained...");
 
 	//inv.my_items(inv.allitemList(en.getItem), en.getItem);
-	
-
 }
 
-list <Player_Actor::statusEff> inBattleStatuses{ };

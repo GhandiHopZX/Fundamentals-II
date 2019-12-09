@@ -148,7 +148,6 @@ void inventory::insertNodeItem(item, int i)
 		{
 			previousItem = nodePtr;
 			nodePtr = nodePtr->node;
-			
 		}
 
 		if (previousItem == nullptr)
@@ -473,7 +472,7 @@ inventory inventory::PlayerItemInventory() // gotta make an inventory that'll wo
 		cout << "Select an Weapon?: use an number to select one.. 0 - " + sum_weapons << endl;
 		displaylistWeapon();
 		cout << "select an weapon? using a #" << endl;
-		
+
 		choice = 'N\A';
 		cin >> i;
 		selectlistWeapon(i);
@@ -493,7 +492,7 @@ inventory inventory::PlayerItemInventory() // gotta make an inventory that'll wo
 		cout << "Armors equipped: select one for overview.. 0 - " + sum_armors << endl;
 		//displaylistWeapon();
 		cout << "select an weapon? using a #" << endl;
-		//int i = 0; 
+		//int i = 0;
 		choice = 'N\A';
 		cin >> i;
 
@@ -510,14 +509,11 @@ inventory inventory::PlayerItemInventory() // gotta make an inventory that'll wo
 		break;
 
 	case 'q':
-		return;
 		break;
 
 	default:
-		return;
 		break;
 	}
-	return;
 }
 
 void inventory::setWeapon(inventory::weapon weapon, int index)

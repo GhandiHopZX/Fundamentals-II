@@ -19,7 +19,7 @@ Enemy::Enemy()
 	goldA = 0;
 	expA = 0;
 	itemN = 0;
-	
+
 	name = "";
 	bio = "";
 	this->allEffGet[20] = {};
@@ -42,7 +42,6 @@ Enemy::Enemy()
 	this->getSPD();
 	this->getFp();
 	this->getSPR();
-
 }
 
 Enemy::Enemy(string namer, elementType, int expAw, int gA, int item)
@@ -202,4 +201,3 @@ void Enemy::setEXP(int rexp)
 {
 	expA = rexp;
 }
-

@@ -3,7 +3,7 @@
 #include <list>
 #include <vector>
 #include <ctime>
-#include "Player_Actor.h"
+#include "aegesa.h"
 
 using namespace std;
 
@@ -29,24 +29,29 @@ public:
 	int turnGuageNum;
 
 	// getters/accessors
+	
 
+	aegesa::statusEff inBattleStatusesE[20]{
+	};
 	// setters/mutators
 
 	void enemyTroop();
 	void allyTroop();
-	
+
 	// functions
 
 	void targetEnemy();
 	void aiTargeting();
 
 	// the core functions of what the player can do when the player can do
-	void turn(); 
+	void turn();
 
-	// recalls all or any stat plus modifier 
+	// recalls all or any stat plus modifier
 	//functions for reauthentications when a number of turns are up
 
 	void battleMode();
+
+	int statusCall(int ti);
 
 	bool playerTGuage(int, int spd, int fp);
 
@@ -54,7 +59,7 @@ public:
 
 	// output types
 
-	void statTurn(int maxNumber);
+	void statTurn(aegesa::statusEff maxNumber);
 
 	void turnSystem(int);
 

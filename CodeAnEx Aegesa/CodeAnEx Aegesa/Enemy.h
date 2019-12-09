@@ -40,7 +40,7 @@ public:
 	//Enemy enemiesList(int indexPass); please leave me alone
 
 	Enemy enemyRandEncounter();
-	
+
 	Enemy BossCall(int);
 
 	int getItem();

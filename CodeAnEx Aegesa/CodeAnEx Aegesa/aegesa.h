@@ -60,9 +60,25 @@ public:
 		unsigned int CON = 0; // constitution (mental, body, soul, based / also effects status)
 	};
 
-	statusEff allEffGet[20] = {}; // wip
+#pragma region statusTypes
+	aegesa::statusEff REGENERATION;
+	aegesa::statusEff POISON;
+	aegesa::statusEff STUNED;
+	aegesa::statusEff DEAD;
+#pragma endregion
 
-		// variables
+	aegesa::statusEff allEffGet[20] = {
+		REGENERATION,
+		POISON,
+		STUNED,
+		DEAD
+	}; // wip
+
+	statusEff My_Statuses[20]
+	{
+	};
+
+	// variables
 	string name = ""; // YOUR NAME!
 	string bio = ""; // YOUR STORY!
 
@@ -177,14 +193,13 @@ public:
 	};
 
 	//get Status
-	statusEff getStatus(int);
+	statusEff getStatus();
 
 	//exp Getter
 	int getExp()
 	{
 		return EXP;
 	};
-
 
 #pragma endregion
 
@@ -232,7 +247,6 @@ public:
 		dp = dpin;
 	}
 
-
 	void setATK(int atin)
 	{
 		ATK = atin;
@@ -247,7 +261,6 @@ public:
 	{
 		SPD = sdin;
 	}
-
 
 	void setSTR(int stin)
 	{
@@ -302,11 +315,9 @@ public:
 
 	void statPlus(char stat, int plus);
 
-
-
 #pragma endregion
 
-	// functions 
+	// functions
 	void setStatus(statusEff statusName[]);
 	void battleGuage();
 	string normalOutput(string normal)
@@ -315,4 +326,3 @@ public:
 	};
 	~aegesa();
 };
-

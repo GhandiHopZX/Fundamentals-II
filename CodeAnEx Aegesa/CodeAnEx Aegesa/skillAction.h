@@ -8,7 +8,7 @@ using namespace std;
 class skillAction
 {
 private:
-	
+
 	// variables
 #pragma region other_vars
 
@@ -30,7 +30,7 @@ public:
 		Dark = 8,
 		Normal = 9
 	};
-	
+
 	int num;
 	string name;
 	string dec;
@@ -56,7 +56,7 @@ public:
 	unsigned int strAdd = 0;
 	unsigned int agiAdd = 0;
 #pragma endregion
-	
+
 	skillAction();
 
 	skillAction(int);
@@ -65,7 +65,7 @@ public:
 
 	skillAction skillcall(int);
 
-	// hooking to the skill the 
+	// hooking to the skill the
 	// enum class
 	elementType getElementType();
 
@@ -80,4 +80,3 @@ public:
 
 	//state changes - wip
 };
-
