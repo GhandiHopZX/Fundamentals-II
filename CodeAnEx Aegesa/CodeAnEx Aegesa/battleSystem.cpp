@@ -96,16 +96,19 @@ void Player_Actor::setStatus(Player_Actor::statusEff statusName[])
 }
 
 // how many turns is your status eff or plus gonna last???
-void battleSystem::statTurn()
+void battleSystem::statTurn(int call)
 {
-	int max_Statuses;
+	int maxNumber = 20;
+	int max_Statuses = maxNumber;
 	// statusCall <- here call an integer for these status effects
 	// for this for loop use the interator to set how many turns for each individual status 
 	// and then count them down for each turn in another iterator.
-	for (int i = 0; i < he.getStatus(max_Statuses).turns_Of_aff; i++)
+	for (int i = 0; i < maxNumber; i++)
 	{
 		//put the statuses in here
 	}
+
+
 }
 
 void battleSystem::turnSystem(int turn)
@@ -128,17 +131,17 @@ void battleSystem::turnSystem(int turn)
 
 		case (b):
 			// enemy turn or ai turn check
-			statTurn();// one turn = one and done
+			statTurn(20);// one turn = one and done
 			break;
 
 		case (c):
 			// yor tuarn
-			statTurn(); // one turn = one and done
+			statTurn(20); // one turn = one and done
 			break;
 
 		case (d):
 			// TurnA
-			statTurn(); // one turn = one and done
+			statTurn(20); // one turn = one and done
 
 			break;
 
@@ -165,6 +168,10 @@ void inventory::itemCall()
 {
 }
 
+int battleSystem::statusCall(int ti)
+{
+	return ti;
+};
 //turn guage
 bool battleSystem::playerTGuage(int spdPlus, int spd, int fp)
 {
@@ -327,7 +334,7 @@ void battleSystem::rewardOutput()
 	// once for all of their rewards.
 	// also store them in the player inventoru
 
-	inv.rewardCall(en.getItem);
+	inv.rewardCall(en.getItem());
 	normalOutput(" Obtained...");
 
 	//inv.my_items(inv.allitemList(en.getItem), en.getItem);
@@ -335,4 +342,4 @@ void battleSystem::rewardOutput()
 
 }
 
-list <Player_Actor::statusEff> allEffGet{};
+list <Player_Actor::statusEff> inBattleStatuses{ };

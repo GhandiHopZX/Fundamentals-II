@@ -94,6 +94,20 @@ public:
 	};
 
 #pragma region getters
+	string getName()
+	{
+		return name;
+	};
+
+	string getBio()
+	{
+		return bio;
+	}
+
+	bool getSMulti()
+	{
+		return statmulti;
+	}
 
 	//Hp Getter
 	int getHp()
@@ -200,6 +214,21 @@ public:
 	// setters / mutators
 
 #pragma region setters
+
+	void setName(string x)
+	{
+		name = x;
+	}
+
+	void setBio(string x)
+	{
+		bio = x;
+	}
+
+	void statMSet(bool d)
+	{
+		statmulti = d;
+	}
 
 	void setHp(int hpin)
 	{

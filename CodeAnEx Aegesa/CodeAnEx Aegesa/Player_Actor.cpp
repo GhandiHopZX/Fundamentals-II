@@ -55,9 +55,11 @@ Player_Actor::statusEff Player_Actor::getStatus(int index)
 	// this is where the statuses are taken
 
 	statusEff me[20] = {};
+	statusEff thisStatus[1] = {};
 	for (int i = 0; i < 20; i++)
 	{
-		me[i] = allEffGet[i];
+		thisStatus[i] = allEffGet[index];
+		me[i] = thisStatus[i];
 	}
 	// beta test
 	string beta = "test";

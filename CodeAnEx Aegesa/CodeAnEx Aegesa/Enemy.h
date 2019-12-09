@@ -8,7 +8,7 @@
 
 using namespace std;
 
-class Enemy : aegesa
+class Enemy : public aegesa
 {
 private:
 

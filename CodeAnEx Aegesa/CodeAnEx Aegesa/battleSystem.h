@@ -45,7 +45,6 @@ public:
 
 	// recalls all or any stat plus modifier 
 	//functions for reauthentications when a number of turns are up
-	void statTurn(); 
 
 	void battleMode();
 
@@ -54,6 +53,8 @@ public:
 	bool enemyTGuage(int, int spd, int fp);
 
 	// output types
+
+	void statTurn(int maxNumber);
 
 	void turnSystem(int);
 

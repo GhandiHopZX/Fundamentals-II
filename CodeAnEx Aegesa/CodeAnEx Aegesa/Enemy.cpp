@@ -6,6 +6,7 @@
 #include <stack>
 #include <stdlib.h>
 #include <malloc.h>
+#include "aegesa.h"
 #include "Enemy.h"
 
 using namespace std;
