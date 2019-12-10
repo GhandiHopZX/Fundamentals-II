@@ -369,8 +369,6 @@ void battleSystem::skill()
 
 void battleSystem::hack() {}
 
-
-
 void battleSystem::rewardOutput()
 {
 	Player_Actor he; //call vars
@@ -387,4 +385,3 @@ void battleSystem::rewardOutput()
 
 	//inv.my_items(inv.allitemList(en.getItem), en.getItem);
 }
-

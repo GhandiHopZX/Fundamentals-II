@@ -31,22 +31,6 @@ inventory::inventory(const inventory&)
 	heada = nullptr;
 	headi = nullptr;
 }
-//
-//inventory::inventory(int wIndex, weapon w)
-//{
-//	
-//	headw = nullptr;
-//}
-//
-//inventory::inventory(int aIndex, armor a)
-//{
-//	heada = nullptr;
-//}
-//
-//inventory::inventory(int iIndex, item i)
-//{
-//	headi = nullptr;
-//}
 
 void inventory::push(int val)
 {
