@@ -5,6 +5,7 @@
 #include <stack>
 #include <thread>
 #include "battleSystem.h"
+#include "aegesa.h"
 
 using namespace std;
 
@@ -43,8 +44,7 @@ private:
 #pragma endregion
 
 public:
-	aegesa::statusEff inBattleStatusesP[20]{
-	};
+	
 	// variables
 	string name; // YOUR NAME!
 	string bio; // YOUR STORY!
@@ -588,9 +588,9 @@ public:
 
 #pragma endregion
 
-	void setStatus(aegesa::statusEff statusName[]);
+	//void setStatus(aegesa::statusEff statusName[]);
 
-	void battleGuage();
+	//void battleGuage();
 
 	// Deconstructor
 	~Player_Actor();

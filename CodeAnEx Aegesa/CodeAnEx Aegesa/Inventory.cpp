@@ -4,6 +4,9 @@
 #include <stack>
 #include "inventory.h"
 #include "Player_Actor.h"
+#include "Enemy.h"
+#include "World.h"
+#include "skillAction.h"
 // use tha multimap function
 
 using namespace std;
@@ -24,23 +27,26 @@ inventory::inventory(int)
 inventory::inventory(const inventory&)
 {
 	capacity = MAX_INTEGRITY;
-	heada = nullptr;
 	headw = nullptr;
+	heada = nullptr;
 	headi = nullptr;
 }
-
-inventory::inventory(int wIndex, weapon w)
-{
-}
-
-inventory::inventory(int aIndex, armor a)
-{
-}
-
-inventory::inventory(int iIndex, item i)
-{
-
-}
+//
+//inventory::inventory(int wIndex, weapon w)
+//{
+//	
+//	headw = nullptr;
+//}
+//
+//inventory::inventory(int aIndex, armor a)
+//{
+//	heada = nullptr;
+//}
+//
+//inventory::inventory(int iIndex, item i)
+//{
+//	headi = nullptr;
+//}
 
 void inventory::push(int val)
 {
@@ -345,7 +351,6 @@ void inventory::displaylistItem() const
 
 	while (nodePtr)
 	{
-		sum_items + 1;
 		nodePtr->ivalue;
 		cout << nodePtr->node << '\t' << '\t' << nodePtr->quantity << endl;
 		nodePtr = nodePtr->node;
@@ -360,7 +365,6 @@ void inventory::displaylistWeapon() const
 
 	while (nodePtr)
 	{
-		sum_weapons + 1;
 		nodePtr->wvalue;
 		cout << nodePtr->next << '\t' << '\t' << nodePtr->quantity << endl;
 		nodePtr = nodePtr->next;
@@ -375,48 +379,53 @@ void inventory::displaylistArmor() const
 
 	while (nodePtr)
 	{
-		sum_armors + 1;
 		nodePtr->avalue;
 		cout << nodePtr->next << '\t' << '\t' << nodePtr->quantity << endl;
 		nodePtr = nodePtr->next;
 	}
 }
 
-inventory::item inventory::selectlistItem(int u)
+void inventory::selectlistItem(int u)
 {
 	if (my_items <= 0)
 	{
 		string message = "No Items in index..";
 		cout << message;
-		return my_items[0];
+		my_items[0];
 	}
 	remItem(my_items[u].quantity);
-	return my_items[u];
+	//return my_items[u];
 }
 
-inventory::armor inventory::selectlistArmor(int u)
+void inventory::selectlistArmor(int u)
 {
 	if (my_armors <= 0)
 	{
 		string message = "No Armors in index..";
 		cout << message;
-		return my_armors[0];
+		my_armors[0];
 	}
 	remItem(my_armors[u].quantity);
-	return my_armors[u];
+	//return my_armors[u];
 }
 
-inventory::weapon inventory::selectlistWeapon(int u)
+void inventory::selectlistWeapon(int u)
 {
 	if (my_weapons <= 0)
 	{
 		string message = "No Armors in index..";
 		cout << message;
-		return my_weapons[0];
+		my_weapons[0];
 	}
 	remItem(my_weapons[u].quantity);
 
-	return my_weapons[u];
+	//return my_weapons[u];
+}
+
+void inventory::itemCall()
+{
+	Player_Actor he; //call vars
+	Enemy en; // call vars
 }
 
 void inventory::PlayerItemInventory() // gotta make an inventory that'll work in the world menu
@@ -430,12 +439,12 @@ void inventory::PlayerItemInventory() // gotta make an inventory that'll work in
 	switch (choice)
 	{
 	case 'i':
-		cout << "Select an Item? or Exit?(Q,q): use an number to select one.. 0 - " + sum_items << endl;
+		cout << "Select an Item? or Exit? (Q,q): use an number to select one.. 0 - " + sum_items << endl;
 		displaylistItem();
 		// select an item? using a #
 		cout << "select an item? using a #" << endl;
 		//int i = 0;
-		choice = 'N\A';
+		choice = 'N';
 		cin >> i;
 		selectlistItem(i);
 		if (isalpha(i))
@@ -454,7 +463,7 @@ void inventory::PlayerItemInventory() // gotta make an inventory that'll work in
 		// select an armor? using a #
 		cout << "select an armor? using a #" << endl;
 		//int i = 0;
-		choice = 'N\A';
+		choice = 'N';
 		cin >> i;
 		selectlistArmor(i);
 		//equip armor
@@ -473,7 +482,7 @@ void inventory::PlayerItemInventory() // gotta make an inventory that'll work in
 		displaylistWeapon();
 		cout << "select an weapon? using a #" << endl;
 
-		choice = 'N\A';
+		choice = 'N';
 		cin >> i;
 		selectlistWeapon(i);
 		//equip armor
@@ -496,7 +505,7 @@ void inventory::PlayerItemInventory() // gotta make an inventory that'll work in
 		cout << endl;
 		cout << "select a gear? using a #" << endl;
 		//int i = 0;
-		choice = 'N\A';
+		choice = 'N';
 		cin >> i;
 
 		//selectlistWeapon(i);

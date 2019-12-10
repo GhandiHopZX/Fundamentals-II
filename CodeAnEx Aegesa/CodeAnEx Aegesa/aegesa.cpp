@@ -4,24 +4,11 @@ using namespace std;
 
 aegesa::statusEff aegesa::getStatus()
 {
-	// a criterion is checked here
-	// and used to see what statuses are present in said
-	// player status then are passed
-	// into the statusEFF index then the index is passed into
-	// gameSystem...
-	// this is where the statuses are taken
-
-	statusEff me[20] = {};
-	statusEff thisStatus[1] = {};
-	for (int i = 0; i < 20; i++)
+	for (size_t i = 0; i < 20; i++)
 	{
-		thisStatus[i] = aegesa::My_Statuses[i];
-		me[i] = thisStatus[i];
-		return me[i];
+		return My_Statuses[i];
 	}
-	// beta test
-	string beta = "test";
-	// statusEff;
+	
 }
 
 void aegesa::statPlus(char stat, int plus)
@@ -318,6 +305,31 @@ void aegesa::statPlus(char stat, int plus)
 	default:
 		break;
 	}
+}
+
+
+void aegesa::setStatus(statusEff statusName[])
+{
+	// a criterion is checked here
+	// and used to see what statuses are present in said
+	// player status then are passed
+	// into the statusEFF index then the index is passed into
+	// gameSystem...
+	// this is where the statuses are taken
+
+	statusEff me[20] = {};
+	statusEff thisStatus[20] = {};
+	for (int i = 0; i < 20; i++)
+	{
+		me[i] = aegesa::My_Statuses[i];
+	}
+	// beta test
+	string beta = "test";
+	// statusEff;
+}
+
+void aegesa::battleGuage()
+{
 }
 
 aegesa::~aegesa()

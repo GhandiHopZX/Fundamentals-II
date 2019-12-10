@@ -14,16 +14,14 @@
 
 using namespace std;
 
-Player_Actor he; //call vars
-Enemy en; // call vars
-inventory inv; // call tha listos
-World warudo;
-skillAction skilz;
-
 //todo: callin enemy encouter data
 
 void battleSystem::battleMode()
+
 {
+	Player_Actor he; //call vars
+	Enemy en; // call vars
+	skillAction skilz;
 	// this is where the insanity goes till hp drops for all members of either
 	// troop size
 	cout << "============ E N G A D G E ============" << endl;
@@ -37,6 +35,10 @@ void battleSystem::battleMode()
 
 battleSystem::battleSystem()
 {
+	Player_Actor he; //call vars
+	Enemy en; // call vars
+	skillAction skilz;
+
 	turnGuageNum = 0; // this is if more than one is set, its usually reset
 	aGuage = 0;
 	battleMode(); // battle mode
@@ -44,22 +46,38 @@ battleSystem::battleSystem()
 
 void battleSystem::enemyTroop()
 {
+	Player_Actor he; //call vars
+	Enemy en; // call vars
+	skillAction skilz;
 }
 
 void battleSystem::allyTroop()
 {
+	Player_Actor he; //call vars
+	Enemy en; // call vars
+	skillAction skilz;
 }
 
 void battleSystem::targetEnemy()
 {
+	Player_Actor he; //call vars
+	Enemy en; // call vars
+	skillAction skilz;
 }
 
 void battleSystem::aiTargeting()
 {
+	Player_Actor he; //call vars
+	Enemy en; // call vars
+	skillAction skilz;
 }
 
 void battleSystem::turn()
 {
+	Player_Actor he; //call vars
+	Enemy en; // call vars
+	inventory inv;
+
 	normalOutput(he.name + " turn...");
 	normalOutput("Attack(a),\n Defend(d),\n Hack(h),\n Skills(s),\n Inventory(i) ");
 	// initialized choice char
@@ -94,8 +112,11 @@ void battleSystem::turn()
 }
 
 // use a linked list?
-void Player_Actor::setStatus(aegesa::statusEff statusName[])
+void aegesa::setStatus(aegesa::statusEff statusName[])
 {
+	Player_Actor he; //call vars
+	Enemy en; // call vars
+	skillAction skilz;
 	// this is where the statuses go in
 
 	// this is where the game and
@@ -107,13 +128,17 @@ void Player_Actor::setStatus(aegesa::statusEff statusName[])
 
 	for (int i = 0; i < 20; i++)
 	{
-		inBattleStatusesP[i] = statusName[i];
+		My_Statuses[i] = statusName[i];
 	}
 }
 
 // how many turns is your status eff or plus gonna last???
 void battleSystem::statTurn(aegesa::statusEff call)
 {
+	Player_Actor he; //call vars
+	Enemy en; // call vars
+	skillAction skilz;
+
 	int maxNumber = 20;
 	int max_Statuses = maxNumber;
 	// statusCall <- here call an integer for these status effects
@@ -127,6 +152,10 @@ void battleSystem::statTurn(aegesa::statusEff call)
 
 void battleSystem::turnSystem(int turn)
 {
+	Player_Actor he; //call vars
+	Enemy en; // call vars
+	skillAction skilz;
+
 	bool guagek;
 	guagek = aGuage;
 	int turnBack;
@@ -178,18 +207,16 @@ void battleSystem::turnSystem(int turn)
 	} while (battleTime == true);
 }
 
-void inventory::itemCall()
-{
-}
-
 int battleSystem::statusCall(int ti)
 {
+
 	return ti;
 };
 
 //turn guage
 bool battleSystem::playerTGuage(int spdPlus, int spd, int fp)
 {
+
 	tm guage;
 	guage.tm_sec = 0; // prototype timer or max?
 
@@ -339,10 +366,17 @@ void battleSystem::skill()
 	he.statPlus('s', skilz.skillcall->spAdd);
 	he.statPlus('d', skilz.skillcall->defAdd);*/
 }
+
 void battleSystem::hack() {}
+
+
 
 void battleSystem::rewardOutput()
 {
+	Player_Actor he; //call vars
+	Enemy en; // call vars
+	inventory inv; // call tha listos
+
 	// iterate all the enemies that were on
 	// the battle field and run this at least
 	// once for all of their rewards.

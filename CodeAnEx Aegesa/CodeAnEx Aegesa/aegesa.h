@@ -65,13 +65,15 @@ public:
 	aegesa::statusEff POISON;
 	aegesa::statusEff STUNED;
 	aegesa::statusEff DEAD;
+	aegesa::statusEff HACKED;
 #pragma endregion
 
 	aegesa::statusEff allEffGet[20] = {
 		REGENERATION,
 		POISON,
 		STUNED,
-		DEAD
+		DEAD,
+		HACKED
 	}; // wip
 
 	statusEff My_Statuses[20]
@@ -317,12 +319,13 @@ public:
 
 #pragma endregion
 
-	// functions
+	//// functions
 	void setStatus(statusEff statusName[]);
 	void battleGuage();
 	string normalOutput(string normal)
 	{
 		return normal;
 	};
+
 	~aegesa();
 };

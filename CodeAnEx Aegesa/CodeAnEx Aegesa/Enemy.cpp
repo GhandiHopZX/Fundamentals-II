@@ -22,7 +22,7 @@ Enemy::Enemy()
 
 	name = "";
 	bio = "";
-	this->allEffGet[20] = {};
+	this->allEffGet;
 	this->battleGuage();
 	this->dummyPlus = 0;
 	this->getAGI();

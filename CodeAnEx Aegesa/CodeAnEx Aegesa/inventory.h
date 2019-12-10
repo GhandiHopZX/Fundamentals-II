@@ -123,11 +123,11 @@ public:
 
 	inventory(const inventory&);
 
-	inventory(int, weapon);
+	/*inventory(int, weapon);
 
 	inventory(int, armor);
 
-	inventory(int, item);
+	inventory(int, item);*/
 
 	// getters/accessors
 	inventory::weapon getMyWeapons(int index)
@@ -296,11 +296,11 @@ public:
 	}
 
 	// selections
-	inventory::item selectlistItem(int);
+	void selectlistItem(int);
 
-	inventory::armor selectlistArmor(int u);
+	void selectlistArmor(int u);
 
-	inventory::weapon selectlistWeapon(int u);
+	void selectlistWeapon(int u);
 
 	// shop_time
 

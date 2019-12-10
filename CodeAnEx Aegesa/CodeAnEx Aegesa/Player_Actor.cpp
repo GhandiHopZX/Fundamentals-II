@@ -39,12 +39,6 @@ Player_Actor::Player_Actor()
 #pragma endregion
 }
 
-inventory inv;
-
-void Player_Actor::battleGuage()
-{
-}
-
 // armors and weapons?
 
 // use this to kill the player and when they die GAME OVER
