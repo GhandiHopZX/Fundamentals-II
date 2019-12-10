@@ -110,28 +110,7 @@ void battleSystem::turn()
 		}
 	}
 }
-
-// use a linked list?
-void aegesa::setStatus(aegesa::statusEff statusName[])
-{
-	Player_Actor he; //call vars
-	Enemy en; // call vars
-	skillAction skilz;
-	// this is where the statuses go in
-
-	// this is where the game and
-	// battle system look for the
-	// setStatuses used for said Actor
-	// and the status effect is used
-
-	//const int N = const_cast<const int&>(o);
-
-	for (int i = 0; i < 20; i++)
-	{
-		My_Statuses[i] = statusName[i];
-	}
-}
-
+//call in set status
 // how many turns is your status eff or plus gonna last???
 void battleSystem::statTurn(aegesa::statusEff call)
 {
