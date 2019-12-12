@@ -4,11 +4,12 @@ using namespace std;
 
 aegesa::statusEff aegesa::getStatus()
 {
-	for (size_t i = 0; i < 20; i++)
+	int i = 0;
+	for (i = 0; i < 20; i++)
 	{
-		return My_Statuses[i];
+		My_Statuses[i];
 	}
-	
+	return My_Statuses[i];
 }
 
 void aegesa::statPlus(char stat, int plus)
@@ -306,7 +307,6 @@ void aegesa::statPlus(char stat, int plus)
 		break;
 	}
 }
-
 
 void aegesa::setStatus(statusEff statusName[])
 {

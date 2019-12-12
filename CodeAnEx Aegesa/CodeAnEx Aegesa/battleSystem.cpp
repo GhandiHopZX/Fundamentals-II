@@ -75,7 +75,6 @@ void battleSystem::aiTargeting()
 void battleSystem::turn()
 {
 	Player_Actor he; //call vars
-	Enemy en; // call vars
 	inventory inv;
 
 	normalOutput(he.name + " turn...");
@@ -92,10 +91,10 @@ void battleSystem::turn()
 			inv.PlayerItemInventory();
 			break;
 		case 's': // skills
-			hack();
+			skill();
 			break;
 		case 'h': // hack
-			skill();
+			hack();
 			break;
 		case 'd': // defend
 			defend();
@@ -110,6 +109,7 @@ void battleSystem::turn()
 		}
 	}
 }
+
 //call in set status
 // how many turns is your status eff or plus gonna last???
 void battleSystem::statTurn(aegesa::statusEff call)
@@ -188,14 +188,12 @@ void battleSystem::turnSystem(int turn)
 
 int battleSystem::statusCall(int ti)
 {
-
 	return ti;
 };
 
 //turn guage
 bool battleSystem::playerTGuage(int spdPlus, int spd, int fp)
 {
-
 	tm guage;
 	guage.tm_sec = 0; // prototype timer or max?
 
@@ -346,11 +344,115 @@ void battleSystem::skill()
 	he.statPlus('d', skilz.skillcall->defAdd);*/
 }
 
-void battleSystem::hack() {}
+void battleSystem::hack() {
+	
+	// get the enemy target
+	targetEnemy();
+
+	wstring window;
+
+	// movement grid
+	wstring grid[11][3];
+
+	// grid array
+	window += L"=== === ===";
+	window += L"XXX === ***";
+	window += L"=== === ===";
+
+	// snap to grid
+	grid[11][5] = window;
+
+	// platforms 
+
+	// 1 2 3
+	// 4 5 6
+	// 7 8 9
+
+	// X< 1 = 0 1 2
+	//	  2 = 3 4 5
+	//	  3 = 6 7 8
+	// 	  4 = 9 10 11
+	//	  5 = 12 13 14
+	//	  6 = 15 16 17
+	//    7 = 18 19 20
+	//	  8 = 21 22 23
+	//	  9 = 24 25 26 >X
+
+	
+	wstring actorT, enemy, hitMarkA;
+	actorT += L"X"; // XX
+	enemy += L"*"; // **
+	hitMarkA += L"#"; // ## mark empty when actorT overlays enemy
+
+	// player startpoint
+	int x, y;
+	grid[0][1] = actorT;
+	grid[1][1] = actorT;
+	grid[2][1] = actorT;
+
+	// enemy startpoint
+	int ex, ey;
+	grid[8][1] = enemy;
+	grid[9][1] = enemy;
+	grid[10][1] = enemy;
+
+	// key console
+	#pragma region VirtualKey input
+	switch (INPUT_KEYBOARD)
+	{
+	case VK_UP:
+		for (int i = 0; i < 2; i++)
+		{
+			x += 0;
+			y -= i;
+			grid[x][y] = actorT;
+		}
+		break;
+
+	case VK_DOWN:
+		for (int i = 0; i < 2; i++)
+		{
+			x += 0;
+			y += i;
+			grid[x][y] = actorT;
+		}
+		break;
+
+	case VK_LEFT:
+		// movement x
+		for (int i = 0; i < 4; i++)
+		{
+			x += i;
+			y += 0;
+			grid[x][y] = actorT;
+		}
+		break;
+
+	case VK_RIGHT:
+		// movement x
+		for (int i = 0; i < 4; i++)
+		{
+			x -= i;
+			y += 0;
+			grid[x][y] = actorT;
+		}
+		break;
+
+	default:
+		break;
+	}
+	#pragma endregion
+
+	/* 
+	  1  2  3  4  5  6
+	  11 12 13 14 15 16
+	  21 22 23 24 25 26
+	 */
+}
 
 void battleSystem::rewardOutput()
 {
-	Player_Actor he; //call vars
+	//Player_Actor he; //call vars
 	Enemy en; // call vars
 	inventory inv; // call tha listos
 
