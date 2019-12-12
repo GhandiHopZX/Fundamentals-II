@@ -352,8 +352,9 @@ void battleSystem::hack() {
 	wstring window;
 
 	// movement grid
-	wstring grid[11][3];
-
+	wstring grid[12][6]; 
+	// one plus higher for
+	//the actuall char amount in the order
 	// grid array
 	window += L"=== === ===";
 	window += L"XXX === ***";
@@ -361,93 +362,137 @@ void battleSystem::hack() {
 
 	// snap to grid
 	grid[11][5] = window;
-
-	// platforms 
-
-	// 1 2 3
-	// 4 5 6
-	// 7 8 9
-
-	// X< 1 = 0 1 2
-	//	  2 = 3 4 5
-	//	  3 = 6 7 8
-	// 	  4 = 9 10 11
-	//	  5 = 12 13 14
-	//	  6 = 15 16 17
-	//    7 = 18 19 20
-	//	  8 = 21 22 23
-	//	  9 = 24 25 26 >X
-
 	
-	wstring actorT, enemy, hitMarkA;
-	actorT += L"X"; // XX
-	enemy += L"*"; // **
-	hitMarkA += L"#"; // ## mark empty when actorT overlays enemy
-
-	// player startpoint
-	int x, y;
-	grid[0][1] = actorT;
-	grid[1][1] = actorT;
-	grid[2][1] = actorT;
-
-	// enemy startpoint
-	int ex, ey;
-	grid[8][1] = enemy;
-	grid[9][1] = enemy;
-	grid[10][1] = enemy;
-
-	// key console
-	#pragma region VirtualKey input
-	switch (INPUT_KEYBOARD)
+	while (!VK_SPACE)
 	{
-	case VK_UP:
-		for (int i = 0; i < 2; i++)
-		{
-			x += 0;
-			y -= i;
-			grid[x][y] = actorT;
-		}
-		break;
+		normalOutput("press space to fire\n");
+		//system("CLS");
 
-	case VK_DOWN:
-		for (int i = 0; i < 2; i++)
-		{
-			x += 0;
-			y += i;
-			grid[x][y] = actorT;
-		}
-		break;
+		// platforms 
 
-	case VK_LEFT:
-		// movement x
-		for (int i = 0; i < 4; i++)
-		{
-			x += i;
-			y += 0;
-			grid[x][y] = actorT;
-		}
-		break;
+		// 1 2 3
+		// 4 5 6
+		// 7 8 9
 
-	case VK_RIGHT:
-		// movement x
-		for (int i = 0; i < 4; i++)
-		{
-			x -= i;
-			y += 0;
-			grid[x][y] = actorT;
-		}
-		break;
+		// X< 1 = 0 1 2
+		//	  2 = 3 4 5
+		//	  3 = 6 7 8
+		// 	  4 = 9 10 11
+		//	  5 = 12 13 14
+		//	  6 = 15 16 17
+		//    7 = 18 19 20
+		//	  8 = 21 22 23
+		//	  9 = 24 25 26 >X
 
-	default:
-		break;
+
+		wstring actorT, enemy, hitMarkA;
+		actorT = L"X"; // XX
+		enemy = L"*"; // **
+		hitMarkA = L"#"; // ## mark empty when actorT overlays enemy
+
+		// player startpoint
+		int x, y;
+		grid[0][1] = actorT;
+		grid[1][1] = actorT;
+		grid[2][1] = actorT;
+
+		// enemy startpoint
+		int ex, ey;
+		grid[8][1] = enemy;
+		grid[9][1] = enemy;
+		grid[10][1] = enemy;
+
+		// key console
+#pragma region VirtualKey input
+		switch (INPUT_KEYBOARD)
+		{
+		case VK_UP:
+			// movement y
+			for (int i = 0; i < 2; i++)
+			{
+				x += 0;
+				y -= i;
+				grid[x][y] = actorT;
+			}
+			// validation
+			try
+			{
+
+			}
+			catch (const std::exception&)
+			{
+
+			}
+			break;
+
+		case VK_DOWN:
+			// movement y
+			for (int i = 0; i < 2; i++)
+			{
+				x += 0;
+				y += i;
+				grid[x][y] = actorT;
+			}
+			// validation
+			try
+			{
+
+			}
+			catch (const std::exception&)
+			{
+
+			}
+			break;
+
+		case VK_LEFT:
+			// movement x
+			for (int i = 0; i < 4; i++)
+			{
+				x += i;
+				y += 0;
+				grid[x][y] = actorT;
+			}
+			// validation
+			try
+			{
+
+			}
+			catch (const std::exception&)
+			{
+
+			}
+			break;
+
+		case VK_RIGHT:
+			// movement x
+			for (int i = 0; i < 4; i++)
+			{
+				x -= i;
+				y += 0;
+				grid[x][y] = actorT;
+			}
+			// validation
+			try
+			{
+
+			}
+			catch (const std::exception&)
+			{
+
+			}
+			break;
+
+		default:
+			break;
+		}
+#pragma endregion
+
+		/*
+		  1  2  3  4  5  6
+		  11 12 13 14 15 16
+		  21 22 23 24 25 26
+		 */
 	}
-	#pragma endregion
-
-	/* 
-	  1  2  3  4  5  6
-	  11 12 13 14 15 16
-	  21 22 23 24 25 26
-	 */
 }
 
 void battleSystem::rewardOutput()
