@@ -352,16 +352,16 @@ void battleSystem::hack() {
 	wstring window;
 
 	// movement grid
-	wstring grid[12][6]; 
+	wstring grid[26][6]; 
 	// one plus higher for
 	//the actuall char amount in the order
 	// grid array
 	window += L"=== === ===";
-	window += L"XXX === ***";
+	window += L"=== === ===";
 	window += L"=== === ===";
 
 	// snap to grid
-	grid[11][5] = window;
+	grid[25][5] = window;
 	
 	while (!VK_SPACE)
 	{
@@ -407,86 +407,116 @@ void battleSystem::hack() {
 		switch (INPUT_KEYBOARD)
 		{
 		case VK_UP:
+			//movement -y
+#pragma region up
 			// movement y
-			for (int i = 0; i < 2; i++)
+			if (y >= 0)
 			{
-				x += 0;
-				y -= i;
-				grid[x][y] = actorT;
-			}
-			// validation
-			try
-			{
+				for (int i = 0; i < 2; i++)
+				{
+					x += 0;
+					y -= 0;
 
+					actorT = grid[x][y];
+				}
 			}
-			catch (const std::exception&)
+			else if (y <= 5)
+			{
+				for (int i = 0; i < 2; i++)
+				{
+					x += 0;
+					y -= i;
+
+					actorT = grid[x][y];
+				}
+			}
+#pragma endregion
+			if (actorT != grid[x][y]) //replacemet space
 			{
 
 			}
 			break;
 
 		case VK_DOWN:
-			// movement y
-			for (int i = 0; i < 2; i++)
+			// movement +y
+#pragma region down
+			if (y >= 5)
 			{
-				x += 0;
-				y += i;
-				grid[x][y] = actorT;
-			}
-			// validation
-			try
-			{
+				for (int i = 0; i < 2; i++)
+				{
+					x += 0;
+					y += 0;
 
+					actorT = grid[x][y];
+				}
 			}
-			catch (const std::exception&)
+			else if (y <= 0)
 			{
+				for (int i = 0; i < 2; i++)
+				{
+					x += 0;
+					y += i;
 
+					actorT = grid[x][y];
+				}
 			}
+#pragma endregion
 			break;
 
 		case VK_LEFT:
-			// movement x
-			for (int i = 0; i < 4; i++)
-			{
-				x += i;
-				y += 0;
-				grid[x][y] = actorT;
-			}
+			// movement x-
 			// validation
-			try
+#pragma region left
+			if (x <= 25)
 			{
-
+				for (int i = 0; i < 4; i++)
+				{
+					x -= i;
+					y += 0;
+					actorT = grid[x][y];
+				}
 			}
-			catch (const std::exception&)
+			else if (x >= 0)
 			{
-
+				for (int i = 0; i < 4; i++)
+				{
+					x += 0;
+					y += 0;
+					actorT = grid[x][y];
+				}
 			}
+#pragma endregion
 			break;
 
 		case VK_RIGHT:
-			// movement x
-			for (int i = 0; i < 4; i++)
+			// movement x+
+#pragma region right
+			if (x >= 25)
 			{
-				x -= i;
-				y += 0;
-				grid[x][y] = actorT;
+				for (int i = 0; i < 4; i++)
+				{
+					x += 0;
+					y += 0;
+					actorT = grid[x][y];
+				}
 			}
-			// validation
-			try
+			else if (x <= 0)
 			{
-
+				for (int i = 0; i < 4; i++)
+				{
+					x += i;
+					y += 0;
+					actorT = grid[x][y];
+				}
 			}
-			catch (const std::exception&)
-			{
-
-			}
+#pragma endregion
 			break;
 
 		default:
 			break;
 		}
 #pragma endregion
-
+		
 		/*
 		  1  2  3  4  5  6
 		  11 12 13 14 15 16

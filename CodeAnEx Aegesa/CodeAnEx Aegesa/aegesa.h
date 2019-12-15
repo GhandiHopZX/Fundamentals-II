@@ -66,6 +66,14 @@ public:
 	aegesa::statusEff STUNED;
 	aegesa::statusEff DEAD;
 	aegesa::statusEff HACKED;
+	aegesa::statusEff CRIPPLE;
+	aegesa::statusEff INEBREATED;
+	aegesa::statusEff SLEEP;
+	aegesa::statusEff CURSEDVSDARK; // AGONY
+	aegesa::statusEff CURSRDVSLIGHT; // DEPRESSION
+	aegesa::statusEff CURSEDVSDEMONIC; // ACCURSED
+	aegesa::statusEff CURSED; 
+	aegesa::statusEff ANGER; // ADRENELINE
 #pragma endregion
 
 	aegesa::statusEff allEffGet[20] = {
@@ -73,7 +81,15 @@ public:
 		POISON,
 		STUNED,
 		DEAD,
-		HACKED
+		HACKED,
+		CRIPPLE,
+		INEBREATED,
+		SLEEP,
+		CURSEDVSDARK,
+		CURSRDVSLIGHT,
+		CURSEDVSDEMONIC,
+		CURSED,
+		ANGER
 	}; // wip
 
 	statusEff My_Statuses[20]
