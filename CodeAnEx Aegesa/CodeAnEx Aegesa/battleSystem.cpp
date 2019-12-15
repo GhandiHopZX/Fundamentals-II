@@ -433,7 +433,7 @@ void battleSystem::hack() {
 #pragma endregion
 			if (actorT != grid[x][y]) //replacemet space
 			{
-
+				actorT = grid[x + 0][y - 1];
 			}
 			break;
 
