@@ -433,7 +433,7 @@ void battleSystem::hack() {
 #pragma endregion
 			if (actorT != grid[x][y]) //replacemet space
 			{
-				actorT = grid[x + 0][y - 1];
+				actorT[y + 1] = '='; // behind u
 			}
 			break;
 
@@ -461,6 +461,10 @@ void battleSystem::hack() {
 				}
 			}
 #pragma endregion
+			if (actorT != grid[x][y]) //replacemet space
+			{
+				actorT[y - 1] = '=';
+			}
 			break;
 
 		case VK_LEFT:
@@ -485,7 +489,14 @@ void battleSystem::hack() {
 					actorT = grid[x][y];
 				}
 			}
+
 #pragma endregion
+			if (actorT != grid[x][y]) //replacemet space
+			{
+				actorT[x + 1] = '=';
+				actorT[x + 2] = '=';
+				actorT[x + 3] = '=';
+			}
 			break;
 
 		case VK_RIGHT:
@@ -510,6 +521,12 @@ void battleSystem::hack() {
 				}
 			}
 #pragma endregion
+			if (actorT != grid[x][y]) //replacemet space
+			{
+				actorT[x - 1] = '=';
+				actorT[x - 2] = '=';
+				actorT[x - 3] = '=';
+			}
 			break;
 
 		default:
@@ -517,6 +534,10 @@ void battleSystem::hack() {
 		}
 #pragma endregion
 		
+		// enemy movement
+
+		// collision
+
 		/*
 		  1  2  3  4  5  6
 		  11 12 13 14 15 16
