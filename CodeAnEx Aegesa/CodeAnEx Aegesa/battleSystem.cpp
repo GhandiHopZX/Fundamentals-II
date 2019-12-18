@@ -365,7 +365,7 @@ void battleSystem::hack() {
 	
 	while (!VK_SPACE)
 	{
-		normalOutput("press space to fire\n");
+		normalOutput("press space to fire when \n your marker (X) lands on (*) \n making a (#)");
 		//system("CLS");
 
 		// platforms 
@@ -534,7 +534,46 @@ void battleSystem::hack() {
 		}
 #pragma endregion
 		
-		// enemy movement
+#pragma region AI
+
+		//--------- enemy movement ------------
+
+		// movement replacement
+		//up
+		if (enemy != grid[ex][ey]) //replacemet space
+		{
+			enemy[ey + 1] = '='; // behind u
+		}
+		//down 
+		if (enemy != grid[ex][ey]) //replacemet space
+		{
+			enemy[ey - 1] = '=';
+		}
+		//left
+		if (enemy != grid[ex][ey]) //replacemet space
+		{
+			enemy[ex + 1] = '=';
+			enemy[ex + 2] = '=';
+			enemy[ex + 3] = '=';
+		}
+		//right
+		if (enemy != grid[ex][ey]) //replacemet space
+		{
+			enemy[ex - 1] = '=';
+			enemy[ex - 2] = '=';
+			enemy[ex - 3] = '=';
+		}
+
+		// ai move away from player 
+		if (actorT[x] -1 >= enemy[x]|| actorT[x] - 1 <= enemy[x])
+		{
+			// check if theres space and seek a way to escape
+			// wait
+			// move again
+		}
+
+	
+#pragma endregion
 
 		// collision
 
