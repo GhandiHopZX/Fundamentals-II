@@ -17,6 +17,12 @@ private:
 	int tse;
 	int tung;
 
+	// Hub worlds that have cellular navigation 
+	// for now we only have ch 0 - 5 to cover the lost city arc
+	// and that's it for now. 
+	// this is the lost city player pos and map
+	int lostCity[10][10]; 
+
 public:
 	World();
 
@@ -28,6 +34,10 @@ public:
 	void chapter3(); //Green Gold
 	void chapter4(); //Renae's Secret/Lost Civilization
 	void chapter5(); //Alicia's Verdict
+
+	void endGame(); // game end
+
+	void navigation();
 
 	// getters/accessors
 

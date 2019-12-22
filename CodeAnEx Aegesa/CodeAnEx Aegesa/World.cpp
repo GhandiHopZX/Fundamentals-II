@@ -21,11 +21,12 @@ World::World()
 	mao = 0;
 	tse = 0;
 	tung = 0;
+	lostCity[0][0] = NULL;
 }
 
 void World::beginningStory()
 {
-	system("COLOR e4"); // shop color
+	//system("COLOR e4"); // shop color
 	system("COLOR 09");
 	system("CLS");
 
@@ -48,37 +49,112 @@ void World::beginningStory()
 	//opening setting
 	system("COLOR 07");
 	cout << "*You Wake Up*" << endl;
+	cin.get();
 	cout << "Huhhh..." << endl;
+	cin.get();
 	cout << "e" << endl;
+	cin.get();
 	cout << "g" << endl;
+	cin.get();
 	cout << "h" << endl;
+	cin.get();
 	cout << "h" << endl;
+	cin.get();
 	cout << "sf" << endl;
+	cin.get();
 	cout << "sdf" << endl;
+	cin.get();
 	cout << "sgrg" << endl;
+	cin.get();
 	cout << "sgg" << endl;
+	cin.get();
+
+	//end of chapter 0
+	chapter1();
 }
 
 void World::chapter1()
 {
 	int i = 0;
+
+	//end of chapter
+	chapter2();
 }
 
 void World::chapter2()
 {
+
+	//end of chapter
+	chapter3();
 }
 
 void World::chapter3()
 {
+
+	//end of chapter
+	chapter4();
 }
 
 void World::chapter4()
 {
+
+	//end of chapter
+	chapter5();
 }
 
 void World::chapter5()
 {
+
+	//end of chapter
+	endGame();
+}
+
+void World::endGame()
+{
+	// end of game? =)
+	cin.get();
+	cout << "Can you live your dream again?" << endl;
 }
 
 //Enemy Encounter call ins
 // call the battle system stuff
+
+// celluar world navigation.
+// with a map ;)
+void World::navigation()
+{
+	// n = north, ne = northeast, nw = northwest, 
+	// sw = southwest, s = south, se = southeast
+	// w = west, e = east
+	char dir = {};
+	cin >> dir;
+	switch (dir)
+	{
+	case 'n':
+
+		break;
+	case 'ne':
+
+		break;
+	case 'nw':
+
+		break;
+	case 's':
+
+		break;
+	case 'se':
+
+		break;
+	case 'sw':
+
+		break;
+	case 'w':
+
+		break;
+	case 'e':
+
+		break;
+	default:
+		break;
+	}
+}

@@ -83,9 +83,6 @@ int main()
 
 	menyu();
 
-	cout << endl;
-	cout << "GoodBye!" << endl;
-
 	system("PAUSE");
 }
 
@@ -108,6 +105,7 @@ void menyu()
 		case 'N':
 
 			d.beginningStory();
+			choice = 3;
 			break;
 
 		case 'c':
@@ -117,6 +115,8 @@ void menyu()
 
 		case 'q':
 		case 'Q':
+			cout << endl;
+			cout << "GoodBye!" << endl;
 			choice = 3;
 			break;
 

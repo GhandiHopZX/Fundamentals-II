@@ -14,6 +14,8 @@
 
 using namespace std;
 
+//todo: callin party data
+
 //todo: callin enemy encouter data
 
 void battleSystem::battleMode()
