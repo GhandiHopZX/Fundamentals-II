@@ -148,7 +148,6 @@ void battleSystem::turnSystem(int turn)
 		case (a):
 			// turn a is always at 0 if its at d which = 4...
 			// CLASH this is why its called TURN A clash
-
 			break;
 
 		case (b):
@@ -565,14 +564,19 @@ void battleSystem::hack() {
 		}
 
 		// ai move away from player 
-		if (actorT[x] -1 >= enemy[x]|| actorT[x] - 1 <= enemy[x])
+		if (actorT[x] -1 >= enemy[ex]|| actorT[x] - 1 <= enemy[ex])
 		{
 			// check if theres space and seek a way to escape
 			// wait
 			// move again
 		}
 
-	
+		if (actorT[y] - 1 >= enemy[ey] || actorT[y] - 1 <= enemy[ey])
+		{
+			// check if theres space and seek a way to escape
+			// wait
+			// move again
+		}
 #pragma endregion
 
 		// collision
