@@ -43,30 +43,40 @@ void World::beginningStory()
 	cin >> bioIn;
 	cout << endl;
 
-	Player_Actor().setName(nameIn);
-	Player_Actor().setBio(bioIn);
+	// full party
+	Player_Actor Actor1; // Proper instantiation
+	Player_Actor Alicia;
+
+	Actor1.setName(nameIn);
+	Actor1.setBio(bioIn);
 
 	//opening setting
 	system("COLOR 07");
-	cout << "*You Wake Up*" << endl;
+	cout << "*" + Actor1.getName() + " Wakes Up*" << endl;
 	cin.get();
-	cout << "Huhhh..." << endl;
+	cout << Actor1.getName() + ": " + "Huhhh..." << endl;
 	cin.get();
-	cout << "e" << endl;
+	cout << Actor1.getName() + ": " + "damn..." << endl;
 	cin.get();
-	cout << "g" << endl;
+	cout << Actor1.getName() + ": " + "Where am I" << endl;
 	cin.get();
-	cout << "h" << endl;
+	cout << Actor1.getName() + ": " + "how.." << endl;
 	cin.get();
-	cout << "h" << endl;
+	cout << Actor1.getName() + ": " + "How did I survive?" << endl;
 	cin.get();
-	cout << "sf" << endl;
+	cout << Actor1.getName() + ": " + "Shit... I hope he doesn't find me. Wherever here is.." << endl;
 	cin.get();
-	cout << "sdf" << endl;
+	cout << Actor1.getName() + ": " + "Huh... Hmmmn.." << endl;
 	cin.get();
-	cout << "sgrg" << endl;
+	cout << Actor1.getName() + ": " + "This opening above me.." << endl;
 	cin.get();
-	cout << "sgg" << endl;
+	cout << Actor1.getName() + ": " + "It feels.." << endl;
+	cin.get();
+	cout << Actor1.getName() + ": " + "good..." << endl;
+	cin.get();
+	cout << Actor1.getName() + ": " + "Weird.." << endl;
+	cin.get();
+	cout << Actor1.getName() + ": " + "WAIT!" << endl;
 	cin.get();
 
 	//end of chapter 0
@@ -111,9 +121,10 @@ void World::chapter5()
 
 void World::endGame()
 {
+
 	// end of game? =)
 	cin.get();
-	cout << "Can you live your dream again?" << endl;
+	cout << "Will you dream again?" << endl;
 }
 
 //Enemy Encounter call ins
