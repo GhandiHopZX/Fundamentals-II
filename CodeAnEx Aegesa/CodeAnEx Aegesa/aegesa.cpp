@@ -310,18 +310,21 @@ void aegesa::statPlus(char stat, int plus)
 
 void aegesa::setStatus(statusEff statusName[])
 {
+	// Base stats
+	statusName[0].hp += 5;
+
 	// a criterion is checked here
 	// and used to see what statuses are present in said
 	// player status then are passed
 	// into the statusEFF index then the index is passed into
 	// gameSystem...
 	// this is where the statuses are taken
-
-	statusEff me[20] = {};
+	
+	statusName[20] = {};
 	statusEff thisStatus[20] = {};
 	for (int i = 0; i < 20; i++)
 	{
-		me[i] = aegesa::My_Statuses[i];
+		statusName[i] = aegesa::My_Statuses[i];
 	}
 	// beta test
 	string beta = "test";

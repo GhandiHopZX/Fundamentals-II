@@ -89,7 +89,7 @@ public:
 		CURSRDVSLIGHT,
 		CURSEDVSDEMONIC,
 		CURSED,
-		ANGER
+		ANGER 
 	}; // wip
 
 	statusEff My_Statuses[20]

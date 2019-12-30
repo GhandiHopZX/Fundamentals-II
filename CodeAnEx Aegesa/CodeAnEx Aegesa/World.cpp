@@ -45,7 +45,9 @@ void World::beginningStory()
 
 	// full party
 	Player_Actor Actor1; // Proper instantiation
-	Player_Actor Alicia;
+	Player_Actor Alicia; // 
+	Player_Actor Renae; //
+	Player_Actor Iyn; //
 
 	Actor1.setName(nameIn);
 	Actor1.setBio(bioIn);
