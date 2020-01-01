@@ -324,7 +324,7 @@ void aegesa::setStatus(statusEff statusName[])
 	statusEff thisStatus[20] = {};
 	for (int i = 0; i < 20; i++)
 	{
-		statusName[i] = aegesa::My_Statuses[i];
+		My_Statuses[i] = statusName[i];
 	}
 	// beta test
 	string beta = "test";

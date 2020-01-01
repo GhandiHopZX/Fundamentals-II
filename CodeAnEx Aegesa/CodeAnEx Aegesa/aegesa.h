@@ -333,6 +333,8 @@ public:
 
 	void statPlus(char stat, int plus);
 
+	
+
 #pragma endregion
 
 	//// functions

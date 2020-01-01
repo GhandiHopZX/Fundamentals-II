@@ -21,7 +21,16 @@ World::World()
 	mao = 0;
 	tse = 0;
 	tung = 0;
-	lostCity[0][0] = NULL;
+
+	map maps[5] =
+	{
+		lostCity[0][0][0],
+		darkForest[0][0][0],
+		ekana[0][0][0],
+		rheTan[0][0][0],
+		aegesaShrine[0][0][0]
+	};
+
 }
 
 void World::beginningStory()
@@ -46,8 +55,8 @@ void World::beginningStory()
 	// full party
 	Player_Actor Actor1; // Proper instantiation
 	Player_Actor Alicia; // 
-	Player_Actor Renae; //
-	Player_Actor Iyn; //
+	Player_Actor Renae; // 
+	Player_Actor Iyn; // 
 
 	Actor1.setName(nameIn);
 	Actor1.setBio(bioIn);
@@ -133,18 +142,20 @@ void World::endGame()
 // call the battle system stuff
 
 // celluar world navigation.
-// with a map ;)
-void World::navigation()
+
+void World::navigation(int selectedMap, int x, int y, int z)
 {
 	// n = north, ne = northeast, nw = northwest, 
 	// sw = southwest, s = south, se = southeast
 	// w = west, e = east
+	// z = floor
+
 	char dir = {};
 	cin >> dir;
 	switch (dir)
 	{
 	case 'n':
-
+		
 		break;
 	case 'ne':
 
@@ -171,3 +182,5 @@ void World::navigation()
 		break;
 	}
 }
+
+// with a map ;)

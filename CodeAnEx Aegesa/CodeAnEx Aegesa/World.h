@@ -13,17 +13,31 @@ class World // this is the mainline story for Code AnEx AEGESA
 	// sorry for the bad storytelling if that's your thing....
 
 private:
-	int mao;
-	int tse;
-	int tung;
-
 	// Hub worlds that have cellular navigation 
 	// for now we only have ch 0 - 5 to cover the lost city arc
 	// and that's it for now. 
 	// this is the lost city player pos and map
-	int lostCity[10][10]; 
+	struct map
+	{
+		int x = 0;
+		int y = 0;
+		int z = 0;
+		string name;
+	};
+
+	map lostCity[4][11][11]; 
+	map darkForest[2][11][11];
+	map ekana[1][11][11];
+	map rheTan[1][11][11];
+	map aegesaShrine[5][11][11];
+
+	int mao = 0;
+	int tse = 0;
+	int tung = 0;
 
 public:
+	// maps
+	
 	World();
 
 	// setters/mutators
@@ -37,7 +51,7 @@ public:
 
 	void endGame(); // game end
 
-	void navigation();
+	void navigation(int selectedMap, int m, int c, int e);
 
 	// getters/accessors
 
