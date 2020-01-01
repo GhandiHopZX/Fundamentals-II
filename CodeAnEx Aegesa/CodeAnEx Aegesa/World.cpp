@@ -149,34 +149,41 @@ void World::navigation(int selectedMap, int x, int y, int z)
 	// sw = southwest, s = south, se = southeast
 	// w = west, e = east
 	// z = floor
+	cout << "Current Location: " << maps[selectedMap].name << endl;
+	cout << "AT: " << maps[selectedMap].x << "row\n" << maps[selectedMap].y 
+		<< "column\n" << maps[selectedMap].z << "floor" << endl;
 
 	char dir = {};
 	cin >> dir;
 	switch (dir)
 	{
 	case 'n':
-		
+		maps[selectedMap].y + 1;
 		break;
 	case 'ne':
-
+		maps[selectedMap].y + 1;
+		maps[selectedMap].x - 1;
 		break;
 	case 'nw':
-
+		maps[selectedMap].y + 1;
+		maps[selectedMap].x + 1;
 		break;
 	case 's':
-
+		maps[selectedMap].y - 1;
 		break;
 	case 'se':
-
+		maps[selectedMap].y - 1;
+		maps[selectedMap].x - 1;
 		break;
 	case 'sw':
-
+		maps[selectedMap].y - 1;
+		maps[selectedMap].x + 1;
 		break;
 	case 'w':
-
+		maps[selectedMap].x + 1;
 		break;
 	case 'e':
-
+		maps[selectedMap].x - 1;
 		break;
 	default:
 		break;

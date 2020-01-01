@@ -37,6 +37,8 @@ private:
 
 public:
 	// maps
+
+	map maps[5] = {	};
 	
 	World();
 
