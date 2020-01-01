@@ -142,6 +142,7 @@ void World::endGame()
 // call the battle system stuff
 
 // celluar world navigation.
+// with a map ;)
 
 void World::navigation(int selectedMap, int x, int y, int z)
 {
@@ -153,6 +154,7 @@ void World::navigation(int selectedMap, int x, int y, int z)
 	cout << "AT: " << maps[selectedMap].x << "row\n" << maps[selectedMap].y 
 		<< "column\n" << maps[selectedMap].z << "floor" << endl;
 
+	cout << "Where will you go?\n (n)north, (e)east, (w)west, (s)south, \n (ne)northeast, (nw)northwest, (se)southeast, (sw)southwest " << endl;
 	char dir = {};
 	cin >> dir;
 	switch (dir)
@@ -186,8 +188,16 @@ void World::navigation(int selectedMap, int x, int y, int z)
 		maps[selectedMap].x - 1;
 		break;
 	default:
+		cout << "not a direction or command" << endl;
+		//menu();
 		break;
 	}
+
+	switch (z)
+	{
+		z = maps[selectedMap].z;
+	default:
+		break;
+	} 
 }
 
-// with a map ;)
