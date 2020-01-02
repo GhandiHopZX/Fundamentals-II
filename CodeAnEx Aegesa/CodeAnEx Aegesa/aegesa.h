@@ -8,6 +8,8 @@ using namespace std;
 class aegesa
 {
 public:
+	aegesa();
+
 #pragma region vars
 
 	// statbase
@@ -30,6 +32,23 @@ public:
 	unsigned int STR = 0; // strength (also effects status)
 	unsigned int END = 0; // endurance (bodily based / also effects status)
 	unsigned int CON = 0; // constitution (mental, body, soul, based / also effects status)
+
+	//deductables
+	int hpd = 0; // health
+	int spd = 0; // special
+	int fpd = 0; // fighter (aural)
+
+	int ATKd = 0; // attack
+	int DEFd = 0; // defence (armor based)
+	int SPDd = 0; // speed
+
+	int AGId = 0; // agility
+	int DEXd = 0; // dexterity
+	int INTd = 0; // intelligence
+	int SPRd = 0; // spirit
+	int STRd = 0; // strength (also effects status)
+	int ENDd = 0; // endurance (bodily based / also effects status)
+	int CONd = 0; // constitution (mental, body, soul, based / also effects status)
 
 	// experience
 	unsigned int EXP; // experience to obtain the per level ap gain

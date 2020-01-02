@@ -1,3 +1,8 @@
+#include "Player_Actor.h"
+#include "battleSystem.h"
+#include "inventory.h"
+#include "enemy.h"
+#include "World.h"
 #include <iostream>
 #include <string>
 #include <list>
@@ -8,19 +13,14 @@
 #include <cmath>
 #include <chrono>
 #include <thread>
-#include "Player_Actor.h"
-#include "battleSystem.h"
-#include "inventory.h"
-#include "enemy.h"
-#include "World.h"
 
 using namespace std;
 
 World::World()
 {
-	mao = 0;
-	tse = 0;
-	tung = 0;
+	mao = 0;// int posx = 0;
+	tse = 0;// int posy = 0;
+	tung = 0;// int posz = 0;
 
 	map maps[5] =
 	{
@@ -30,11 +30,22 @@ World::World()
 		rheTan[0][0][0],
 		aegesaShrine[0][0][0]
 	};
-
+	
 }
+
+// full party GLOBALS
+Player_Actor Actor1; // Proper instantiation
+Player_Actor Alicia; // 
+Player_Actor Renae; // 
+Player_Actor Iyn; // 
+inventory mainInventory;
+int location = 0; // 0 lostCity, 1 darkForest, 2 ekana, 3 rheTan, 4 aegesaShrine
+
 
 void World::beginningStory()
 {
+	
+
 	//system("COLOR e4"); // shop color
 	system("COLOR 09");
 	system("CLS");
@@ -52,19 +63,31 @@ void World::beginningStory()
 	cin >> bioIn;
 	cout << endl;
 
-	// full party
-	Player_Actor Actor1; // Proper instantiation
-	Player_Actor Alicia; // 
-	Player_Actor Renae; // 
-	Player_Actor Iyn; // 
-
 	Actor1.setName(nameIn);
 	Actor1.setBio(bioIn);
 
+#pragma region Alicia_SetStats
+	Alicia.setName("Alicia");
+	Alicia.setBio("Lost class 3 Android unit. Locked Away for 10 years, now follows you in your journey for the AType upgrade to save her friend..");
+	Alicia.setATK(6);
+	Alicia.setSPD(8);
+	Alicia.setDEF(4);
+	Alicia.setSTR(10);
+	Alicia.setDEX(12);
+	Alicia.setCON(7);
+	Alicia.setEND(5);
+	Alicia.setINT(6);
+
+	Alicia.setHp(15);
+	Alicia.setSp(155);
+	Alicia.setFp(5);
+	Alicia.setAp(5);
+	Alicia.setDp(0); // always set these defaulted to 0
+#pragma endregion
+
 	//opening setting
 	system("COLOR 07");
-	cout << "*" + Actor1.getName() + " Wakes Up*" << endl;
-	cin.get();
+	dialougeAction(Actor1, "Wakes up");
 	cout << Actor1.getName() + ": " + "Huhhh..." << endl;
 	cin.get();
 	cout << Actor1.getName() + ": " + "damn..." << endl;
@@ -89,7 +112,16 @@ void World::beginningStory()
 	cin.get();
 	cout << Actor1.getName() + ": " + "WAIT!" << endl;
 	cin.get();
+	dialouge(Actor1, "I wana see if I can find that light I just saw...");
+	dialouge(Actor1, "I wana see if I can find that light I just saw...");
+	dialougeAction(Actor1, "Looks up");
+	dialouge(Actor1, "No way....");
+	dialougeAction(Actor1, "Jolts from the cold now heated air...");
+	dialougeAction(Actor1, "Sees the now visible white clad figure.");
+	dialougeAction(Alicia, "Figure steps in from the darkness..");
 
+	// menu time
+	menu();
 	//end of chapter 0
 	chapter1();
 }
@@ -143,6 +175,37 @@ void World::endGame()
 
 // celluar world navigation.
 // with a map ;)
+
+void World::menu()
+{
+	char choice = {};
+	cout << "Please select an option....\n (i) inventory,\n (n) navigation,\n (p) partystatus,\n (d) dataManagement,\n (o) options";
+	cin >> choice;
+	switch (choice)
+	{
+	case 'i':
+	case 'item':
+		mainInventory.PlayerItemInventory();
+		break;
+	case 'n':
+	case 'navi':
+		navigation(location, mao, tse, tung);
+	default:
+		break;
+	}
+}
+
+void World::dialouge(Player_Actor pn, string in)
+{
+	cout << pn.getName() + ": " + in << endl;
+	cin.get();
+}
+
+void World::dialougeAction(Player_Actor pn, string in)
+{
+	cout << "*" + pn.getName() + " " + in + "*" << endl;
+	cin.get();
+}
 
 void World::navigation(int selectedMap, int x, int y, int z)
 {
@@ -200,4 +263,3 @@ void World::navigation(int selectedMap, int x, int y, int z)
 		break;
 	} 
 }
-

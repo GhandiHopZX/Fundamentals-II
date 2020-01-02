@@ -6,7 +6,6 @@
 #include "Player_Actor.h"
 #include "Enemy.h"
 #include "World.h"
-#include "skillAction.h"
 // use tha multimap function
 
 using namespace std;
@@ -412,6 +411,7 @@ void inventory::itemCall()
 	Enemy en; // call vars
 }
 
+// for combat
 void inventory::PlayerItemInventory() // gotta make an inventory that'll work in the world menu
 {
 	system("CLS");
@@ -545,12 +545,23 @@ void inventory::weaponCall(int index)
 
 void inventory::addItem(int find) {
 	int i = 1;
-	my_items[find].quantity += i; // calls the index and adds 1
+	item b;
+	for (size_t g = 0; g < MAX_INTEGRITY; g++)
+	{
+		b = itemlist[find];
+	}
+	if (b.ivalue != my_items[find].ivalue)
+	{
+		insertNodeItem(allitemList(find), i);
+	}
+	appendNodeItem(allitemList(find), i); // calls the index and adds 1
+	
 } //adding to the struct array
 
 void inventory::remItem(int find) {
 	int i = 1;
 	my_items[find].quantity -= i; // calls the index and adds 1
+	deleteNodeItem(my_items[find], i);
 } //removing to the struct array
 
 inventory::~inventory()

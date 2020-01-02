@@ -1,6 +1,28 @@
-#include <iostream>
 #include "aegesa.h"
+#include <iostream>
 using namespace std;
+
+aegesa::aegesa()
+{
+	EXP = NULL;
+	dummyPlus = NULL;
+	statmulti = NULL;
+	hpd = getHp();
+	spd = getSp(); // special
+	fpd = getFp(); // fighter (aural)
+
+	ATKd = getATK(); // attack
+	DEFd = getDEF(); // defence (armor based)
+	SPDd = getSPD(); // speed
+
+	AGId = getAGI(); // agility
+	DEXd = getDEX(); // dexterity
+	INTd = getINT(); // intelligence
+	SPRd = getSPR(); // spirit
+	STRd = getSTR(); // strength (also effects status)
+	ENDd = getEND(); // endurance (bodily based / also effects status)
+	CONd = getCON(); // constitution (mental, body, soul, based / also effects status)
+}
 
 aegesa::statusEff aegesa::getStatus()
 {

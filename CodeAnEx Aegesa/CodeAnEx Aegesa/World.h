@@ -3,6 +3,7 @@
 #include <string>
 #include <list>
 #include <vector>
+#include "Player_Actor.h"
 #include "battleSystem.h"
 
 class World // this is the mainline story for Code AnEx AEGESA
@@ -52,6 +53,12 @@ public:
 	void chapter5(); //Alicia's Verdict
 
 	void endGame(); // game end
+
+	void menu();
+
+	void dialouge(Player_Actor pn, string in);
+
+	void dialougeAction(Player_Actor pn, string in);
 
 	void navigation(int selectedMap, int m, int c, int e);
 

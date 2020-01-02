@@ -79,7 +79,7 @@ void battleSystem::turn()
 	Player_Actor he; //call vars
 	inventory inv;
 
-	normalOutput(he.name + " turn...");
+	normalOutput(he.getName() + " turn...");
 	normalOutput("Attack(a),\n Defend(d),\n Hack(h),\n Skills(s),\n Inventory(i) ");
 	// initialized choice char
 	char c = { 'n' };
