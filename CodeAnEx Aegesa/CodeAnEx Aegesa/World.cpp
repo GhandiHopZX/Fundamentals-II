@@ -44,8 +44,6 @@ int location = 0; // 0 lostCity, 1 darkForest, 2 ekana, 3 rheTan, 4 aegesaShrine
 
 void World::beginningStory()
 {
-	
-
 	//system("COLOR e4"); // shop color
 	system("COLOR 09");
 	system("CLS");
@@ -85,7 +83,7 @@ void World::beginningStory()
 	Alicia.setDp(0); // always set these defaulted to 0
 #pragma endregion
 
-	//opening setting
+	#pragma region opening setting
 	system("COLOR 07");
 	dialougeAction(Actor1, "Wakes up");
 	cout << Actor1.getName() + ": " + "Huhhh..." << endl;
@@ -119,7 +117,32 @@ void World::beginningStory()
 	dialougeAction(Actor1, "Jolts from the cold now heated air...");
 	dialougeAction(Actor1, "Sees the now visible white clad figure.");
 	dialougeAction(Alicia, "Figure steps in from the darkness..");
-
+	dialouge(Alicia, "Aegesa... Type.");
+	dialouge(Actor1, "W... what..? What are you talking about?");
+	dialouge(Alicia, "Aegesa Type.. ARE YOU COGNIZANT OF YOUR ENVIRONMENT?");
+	dialouge(Actor1, "cogni.. of what?.. What are you talking about?");
+	dialouge(Alicia, "You are aware of your surroundings are you not?");
+	dialouge(Actor1, "No I'm stupid... Sorry. Not very cognizant of anything at the moment...");
+	dialouge(Alicia, "You genetic template says your a savant compared to the average...");
+	dialouge(Actor1, "So you're another one of those hackers AREN'T YOU!?");
+	dialouge(Alicia, "I am not sure of what argument this pertains to..");
+	dialouge(Actor1, "You talk like a robot... Are you that then?");
+	dialougeAction(Alicia, "FLASH");
+	dialougeAction(Alicia, "POSE");
+	dialouge(Alicia, "I am a CLASS III GUARDIAN TIER ANDROID!");
+	dialouge(Alicia, "I have searched for a compatable Aegesa type. Suitable for both combat and architectural assembly..");
+	dialouge(Actor1, "Whoa that means you're.. No kidding you're the real deal!");
+	dialouge(Actor1, "Ok You're from the machine itself huh?");
+	dialouge(Alicia, "I'm from the Crown City...");
+	dialouge(Actor1, "......");
+	dialouge(Alicia, "I know it may seem hard to believe but I am not what you may hypothesize...");
+	dialouge(Actor1, "I don't even know what you're talking about..");
+	dialouge(Alicia, "....");
+	dialouge(Actor1, "If you came from some make believe world that hasn't existed before on the world maps then tell me where it is!");
+	dialouge(Alicia, "Alright then..");
+	dialouge(Alicia, "I'll show you where it is. If you help me find my friend..");
+	dialouge(Actor1, "I'm not too sure I should even really trust you to go with you to any place...");
+	#pragma endregion
 	// menu time
 	menu();
 	//end of chapter 0
@@ -203,7 +226,7 @@ void World::dialouge(Player_Actor pn, string in)
 
 void World::dialougeAction(Player_Actor pn, string in)
 {
-	cout << "*" + pn.getName() + " " + in + "*" << endl;
+	cout << pn.getName() + ": " + "*" + " " + in + "*" << endl;
 	cin.get();
 }
 
