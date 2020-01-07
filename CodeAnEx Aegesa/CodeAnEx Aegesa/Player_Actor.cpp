@@ -10,7 +10,8 @@ Player_Actor::Player_Actor()
 	name = "";
 	bio = "";
 	statmulti = false;
-
+	leader = false;
+	party_num = 4;
 #pragma region Stat_Instantiation
 
 	// base stats
@@ -39,9 +40,28 @@ Player_Actor::Player_Actor()
 #pragma endregion
 }
 
-// armors and weapons?
+//full party
+Player_Actor Party[];
 
-// use this to kill the player and when they die GAME OVER
+void Player_Actor::setParty(Player_Actor currentPa, int pos)
+{
+	if (leader == true)
+	{
+		Party[pos] = currentPa;
+	}
+	else
+	{
+		normalOutput("Not a party leader...");
+	}
+}
+
+Player_Actor Player_Actor::getParty()
+{
+	return Party[party_num];
+}
+
+
+// use this to kill the player and when they die
 Player_Actor::~Player_Actor()
 {
 }

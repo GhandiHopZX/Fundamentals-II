@@ -16,6 +16,8 @@ private:
 	
 	string bio; // YOUR STORY!
 	string name; // YOUR NAME!
+	bool leader; // this is for the party system
+	int party_num; // number of people you can have
 	// variables
 
 public:
@@ -24,13 +26,13 @@ public:
 	int dummyPlus;
 
 	// stuff
-
-	// weapons and armor
-
+	
 	// Constructors
 	Player_Actor();
 
 	// getters / accessors
+	Player_Actor getParty();
+
 	string normalOutput(string normal)
 	{
 		return normal;
@@ -558,8 +560,7 @@ public:
 
 #pragma endregion
 
-	//void setStatus(aegesa::statusEff statusName[]);
-
+	void setParty(Player_Actor currentPa, int pos);
 	//void battleGuage();
 
 	// Deconstructor

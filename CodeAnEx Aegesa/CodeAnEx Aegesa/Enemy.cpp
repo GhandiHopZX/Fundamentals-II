@@ -55,7 +55,7 @@ Enemy::Enemy(string namer, elementType, int expAw, int gA, int item)
 
 Enemy Enemy::enemyRandEncounter()
 {
-	// constants
+	// lv1 constants
 	const int MAX_ERAND = 13;
 	const int MAX_GOLD = 1100;
 	const int MAX_ITEM = 14;

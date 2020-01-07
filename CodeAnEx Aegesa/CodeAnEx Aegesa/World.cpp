@@ -24,14 +24,15 @@ World::World()
 
 	map maps[5] =
 	{
-		lostCity[0][0][0],
-		darkForest[0][0][0],
-		ekana[0][0][0],
-		rheTan[0][0][0],
-		aegesaShrine[0][0][0]
+		lostCity[5][0][0],
+		darkForest[5][0][0],
+		ekana[5][0][0],
+		rheTan[5][0][0],
+		aegesaShrine[5][0][0]
 	};
 	
 }
+
 
 // full party GLOBALS
 Player_Actor Actor1; // Proper instantiation
@@ -39,7 +40,7 @@ Player_Actor Alicia; //
 Player_Actor Renae; // 
 Player_Actor Iyn; // 
 inventory mainInventory;
-int location = 0; // 0 lostCity, 1 darkForest, 2 ekana, 3 rheTan, 4 aegesaShrine
+int location = 0; // 0 lostCity, 1 darkForest, 2 ekana, 3 rheTan, 4 aegesaShrine...
 
 
 void World::beginningStory()
@@ -123,7 +124,7 @@ void World::beginningStory()
 	dialouge(Actor1, "cogni.. of what?.. What are you talking about?");
 	dialouge(Alicia, "You are aware of your surroundings are you not?");
 	dialouge(Actor1, "No I'm stupid... Sorry. Not very cognizant of anything at the moment...");
-	dialouge(Alicia, "You genetic template says your a savant compared to the average...");
+	dialouge(Alicia, "Your genetic template says your a savant compared to the average...");
 	dialouge(Actor1, "So you're another one of those hackers AREN'T YOU!?");
 	dialouge(Alicia, "I am not sure of what argument this pertains to..");
 	dialouge(Actor1, "You talk like a robot... Are you that then?");
@@ -132,6 +133,7 @@ void World::beginningStory()
 	dialouge(Alicia, "I am a CLASS III GUARDIAN TIER ANDROID!");
 	dialouge(Alicia, "I have searched for a compatable Aegesa type. Suitable for both combat and architectural assembly..");
 	dialouge(Actor1, "Whoa that means you're.. No kidding you're the real deal!");
+	dialouge(Alicia, "What are you referencing?");
 	dialouge(Actor1, "Ok You're from the machine itself huh?");
 	dialouge(Alicia, "I'm from the Crown City...");
 	dialouge(Actor1, "......");
@@ -202,7 +204,7 @@ void World::endGame()
 void World::menu()
 {
 	char choice = {};
-	cout << "Please select an option....\n (i) inventory,\n (n) navigation,\n (p) partystatus,\n (d) dataManagement,\n (o) options";
+	cout << "Please select an option....\n (i) Inventory,\n (n) Navigation,\n (p) Party,\n (d) Save/Load,\n (o) Options";
 	cin >> choice;
 	switch (choice)
 	{
@@ -210,13 +212,45 @@ void World::menu()
 	case 'item':
 		mainInventory.PlayerItemInventory();
 		break;
+
 	case 'n':
 	case 'navi':
 		navigation(location, mao, tse, tung);
+		break;
+
+	case 'p':
+	case 'part':
+		partyMenu(Actor1.getParty());
+		break;
+
+	case 'd':
+	case 'data':
+		dataCall();
+		break;
+
+	case 'o':
+	case 'opti':
+		optionMenuCall();
+		break;
+
 	default:
+		cout << "Invalid Choice" << endl;
+		menu();
 		break;
 	}
 }
+
+void World::partyMenu(Player_Actor party)
+{
+	
+	
+}
+
+void World::dataCall(){}
+
+void World::optionMenuCall(){}
+
+void World::eventCalls(World::map local, bool trigger, string dialougeOut){}
 
 void World::dialouge(Player_Actor pn, string in)
 {
@@ -232,6 +266,8 @@ void World::dialougeAction(Player_Actor pn, string in)
 
 void World::navigation(int selectedMap, int x, int y, int z)
 {
+	// maps
+
 	// n = north, ne = northeast, nw = northwest, 
 	// sw = southwest, s = south, se = southeast
 	// w = west, e = east
@@ -240,7 +276,9 @@ void World::navigation(int selectedMap, int x, int y, int z)
 	cout << "AT: " << maps[selectedMap].x << "row\n" << maps[selectedMap].y 
 		<< "column\n" << maps[selectedMap].z << "floor" << endl;
 
-	cout << "Where will you go?\n (n)north, (e)east, (w)west, (s)south, \n (ne)northeast, (nw)northwest, (se)southeast, (sw)southwest " << endl;
+	cout << "Where will you go?\n (n)north,\n"
+		<< "(e)east,\n (w)west,\n (s)south,\n (ne)northeast,\n"
+		<< "(nw)northwest,\n (se)southeast,\n (sw)southwest\n " << endl;
 	char dir = {};
 	cin >> dir;
 	switch (dir)
@@ -281,7 +319,7 @@ void World::navigation(int selectedMap, int x, int y, int z)
 
 	switch (z)
 	{
-		z = maps[selectedMap].z;
+	maps[selectedMap].z = z;
 	default:
 		break;
 	} 

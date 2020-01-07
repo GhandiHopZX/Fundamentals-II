@@ -19,7 +19,6 @@ using namespace std;
 //todo: callin enemy encouter data
 
 void battleSystem::battleMode()
-
 {
 	Player_Actor he; //call vars
 	Enemy en; // call vars
@@ -48,7 +47,6 @@ battleSystem::battleSystem()
 
 void battleSystem::enemyTroop()
 {
-	Player_Actor he; //call vars
 	Enemy en; // call vars
 	skillAction skilz;
 }
@@ -56,7 +54,6 @@ void battleSystem::enemyTroop()
 void battleSystem::allyTroop()
 {
 	Player_Actor he; //call vars
-	Enemy en; // call vars
 	skillAction skilz;
 }
 
@@ -69,9 +66,9 @@ void battleSystem::targetEnemy()
 
 void battleSystem::aiTargeting()
 {
-	Player_Actor he; //call vars
-	Enemy en; // call vars
-	skillAction skilz;
+	//Player_Actor he; //call vars
+	//Enemy en; // call vars
+	//skillAction skilz;
 }
 
 void battleSystem::turn()

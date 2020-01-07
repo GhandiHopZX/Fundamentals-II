@@ -26,20 +26,26 @@ private:
 		string name;
 	};
 
-	map lostCity[4][11][11]; 
-	map darkForest[2][11][11];
-	map ekana[1][11][11];
-	map rheTan[1][11][11];
-	map aegesaShrine[5][11][11];
-
 	int mao = 0;
 	int tse = 0;
 	int tung = 0;
 
-public:
-	// maps
+	map lostCity[11][11][4];
+	map darkForest[11][11][2];
+	map ekana[11][11][1];
+	map rheTan[11][11][1];
+	map aegesaShrine[11][11][5];
 
-	map maps[5] = {	};
+public:
+	
+	map maps[5] =
+	{
+		lostCity[5][0][0],
+		darkForest[5][0][0],
+		ekana[5][0][0],
+		rheTan[5][0][0],
+		aegesaShrine[5][0][0]
+	};
 	
 	World();
 
@@ -55,6 +61,14 @@ public:
 	void endGame(); // game end
 
 	void menu();
+
+	void partyMenu(Player_Actor party);
+
+	void dataCall();
+
+	void optionMenuCall();
+
+	void eventCalls(World::map local, bool trigger, string dialougeOut);
 
 	void dialouge(Player_Actor pn, string in);
 

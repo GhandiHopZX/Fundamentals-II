@@ -1,5 +1,7 @@
 #include "aegesa.h"
 #include <iostream>
+#include "Player_Actor.h"
+#include "Enemy.h"
 using namespace std;
 
 aegesa::aegesa()
@@ -22,6 +24,8 @@ aegesa::aegesa()
 	STRd = getSTR(); // strength (also effects status)
 	ENDd = getEND(); // endurance (bodily based / also effects status)
 	CONd = getCON(); // constitution (mental, body, soul, based / also effects status)
+
+	
 }
 
 aegesa::statusEff aegesa::getStatus()
