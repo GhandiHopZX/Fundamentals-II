@@ -33,12 +33,19 @@ public:
 	// getters / accessors
 	Player_Actor getParty();
 
+	Player_Actor callPartyMember(int);
+
 	string normalOutput(string normal)
 	{
 		return normal;
 	};
 
 #pragma region getters
+	int getParty_num()
+	{
+		return party_num;
+	}
+
 	string getName()
 	{
 		return name;
@@ -155,6 +162,10 @@ public:
 	// setters / mutators
 
 #pragma region setters
+	void setParty_num(int n)
+	{
+		party_num = n;
+	}
 
 	void setName(string x)
 	{

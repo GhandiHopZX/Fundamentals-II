@@ -241,7 +241,20 @@ void World::menu()
 
 void World::partyMenu(Player_Actor party)
 {
+	system("CLS");
+	cout << "" << endl;
+
+	// print menu
+	for (size_t i = 0; i < party.getParty_num(); i++)
+	{
+		string m = party.callPartyMember(i).getStatus().buffName;
+		int v = party.callPartyMember(i).getStatus().turns_Of_aff;
+		cout << party.callPartyMember(i).getName() << ": " << '\n' << "HP" << ": " << party.callPartyMember(i).getHpd() << '/' << party.callPartyMember(i).getHp();
+		cout << '\n' << "SP" << '\t' << party.callPartyMember(i).getSPDd() << '/' << party.callPartyMember(i).getSp() << endl;
+		cout << m << "Turns Left: " << v << endl;
+	}
 	
+
 }
 
 void World::dataCall(){}

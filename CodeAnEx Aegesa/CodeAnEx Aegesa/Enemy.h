@@ -12,9 +12,9 @@ class Enemy : public aegesa
 {
 private:
 
-	int expA; //exp awarded
-	int itemN;
-	int goldA; //gold awarded
+	int expA; // exp awarded
+	int itemN; // item awarded
+	int goldA; // gold awarded
 
 public:
 	// check this for a weakness

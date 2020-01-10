@@ -123,16 +123,25 @@ public:
 	bool statmulti;
 	int dummyPlus;
 
+	enum class elementType
+	{
+		Water = 0,
+		Fire = 1,
+		Earth = 2,
+		Air = 3,
+		Lightning = 4,
+		Phase = 5,
+		Bio = 6,
+		Light = 7,
+		Dark = 8,
+		Normal = 9
+	};
+
 #pragma region getters
 	string getName()
 	{
 		return name;
 	};
-
-	string getBio()
-	{
-		return bio;
-	}
 
 	bool getSMulti()
 	{
@@ -249,11 +258,6 @@ public:
 		name = x;
 	}
 
-	void setBio(string x)
-	{
-		bio = x;
-	}
-
 	void statMSet(bool d)
 	{
 		statmulti = d;
@@ -353,6 +357,159 @@ public:
 	void statPlus(char stat, int plus);
 
 	
+
+#pragma endregion
+
+	// down couts
+
+#pragma region getters
+	//Hp Getter
+	int getHpd()
+	{
+		return hpd;
+	};
+
+	//Sp Getter
+	int getSpd()
+	{
+		return spd;
+	};
+
+	//Fp Getter
+	int getFpd()
+	{
+		return fpd;
+	};
+
+	//atk Getter
+	int getATKd()
+	{
+		return ATKd;
+	};
+
+	//def Getter
+	int getDEFd()
+	{
+		return DEFd;
+	};
+
+	//spd Getter
+	int getSPDd()
+	{
+		return SPDd;
+	};
+
+	//agi Getter
+	int getAGId()
+	{
+		return AGId;
+	};
+
+	//dex Getter
+	int getDEXd()
+	{
+		return DEXd;
+	};
+
+	//int Getter
+	int getINTd()
+	{
+		return INTd;
+	};
+
+	//spr Getter
+	int getSPRd()
+	{
+		return SPRd;
+	};
+
+	//str Getter
+	int getSTRd()
+	{
+		return STRd;
+	};
+
+	//end Getter
+	int getENDd()
+	{
+		return ENDd;
+	};
+
+	//con Getter
+	int getCONd()
+	{
+		return CONd;
+	};
+
+#pragma endregion
+
+#pragma region setters
+
+	void setHpd(int hpin)
+	{
+		hpd = hpin;
+	}
+
+	void setSpd(int spin)
+	{
+		spd = spin;
+	}
+
+	void setFpd(int fpin)
+	{
+		fpd = fpin;
+	}
+
+	void setATKd(int atin)
+	{
+		ATKd = atin;
+	}
+
+	void setDEFd(int dein)
+	{
+		DEFd = dein;
+	}
+
+	void setSPDd(int sdin)
+	{
+		SPDd = sdin;
+	}
+
+	void setSTRd(int stin)
+	{
+		STRd = stin;
+	}
+
+	void setAGId(int agin)
+	{
+		AGId = agin;
+	}
+
+	void setENDd(int send)
+	{
+		ENDd = send;
+	}
+
+	void setCONd(int coin)
+	{
+		CONd = coin;
+	}
+
+	void setDEXd(int dexin)
+	{
+		DEXd = dexin;
+	}
+
+	void setINTd(int intIn)
+	{
+		INTd = intIn;
+	}
+
+	void setSPRd(int sprIn)
+	{
+		SPRd = sprIn;
+	}
+
 
 #pragma endregion
 

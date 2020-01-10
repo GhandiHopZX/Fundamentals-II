@@ -63,6 +63,11 @@ Player_Actor Player_Actor::getParty()
 	}
 }
 
+Player_Actor Player_Actor::callPartyMember(int pos)
+{
+	return Party[pos];
+}
+
 // use this to kill the player and when they die
 Player_Actor::~Player_Actor()
 {

@@ -21,7 +21,6 @@ Enemy::Enemy()
 	itemN = 0;
 
 	name = "";
-	bio = "";
 	this->allEffGet;
 	this->battleGuage();
 	this->dummyPlus = 0;
