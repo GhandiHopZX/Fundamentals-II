@@ -57,9 +57,11 @@ void Player_Actor::setParty(Player_Actor currentPa, int pos)
 
 Player_Actor Player_Actor::getParty()
 {
-	return Party[party_num];
+	for (size_t i = 0; i < party_num; i++)
+	{
+		return Party[party_num];
+	}
 }
-
 
 // use this to kill the player and when they die
 Player_Actor::~Player_Actor()

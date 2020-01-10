@@ -28,7 +28,7 @@ void battleSystem::battleMode()
 	cout << "============ E N G A D G E ============" << endl;
 
 	//player set
-	playerTGuage(he.dummyPlus, he.getSPD(), he.getFp());
+	playerTGuage(he.getParty().dummyPlus, he.getParty().getSPD(), he.getParty().getFp());
 
 	//enemy set
 	enemyTGuage(en.getSPDPlus(), en.getSPD(), en.getFp());
@@ -76,7 +76,7 @@ void battleSystem::turn()
 	Player_Actor he; //call vars
 	inventory inv;
 
-	normalOutput(he.getName() + " turn...");
+	normalOutput(he.getParty().getName() + " turn...");
 	normalOutput("Attack(a),\n Defend(d),\n Hack(h),\n Skills(s),\n Inventory(i)");
 	// initialized choice char
 	char c = { 'n' };
