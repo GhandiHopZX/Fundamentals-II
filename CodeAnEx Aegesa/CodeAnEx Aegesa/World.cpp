@@ -30,9 +30,8 @@ World::World()
 		rheTan[5][0][0],
 		aegesaShrine[5][0][0]
 	};
-	
-}
 
+}
 
 // full party GLOBALS
 Player_Actor Actor1; // Proper instantiation
@@ -242,7 +241,6 @@ void World::menu()
 
 void World::partyMenu(Player_Actor party)
 {
-	
 	
 }
 

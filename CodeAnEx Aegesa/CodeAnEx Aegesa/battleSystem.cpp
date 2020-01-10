@@ -77,7 +77,7 @@ void battleSystem::turn()
 	inventory inv;
 
 	normalOutput(he.getName() + " turn...");
-	normalOutput("Attack(a),\n Defend(d),\n Hack(h),\n Skills(s),\n Inventory(i) ");
+	normalOutput("Attack(a),\n Defend(d),\n Hack(h),\n Skills(s),\n Inventory(i)");
 	// initialized choice char
 	char c = { 'n' };
 
@@ -331,6 +331,15 @@ void battleSystem::multiDamageOutput(string n[])
 	cin.get();
 }
 
+void battleSystem::hackOutput(string n)
+{
+	system("Color 09");
+	cout << n << endl;
+	cout << "Press Enter";
+	system("COLOR 07");
+	cin.get();
+}
+
 // battle_system calls
 void battleSystem::attack() {
 }
@@ -535,6 +544,10 @@ void battleSystem::hack() {
 #pragma region AI
 
 		//--------- enemy movement ------------
+		if (ex | ey == y | x)
+		{
+			enemy[ex - 1 | +1] | enemy[ey - 1 | +1];
+		}
 
 		// movement replacement
 		//up
@@ -563,7 +576,7 @@ void battleSystem::hack() {
 		}
 
 		// ai move away from player 
-		if (actorT[x] -1 >= enemy[ex]|| actorT[x] - 1 <= enemy[ex])
+		if (actorT[x] -1 >= enemy[ex] || actorT[x] - 1 <= enemy[ex])
 		{
 			// check if theres space and seek a way to escape
 			// wait
@@ -576,15 +589,38 @@ void battleSystem::hack() {
 			// wait
 			// move again
 		}
-#pragma endregion
-
+		
 		// collision
+		if (grid[x][y] == grid[ex][ey] && grid[ex] == grid[ey])
+		{
+			enemy = hitMarkA;
+			actorT = hitMarkA;
 
+			switch (VK_SPACE)
+			{
+				hackOutput("");
+			default:
+				break;
+			}
+		}
+		else
+		{
+			enemy = enemy;
+			actorT = actorT;
+
+			switch (VK_SPACE)
+			{
+			default:
+				break;
+			}
+		}
 		/*
 		  1  2  3  4  5  6
 		  11 12 13 14 15 16
 		  21 22 23 24 25 26
 		 */
+#pragma endregion
+
 	}
 }
 
@@ -604,3 +640,4 @@ void battleSystem::rewardOutput()
 
 	//inv.my_items(inv.allitemList(en.getItem), en.getItem);
 }
+

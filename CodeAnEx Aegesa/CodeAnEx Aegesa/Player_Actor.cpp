@@ -51,7 +51,7 @@ void Player_Actor::setParty(Player_Actor currentPa, int pos)
 	}
 	else
 	{
-		normalOutput("Not a party leader...");
+		cout << "not a party leader..." << endl;
 	}
 }
 

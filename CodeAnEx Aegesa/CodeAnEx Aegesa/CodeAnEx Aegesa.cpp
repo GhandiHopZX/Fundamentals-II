@@ -32,6 +32,7 @@ void menyu();
 
 int main()
 {
+	system("Color 0A");
 	// formating
 	// title screen
 #pragma region Title

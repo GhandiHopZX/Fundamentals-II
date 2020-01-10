@@ -70,6 +70,10 @@ public:
 
 	void multiDamageOutput(string[]);
 
+	void hackOutput(string);
+
+	// choices
+
 	void attack();
 
 	void defend();
@@ -78,7 +82,10 @@ public:
 
 	void hack();
 
+	// rewards
+
 	void rewardOutput();
+
 
 	// templates
 	template <class T>
