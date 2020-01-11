@@ -219,7 +219,7 @@ void World::menu()
 
 	case 'p':
 	case 'part':
-		partyMenu(Actor1.getParty());
+		partyMenu(Actor1);
 		break;
 
 	case 'd':
@@ -241,7 +241,9 @@ void World::menu()
 
 void World::partyMenu(Player_Actor party)
 {
+	char choice = 'm';
 	system("CLS");
+	cout << "Current Party" << endl;
 	cout << "" << endl;
 
 	// print menu
@@ -251,10 +253,37 @@ void World::partyMenu(Player_Actor party)
 		int v = party.callPartyMember(i).getStatus().turns_Of_aff;
 		cout << party.callPartyMember(i).getName() << ": " << '\n' << "HP" << ": " << party.callPartyMember(i).getHpd() << '/' << party.callPartyMember(i).getHp();
 		cout << '\n' << "SP" << '\t' << party.callPartyMember(i).getSPDd() << '/' << party.callPartyMember(i).getSp() << endl;
-		cout << m << "Turns Left: " << v << endl;
+		cout << "[" << m << "]" << "Turns Left: " << v << endl;
 	}
-	
 
+	cout << "Please select an option....\n (s) status,\n (e) Equip,\n (sa) skillActions,\n (t) classTree ";
+	switch (choice)
+	{
+	case 's':
+		// select party member
+		// status for member
+		break;
+
+	case 'e':
+		// select party member
+		// equip items
+		break;
+
+	case 'sa':
+		// select party member
+		// skill set
+		break;
+
+	case 'c':
+		// select party member
+		// class tree
+		break;
+
+	default:
+		cout << "Invalid choice..." << endl;
+		menu();
+		break;
+	}
 }
 
 void World::dataCall(){}
