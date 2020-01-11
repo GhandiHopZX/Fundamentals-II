@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\saves">
+      <UniqueIdentifier>{6fdc09f9-4622-4a81-bf9d-f552e674782e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CodeAnEx Aegesa.cpp">
@@ -62,5 +65,10 @@
     <ClInclude Include="aegesa.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="saveTemp.txt">
+      <Filter>Source Files\saves</Filter>
+    </None>
   </ItemGroup>
 </Project>

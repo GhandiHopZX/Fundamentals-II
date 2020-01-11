@@ -56,7 +56,7 @@ public:
 
 	// output types
 
-	void statTurn(aegesa::statusEff maxNumber);
+	void statTurn(aegesa::statusEff);
 
 	void turnSystem(int);
 

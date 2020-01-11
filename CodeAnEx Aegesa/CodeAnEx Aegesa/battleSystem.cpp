@@ -111,24 +111,35 @@ void battleSystem::turn()
 
 //call in set status
 // how many turns is your status eff or plus gonna last???
-void battleSystem::statTurn(aegesa::statusEff call)
+void battleSystem::statTurn(aegesa::statusEff turnsLastS)
 {
 	Player_Actor he; //call vars
-	Enemy en; // call vars
-	skillAction skilz;
+	//Enemy en; // call vars do another function for these guys
+	//skillAction skilz;
 
-	int maxNumber = 20;
+	int maxNumber = 19;
 	int max_Statuses = maxNumber;
+	int b{};
 	// statusCall <- here call an integer for these status effects
 	// for this for loop use the interator to set how many turns for each individual status
 	// and then count them down for each turn in another iterator.
-	for (int i = 0; i < maxNumber; i++)
+	for (int i = b - 1; i < he.getParty_num(); i++)
 	{
+		b = he.getParty().getStatus().turns_Of_aff;
 		//put the statuses in here
+		--b;
 	}
+	for (size_t i = 0; i < maxNumber; i++)
+	{
+		if (he.callPartyMember.My_Statuses[i].turns_Of_aff <= 0)
+		{
+			he.My_Statuses[i].buffName.erase;
+		}
+	}
+	
 }
 
-void battleSystem::turnSystem(int turn)
+void battleSystem::turnSystem(int turnN)
 {
 	Player_Actor he; //call vars
 	Enemy en; // call vars
@@ -142,7 +153,7 @@ void battleSystem::turnSystem(int turn)
 	do
 	{
 		// turn switch checking whose turn it is
-		switch (turn)
+		switch (turnN)
 		{
 		case (a):
 			// turn a is always at 0 if its at d which = 4...
@@ -151,17 +162,19 @@ void battleSystem::turnSystem(int turn)
 
 		case (b):
 			// enemy turn or ai turn check
-			//statTurn(statusCall(he.getStatus()));// call this whenever you get a SPECIFIC stat you want that is numbered
+			
+			statTurn(he.getParty().getStatus());// call this whenever you get a SPECIFIC stat you want that is numbered
 			break;
 
 		case (c):
 			// yor tuarn
-			//statTurn(20); // one turn = one and done
+			turn();
+			statTurn(he.getParty().getStatus()); // one turn = one and done
 			break;
 
 		case (d):
 			// TurnA
-			//statTurn(20); // one turn = one and done
+			statTurn(he.getParty().getStatus()); // one turn = one and done
 
 			break;
 
