@@ -41,6 +41,11 @@ public:
 	};
 
 #pragma region getters
+	int getSPDPlus()
+	{
+		return dummyPlus;
+	}
+
 	int getParty_num()
 	{
 		return party_num;

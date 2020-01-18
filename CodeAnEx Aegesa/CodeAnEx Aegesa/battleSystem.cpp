@@ -196,7 +196,6 @@ void battleSystem::turnSystem(int turnN)
 
 		case (b):
 			// enemy turn or ai turn check
-			
 			statTurn(he.getParty().getStatus());// call this whenever you get a SPECIFIC stat you want that is numbered
 			break;
 
@@ -207,9 +206,8 @@ void battleSystem::turnSystem(int turnN)
 			break;
 
 		case (d):
-			// TurnA
+			turn_A_mode();
 			statTurn(he.getParty().getStatus()); // one turn = one and done
-
 			break;
 
 		case (e):
@@ -671,7 +669,9 @@ void battleSystem::hack() {
 	}
 }
 
-void battleSystem::turn_A_mode(){}
+void battleSystem::turn_A_mode(){
+
+}
 
 void battleSystem::rewardOutput()
 {

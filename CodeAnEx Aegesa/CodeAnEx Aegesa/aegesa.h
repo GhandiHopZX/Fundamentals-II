@@ -253,6 +253,11 @@ public:
 
 #pragma region setters
 
+	void setSPDplus(int m)
+	{
+		dummyPlus = m;
+	}
+
 	void setName(string x)
 	{
 		name = x;
