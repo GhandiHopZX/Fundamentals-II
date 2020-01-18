@@ -14,6 +14,18 @@
 
 using namespace std;
 
+battleSystem::battleSystem()
+{
+	Player_Actor he; //call vars
+	Enemy en; // call vars
+	skillAction skilz;
+
+	turn_Number = 0;
+	turnGuageNum = 0; // this is if more than one is set, its usually reset
+	aGuage = 0;
+	battleMode(); // battle mode
+}
+
 //todo: callin party data
 
 //todo: callin enemy encouter data
@@ -27,22 +39,44 @@ void battleSystem::battleMode()
 	// troop size
 	cout << "============ E N G A D G E ============" << endl;
 
-	//player set
-	playerTGuage(he.getParty().dummyPlus, he.getParty().getSPD(), he.getParty().getFp());
-
 	//enemy set
-	enemyTGuage(en.getSPDPlus(), en.getSPD(), en.getFp());
-}
+	for (size_t i = 0; i < en.getParty_num; i++)
+	{
+		en.setParty(en.enemyRandEncounter(), i);
+		normalOutput("a " + en.callPartyMember(i).getName() + " approches..");
+		cin.get();
+	}
 
-battleSystem::battleSystem()
-{
-	Player_Actor he; //call vars
-	Enemy en; // call vars
-	skillAction skilz;
+	if (en.getParty_num > 1)
+	{
+		normalOutput("The " + en.callPartyMember(0).name + " group challenges...");
+		cin.get();
+	}
+	else
+	{
+		normalOutput("ENTER " + en.callPartyMember(0).name + " " + en.callPartyMember(0).getTitle());
+	}
 
-	turnGuageNum = 0; // this is if more than one is set, its usually reset
-	aGuage = 0;
-	battleMode(); // battle mode
+	do
+	{
+		// action loop
+		for (size_t i = 0; i < he.getParty_num(); i++)
+		{
+			//player set
+			playerTGuage(he.callPartyMember(i).dummyPlus, he.callPartyMember(i).getSPD(), he.callPartyMember(i).getFp());
+		}
+		
+		for (size_t i = 0; i < en.getParty_num(); i++)
+		{
+			enemyTGuage(en.callPartyMember(i).getSPDPlus(), en.callPartyMember(i).getSPD(), en.callPartyMember(i).getFp());
+		}
+		
+		turnSystem(turn_Number);
+
+		turn_Number++; // get an operator for this
+
+	} while (battleTime);
+	
 }
 
 void battleSystem::enemyTroop()
@@ -637,6 +671,8 @@ void battleSystem::hack() {
 	}
 }
 
+void battleSystem::turn_A_mode(){}
+
 void battleSystem::rewardOutput()
 {
 	//Player_Actor he; //call vars
@@ -653,4 +689,3 @@ void battleSystem::rewardOutput()
 
 	//inv.my_items(inv.allitemList(en.getItem), en.getItem);
 }
-

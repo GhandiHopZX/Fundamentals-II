@@ -19,6 +19,10 @@ Enemy::Enemy()
 	goldA = 0;
 	expA = 0;
 	itemN = 0;
+	leader = false;
+	party_num = 4;
+	bio = "";
+	title = "";
 
 	name = "";
 	this->allEffGet;
@@ -199,4 +203,42 @@ void Enemy::setGold(int reg)
 void Enemy::setEXP(int rexp)
 {
 	expA = rexp;
+}
+
+//full party
+Enemy Party[];
+
+void Enemy::setParty(Enemy currentPa, int pos)
+{
+	if (leader == true)
+	{
+		Party[pos] = currentPa;
+	}
+	else
+	{
+		Party[0].leader = true;
+	}
+}
+
+Enemy Enemy::getParty()
+{
+	for (size_t i = 0; i < party_num; i++)
+	{
+		return Party[party_num];
+	}
+}
+
+Enemy Enemy::callPartyMember(int pos)
+{
+	return Party[pos];
+}
+
+string Enemy::getTitle()
+{
+	return title;
+}
+
+void Enemy::setTitle(string n)
+{
+	title = n;
 }

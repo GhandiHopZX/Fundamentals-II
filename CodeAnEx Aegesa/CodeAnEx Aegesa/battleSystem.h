@@ -14,7 +14,7 @@ private:
 	// variables
 	bool battleTime; // if its time to fight
 	bool* aGuage;
-
+	int turn_Number;
 	enum t
 	{
 		a = 0, b = 1, c = 2, d = 3, e = 4, f = 5
@@ -81,6 +81,8 @@ public:
 	void skill();
 
 	void hack();
+
+	void turn_A_mode();
 
 	// rewards
 
