@@ -144,8 +144,7 @@ void World::beginningStory()
 	dialouge(Alicia, "I'll show you where it is. If you help me find my friend..");
 	dialouge(Actor1, "I'm not too sure I should even really trust you to go with you to any place...");
 	#pragma endregion
-	// menu time
-	menu();
+	
 	//end of chapter 0
 	chapter1();
 }
@@ -153,6 +152,8 @@ void World::beginningStory()
 void World::chapter1()
 {
 	int i = 0;
+	// menu time
+	menu();
 
 	//end of chapter
 	chapter2();

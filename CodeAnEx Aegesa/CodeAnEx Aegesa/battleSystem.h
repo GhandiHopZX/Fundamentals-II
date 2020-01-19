@@ -84,6 +84,8 @@ public:
 
 	void turn_A_mode();
 
+	void enemyTurn();
+
 	// rewards
 
 	void rewardOutput();

@@ -14,12 +14,13 @@
 
 using namespace std;
 
+Player_Actor he; //call vars
+Enemy en; // call vars
+skillAction skilz;
+inventory inv;
+
 battleSystem::battleSystem()
 {
-	Player_Actor he; //call vars
-	Enemy en; // call vars
-	skillAction skilz;
-
 	turn_Number = 0;
 	turnGuageNum = 0; // this is if more than one is set, its usually reset
 	aGuage = 0;
@@ -32,29 +33,29 @@ battleSystem::battleSystem()
 
 void battleSystem::battleMode()
 {
-	Player_Actor he; //call vars
-	Enemy en; // call vars
-	skillAction skilz;
+	//Player_Actor he; //call vars
+	//Enemy en; // call vars
+	//skillAction skilz;
 	// this is where the insanity goes till hp drops for all members of either
 	// troop size
 	cout << "============ E N G A D G E ============" << endl;
 
 	//enemy set
-	for (size_t i = 0; i < en.getParty_num; i++)
+	for (size_t i = 0; i < en.getParty_num(); i++)
 	{
 		en.setParty(en.enemyRandEncounter(), i);
 		normalOutput("a " + en.callPartyMember(i).getName() + " approches..");
 		cin.get();
 	}
 
-	if (en.getParty_num > 1)
+	if (en.getParty_num() > 1)
 	{
-		normalOutput("The " + en.callPartyMember(0).name + " group challenges...");
+		normalOutput("The " + en.callPartyMember(0).getName() + " group challenges...");
 		cin.get();
 	}
 	else
 	{
-		normalOutput("ENTER " + en.callPartyMember(0).name + " " + en.callPartyMember(0).getTitle());
+		normalOutput("ENTER " + en.callPartyMember(0).getName() + " " + en.callPartyMember(0).getTitle());
 	}
 
 	do
@@ -63,7 +64,7 @@ void battleSystem::battleMode()
 		for (size_t i = 0; i < he.getParty_num(); i++)
 		{
 			//player set
-			playerTGuage(he.callPartyMember(i).dummyPlus, he.callPartyMember(i).getSPD(), he.callPartyMember(i).getFp());
+			playerTGuage(he.callPartyMember(i).getSPDPlus(), he.callPartyMember(i).getSPD(), he.callPartyMember(i).getFp());
 		}
 		
 		for (size_t i = 0; i < en.getParty_num(); i++)
@@ -81,21 +82,21 @@ void battleSystem::battleMode()
 
 void battleSystem::enemyTroop()
 {
-	Enemy en; // call vars
-	skillAction skilz;
+	//Enemy en; // call vars
+	//skillAction skilz;
 }
 
 void battleSystem::allyTroop()
 {
-	Player_Actor he; //call vars
-	skillAction skilz;
+	//Player_Actor he; //call vars
+	//skillAction skilz;
 }
 
 void battleSystem::targetEnemy()
 {
-	Player_Actor he; //call vars
-	Enemy en; // call vars
-	skillAction skilz;
+	//Player_Actor he; //call vars
+	//Enemy en; // call vars
+	//skillAction skilz;
 }
 
 void battleSystem::aiTargeting()
@@ -107,8 +108,8 @@ void battleSystem::aiTargeting()
 
 void battleSystem::turn()
 {
-	Player_Actor he; //call vars
-	inventory inv;
+	//Player_Actor he; //call vars
+	//inventory inv;
 
 	normalOutput(he.getParty().getName() + " turn...");
 	normalOutput("Attack(a),\n Defend(d),\n Hack(h),\n Skills(s),\n Inventory(i)");
@@ -147,7 +148,7 @@ void battleSystem::turn()
 // how many turns is your status eff or plus gonna last???
 void battleSystem::statTurn(aegesa::statusEff turnsLastS)
 {
-	Player_Actor he; //call vars
+	//Player_Actor he; //call vars
 	//Enemy en; // call vars do another function for these guys
 	//skillAction skilz;
 
@@ -159,15 +160,15 @@ void battleSystem::statTurn(aegesa::statusEff turnsLastS)
 	// and then count them down for each turn in another iterator.
 	for (int i = b - 1; i < he.getParty_num(); i++)
 	{
-		b = he.getParty().getStatus().turns_Of_aff;
+		b = he.callPartyMember(i).getStatus().turns_Of_aff;
 		//put the statuses in here
 		--b;
 	}
-	for (size_t i = 0; i < maxNumber; i++)
+	for (int i = 0; i < maxNumber; i++)
 	{
-		if (he.callPartyMember.My_Statuses[i].turns_Of_aff <= 0)
+		if (he.callPartyMember(i).My_Statuses[i].turns_Of_aff <= 0)
 		{
-			he.My_Statuses[i].buffName.erase;
+			he.callPartyMember(i).My_Statuses[i].buffName.erase();
 		}
 	}
 	
@@ -175,9 +176,9 @@ void battleSystem::statTurn(aegesa::statusEff turnsLastS)
 
 void battleSystem::turnSystem(int turnN)
 {
-	Player_Actor he; //call vars
-	Enemy en; // call vars
-	skillAction skilz;
+//	Player_Actor he; //call vars
+	//Enemy en; // call vars
+	//skillAction skilz;
 
 	bool guagek;
 	guagek = aGuage;
@@ -196,16 +197,20 @@ void battleSystem::turnSystem(int turnN)
 
 		case (b):
 			// enemy turn or ai turn check
+			normalOutput("TURN # "+ turnN);
+			enemyTurn();
 			statTurn(he.getParty().getStatus());// call this whenever you get a SPECIFIC stat you want that is numbered
 			break;
 
 		case (c):
 			// yor tuarn
+			normalOutput("TURN # " + turnN);
 			turn();
 			statTurn(he.getParty().getStatus()); // one turn = one and done
 			break;
 
 		case (d):
+			normalOutput("TURN # " + turnN);
 			turn_A_mode();
 			statTurn(he.getParty().getStatus()); // one turn = one and done
 			break;
@@ -386,9 +391,12 @@ void battleSystem::hackOutput(string n)
 }
 
 // battle_system calls
-void battleSystem::attack() {
-}
-void battleSystem::defend() {}
+void battleSystem::attack() 
+{}
+
+void battleSystem::defend()
+{}
+
 void battleSystem::skill()
 {
 	/*he.statPlus('h', skilz.skillcall->hpAdd);
@@ -643,7 +651,9 @@ void battleSystem::hack() {
 
 			switch (VK_SPACE)
 			{
-				hackOutput("");
+				hackOutput("HIT");
+				cin.get();
+				hackOutput("HACKED!");
 			default:
 				break;
 			}
@@ -669,15 +679,17 @@ void battleSystem::hack() {
 	}
 }
 
-void battleSystem::turn_A_mode(){
+void battleSystem::turn_A_mode()
+{}
 
-}
+void battleSystem::enemyTurn()
+{}
 
 void battleSystem::rewardOutput()
 {
 	//Player_Actor he; //call vars
-	Enemy en; // call vars
-	inventory inv; // call tha listos
+	//Enemy en; // call vars
+	//inventory inv; // call tha listos
 
 	// iterate all the enemies that were on
 	// the battle field and run this at least
