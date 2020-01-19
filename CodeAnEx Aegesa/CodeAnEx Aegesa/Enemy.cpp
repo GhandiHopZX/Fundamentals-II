@@ -165,7 +165,7 @@ Enemy Enemy::BossCall(int call)
 	GiggaRaugght.setAp(100);
 	GiggaRaugght.setSp(3000);
 	GiggaRaugght.setHp(2500);
-	GiggaRaugght.setTitle("THE GIGGARATION");
+	GiggaRaugght.setTitle("THE GIGGANTRION");
 #pragma endregion
 
 	return lvl1index[call];
