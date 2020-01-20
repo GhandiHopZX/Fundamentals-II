@@ -108,6 +108,10 @@ void battleSystem::aiTargeting()
 	//skillAction skilz;
 }
 
+void battleSystem::targetedEnemy(Enemy e, int statpwr) {}
+
+void battleSystem::aItargeted() {}
+
 void battleSystem::turn()
 {
 	//Player_Actor he; //call vars
@@ -394,7 +398,9 @@ void battleSystem::hackOutput(string n)
 
 // battle_system calls
 void battleSystem::attack() 
-{}
+{
+	targetEnemy();
+}
 
 void battleSystem::defend()
 {}

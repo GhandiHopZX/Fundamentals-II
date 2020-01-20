@@ -375,7 +375,7 @@ aegesa aegesa::getParty()
 	for (size_t i = 0; i < party_num; i++)
 	{
 		return Party[party_num];
-	}
+	};
 }
 
 aegesa aegesa::callPartyMember(int pos)

@@ -4,6 +4,8 @@
 #include <vector>
 #include <ctime>
 #include "aegesa.h"
+#include "Player_Actor.h"
+#include "Enemy.h"
 
 using namespace std;
 
@@ -39,6 +41,11 @@ public:
 
 	void targetEnemy();
 	void aiTargeting();
+
+	void targetedEnemy(Enemy e, int statpwr);
+
+
+	void aItargeted();
 
 	// the core functions of what the player can do when the player can do
 	void turn();
@@ -92,6 +99,13 @@ public:
 
 
 	// templates
+
+	template <class statPwr>
+	statPwr point_plier(statPwr atk, statPwr mgk, statPwr auraFp)
+	{
+		
+	}
+
 	template <class T>
 	T absolute(T ab0, T ab1, T ab2, T ab3)
 	{
