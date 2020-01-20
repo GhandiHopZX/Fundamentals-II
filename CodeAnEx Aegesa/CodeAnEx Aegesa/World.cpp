@@ -248,7 +248,7 @@ void World::partyMenu(Player_Actor party)
 	cout << "" << endl;
 
 	// print menu
-	for (size_t i = 0; i < party.getParty_num(); i++)
+	for (int i = 0; i < party.getParty_num(); i++)
 	{
 		string m = party.callPartyMember(i).getStatus().buffName;
 		int v = party.callPartyMember(i).getStatus().turns_Of_aff;
@@ -325,32 +325,32 @@ void World::navigation(int selectedMap, int x, int y, int z)
 	switch (dir)
 	{
 	case 'n':
-		maps[selectedMap].y + 1;
+		maps[selectedMap].y += 1;
 		break;
 	case 'ne':
-		maps[selectedMap].y + 1;
-		maps[selectedMap].x - 1;
+		maps[selectedMap].y += 1;
+		maps[selectedMap].x -= 1;
 		break;
 	case 'nw':
-		maps[selectedMap].y + 1;
-		maps[selectedMap].x + 1;
+		maps[selectedMap].y += 1;
+		maps[selectedMap].x += 1;
 		break;
 	case 's':
-		maps[selectedMap].y - 1;
+		maps[selectedMap].y -= 1;
 		break;
 	case 'se':
-		maps[selectedMap].y - 1;
-		maps[selectedMap].x - 1;
+		maps[selectedMap].y -= 1;
+		maps[selectedMap].x -= 1;
 		break;
 	case 'sw':
-		maps[selectedMap].y - 1;
-		maps[selectedMap].x + 1;
+		maps[selectedMap].y -= 1;
+		maps[selectedMap].x += 1;
 		break;
 	case 'w':
-		maps[selectedMap].x + 1;
+		maps[selectedMap].x += 1;
 		break;
 	case 'e':
-		maps[selectedMap].x - 1;
+		maps[selectedMap].x -= 1;
 		break;
 	default:
 		cout << "not a direction or command" << endl;
@@ -360,8 +360,8 @@ void World::navigation(int selectedMap, int x, int y, int z)
 
 	switch (z)
 	{
-	maps[selectedMap].z = z;
 	default:
+		maps[selectedMap].z = z;
 		break;
 	} 
 }

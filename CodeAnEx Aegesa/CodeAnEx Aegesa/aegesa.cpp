@@ -1,14 +1,17 @@
-#include "aegesa.h"
 #include <iostream>
+#include "aegesa.h"
 #include "Player_Actor.h"
 #include "Enemy.h"
 using namespace std;
+
+aegesa Party[];
 
 aegesa::aegesa()
 {
 	EXP = NULL;
 	dummyPlus = NULL;
 	statmulti = NULL;
+	party_num = 4;
 	hpd = getHp();
 	spd = getSp(); // special
 	fpd = getFp(); // fighter (aural)
@@ -355,8 +358,43 @@ void aegesa::setStatus(statusEff statusName[])
 	// statusEff;
 }
 
+void aegesa::setParty(aegesa currentPa, int pos)
+{
+	if (leader == true)
+	{
+		Party[pos] = currentPa;
+	}
+	else
+	{
+		cout << "not a party leader..." << endl;
+	}
+}
+
+aegesa aegesa::getParty()
+{
+	for (size_t i = 0; i < party_num; i++)
+	{
+		return Party[party_num];
+	}
+}
+
+aegesa aegesa::callPartyMember(int pos)
+{
+	return Party[pos];
+}
+
 void aegesa::battleGuage()
 {
+}
+
+void aegesa::setTitle(string n)
+{
+	title = n;
+}
+
+int aegesa::getSPDPlus()
+{
+	return dummyPlus;
 }
 
 aegesa::~aegesa()

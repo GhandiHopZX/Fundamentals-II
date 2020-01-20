@@ -17,7 +17,7 @@ private:
 	int goldA; // gold awarded
 	bool leader; // lead
 	int party_num;
-	string title;
+	
 
 public:
 	// check this for a weakness
@@ -54,31 +54,12 @@ public:
 
 	int getSPDPlus();
 
-	Enemy getParty();
-
-	int getParty_num()
-	{
-		return party_num;
-	}
-
 	void setItem(int);
 
 	void setGold(int);
 
 	void setEXP(int);
 
-	void setParty(Enemy currentPa, int pos);
-
-	void setParty_num(int n)
-	{
-		party_num = n;
-	}
-
-	Enemy callPartyMember(int pos);
-
-	string getTitle();
-
-	void setTitle(string n);
 
 	// list of enemy types and methods
 	list <Enemy> enemyList = {};

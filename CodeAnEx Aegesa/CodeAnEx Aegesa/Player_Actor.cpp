@@ -40,33 +40,7 @@ Player_Actor::Player_Actor()
 #pragma endregion
 }
 
-//full party
-Player_Actor Party[];
 
-void Player_Actor::setParty(Player_Actor currentPa, int pos)
-{
-	if (leader == true)
-	{
-		Party[pos] = currentPa;
-	}
-	else
-	{
-		cout << "not a party leader..." << endl;
-	}
-}
-
-Player_Actor Player_Actor::getParty()
-{
-	for (size_t i = 0; i < party_num; i++)
-	{
-		return Party[party_num];
-	}
-}
-
-Player_Actor Player_Actor::callPartyMember(int pos)
-{
-	return Party[pos];
-}
 
 // use this to kill the player and when they die
 Player_Actor::~Player_Actor()

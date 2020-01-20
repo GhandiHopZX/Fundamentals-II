@@ -5,6 +5,7 @@
 #include <thread>
 #include "windows.h"
 #include "stdlib.h"
+#include "aegesa.h"
 #include "inventory.h"
 #include "battleSystem.h"
 #include "Player_Actor.h"
@@ -18,6 +19,7 @@ Player_Actor he; //call vars
 Enemy en; // call vars
 skillAction skilz;
 inventory inv;
+aegesa ae;
 
 battleSystem::battleSystem()
 {
@@ -74,7 +76,7 @@ void battleSystem::battleMode()
 		
 		turnSystem(turn_Number);
 
-		turn_Number++; // get an operator for this
+		--turn_Number; // get an operator for this
 
 	} while (battleTime);
 	
@@ -148,10 +150,6 @@ void battleSystem::turn()
 // how many turns is your status eff or plus gonna last???
 void battleSystem::statTurn(aegesa::statusEff turnsLastS)
 {
-	//Player_Actor he; //call vars
-	//Enemy en; // call vars do another function for these guys
-	//skillAction skilz;
-
 	int maxNumber = 19;
 	int max_Statuses = maxNumber;
 	int b{};
@@ -160,15 +158,15 @@ void battleSystem::statTurn(aegesa::statusEff turnsLastS)
 	// and then count them down for each turn in another iterator.
 	for (int i = b - 1; i < he.getParty_num(); i++)
 	{
-		b = he.callPartyMember(i).getStatus().turns_Of_aff;
+		b = ae.callPartyMember(i).getStatus().turns_Of_aff;
 		//put the statuses in here
 		--b;
 	}
 	for (int i = 0; i < maxNumber; i++)
 	{
-		if (he.callPartyMember(i).My_Statuses[i].turns_Of_aff <= 0)
+		if (ae.callPartyMember(i).My_Statuses[i].turns_Of_aff <= 0)
 		{
-			he.callPartyMember(i).My_Statuses[i].buffName.erase();
+			ae.callPartyMember(i).My_Statuses[i].buffName.erase();
 		}
 	}
 	
@@ -183,6 +181,8 @@ void battleSystem::turnSystem(int turnN)
 	bool guagek;
 	guagek = aGuage;
 	int turnBack;
+
+
 	// a = no turn at the moment or turnA clash, b = enemy turn check, c = yor TUARN check, d = conflict turn for turn A clash
 	// infinite turns till its over
 	do
@@ -200,6 +200,8 @@ void battleSystem::turnSystem(int turnN)
 			normalOutput("TURN # "+ turnN);
 			enemyTurn();
 			statTurn(he.getParty().getStatus());// call this whenever you get a SPECIFIC stat you want that is numbered
+			// look through the stat turn anatomy
+			// that might be the answer
 			break;
 
 		case (c):
@@ -217,7 +219,7 @@ void battleSystem::turnSystem(int turnN)
 
 		case (e):
 			// Turncheck
-			turnBack = -4; // if nobodys turn
+			//static_cast<t>(turnBack) -= 4; // if nobodys turn
 
 			break;
 
@@ -265,7 +267,7 @@ bool battleSystem::playerTGuage(int spdPlus, int spd, int fp)
 		int push = 2;
 
 		*aGuage = true;
-		turnSystem(static_cast<t>(push));
+		turnSystem(push);
 		normalOutput("primed..!");
 		guage.tm_sec = 0; // reset
 		return aGuage;
@@ -310,7 +312,7 @@ bool battleSystem::enemyTGuage(int spdPlus, int spd, int fp)
 		int push = 1;
 
 		*aGuage = true;
-		turnSystem(static_cast<t>(push));
+		turnSystem(push);
 		normalOutput("primed..!");
 		guage.tm_sec = 0; // reset
 		return aGuage;

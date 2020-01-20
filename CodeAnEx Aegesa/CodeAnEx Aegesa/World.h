@@ -3,6 +3,7 @@
 #include <string>
 #include <list>
 #include <vector>
+#include "aegesa.h"
 #include "Player_Actor.h"
 #include "battleSystem.h"
 

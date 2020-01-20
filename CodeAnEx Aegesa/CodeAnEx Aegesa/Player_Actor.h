@@ -16,24 +16,20 @@ private:
 	
 	string bio; // YOUR STORY!
 	string name; // YOUR NAME!
-	bool leader; // this is for the party system
-	int party_num; // number of people you can have
+	
 	// variables
 
 public:
 	// stat multiplier flag
 	bool statmulti;
 	int dummyPlus;
-
+	
 	// stuff
 	
 	// Constructors
 	Player_Actor();
 
 	// getters / accessors
-	Player_Actor getParty();
-
-	Player_Actor callPartyMember(int);
 
 	string normalOutput(string normal)
 	{
@@ -167,10 +163,7 @@ public:
 	// setters / mutators
 
 #pragma region setters
-	void setParty_num(int n)
-	{
-		party_num = n;
-	}
+	
 
 	void setName(string x)
 	{
@@ -576,7 +569,7 @@ public:
 
 #pragma endregion
 
-	void setParty(Player_Actor currentPa, int pos);
+	
 	//void battleGuage();
 
 	// Deconstructor

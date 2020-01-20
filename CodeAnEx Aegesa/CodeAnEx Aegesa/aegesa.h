@@ -4,7 +4,7 @@
 #include "aegesa.h"
 
 using namespace std;
-//this is a dummy class for enemy
+//this is a parent class for enemies, actors and player actors
 class aegesa
 {
 public:
@@ -49,16 +49,19 @@ public:
 	int STRd = 0; // strength (also effects status)
 	int ENDd = 0; // endurance (bodily based / also effects status)
 	int CONd = 0; // constitution (mental, body, soul, based / also effects status)
+	int party_num; // number of people you can have
+	bool leader;
 
 	// experience
 	unsigned int EXP; // experience to obtain the per level ap gain
-
+	string title;
 #pragma endregion
 
 	struct statusEff
 	{
 		string buffName;
 		int turns_Of_aff = 0;
+		
 		// afflictions statbase
 		unsigned int hp = 0; // health
 		unsigned int sp = 0; // special
@@ -111,8 +114,7 @@ public:
 		ANGER 
 	}; // wip
 
-	statusEff My_Statuses[20]
-	{
+	statusEff My_Statuses[20]{
 	};
 
 	// variables
@@ -142,6 +144,17 @@ public:
 	{
 		return name;
 	};
+
+	string getTitle()
+	{
+		return title;
+	}
+
+
+	int getParty_num()
+	{
+		return party_num;
+	}
 
 	bool getSMulti()
 	{
@@ -252,6 +265,10 @@ public:
 	// setters / mutators
 
 #pragma region setters
+	void setParty_num(int n)
+	{
+		party_num = n;
+	}
 
 	void setSPDplus(int m)
 	{
@@ -519,7 +536,15 @@ public:
 #pragma endregion
 
 	//// functions
+
+	void setTitle(string n);
+
+	int getSPDPlus();
+	
 	void setStatus(statusEff statusName[]);
+	void setParty(aegesa currentPa, int pos);
+	aegesa getParty();
+	aegesa callPartyMember(int pos);
 	void battleGuage();
 	string normalOutput(string normal)
 	{
