@@ -540,11 +540,8 @@ public:
 	void setTitle(string n);
 
 	int getSPDPlus();
-	
 	void setStatus(statusEff statusName[]);
-	void setParty(aegesa currentPa, int pos);
-	aegesa getParty();
-	aegesa callPartyMember(int pos);
+	
 	void battleGuage();
 	string normalOutput(string normal)
 	{

@@ -42,7 +42,7 @@ public:
 	void targetEnemy();
 	void aiTargeting();
 
-	void targetedEnemy(Enemy e, int statpwr);
+	void targetedEnemy(int index);
 
 
 	void aItargeted();
@@ -101,10 +101,15 @@ public:
 	// templates
 
 	template <class statPwr>
-	statPwr point_plier(statPwr atk, statPwr mgk, statPwr auraFp)
+	statPwr point_plier(statPwr weapon, statPwr atk, statPwr mgk, statPwr auraFp)
 	{
-		
+		int attr_strengh = weapon;
+		int attr_size = atk + mgk + auraFp;
+		int atk_value = .75 * attr_strengh + .67 * attr_size;
+		return atk_value;
 	}
+
+
 
 	template <class T>
 	T absolute(T ab0, T ab1, T ab2, T ab3)

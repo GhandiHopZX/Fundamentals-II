@@ -11,7 +11,7 @@
 
 using namespace std;
 
-//Enemy d;
+Enemy troop[];
 
 Enemy::Enemy()
 {
@@ -171,6 +171,12 @@ Enemy Enemy::BossCall(int call)
 	return lvl1index[call];
 }
 
+Enemy Enemy::callTroopMember(int in)
+{
+	return troop[in];
+	
+}
+
 int Enemy::getItem()
 {
 	return itemN;
@@ -206,4 +212,6 @@ void Enemy::setEXP(int rexp)
 	expA = rexp;
 }
 
+void Enemy::setTroop(Enemy d, int indx) {
 
+}

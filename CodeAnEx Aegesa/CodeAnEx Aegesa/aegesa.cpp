@@ -4,8 +4,6 @@
 #include "Enemy.h"
 using namespace std;
 
-aegesa Party[];
-
 aegesa::aegesa()
 {
 	EXP = NULL;
@@ -27,6 +25,8 @@ aegesa::aegesa()
 	STRd = getSTR(); // strength (also effects status)
 	ENDd = getEND(); // endurance (bodily based / also effects status)
 	CONd = getCON(); // constitution (mental, body, soul, based / also effects status)
+
+	
 }
 
 aegesa::statusEff aegesa::getStatus()
@@ -358,30 +358,6 @@ void aegesa::setStatus(statusEff statusName[])
 	// statusEff;
 }
 
-void aegesa::setParty(aegesa currentPa, int pos)
-{
-	if (leader == true)
-	{
-		Party[pos] = currentPa;
-	}
-	else
-	{
-		cout << "not a party leader..." << endl;
-	}
-}
-
-aegesa aegesa::getParty()
-{
-	for (size_t i = 0; i < party_num; i++)
-	{
-		return Party[party_num];
-	};
-}
-
-aegesa aegesa::callPartyMember(int pos)
-{
-	return Party[pos];
-}
 
 void aegesa::battleGuage()
 {

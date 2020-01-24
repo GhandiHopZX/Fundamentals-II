@@ -46,6 +46,8 @@ public:
 
 	Enemy BossCall(int);
 
+	Enemy callTroopMember(int);
+
 	int getItem();
 
 	int getGold();
@@ -59,6 +61,9 @@ public:
 	void setGold(int);
 
 	void setEXP(int);
+
+	void setTroop(Enemy d, int indx);
+
 
 
 	// list of enemy types and methods

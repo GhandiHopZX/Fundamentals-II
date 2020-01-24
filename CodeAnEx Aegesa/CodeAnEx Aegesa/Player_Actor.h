@@ -569,7 +569,9 @@ public:
 
 #pragma endregion
 
-	
+	void setParty(Player_Actor currentPa, int pos);
+	Player_Actor getParty();
+	Player_Actor callPartyMember(int pos);
 	//void battleGuage();
 
 	// Deconstructor

@@ -45,19 +45,19 @@ void battleSystem::battleMode()
 	//enemy set
 	for (size_t i = 0; i < en.getParty_num(); i++)
 	{
-		en.setParty(en.enemyRandEncounter(), i);
-		normalOutput("a " + en.callPartyMember(i).getName() + " approches..");
+		en.setTroop(en.enemyRandEncounter(), i);
+		//normalOutput("a " + en.callTroopMember(i).getName() + " approches..");
 		cin.get();
 	}
 
 	if (en.getParty_num() > 1)
 	{
-		normalOutput("The " + en.callPartyMember(0).getName() + " group challenges...");
+		//normalOutput("The " + en.callTroopMember(0).getName() + " group challenges...");
 		cin.get();
 	}
 	else
 	{
-		normalOutput("ENTER " + en.callPartyMember(0).getName() + " " + en.callPartyMember(0).getTitle());
+		//normalOutput("ENTER " + en.callTroopMember(0).getName() + " " + en.callTroopMember(0).getTitle());
 	}
 
 	do
@@ -71,7 +71,7 @@ void battleSystem::battleMode()
 		
 		for (size_t i = 0; i < en.getParty_num(); i++)
 		{
-			enemyTGuage(en.callPartyMember(i).getSPDPlus(), en.callPartyMember(i).getSPD(), en.callPartyMember(i).getFp());
+			//enemyTGuage(en.callTroopMember(i).getSPDPlus(), en.callTroopMember(i).getSPD(), en.callTroopMember(i).getFp());
 		}
 		
 		turnSystem(turn_Number);
@@ -108,7 +108,7 @@ void battleSystem::aiTargeting()
 	//skillAction skilz;
 }
 
-void battleSystem::targetedEnemy(Enemy e, int statpwr) {}
+void battleSystem::targetedEnemy(int e) {}
 
 void battleSystem::aItargeted() {}
 
@@ -156,21 +156,20 @@ void battleSystem::statTurn(aegesa::statusEff turnsLastS)
 {
 	int maxNumber = 19;
 	int max_Statuses = maxNumber;
-	int b{};
 	// statusCall <- here call an integer for these status effects
 	// for this for loop use the interator to set how many turns for each individual status
 	// and then count them down for each turn in another iterator.
-	for (int i = b - 1; i < he.getParty_num(); i++)
+	for (int i = 0; i < he.getParty_num(); i++)
 	{
-		b = ae.callPartyMember(i).getStatus().turns_Of_aff;
 		//put the statuses in here
-		--b;
+		he.callPartyMember(i).getStatus().turns_Of_aff - 1;
 	}
+	// stat check
 	for (int i = 0; i < maxNumber; i++)
 	{
-		if (ae.callPartyMember(i).My_Statuses[i].turns_Of_aff <= 0)
+		if (he.callPartyMember(i).My_Statuses[i].turns_Of_aff <= 0)
 		{
-			ae.callPartyMember(i).My_Statuses[i].buffName.erase();
+			he.callPartyMember(i).My_Statuses[i].buffName.erase();
 		}
 	}
 	
