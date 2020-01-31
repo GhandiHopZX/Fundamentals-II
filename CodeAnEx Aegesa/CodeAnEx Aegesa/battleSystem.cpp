@@ -76,7 +76,7 @@ void battleSystem::battleMode()
 		
 		turnSystem(turn_Number);
 
-		--turn_Number; // get an operator for this
+		turn_Number = 0; // get an operator for this
 
 	} while (battleTime);
 	
@@ -191,11 +191,12 @@ void battleSystem::turnSystem(int turnN)
 	do
 	{
 		// turn switch checking whose turn it is
-		switch (turnN)
+		switch (turnN) // int to enum comparison
 		{
 		case (a):
 			// turn a is always at 0 if its at d which = 4...
 			// CLASH this is why its called TURN A clash
+			turn_A_mode();
 			break;
 
 		case (b):
@@ -396,7 +397,7 @@ void battleSystem::hackOutput(string n)
 }
 
 // battle_system calls
-void battleSystem::attack() 
+void battleSystem::attack() // to do: modify this
 {
 	targetEnemy();
 }

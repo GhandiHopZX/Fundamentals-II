@@ -64,10 +64,8 @@ public:
 
 	void setTroop(Enemy d, int indx);
 
-
-
 	// list of enemy types and methods
-	list <Enemy> enemyList = {};
+	list <Enemy> enemyTroop = {};
 
-	
+
 };
