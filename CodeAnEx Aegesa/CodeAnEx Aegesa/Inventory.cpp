@@ -6,8 +6,8 @@
 #include "Player_Actor.h"
 #include "Enemy.h"
 #include "World.h"
-// use tha multimap function
 
+// use tha multimap function
 using namespace std;
 
 inventory::inventory()
@@ -407,9 +407,10 @@ void inventory::selectlistWeapon(int u)
 
 void inventory::itemCall()
 {
-	Player_Actor he; //call vars
-	Enemy en; // call vars
-}
+	//Player_Actor he; //call vars
+	//Enemy en; // call vars
+
+} // fix this
 
 // for combat
 void inventory::PlayerItemInventory() // gotta make an inventory that'll work in the world menu
@@ -512,6 +513,17 @@ void inventory::PlayerItemInventory() // gotta make an inventory that'll work in
 	}
 }
 
+// arrays for the player's inventory.
+
+inventory::weapon my_weapons[inventory::MAX_INTEGRITY] =
+{};
+
+inventory::armor my_armors[inventory::MAX_INTEGRITY] =
+{};
+
+inventory::item my_items[inventory::MAX_INTEGRITY] =
+{};
+
 void inventory::setWeapon(inventory::weapon weapon, int index)
 {
 	ActorWeaponE[index] = weapon;
@@ -520,6 +532,16 @@ void inventory::setWeapon(inventory::weapon weapon, int index)
 void inventory::setArmor(inventory::armor gear, int index)
 {
 	ActorArmorE[index] = gear;
+}
+
+inventory inventory::armor getMyArmors(int index)
+{
+	return ActorArmorE[index];
+}
+
+inventory inventory::weapon getMyWeapons(int index)
+{
+	return ActorWeaponE[index];
 }
 
 void inventory::rewardCall(int index)

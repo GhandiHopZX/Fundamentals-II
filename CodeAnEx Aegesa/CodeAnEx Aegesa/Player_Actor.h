@@ -5,6 +5,7 @@
 #include <stack>
 #include <thread>
 #include "battleSystem.h"
+#include "inventory.h"
 #include "aegesa.h"
 
 using namespace std;
@@ -20,11 +21,10 @@ private:
 	// variables
 
 public:
+
 	// stat multiplier flag
 	bool statmulti;
 	int dummyPlus;
-	
-	// stuff
 	
 	// Constructors
 	Player_Actor();
@@ -159,8 +159,6 @@ public:
 	};
 
 #pragma endregion
-
-	// setters / mutators
 
 #pragma region setters
 	

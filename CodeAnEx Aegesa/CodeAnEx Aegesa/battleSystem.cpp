@@ -399,6 +399,11 @@ void battleSystem::hackOutput(string n)
 // battle_system calls
 void battleSystem::attack() // to do: modify this
 {
+	int weaponPwr;
+
+	// I guess now everyone has their own inventory...
+	weaponPwr = he.getATKd() + inv.ActorWeaponE->atkAdd; 
+	point_plier(weaponPwr, he.getSpd(), he.getFpd());
 	targetEnemy();
 }
 

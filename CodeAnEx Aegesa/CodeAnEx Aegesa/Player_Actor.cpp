@@ -13,6 +13,7 @@ Player_Actor::Player_Actor()
 	statmulti = false;
 	leader = false;
 	party_num = 4;
+
 #pragma region Stat_Instantiation
 
 	// base stats

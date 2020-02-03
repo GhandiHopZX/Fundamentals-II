@@ -16,6 +16,7 @@ private:
 	int capacity; // stack size
 	int size;
 
+
 public:
 	// structs
 	struct weapon
@@ -103,19 +104,6 @@ public:
 	// constant variables
 	static const int MAX_INTEGRITY = 20;
 
-	// arrays for the player's inventory.
-	weapon my_weapons[MAX_INTEGRITY] =
-	{};
-
-	armor my_armors[MAX_INTEGRITY] =
-	{};
-
-	item my_items[MAX_INTEGRITY] =
-	{};
-
-	weapon ActorWeaponE[1] = { getMyWeapons(0) };
-	armor ActorArmorE[1] = { getMyArmors(0) };
-
 	// constructor
 	inventory();
 
@@ -129,20 +117,8 @@ public:
 
 	inventory(int, item);*/
 
-	// getters/accessors
-	inventory::weapon getMyWeapons(int index)
-	{
-		return ActorWeaponE[index];
-	}
-
-	inventory::armor getMyArmors(int index)
-	{
-		return ActorArmorE[index];
-	}
-
-	// setters/mutators
-	void setWeapon(inventory::weapon weapon, int index);
-	void setArmor(inventory::armor gear, int index);
+	inventory::weapon ActorWeaponE[1] = {};
+	inventory::armor ActorArmorE[1] = {};
 
 	// functions
 	void push(int);
@@ -301,6 +277,12 @@ public:
 	void selectlistArmor(int u);
 
 	void selectlistWeapon(int u);
+
+	// get
+
+	// setters / mutators
+	void setWeapon(inventory::weapon weapon, int index);
+	void setArmor(inventory::armor gear, int index);
 
 	// shop_time
 
