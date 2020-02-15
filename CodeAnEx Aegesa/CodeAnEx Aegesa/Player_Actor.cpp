@@ -4,7 +4,6 @@
 #include "Player_Actor.h"
 //#include "battleSystem.h"
 #include "inventory.h"
-#include "aegesa.cpp"
 
 Player_Actor::Player_Actor()
 {
