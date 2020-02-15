@@ -513,16 +513,6 @@ void inventory::PlayerItemInventory() // gotta make an inventory that'll work in
 	}
 }
 
-// arrays for the player's inventory.
-
-inventory::weapon my_weapons[inventory::MAX_INTEGRITY] =
-{};
-
-inventory::armor my_armors[inventory::MAX_INTEGRITY] =
-{};
-
-inventory::item my_items[inventory::MAX_INTEGRITY] =
-{};
 
 void inventory::setWeapon(inventory::weapon weapon, int index)
 {
@@ -534,15 +524,15 @@ void inventory::setArmor(inventory::armor gear, int index)
 	ActorArmorE[index] = gear;
 }
 
-inventory inventory::armor getMyArmors(int index)
-{
-	return ActorArmorE[index];
-}
-
-inventory inventory::weapon getMyWeapons(int index)
-{
-	return ActorWeaponE[index];
-}
+//inventory inventory::armor getMyArmors(int index)
+//{
+//	return ActorArmorE[index];
+//}
+//
+//inventory inventory::weapon getMyWeapons(int index)
+//{
+//	return ActorWeaponE[index];
+//}
 
 void inventory::rewardCall(int index)
 {

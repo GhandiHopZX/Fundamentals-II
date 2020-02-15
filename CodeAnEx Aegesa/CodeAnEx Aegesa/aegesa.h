@@ -150,7 +150,6 @@ public:
 		return title;
 	}
 
-
 	int getParty_num()
 	{
 		return party_num;
@@ -366,12 +365,12 @@ public:
 
 		if (statmulti == true)
 		{
-			EXP = expin + plus;
+			EXP += expin + plus;
 		}
 		else
 		{
 			cout << "EXP multiplier gain has faded." << endl;
-			EXP = expin;
+			EXP += expin;
 			//EXP -= eDrain;
 		}
 	}

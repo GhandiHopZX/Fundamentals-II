@@ -2,7 +2,7 @@
 #include <string>
 #include <ctime>
 #include "Player_Actor.h"
-#include "battleSystem.h"
+//#include "battleSystem.h"
 #include "inventory.h"
 #include "aegesa.cpp"
 
@@ -43,31 +43,31 @@ Player_Actor::Player_Actor()
 }
 
 Player_Actor Party[];
-
-void Player_Actor::setParty(Player_Actor currentPa, int pos)
-{
-	if (leader == true)
-	{
-		Party[pos] = currentPa;
-	}
-	else
-	{
-		cout << "not a party leader..." << endl;
-	}
-}
-
-Player_Actor Player_Actor::getParty()
-{
-	for (int i = 0; i < party_num; i++)
-	{
-		return Party[party_num];
-	};
-}
-
-Player_Actor Player_Actor::callPartyMember(int pos)
-{
-	return Party[pos];
-}
+//
+//void Player_Actor::setParty(Player_Actor currentPa, int pos)
+//{
+//	if (leader == true)
+//	{
+//		Party[pos] = currentPa;
+//	}
+//	else
+//	{
+//		cout << "not a party leader..." << endl;
+//	}
+//}
+//
+//Player_Actor Player_Actor::getParty()
+//{
+//	for (int i = 0; i < party_num; i++)
+//	{
+//		return Party[party_num];
+//	};
+//}
+//
+//Player_Actor Player_Actor::callPartyMember(int pos)
+//{
+//	return Party[pos];
+//}
 
 // use this to kill the player and when they die
 Player_Actor::~Player_Actor()

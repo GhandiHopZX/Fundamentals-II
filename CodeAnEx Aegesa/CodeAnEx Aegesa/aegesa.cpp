@@ -29,6 +29,39 @@ aegesa::aegesa()
 	
 }
 
+void aegesa::setTitle(string n)
+{
+	title = n;
+}
+
+void aegesa::setStatus(statusEff statusName[])
+{
+	// Base stats
+	statusName[0].hp += 5;
+
+	// a criterion is checked here
+	// and used to see what statuses are present in said
+	// player status then are passed
+	// into the statusEFF index then the index is passed into
+	// gameSystem...
+	// this is where the statuses are taken
+
+	statusName[20] = {};
+	statusEff thisStatus[20] = {};
+	for (int i = 0; i < 20; i++)
+	{
+		My_Statuses[i] = statusName[i];
+	}
+	// beta test
+	string beta = "test";
+	// statusEff;
+}
+
+int aegesa::getSPDPlus()
+{
+	return dummyPlus;
+}
+
 aegesa::statusEff aegesa::getStatus()
 {
 	int i = 0;
@@ -335,42 +368,8 @@ void aegesa::statPlus(char stat, int plus)
 	}
 }
 
-void aegesa::setStatus(statusEff statusName[])
-{
-	// Base stats
-	statusName[0].hp += 5;
-
-	// a criterion is checked here
-	// and used to see what statuses are present in said
-	// player status then are passed
-	// into the statusEFF index then the index is passed into
-	// gameSystem...
-	// this is where the statuses are taken
-	
-	statusName[20] = {};
-	statusEff thisStatus[20] = {};
-	for (int i = 0; i < 20; i++)
-	{
-		My_Statuses[i] = statusName[i];
-	}
-	// beta test
-	string beta = "test";
-	// statusEff;
-}
-
-
 void aegesa::battleGuage()
 {
-}
-
-void aegesa::setTitle(string n)
-{
-	title = n;
-}
-
-int aegesa::getSPDPlus()
-{
-	return dummyPlus;
 }
 
 aegesa::~aegesa()

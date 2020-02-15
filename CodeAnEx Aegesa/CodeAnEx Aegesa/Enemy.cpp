@@ -169,10 +169,10 @@ Enemy Enemy::BossCall(int call)
 	return lvl1index[call];
 }
 
-Enemy Enemy::callTroopMember(int init)
-{
-	return enemyTroop.clear; //; how to use lists???
-}
+//Enemy Enemy::callTroopMember(int init)
+//{
+//	return enemyTroop.clear; //; how to use lists???
+//}
 
 int Enemy::getItem()
 {
@@ -209,7 +209,7 @@ void Enemy::setEXP(int rexp)
 	expA = rexp;
 }
 
-void Enemy::setTroop(Enemy d, int indx) 
-{
-	enemyTroop.insert = d;
-}
+//void Enemy::setTroop(Enemy d, int indx) 
+//{
+//	enemyTroop.insert = d;
+//}

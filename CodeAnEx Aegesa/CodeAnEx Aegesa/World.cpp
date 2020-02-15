@@ -248,14 +248,14 @@ void World::partyMenu(Player_Actor party)
 	cout << "" << endl;
 
 	// print menu
-	for (int i = 0; i < party.getParty_num(); i++)
+	/*for (int i = 0; i < party.getParty_num(); i++)
 	{
 		string m = party.callPartyMember(i).getStatus().buffName;
 		int v = party.callPartyMember(i).getStatus().turns_Of_aff;
 		cout << party.callPartyMember(i).getName() << ": " << '\n' << "HP" << ": " << party.callPartyMember(i).getHpd() << '/' << party.callPartyMember(i).getHp();
 		cout << '\n' << "SP" << '\t' << party.callPartyMember(i).getSPDd() << '/' << party.callPartyMember(i).getSp() << endl;
 		cout << "[" << m << "]" << "Turns Left: " << v << endl;
-	}
+	}*/
 
 	cout << "Please select an option....\n (s) status,\n (e) Equip,\n (sa) skillActions,\n (t) classTree ";
 	switch (choice)

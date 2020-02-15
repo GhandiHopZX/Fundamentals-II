@@ -116,6 +116,17 @@ public:
 	inventory(int, armor);
 
 	inventory(int, item);*/
+	// arrays for the player's inventory.
+
+	weapon my_weapons[inventory::MAX_INTEGRITY] =
+	{};
+
+	armor my_armors[inventory::MAX_INTEGRITY] =
+	{};
+
+	item my_items[inventory::MAX_INTEGRITY] =
+	{};
+
 
 	inventory::weapon ActorWeaponE[1] = {};
 	inventory::armor ActorArmorE[1] = {};
