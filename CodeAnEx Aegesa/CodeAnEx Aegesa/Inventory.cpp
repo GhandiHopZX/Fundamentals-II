@@ -368,7 +368,7 @@ void inventory::displaylistArmor() const
 	}
 }
 
-void inventory::selectlistItem(int u)
+void inventory::selectlistItem(int u, Player_Actor o)
 {
 	if (my_items <= 0)
 	{
@@ -376,11 +376,45 @@ void inventory::selectlistItem(int u)
 		cout << message;
 		my_items[0];
 	}
+	else
+	{
+		cout << "use Item?";
+		itemUse(u, o);
+	}
 	remItem(my_items[u].quantity);
 	//return my_items[u];
 }
 
-void inventory::selectlistArmor(int u)
+void inventory::itemUse(int d, Player_Actor o)
+{
+	// add stuff here
+	o.AGId += my_items[d].agiAdd;
+	o.ap += my_items[d].apAdd;
+	o.ATKd += my_items[d].atkAdd;
+	o.CONd += my_items[d].conAdd;
+	o.DEFd += my_items[d].defAdd;
+	o.DEXd += my_items[d].dexAdd;
+	o.ENDd += my_items[d].endAdd;
+	o.fpd += my_items[d].fpAdd;
+	 // use the gold value for gold items += my_items[d].goldValue;
+	o.AGId += my_items[d].hpAdd;
+	o.AGId += my_items[d].intAdd;
+	o.AGId += my_items[d].spAdd;
+	o.AGId += my_items[d].spdAdd;
+	o.AGId += my_items[d].sprAdd;
+	o.AGId += my_items[d].strAdd;
+
+	// name call
+	cout << my_items[d].name << "used" << endl;
+}
+
+void inventory::armorSell(int d, Player_Actor o)
+{
+
+	// name call
+}
+
+void inventory::selectlistArmor(int u, Player_Actor o)
 {
 	if (my_armors <= 0)
 	{
@@ -392,7 +426,7 @@ void inventory::selectlistArmor(int u)
 	//return my_armors[u];
 }
 
-void inventory::selectlistWeapon(int u)
+void inventory::selectlistWeapon(int u, Player_Actor i)
 {
 	if (my_weapons <= 0)
 	{
@@ -405,15 +439,13 @@ void inventory::selectlistWeapon(int u)
 	//return my_weapons[u];
 }
 
-void inventory::itemCall()
+void inventory::itemCall(int i)
 {
-	//Player_Actor he; //call vars
-	//Enemy en; // call vars
 
-} // fix this
+} // for item usage
 
 // for combat
-void inventory::PlayerItemInventory() // gotta make an inventory that'll work in the world menu
+void inventory::PlayerItemInventory(Player_Actor o) // gotta make an inventory that'll work in the world menu
 {
 	system("CLS");
 	// show choices'
@@ -431,15 +463,15 @@ void inventory::PlayerItemInventory() // gotta make an inventory that'll work in
 		//int i = 0;
 		choice = 'N';
 		cin >> i;
-		selectlistItem(i);
+		selectlistItem(i, o); // usage
 		if (isalpha(i))
 		{
 			cout << "invalid option" << endl;
-			PlayerItemInventory();
+			PlayerItemInventory(o);
 			break;
 		}
 		cout << "Make another selection?" << endl;
-		PlayerItemInventory();
+		PlayerItemInventory(o);
 		break;
 
 	case 'a':
@@ -450,16 +482,16 @@ void inventory::PlayerItemInventory() // gotta make an inventory that'll work in
 		//int i = 0;
 		choice = 'N';
 		cin >> i;
-		selectlistArmor(i);
+		selectlistArmor(i,o);
 		//equip armor
 		if (isalpha(i))
 		{
 			cout << "invalid option" << endl;
-			PlayerItemInventory();
+			PlayerItemInventory(o);
 			break;
 		}
 		cout << "Make another selection?" << endl;
-		PlayerItemInventory();
+		PlayerItemInventory(o);
 		break;
 
 	case 'w':
@@ -469,16 +501,16 @@ void inventory::PlayerItemInventory() // gotta make an inventory that'll work in
 
 		choice = 'N';
 		cin >> i;
-		selectlistWeapon(i);
+		selectlistWeapon(i,o);
 		//equip armor
 		if (isalpha(i))
 		{
 			cout << "invalid option" << endl;
-			PlayerItemInventory();
+			PlayerItemInventory(o);
 			break;
 		}
 		cout << "Make another selection?" << endl;
-		PlayerItemInventory();
+		PlayerItemInventory(o);
 		break;
 
 	case 'e':
@@ -498,11 +530,11 @@ void inventory::PlayerItemInventory() // gotta make an inventory that'll work in
 		if (isalpha(i))
 		{
 			cout << "invalid option" << endl;
-			PlayerItemInventory();
+			PlayerItemInventory(o);
 			break;
 		}
 		cout << "Make another selection?" << endl;
-		PlayerItemInventory();
+		PlayerItemInventory(o);
 		break;
 
 	case 'q':
@@ -514,14 +546,14 @@ void inventory::PlayerItemInventory() // gotta make an inventory that'll work in
 }
 
 
-void inventory::setWeapon(inventory::weapon weapon, int index)
+void inventory::setWeapon(Player_Actor o, inventory::weapon weapon, int index)
 {
-	ActorWeaponE[index] = weapon;
+	//o.mActorWeaponE[index] = weapon;
 }
 
-void inventory::setArmor(inventory::armor gear, int index)
+void inventory::setArmor(Player_Actor o, inventory::armor gear, int index)
 {
-	ActorArmorE[index] = gear;
+	//o.mActorArmorE[index] = gear;
 }
 
 //inventory inventory::armor getMyArmors(int index)

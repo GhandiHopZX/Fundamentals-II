@@ -22,6 +22,10 @@ private:
 	// variables
 
 public:
+	/*
+	inventory::weapon mActorWeaponE[1];
+	inventory::armor mActorArmorE[1];
+	*/
 
 	// stat multiplier flag
 	/*bool statmulti;

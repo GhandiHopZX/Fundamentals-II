@@ -2,8 +2,8 @@
 #include <iostream>
 #include <string>
 #include <cstdio>
-#include "Player_Actor.h"
 #include "inventory.h"
+#include "Player_Actor.h"
 
 using namespace std;
 
@@ -157,9 +157,9 @@ public:
 	void displaylistWeapon() const;
 	void displaylistArmor() const;
 
-	void PlayerItemInventory();
+	void PlayerItemInventory(Player_Actor);
 
-	void itemCall();
+	void itemCall(int);
 
 	// battleSystem
 	void rewardCall(int);
@@ -283,17 +283,21 @@ public:
 	}
 
 	// selections
-	void selectlistItem(int);
+	void selectlistItem(int, Player_Actor);
 
-	void selectlistArmor(int u);
+	void itemUse(int d, Player_Actor);
 
-	void selectlistWeapon(int u);
+	void armorSell(int d, Player_Actor o);
+
+	void selectlistArmor(int u, Player_Actor);
+
+	void selectlistWeapon(int u, Player_Actor);
 
 	// get
 
 	// setters / mutators
-	void setWeapon(inventory::weapon weapon, int index);
-	void setArmor(inventory::armor gear, int index);
+	void setWeapon(Player_Actor, inventory::weapon weapon, int index);
+	void setArmor(Player_Actor, inventory::armor gear, int index);
 
 	// shop_time
 
