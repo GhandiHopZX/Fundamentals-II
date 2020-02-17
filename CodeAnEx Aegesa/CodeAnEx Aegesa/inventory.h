@@ -18,7 +18,13 @@ private:
 
 
 public:
-	// structs
+	// structs  
+
+	// you're going to have to place these into separate classes that inherit inventory.h in order to 
+	// make a system for each actor to implement their own stuff needed. 
+	// 1 inventory for the main actor
+	// and 3 objects being weapon, armor and item for each and every actor
+
 	struct weapon
 	{
 		string name;
