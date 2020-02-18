@@ -268,7 +268,8 @@ void World::partyMenu(Player_Actor party)
 	case 'e':
 		// select party member
 		// equip items
-		mainInventory.PlayerItemInventory();
+		
+		mainInventory.PlayerItemInventory(Actor1);
 		break;
 
 	case 'sa':

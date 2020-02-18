@@ -293,17 +293,17 @@ public:
 
 	void itemUse(int d, Player_Actor);
 
-	void armorSell(int d, Player_Actor o);
+	//void armorSell(int d, Player_Actor o);
 
-	void selectlistArmor(int u, Player_Actor);
+	
 
 	void selectlistWeapon(int u, Player_Actor);
 
 	// get
 
 	// setters / mutators
-	void setWeapon(Player_Actor, inventory::weapon weapon, int index);
-	void setArmor(Player_Actor, inventory::armor gear, int index);
+	//void setWeapon(Player_Actor o, inventory::weapon weapon, int index);
+	//void setArmor(Player_Actor o, inventory::armor gear, int index);
 
 	// shop_time
 
