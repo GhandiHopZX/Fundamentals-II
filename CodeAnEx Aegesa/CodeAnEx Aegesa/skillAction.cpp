@@ -13,6 +13,8 @@ skillAction::skillAction(int call)
 {
 	// using cout for the sake of simplicity
 	// because normalOutput is for the battleSystem.
+	// this is for the menu
+
 	cout << skillcall(call).name << endl;
 	skillcall(call).dec;
 	displayElementType();
@@ -39,24 +41,27 @@ skillAction::skillAction(int call)
 		<< endl;
 }
 
-skillAction::skillAction(int num, string name, elementType, string dec, bool rangeType)
+skillAction::skillAction(int num, string name, elementType, string dec, bool rangeType, int sp_succ, int fp_succ, int* statMul[])
 {
+	// sp consume
 }
 
 skillAction skillAction::skillcall(int p)
 {
 #pragma region Skillist
-	skillAction FireWeave(0, "FireWeave", skillAction::elementType::Fire, "AN AOE ATTACK THAT ENGULFS ALL ENEMIES.", true);
-	skillAction WaterFlash(1, "WaterFlash", skillAction::elementType::Water, "A singular riptide of water..", false);
+	//skillAction FireWeave(0, "FireWeave", skillAction::elementType::Fire, "AN AOE ATTACK THAT ENGULFS ALL ENEMIES.", true);
+	//skillAction WaterFlash(1, "WaterFlash", skillAction::elementType::Water, "A singular riptide of water..", false);
 #pragma endregion
 
 	skillAction allSkills[50] =
 	{
-		FireWeave,
-		WaterFlash
+		/*FireWeave,
+		WaterFlash*/
 	};
 	return allSkills[p];
 }
+
+
 
 skillAction::elementType skillAction::getElementType()
 {
@@ -159,3 +164,12 @@ void skillAction::getRangeType()
 		cout << "Single" << endl;
 	}
 }
+
+template <>
+struct hash<skillAction>
+{
+	size_t operator() (const skillAction& sk) const
+	{
+		//individual Hashes
+	}
+};

@@ -408,23 +408,24 @@ void inventory::itemUse(int d, Player_Actor o)
 	cout << my_items[d].name << "used" << endl;
 }
 
-void inventory::armorSell(int d, Player_Actor o)
-{
+//
+//void inventory::armorSell(int d, Player_Actor o)
+//{
+//
+//	// name call
+//}
 
-	// name call
-}
-
-void inventory::selectlistArmor(int u, Player_Actor o)
-{
-	if (my_armors <= 0)
-	{
-		string message = "No Armors in index..";
-		cout << message;
-		my_armors[0];
-	}
-	remItem(my_armors[u].quantity);
-	//return my_armors[u];
-}
+//void inventory::selectlistArmor(int u, Player_Actor o)
+//{
+//	if (my_armors <= 0)
+//	{
+//		string message = "No Armors in index..";
+//		cout << message;
+//		my_armors[0];
+//	}
+//	//remItem(my_armors[u].quantity);
+//	//return my_armors[u];
+//}
 
 void inventory::selectlistWeapon(int u, Player_Actor i)
 {
@@ -482,7 +483,7 @@ void inventory::PlayerItemInventory(Player_Actor o) // gotta make an inventory t
 		//int i = 0;
 		choice = 'N';
 		cin >> i;
-		selectlistArmor(i,o);
+		//selectlistArmor(i,o);
 		//equip armor
 		if (isalpha(i))
 		{
@@ -545,16 +546,16 @@ void inventory::PlayerItemInventory(Player_Actor o) // gotta make an inventory t
 	}
 }
 
-
-void inventory::setWeapon(Player_Actor o, inventory::weapon weapon, int index)
-{
-	//o.mActorWeaponE[index] = weapon;
-}
-
-void inventory::setArmor(Player_Actor o, inventory::armor gear, int index)
-{
-	//o.mActorArmorE[index] = gear;
-}
+//
+//void inventory::setWeapon(Player_Actor o, inventory::weapon weapon, int index)
+//{
+//	//o.mActorWeaponE[index] = weapon;
+//}
+//
+//void inventory::setArmor(Player_Actor o, inventory::armor gear, int index)
+//{
+//	//o.mActorArmorE[index] = gear;
+//}
 
 //inventory inventory::armor getMyArmors(int index)
 //{
@@ -573,12 +574,7 @@ void inventory::rewardCall(int index)
 	//return allitemList(index);
 }
 
-void inventory::armorCall(int index)
-{
-	cout << armorlist[index].name << endl;
-	addItem(armorlist[index].quantity);
-	//return allarmorList(index);
-}
+
 
 void inventory::weaponCall(int index)
 {

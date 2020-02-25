@@ -124,18 +124,18 @@ public:
 	inventory(int, item);*/
 	// arrays for the player's inventory.
 
-	weapon my_weapons[inventory::MAX_INTEGRITY] =
-	{};
+	//weapon my_weapons[inventory::MAX_INTEGRITY] =
+	//{};
 
-	armor my_armors[inventory::MAX_INTEGRITY] =
-	{};
+	//armor my_armors[inventory::MAX_INTEGRITY] =
+	//{};
 
 	item my_items[inventory::MAX_INTEGRITY] =
 	{};
 
 
-	inventory::weapon ActorWeaponE[1] = {};
-	inventory::armor ActorArmorE[1] = {};
+	/*inventory::weapon ActorWeaponE[1] = {};
+	inventory::armor ActorArmorE[1] = {};*/
 
 	// functions
 	void push(int);
@@ -217,38 +217,38 @@ public:
 	{
 		return itemlist[integer];
 	}
-
-#pragma region All_armors
-	inventory::armor broad_armor;
-	inventory::armor kavelar_gear;
-	inventory::armor carbonite_gear;
-	inventory::armor crystalline_armor;
-	inventory::armor aerolite_gear;
-	inventory::armor vandham_armor;
-	inventory::armor antiImpact_armor;
-	inventory::armor katType_armor;
-	inventory::armor grenadier_composite_armor;
-	inventory::armor anti_nuclear_armor;
-#pragma endregion
-
-	inventory::armor armorlist[100] =
-	{
-		broad_armor,
-		kavelar_gear,
-		carbonite_gear,
-		crystalline_armor,
-		aerolite_gear,
-		vandham_armor,
-		antiImpact_armor,
-		katType_armor,
-		grenadier_composite_armor,
-		anti_nuclear_armor
-	};
-
-	inventory::armor allarmorList(int integer)
-	{
-		return armorlist[integer];
-	}
+//
+//#pragma region All_armors
+//	inventory::armor broad_armor;
+//	inventory::armor kavelar_gear;
+//	inventory::armor carbonite_gear;
+//	inventory::armor crystalline_armor;
+//	inventory::armor aerolite_gear;
+//	inventory::armor vandham_armor;
+//	inventory::armor antiImpact_armor;
+//	inventory::armor katType_armor;
+//	inventory::armor grenadier_composite_armor;
+//	inventory::armor anti_nuclear_armor;
+//#pragma endregion
+//
+//	inventory::armor armorlist[100] =
+//	{
+//		broad_armor,
+//		kavelar_gear,
+//		carbonite_gear,
+//		crystalline_armor,
+//		aerolite_gear,
+//		vandham_armor,
+//		antiImpact_armor,
+//		katType_armor,
+//		grenadier_composite_armor,
+//		anti_nuclear_armor
+//	};
+//
+//	inventory::armor allarmorList(int integer)
+//	{
+//		return armorlist[integer];
+//	}
 
 #pragma region All_weapons
 	inventory::weapon brawd_injector;
@@ -266,27 +266,27 @@ public:
 	inventory::weapon anti_nuclear_injector;
 #pragma endregion
 
-	inventory::weapon weaponlist[100] =
-	{
-	 brawd_injector,
-	 glass_gauntlet,
-	 carbonite_knuckle,
-	 crystalline_injector,
-	 aerolite_gauntlet,
-	 vandham_gauntlet,
-	 antimatter_injector,
-	 shinobi_claws,
-	 tacheyon_injector,
-	 magic_glove,
-	 bomber_injector,
-	 titanium_infused_gauntlet,
-	 anti_nuclear_injector
-	};
+	//inventory::weapon weaponlist[100] =
+	//{
+	// brawd_injector,
+	// glass_gauntlet,
+	// carbonite_knuckle,
+	// crystalline_injector,
+	// aerolite_gauntlet,
+	// vandham_gauntlet,
+	// antimatter_injector,
+	// shinobi_claws,
+	// tacheyon_injector,
+	// magic_glove,
+	// bomber_injector,
+	// titanium_infused_gauntlet,
+	// anti_nuclear_injector
+	//};
 
-	inventory::weapon allweaponList(int integer)
-	{
-		return weaponlist[integer];
-	}
+	//inventory::weapon allweaponList(int integer)
+	//{
+	//	return weaponlist[integer];
+	//}
 
 	// selections
 	void selectlistItem(int, Player_Actor);

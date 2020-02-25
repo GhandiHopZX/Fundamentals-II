@@ -1,7 +1,6 @@
 #pragma once
 #include "battleSystem.h"
-#include "Player_Actor.h"
-#include "Enemy.h"
+#include "aegesa.h"
 
 using namespace std;
 
@@ -15,6 +14,8 @@ private:
 #pragma endregion
 
 public:
+	// every skill has an range type, element, name, description, sp/fp consumption, and stat multipliers 
+	// and yes I'm putting it all in a magic hash
 	// This exists because Enemy is not skillAction so ill compare the two in
 	// validation when damage is processed...
 	enum class elementType
@@ -61,7 +62,7 @@ public:
 
 	skillAction(int);
 
-	skillAction(int num, string name, elementType, string dec, bool);
+	skillAction(int num, string name, elementType, string dec, bool rangeType, int sp_succ, int fp_succ, int* statMul[]);
 
 	skillAction skillcall(int);
 
