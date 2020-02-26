@@ -410,7 +410,7 @@ using namespace std;
 //void battleSystem::defend()
 //{}
 //
-void battleSystem::skill(int* statMul[], int statNum)
+void battleSystem::skill(int* statMul[], int statNum) // party one and targeted party
 {
 	int me;
 	me = *statMul[statNum];
