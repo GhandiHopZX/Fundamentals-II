@@ -134,4 +134,6 @@ public:
 		}
 	}
 
+	void skill(int* statMul[], int statNum);
+
 };

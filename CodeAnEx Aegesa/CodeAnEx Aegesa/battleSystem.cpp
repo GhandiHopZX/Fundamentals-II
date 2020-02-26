@@ -410,12 +410,21 @@ using namespace std;
 //void battleSystem::defend()
 //{}
 //
-//void battleSystem::skill()
-//{
-//	/*he.statPlus('h', skilz.skillcall->hpAdd);
-//	he.statPlus('s', skilz.skillcall->spAdd);
-//	he.statPlus('d', skilz.skillcall->defAdd);*/
-//}
+void battleSystem::skill(int* statMul[], int statNum)
+{
+	int me;
+	me = *statMul[statNum];
+	int& bk = me;
+
+	/*he.statPlus('h', skilz.skillcall->hpAdd);
+	he.statPlus('s', skilz.skillcall->spAdd);
+	he.statPlus('d', skilz.skillcall->defAdd);*/
+	// end deletion
+
+	// determine range type
+
+	delete[] statMul;
+}
 //
 //void battleSystem::hack() {
 //	

@@ -62,7 +62,8 @@ public:
 
 	skillAction(int);
 
-	skillAction(int num, string name, elementType, string dec, bool rangeType, int sp_succ, int fp_succ, int* statMul[]);
+	skillAction(int num, string name, elementType d, string dec, bool rangeType,
+		int sp_succ, int fp_succ);
 
 	skillAction skillcall(int);
 
@@ -73,7 +74,7 @@ public:
 	// for element changes
 	elementType setElementType(int m);
 
-	void displayElementType();
+	void displayElementType(elementType d);
 
 	void getDescription();
 

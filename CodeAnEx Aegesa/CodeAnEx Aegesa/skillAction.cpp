@@ -1,5 +1,6 @@
 #include <iostream>
 #include "skillAction.h"
+#include "aegesa.h"
 
 //default
 skillAction::skillAction()
@@ -17,10 +18,12 @@ skillAction::skillAction(int call)
 
 	cout << skillcall(call).name << endl;
 	skillcall(call).dec;
-	displayElementType();
-	getElementType();
+	cout << endl;
+	displayElementType(skillcall(call).getElementType());
+	cout << endl;
 	getRangeType();
-	cout << skillcall(call).num + '\n' +
+	cout << 
+		skillcall(call).num + '\n' +
 		skillcall(call).hpAdd + '\n' +
 		skillcall(call).spAdd + '\n' +
 		skillcall(call).dpAdd + '\n' +
@@ -41,27 +44,35 @@ skillAction::skillAction(int call)
 		<< endl;
 }
 
-skillAction::skillAction(int num, string name, elementType, string dec, bool rangeType, int sp_succ, int fp_succ, int* statMul[])
+skillAction::skillAction(int num, string name, elementType d, string dec,
+	bool rangeType, int sp_succ, int fp_succ)
 {
+	
 	// sp consume
+	sp_succ = 0;
+	// fp consume
+	fp_succ = 0;
+
+	fpAdd += 0;
+	spAdd += 0;
+	hpAdd += 0;
+
 }
 
 skillAction skillAction::skillcall(int p)
 {
 #pragma region Skillist
-	//skillAction FireWeave(0, "FireWeave", skillAction::elementType::Fire, "AN AOE ATTACK THAT ENGULFS ALL ENEMIES.", true);
-	//skillAction WaterFlash(1, "WaterFlash", skillAction::elementType::Water, "A singular riptide of water..", false);
+	skillAction FireWeave(0, "FireWeave", elementType::Fire, "Weaves of unending flame lash about the targets", true, 1300, 12);
+	skillAction WaterFlash(1, "WaterFlash", skillAction::elementType::Water, "A singular riptide of water..", false, 234, 2);
 #pragma endregion
 
 	skillAction allSkills[50] =
 	{
-		/*FireWeave,
-		WaterFlash*/
+		FireWeave,
+		WaterFlash
 	};
 	return allSkills[p];
 }
-
-
 
 skillAction::elementType skillAction::getElementType()
 {
@@ -108,9 +119,9 @@ skillAction::elementType skillAction::setElementType(int m)
 	return static_cast<elementType>(m);
 }
 
-void skillAction::displayElementType()
+void skillAction::displayElementType(elementType d)
 {
-	switch (elementType::Water)
+	switch (d)
 	{
 	case skillAction::elementType::Water:
 		cout << "Water" << endl;
