@@ -10,6 +10,90 @@
 // use tha multimap function
 using namespace std;
 
+//items
+
+#pragma region All_items
+inventory::item AEGESA_FRAGMENT;
+inventory::item kaider_shard;
+inventory::item greenball_bun;
+inventory::item enchantment_crystal;
+inventory::item music_chord;
+inventory::item static_weave;
+inventory::item marble_eye;
+inventory::item tiny_fingers;
+inventory::item chared_beast_skin;
+inventory::item magical_mane;
+inventory::item masters_cane;
+inventory::item broken_wing;
+inventory::item ripped_coat;
+inventory::item shattered_broach;
+#pragma endregion
+
+inventory::item itemlist[100] =
+{
+	AEGESA_FRAGMENT,
+	kaider_shard,
+	greenball_bun,
+	enchantment_crystal,
+	music_chord,
+	static_weave,
+	marble_eye,
+	tiny_fingers,
+	chared_beast_skin,
+	magical_mane,
+	masters_cane,
+	broken_wing,
+	ripped_coat,
+	shattered_broach,
+};
+
+inventory::item allitemList(int integer)
+{
+	return itemlist[integer];
+}
+//
+//#pragma region All_armors
+//	inventory::armor broad_armor;
+//	inventory::armor kavelar_gear;
+//	inventory::armor carbonite_gear;
+//	inventory::armor crystalline_armor;
+//	inventory::armor aerolite_gear;
+//	inventory::armor vandham_armor;
+//	inventory::armor antiImpact_armor;
+//	inventory::armor katType_armor;
+//	inventory::armor grenadier_composite_armor;
+//	inventory::armor anti_nuclear_armor;
+//#pragma endregion
+//
+//	inventory::armor armorlist[100] =
+//	{
+//		broad_armor,
+//		kavelar_gear,
+//		carbonite_gear,
+//		crystalline_armor,
+//		aerolite_gear,
+//		vandham_armor,
+//		antiImpact_armor,
+//		katType_armor,
+//		grenadier_composite_armor,
+//		anti_nuclear_armor
+//	};
+//
+//	inventory::armor allarmorList(int integer)
+//	{
+//		return armorlist[integer];
+//	}
+
+//weapon my_weapons[inventory::MAX_INTEGRITY] =
+	//{};
+
+	//armor my_armors[inventory::MAX_INTEGRITY] =
+	//{};
+
+inventory::item my_items[inventory::MAX_INTEGRITY] =
+{};
+
+
 inventory::inventory()
 {
 	headw = nullptr;
@@ -368,45 +452,45 @@ void inventory::displaylistArmor() const
 	}
 }
 
-void inventory::selectlistItem(int u, Player_Actor o)
-{
-	if (my_items <= 0)
-	{
-		string message = "No Items in index..";
-		cout << message;
-		my_items[0];
-	}
-	else
-	{
-		cout << "use Item?";
-		itemUse(u, o);
-	}
-	remItem(my_items[u].quantity);
-	//return my_items[u];
-}
+//void selectlistItem(int u, Player_Actor o)
+//{
+//	if (inventory::my_items <= 0)
+//	{
+//		string message = "No Items in index..";
+//		cout << message;
+//		my_items[0];
+//	}
+//	else
+//	{
+//		cout << "use Item?";
+//		itemUse(u, o);
+//	}
+//	remItem(my_items[u].quantity);
+//	//return my_items[u];
+//}
 
-void inventory::itemUse(int d, Player_Actor o)
-{
-	// add stuff here
-	o.AGId += my_items[d].agiAdd;
-	o.ap += my_items[d].apAdd;
-	o.ATKd += my_items[d].atkAdd;
-	o.CONd += my_items[d].conAdd;
-	o.DEFd += my_items[d].defAdd;
-	o.DEXd += my_items[d].dexAdd;
-	o.ENDd += my_items[d].endAdd;
-	o.fpd += my_items[d].fpAdd;
-	 // use the gold value for gold items += my_items[d].goldValue;
-	o.AGId += my_items[d].hpAdd;
-	o.AGId += my_items[d].intAdd;
-	o.AGId += my_items[d].spAdd;
-	o.AGId += my_items[d].spdAdd;
-	o.AGId += my_items[d].sprAdd;
-	o.AGId += my_items[d].strAdd;
-
-	// name call
-	cout << my_items[d].name << "used" << endl;
-}
+//void inventory::itemUse(int d, Player_Actor o)
+//{
+//	// add stuff here
+//	o.AGId += my_items[d].agiAdd;
+//	o.ap += my_items[d].apAdd;
+//	o.ATKd += my_items[d].atkAdd;
+//	o.CONd += my_items[d].conAdd;
+//	o.DEFd += my_items[d].defAdd;
+//	o.DEXd += my_items[d].dexAdd;
+//	o.ENDd += my_items[d].endAdd;
+//	o.fpd += my_items[d].fpAdd;
+//	 // use the gold value for gold items += my_items[d].goldValue;
+//	o.AGId += my_items[d].hpAdd;
+//	o.AGId += my_items[d].intAdd;
+//	o.AGId += my_items[d].spAdd;
+//	o.AGId += my_items[d].spdAdd;
+//	o.AGId += my_items[d].sprAdd;
+//	o.AGId += my_items[d].strAdd;
+//
+//	// name call
+//	cout << my_items[d].name << "used" << endl;
+//}
 
 //
 //void inventory::armorSell(int d, Player_Actor o)
@@ -427,18 +511,18 @@ void inventory::itemUse(int d, Player_Actor o)
 //	//return my_armors[u];
 //}
 
-void inventory::selectlistWeapon(int u, Player_Actor i)
-{
-	if (my_weapons <= 0)
-	{
-		string message = "No Armors in index..";
-		cout << message;
-		my_weapons[0];
-	}
-	remItem(my_weapons[u].quantity);
-
-	//return my_weapons[u];
-}
+//void inventory::selectlistWeapon(int u, Player_Actor i)
+//{
+//	if (my_weapons <= 0)
+//	{
+//		string message = "No Armors in index..";
+//		cout << message;
+//		my_weapons[0];
+//	}
+//	remItem(my_weapons[u].quantity);
+//
+//	//return my_weapons[u];
+//}
 
 void inventory::itemCall(int i)
 {
@@ -446,105 +530,105 @@ void inventory::itemCall(int i)
 } // for item usage
 
 // for combat
-void inventory::PlayerItemInventory(Player_Actor o) // gotta make an inventory that'll work in the world menu
-{
-	system("CLS");
-	// show choices'
-	cout << "What menu would you like to select..?" << endl;
-	cout << "Items(i), Armors(a), Weapons(w), Equipped(e), Quit(q)" << endl;
-	char choice = {};
-	int i = 0;
-	switch (choice)
-	{
-	case 'i':
-		cout << "Select an Item? or Exit? (Q,q): use an number to select one.. 0 - " + sum_items << endl;
-		displaylistItem();
-		// select an item? using a #
-		cout << "select an item? using a #" << endl;
-		//int i = 0;
-		choice = 'N';
-		cin >> i;
-		selectlistItem(i, o); // usage
-		if (isalpha(i))
-		{
-			cout << "invalid option" << endl;
-			PlayerItemInventory(o);
-			break;
-		}
-		cout << "Make another selection?" << endl;
-		PlayerItemInventory(o);
-		break;
-
-	case 'a':
-		cout << "Select an Armor?: use an number to select one.. 0 - " + sum_armors << endl;
-		displaylistArmor();
-		// select an armor? using a #
-		cout << "select an armor? using a #" << endl;
-		//int i = 0;
-		choice = 'N';
-		cin >> i;
-		//selectlistArmor(i,o);
-		//equip armor
-		if (isalpha(i))
-		{
-			cout << "invalid option" << endl;
-			PlayerItemInventory(o);
-			break;
-		}
-		cout << "Make another selection?" << endl;
-		PlayerItemInventory(o);
-		break;
-
-	case 'w':
-		cout << "Select an Weapon?: use an number to select one.. 0 - " + sum_weapons << endl;
-		displaylistWeapon();
-		cout << "select an weapon? using a #" << endl;
-
-		choice = 'N';
-		cin >> i;
-		selectlistWeapon(i,o);
-		//equip armor
-		if (isalpha(i))
-		{
-			cout << "invalid option" << endl;
-			PlayerItemInventory(o);
-			break;
-		}
-		cout << "Make another selection?" << endl;
-		PlayerItemInventory(o);
-		break;
-
-	case 'e':
-		cout << "Weapons equipped: select one for overview.. 0 - " + sum_weapons << endl;
-		cout << "Armors equipped: select one for overview.. 0 - " + sum_armors << endl;
-		//displaylistEQWgear();
-		cout << endl;
-		//displaylistEQAgear();
-		cout << endl;
-		cout << "select a gear? using a #" << endl;
-		//int i = 0;
-		choice = 'N';
-		cin >> i;
-
-		//selectlistWeapon(i);
-		//equip armor
-		if (isalpha(i))
-		{
-			cout << "invalid option" << endl;
-			PlayerItemInventory(o);
-			break;
-		}
-		cout << "Make another selection?" << endl;
-		PlayerItemInventory(o);
-		break;
-
-	case 'q':
-		break;
-
-	default:
-		break;
-	}
-}
+//void inventory::PlayerItemInventory(Player_Actor o) // gotta make an inventory that'll work in the world menu
+//{
+//	system("CLS");
+//	// show choices'
+//	cout << "What menu would you like to select..?" << endl;
+//	cout << "Items(i), Armors(a), Weapons(w), Equipped(e), Quit(q)" << endl;
+//	char choice = {};
+//	int i = 0;
+//	switch (choice)
+//	{
+//	case 'i':
+//		cout << "Select an Item? or Exit? (Q,q): use an number to select one.. 0 - " + sum_items << endl;
+//		displaylistItem();
+//		// select an item? using a #
+//		cout << "select an item? using a #" << endl;
+//		//int i = 0;
+//		choice = 'N';
+//		cin >> i;
+//		selectlistItem(i, o); // usage
+//		if (isalpha(i))
+//		{
+//			cout << "invalid option" << endl;
+//			PlayerItemInventory(o);
+//			break;
+//		}
+//		cout << "Make another selection?" << endl;
+//		PlayerItemInventory(o);
+//		break;
+//
+//	case 'a':
+//		cout << "Select an Armor?: use an number to select one.. 0 - " + sum_armors << endl;
+//		displaylistArmor();
+//		// select an armor? using a #
+//		cout << "select an armor? using a #" << endl;
+//		//int i = 0;
+//		choice = 'N';
+//		cin >> i;
+//		//selectlistArmor(i,o);
+//		//equip armor
+//		if (isalpha(i))
+//		{
+//			cout << "invalid option" << endl;
+//			PlayerItemInventory(o);
+//			break;
+//		}
+//		cout << "Make another selection?" << endl;
+//		PlayerItemInventory(o);
+//		break;
+//
+//	case 'w':
+//		cout << "Select an Weapon?: use an number to select one.. 0 - " + inventory::sum_weapons << endl;
+//		displaylistWeapon();
+//		cout << "select an weapon? using a #" << endl;
+//
+//		choice = 'N';
+//		cin >> i;
+//		selectlistWeapon(i,o);
+//		//equip armor
+//		if (isalpha(i))
+//		{
+//			cout << "invalid option" << endl;
+//			PlayerItemInventory(o);
+//			break;
+//		}
+//		cout << "Make another selection?" << endl;
+//		PlayerItemInventory(o);
+//		break;
+//
+//	case 'e':
+//		cout << "Weapons equipped: select one for overview.. 0 - " + sum_weapons << endl;
+//		cout << "Armors equipped: select one for overview.. 0 - " + sum_armors << endl;
+//		//displaylistEQWgear();
+//		cout << endl;
+//		//displaylistEQAgear();
+//		cout << endl;
+//		cout << "select a gear? using a #" << endl;
+//		//int i = 0;
+//		choice = 'N';
+//		cin >> i;
+//
+//		//selectlistWeapon(i);
+//		//equip armor
+//		if (isalpha(i))
+//		{
+//			cout << "invalid option" << endl;
+//			PlayerItemInventory(o);
+//			break;
+//		}
+//		cout << "Make another selection?" << endl;
+//		PlayerItemInventory(o);
+//		break;
+//
+//	case 'q':
+//		break;
+//
+//	default:
+//		break;
+//	}
+//}
 
 //
 //void inventory::setWeapon(Player_Actor o, inventory::weapon weapon, int index)
@@ -575,13 +659,13 @@ void inventory::rewardCall(int index)
 }
 
 
-
-void inventory::weaponCall(int index)
-{
-	cout << weaponlist[index].name << endl;
-	addItem(weaponlist[index].quantity);
-	//return allweaponList(index);
-}
+//
+//void inventory::weaponCall(int index)
+//{
+//	cout << weaponlist[index].name << endl;
+//	addItem(weaponlist[index].quantity);
+//	//return allweaponList(index);
+//}
 
 void inventory::addItem(int find) {
 	int i = 1;

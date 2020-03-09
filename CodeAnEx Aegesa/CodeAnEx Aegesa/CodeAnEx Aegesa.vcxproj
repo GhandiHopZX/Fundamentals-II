@@ -152,7 +152,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="aegesa.cpp" />
-    <ClCompile Include="ArmorType.cpp" />
     <ClCompile Include="battleSystem.cpp" />
     <ClCompile Include="CodeAnEx Aegesa.cpp" />
     <ClCompile Include="Enemy.cpp" />
@@ -163,7 +162,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aegesa.h" />
-    <ClInclude Include="ArmorType.h" />
     <ClInclude Include="battleSystem.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="inventory.h" />

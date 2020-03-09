@@ -210,7 +210,7 @@ void World::menu()
 	{
 	case 'i':
 	case 'item':
-		mainInventory.PlayerItemInventory();
+		//mainInventory.PlayerItemInventory(Actor1);
 		break;
 
 	case 'n':
@@ -269,7 +269,7 @@ void World::partyMenu(Player_Actor party)
 		// select party member
 		// equip items
 		
-		mainInventory.PlayerItemInventory(Actor1);
+		//mainInventory.PlayerItemInventory(Actor1);
 		break;
 
 	case 'sa':
