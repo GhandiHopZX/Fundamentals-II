@@ -20,10 +20,16 @@ private:
 public:
 	// structs  
 
-	// you're going to have to place these into separate classes that inherit inventory.h in order to 
-	// make a system for each actor to implement their own stuff needed. 
-	// 1 inventory for the main actor
-	// and 3 objects being weapon, armor and item for each and every actor
+	// you're going to have to look at 
+	// different hash creations for each item, armor and weapon types
+	// so that these can be saved to a file called to decoding then called to be 
+	// stored on a stack of memory (a method that stores it into an array)
+	// to then be used from that list of data 
+    // ie: a non h file method but object method only 
+	// "ArmorBase", "WeaponBase", "ItemBase" etc...
+	// to then call it to any other object (.cpp) not an h file
+	// this could work with anything else
+	// there are other methods but this is the only thing I could think of.
 
 	struct weapon
 	{

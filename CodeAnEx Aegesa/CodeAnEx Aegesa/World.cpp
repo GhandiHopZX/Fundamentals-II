@@ -54,11 +54,11 @@ void World::beginningStory()
 	// What's Your Name?
 
 	cout << "What's Your Name?: " << endl;
-	cin >> nameIn;
+	getline(cin, nameIn);
 
 	// What's Your Story?
 	cout << "What's Your Story?: " << endl;
-	cin >> bioIn;
+	getline(cin, bioIn);
 	cout << endl;
 
 	Actor1.setName(nameIn);
@@ -111,7 +111,7 @@ void World::beginningStory()
 	cout << Actor1.getName() + ": " + "WAIT!" << endl;
 	cin.get();
 	dialouge(Actor1, "I wana see if I can find that light I just saw...");
-	dialouge(Actor1, "I wana see if I can find that light I just saw...");
+	dialouge(Actor1, "I wana see if if its even real.");
 	dialougeAction(Actor1, "Looks up");
 	dialouge(Actor1, "No way....");
 	dialougeAction(Actor1, "Jolts from the cold now heated air...");
