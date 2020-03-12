@@ -106,8 +106,8 @@ void menyu()
 	getline(cin, choiceS);
 
 	choice = choiceIN(dialougeInput(choiceS));
-	while (getchar() != '\n'); // flush
 
+	//while (getchar() != '\n'); // flush
 
 	do
 	{

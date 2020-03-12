@@ -19,6 +19,9 @@ private:
 
 	string savePath;
 	string saveName;
+	string loadedDir;
+	int numberOfFiles = 0;
+	string loadedDirs[1] = {};
 	
 public:
 
@@ -86,8 +89,72 @@ public:
 
 	FileLoad loadFile() 
 	{
+		int choice;
+		cout << "FILE Select.. (1) for pasting directory or (2) for QuickLoad" << endl;
+		switch (choice)
+		{
+		case 1:
+			getline(cin, loadedDir);
+			break;
+		case 2:
+			break;
+
+			// scan through for files for the numberOfFiles
+			// find the .dat ones
+			/*for each (FILE var in derp)
+			{
+
+			}*/
+			// put them in this array "numberOfFiles"
+			for (int i = 0; i < numberOfFiles; i++)
+			{
+				loadedDirs[numberOfFiles] += loadedDir;
+			}
+			cout << endl;
+			// load selections
+			for (int i = 0; i < numberOfFiles; i++)
+			{
+				cout << endl;
+				cout << i + 1 << loadedDirs[numberOfFiles] << endl;
+			}
+
+			int selectFileNumb = NULL;
+			try
+			{
+				switch (selectFileNumb)
+				{
+
+				case 0: // check for number
+					// if selectFileNumb is a number 
+					int j = selectFileNumb;
+					int i = 0;
+					do
+					{
+						loadedDirs[i];
+					} while (i != selectFileNumb);
+
+					if (selectFileNumb <= 0)
+					{
+						cout << "No File Found..." << endl;
+					}
+					break;
+
+				default:
+					cout << "Invalid Choice.." << endl;
+					loadFile();
+					break;
+				}
+			}
+			catch (const std::invalid_argument& dis)
+			{
+
+			}
+			
+		default:
+			break;
+		}
 		// fstream stuff here...
-		fstream JavaFile((savePath + '/' + saveName + ".dat").c_str(), ios::in, ios_base::trunc);
+		fstream JavaFile((loadedDir + '/' + saveName + ".dat").c_str(), ios::in, ios_base::trunc);
 
 		// end here
 		return nuwData;
