@@ -16,9 +16,13 @@ class FileSave // this is the fileSystem for the game for saving and loading
 protected:
 
 private:
+
+	string savePath;
+	string saveName;
 	
 public:
 
+	// vars
 	struct SKILLSET
 	{
 		int keys[24];
@@ -49,11 +53,55 @@ public:
 	};
 
 	PARTY_MEMBER_DATA PMD01[3]; // Find a way to hashify this number
-	int INVENTORY_KEYS[49]; // this one too
+	int INVENTORY_KEYS[50]{}; // this one too
 
-	// vars
+	struct FileLoad
+	{
+		SKILLSET l1;
+		PARTY_MEMBER_DATA l2[3];
+		FILEDATA l3;
+		int INVENTORY_KEYS_l4[49];
+	};
+
+	FileLoad nuwData; // one for fstream
+
+	//functions
 
 	FileSave();
+
+	void saveFile(vector<FileSave::SKILLSET> &SkillSet, vector<FileSave::PARTY_MEMBER_DATA> PMD[], vector<FileSave::FILEDATA> &FileData)
+	{
+		fstream JavaFile((savePath + '/' + saveName + ".dat").c_str(), ios::out, ios_base::trunc);
+	};
+
+	void setSavePath(string m)
+	{
+		savePath = m;
+	};
+
+	void setFileName(string m)
+	{
+		saveName = m;
+	};
+
+	FileLoad loadFile() 
+	{
+		// fstream stuff here...
+		fstream JavaFile((savePath + '/' + saveName + ".dat").c_str(), ios::in, ios_base::trunc);
+
+		// end here
+		return nuwData;
+	};
+
+	string getSavePath()
+	{
+		return savePath;
+	};
+
+	string getSaveName()
+	{
+		return saveName;
+	};
 
 	~FileSave();
 
