@@ -145,9 +145,10 @@ public:
 					break;
 				}
 			}
-			catch (const std::invalid_argument& dis)
+			catch (const std::invalid_argument& dis) // find something for the alphabet
 			{
-
+				cout << "Sorry try again..." << endl;
+				loadFile();
 			}
 			
 		default:

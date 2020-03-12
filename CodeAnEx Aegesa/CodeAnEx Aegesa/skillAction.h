@@ -1,6 +1,9 @@
 #pragma once
 #include "battleSystem.h"
 #include "aegesa.h"
+#include <iostream>
+#include <list>
+#include <cstring>
 
 using namespace std;
 
@@ -82,3 +85,22 @@ public:
 
 	//state changes - wip
 };
+
+class HashTable
+{
+public:
+	HashTable();
+	~HashTable();
+
+private:
+	static const int hashGroups = 48;
+	list<pair<int, string>> table[hashGroups]; //2:43
+};
+
+HashTable::HashTable()
+{
+}
+
+HashTable::~HashTable()
+{
+}
