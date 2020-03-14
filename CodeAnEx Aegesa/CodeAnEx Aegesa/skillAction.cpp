@@ -1,7 +1,8 @@
 
+#include <iostream>
 #include "skillAction.h"
 #include "aegesa.h"
-#include <iostream>
+#include "HashTableSet.h"
 
 //default
 skillAction::skillAction()
@@ -189,11 +190,3 @@ skillAction::elementType skillAction::setElementType(int m)
 	return static_cast<elementType>(m);
 }
 
-template <>
-struct hash<skillAction>
-{
-	size_t operator() (const skillAction& sk) const
-	{
-		//individual Hashes
-	}
-};

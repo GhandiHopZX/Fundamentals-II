@@ -1,17 +1,19 @@
-#include "HashTableSet.h"
-
 #include <list>
 #include <cstring>
 #include <string>
 #include <vector>
+#include <unordered_set>
 #include <iostream>
+#include "skillAction.h"
+#include "HashTableSet.h"
 
 using namespace std;
 
 HashTableSet::HashTableSet()
 {
-
 }
+
+//HashTableSet SkillList;
 
 inline bool HashTableSet::isEmpty() const
 {
@@ -100,6 +102,12 @@ inline void HashTableSet::printTable()
 	}
 	return;
 }
+
+//int HashTableSet::skillCall(int sk)
+//{
+//	//Hash here
+//	SkillList.hash(sk);
+//}
 
 HashTableSet::~HashTableSet()
 {

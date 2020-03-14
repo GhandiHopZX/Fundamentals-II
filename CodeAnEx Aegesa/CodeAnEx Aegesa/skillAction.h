@@ -1,9 +1,11 @@
 #pragma once
-#include "battleSystem.h"
-#include "aegesa.h"
+#include <iomanip>
 #include <iostream>
 #include <list>
 #include <cstring>
+#include "battleSystem.h"
+#include "HashTableSet.h"
+#include "aegesa.h"
 
 using namespace std;
 
@@ -85,6 +87,12 @@ public:
 
 	bool getRangeType();
 
+	template <class printedT>
+	printedT output(string i)
+	{
+		cout << setprecision(2) << fixed << endl;
+		return i;
+	}
 	//state changes - wip
 };
 
