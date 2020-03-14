@@ -1,6 +1,7 @@
-#include <iostream>
+
 #include "skillAction.h"
 #include "aegesa.h"
+#include <iostream>
 
 //default
 skillAction::skillAction()
@@ -22,7 +23,7 @@ skillAction::skillAction(int call)
 	displayElementType(skillcall(call).getElementType());
 	cout << endl;
 	getRangeType();
-	cout << 
+	cout <<
 		skillcall(call).num + '\n' +
 		skillcall(call).hpAdd + '\n' +
 		skillcall(call).spAdd + '\n' +
@@ -44,19 +45,23 @@ skillAction::skillAction(int call)
 		<< endl;
 }
 
-skillAction::skillAction(int num, string name, elementType d, string dec,
-	bool rangeType, int sp_succ, int fp_succ)
+skillAction::skillAction(int numid, string name, elementType d, string dec,
+	bool rType, int sp_succ, int fp_succ)
 {
-	
 	// sp consume
 	sp_succ = 0;
 	// fp consume
 	fp_succ = 0;
 
+	num = numid;
+
+	rangeType = rType;
+
+	type = d;
+
 	fpAdd += 0;
 	spAdd += 0;
 	hpAdd += 0;
-
 }
 
 skillAction skillAction::skillcall(int p)
@@ -159,22 +164,32 @@ void skillAction::displayElementType(elementType d)
 	}
 }
 
-void skillAction::getDescription()
+string skillAction::getDescription()
 {
-	cout << dec;
+	return dec;
 }
 
-void skillAction::getRangeType()
+void skillAction::setRangeType(bool rangeT)
 {
-	if (rangeType = true)
+	rangeType = rangeT;
+
+	if (rangeType == true) // aoe true
 	{
-		cout << "AOE" << endl;
+		cout << "AOE set" << endl;
+
 	}
-	else
-	{
-		cout << "Single" << endl;
+	else // single false
+	{	
+		cout << "Single set" << endl;
 	}
 }
+
+bool skillAction::getRangeType()
+{
+	return rangeType;
+}
+
+
 
 template <>
 struct hash<skillAction>

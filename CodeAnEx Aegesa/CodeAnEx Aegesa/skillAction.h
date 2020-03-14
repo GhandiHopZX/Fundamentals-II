@@ -79,28 +79,13 @@ public:
 
 	void displayElementType(elementType d);
 
-	void getDescription();
+	string getDescription();
 
-	void getRangeType();
+	void setRangeType(bool);
+
+	bool getRangeType();
 
 	//state changes - wip
 };
 
-class HashTable
-{
-public:
-	HashTable();
-	~HashTable();
 
-private:
-	static const int hashGroups = 48;
-	list<pair<int, string>> table[hashGroups]; //2:43
-};
-
-HashTable::HashTable()
-{
-}
-
-HashTable::~HashTable()
-{
-}
