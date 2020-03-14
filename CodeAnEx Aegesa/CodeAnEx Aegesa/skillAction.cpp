@@ -119,11 +119,6 @@ skillAction::elementType skillAction::getElementType()
 	}
 }
 
-skillAction::elementType skillAction::setElementType(int m)
-{
-	return static_cast<elementType>(m);
-}
-
 void skillAction::displayElementType(elementType d)
 {
 	switch (d)
@@ -164,11 +159,6 @@ void skillAction::displayElementType(elementType d)
 	}
 }
 
-string skillAction::getDescription()
-{
-	return dec;
-}
-
 void skillAction::setRangeType(bool rangeT)
 {
 	rangeType = rangeT;
@@ -189,7 +179,15 @@ bool skillAction::getRangeType()
 	return rangeType;
 }
 
+string skillAction::getDescription()
+{
+	return dec;
+}
 
+skillAction::elementType skillAction::setElementType(int m)
+{
+	return static_cast<elementType>(m);
+}
 
 template <>
 struct hash<skillAction>
