@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class HashTableSet
+class HashTableSet // with this you can make multiple hashes with calculations that will be handy through out this project
 {
 private:
 	static const int hashGroups = 48;
