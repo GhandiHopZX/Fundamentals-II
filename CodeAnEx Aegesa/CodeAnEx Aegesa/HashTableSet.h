@@ -10,7 +10,7 @@ class HashTableSet // with this you can make multiple hashes with calculations t
 {
 private:
 	static const int hashGroups = 400;
-	list<pair<int, string>> table[hashGroups];
+	list<pair<int, string>> nametable[hashGroups];
 
 public:
 	HashTableSet();

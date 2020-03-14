@@ -9,7 +9,7 @@
 
 using namespace std;
 
-HashTableSet::HashTableSet()
+HashTableSet::HashTableSet() // you cant include this class anywhere else bc of its identity
 {
 }
 
@@ -20,7 +20,7 @@ inline bool HashTableSet::isEmpty() const
 	int sum{};
 	for (int i{}; i < hashGroups; i++)
 	{
-		sum += table[i].size();
+		sum += nametable[i].size();
 	}
 
 	if (!sum)
@@ -38,7 +38,7 @@ inline int HashTableSet::hash(int key) // hashfunction
 inline void HashTableSet::insertItem(int key, string value)
 {
 	int hashValue = hash(key);
-	auto& cell = table[hashValue];
+	auto& cell = nametable[hashValue];
 	auto bItr = begin(cell);
 	bool keyExists = false;
 	for (; bItr != end(cell); bItr++)
@@ -62,7 +62,7 @@ inline void HashTableSet::insertItem(int key, string value)
 inline void HashTableSet::removeItem(int key)
 {
 	int hashValue = hash(key);
-	auto& cell = table[hashValue];
+	auto& cell = nametable[hashValue];
 	auto bItr = begin(cell);
 	bool keyExists = false;
 	for (; bItr != end(cell); bItr++)
@@ -92,10 +92,10 @@ inline void HashTableSet::printTable()
 {
 	for (int i{}; i < hashGroups; i++)
 	{
-		if (table[i].size() == 0) continue;
+		if (nametable[i].size() == 0) continue;
 
-		auto bItr = table[i].begin();
-		for (; bItr != table[i].end(); bItr++)
+		auto bItr = nametable[i].begin();
+		for (; bItr != nametable[i].end(); bItr++)
 		{
 			cout << "[INFO] Key: " << bItr->first << " Value: " << bItr->second << endl;
 		}

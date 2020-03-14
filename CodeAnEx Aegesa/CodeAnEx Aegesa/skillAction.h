@@ -4,7 +4,6 @@
 #include <list>
 #include <cstring>
 #include "battleSystem.h"
-#include "HashTableSet.h"
 #include "aegesa.h"
 
 using namespace std;
