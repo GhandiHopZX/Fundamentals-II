@@ -13,10 +13,21 @@ using namespace std;
 
 HashTableSet::HashTableSet() // you cant include this class anywhere else bc of its identity 
 {
+	skill_Sum = 0;
+	shash_Value = 0;
+	skey_exists = 0;
+}
+
+HashTableSet::HashTableSet(int key, skillAction meeep)
+{
+	skill_Sum = 0;
+	shash_Value = 0;
+	skey_exists = 0;
 }
 
 //HashTableSet SkillList;
 
+#pragma region nameList
 inline bool HashTableSet::isEmpty() const
 {
 	int sum{};
@@ -104,17 +115,43 @@ inline void HashTableSet::printTable()
 	}
 	return;
 }
+#pragma endregion
 
-inline void HashTableSet::insertSkill(skillAction m)
+
+#pragma region skillList
+bool HashTableSet::sisEmpty() const
+{
+	return false;
+}
+
+int HashTableSet::skillHash(int)
+{
+	return 0;
+}
+
+void HashTableSet::insertSkill(int key, skillAction m)
 {
 
 }
 
-//int HashTableSet::skillCall(int sk)
-//{
-//	//Hash here
-//	SkillList.hash(sk);
-//}
+void HashTableSet::removeSkItem(int)
+{
+}
+
+string HashTableSet::searchSkTable(int)
+{
+	return string();
+}
+
+void HashTableSet::printSkTable()
+{
+}
+
+skillAction HashTableSet::skillCall(int sk)
+{
+	return skillAction();
+}
+#pragma endregion
 
 HashTableSet::~HashTableSet()
 {

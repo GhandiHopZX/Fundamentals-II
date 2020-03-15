@@ -10,10 +10,17 @@ class HashTableSet // with this you can make multiple hashes with calculations t
 {
 private:
 	static const int hashGroups = 400;
+	static const int skillGroups = 200;
+	int skill_Sum;
+	int shash_Value;
+	bool skey_exists;
+
+	list<pair<int, skillAction>> skillTable[skillGroups];
 	list<pair<int, string>> nametable[hashGroups];
 
 public:
 	HashTableSet();
+	HashTableSet(int, skillAction);
 	~HashTableSet();
 
 	bool isEmpty() const;
@@ -22,9 +29,15 @@ public:
 	void removeItem(int key);
 	string searchTable(int key);
 	void printTable();
-
-	void insertSkill(skillAction m);
+	
+	// skill
+	bool sisEmpty() const;
+	int skillHash(int);
+	void insertSkill(int key, skillAction m);
+	void removeSkItem(int);
+	string searchSkTable(int);
+	void printSkTable();
 
 	// for hashes
-	int skillCall(int sk);
+	skillAction skillCall(int sk);
 };
