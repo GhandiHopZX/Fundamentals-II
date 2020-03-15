@@ -9,7 +9,9 @@
 
 using namespace std;
 
-HashTableSet::HashTableSet() // you cant include this class anywhere else bc of its identity
+// make more constructors?
+
+HashTableSet::HashTableSet() // you cant include this class anywhere else bc of its identity 
 {
 }
 
@@ -101,6 +103,11 @@ inline void HashTableSet::printTable()
 		}
 	}
 	return;
+}
+
+inline void HashTableSet::insertSkill(skillAction m)
+{
+
 }
 
 //int HashTableSet::skillCall(int sk)

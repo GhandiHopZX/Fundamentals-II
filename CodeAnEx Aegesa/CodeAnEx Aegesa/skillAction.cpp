@@ -1,7 +1,7 @@
-
 #include <iostream>
 #include "skillAction.h"
 #include "aegesa.h"
+#include "HashTableSet.h"
 
 //default
 skillAction::skillAction()

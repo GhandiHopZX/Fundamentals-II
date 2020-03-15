@@ -23,6 +23,8 @@ public:
 	string searchTable(int key);
 	void printTable();
 
+	void insertSkill(skillAction m);
+
 	// for hashes
 	int skillCall(int sk);
 };
