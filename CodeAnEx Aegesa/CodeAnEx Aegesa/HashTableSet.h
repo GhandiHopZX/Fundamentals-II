@@ -23,6 +23,8 @@ public:
 	HashTableSet(int, skillAction);
 	~HashTableSet();
 
+	int operator++(int k);
+
 	// names
 	bool isEmpty() const;
 	int hash(int key);

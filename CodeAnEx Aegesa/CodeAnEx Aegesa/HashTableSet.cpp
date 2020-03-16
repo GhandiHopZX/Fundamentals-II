@@ -259,7 +259,7 @@ skillAction HashTableSet::skillCall(int sk)
 		else if(skillTable[i].empty())
 		{
 			cout << "Skill no. " << sk + " Not found or availiable moving to next skill..." << endl;
-			//bItr->second.operator++; get some operator overloading
+			operator++(shash_Value);
 			return bItr->second;
 		}
 	}	return skillAction();
@@ -272,3 +272,10 @@ HashTableSet::~HashTableSet()
 }
 
 // operator++
+int HashTableSet::operator++(int k)
+{
+	int *m = &k;
+	++m;
+	int& oldVal = *m;
+	return oldVal;
+}
