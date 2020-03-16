@@ -23,6 +23,7 @@ public:
 	HashTableSet(int, skillAction);
 	~HashTableSet();
 
+	// names
 	bool isEmpty() const;
 	int hash(int key);
 	void insertItem(int key, string value);
@@ -37,7 +38,10 @@ public:
 	void removeSkItem(int);
 	string searchSkTable(int);
 	void printSkTable();
+	int getSkillSum();
+	void setSkillSum(int);
+	
 
 	// for hashes
-	skillAction skillCall(int sk);
+	skillAction skillCall(int sk); //operator for this
 };
