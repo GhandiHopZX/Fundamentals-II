@@ -259,7 +259,7 @@ skillAction HashTableSet::skillCall(int sk)
 		else if(skillTable[i].empty())
 		{
 			cout << "Skill no. " << sk + " Not found or availiable moving to next skill..." << endl;
-			operator++(shash_Value);
+			++shash_Value;
 			return bItr->second;
 		}
 	}	return skillAction();
